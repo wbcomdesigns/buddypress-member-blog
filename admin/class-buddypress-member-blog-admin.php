@@ -118,6 +118,16 @@ class Buddypress_Member_Blog_Admin {
 	}
 	
 	/**
+	 * Plugin register settings.
+	 *
+	 * @since 1.0.0
+	 */
+	public function bp_member_blog_add_plugin_settings(){		
+		register_setting( 'bp_member_blog_general_settigs', 'bp_member_blog_gen_stngs' );		
+		
+	}
+	
+	/**
 	 * Callable function for settings page.
 	 *
 	 * @since 1.0.0

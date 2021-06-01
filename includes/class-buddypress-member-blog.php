@@ -159,6 +159,9 @@ class Buddypress_Member_Blog {
 		
 		/* Plugin settings page */
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'bp_member_blog_add_plugin_settings_page' );
+		
+		/* Plugin register settings */
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'bp_member_blog_add_plugin_settings' );		
 
 	}
 

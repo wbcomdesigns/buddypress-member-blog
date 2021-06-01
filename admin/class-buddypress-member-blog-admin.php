@@ -99,5 +99,69 @@ class Buddypress_Member_Blog_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+	
+	/**
+	 * Add admin sub menu for plugin settings.
+	 *
+	 * @since 1.0.0
+	 */
+	public function bp_member_blog_add_plugin_settings_page(){
+		
+		if ( empty ( $GLOBALS['admin_page_hooks']['wbcomplugins'] ) ) {			
+
+			add_menu_page( esc_html__( 'WB Plugins', 'buddypress-member-blog' ), esc_html__( 'WB Plugins', 'buddypress-member-blog' ), 'manage_options', 'wbcomplugins', array( $this, 'bp_member_blog_settings_page' ), 'dashicons-lightbulb', 59 );
+			
+		 	add_submenu_page( 'wbcomplugins', esc_html__( 'General', 'buddypress-member-blog' ), esc_html__( 'General', 'buddypress-member-blog' ), 'manage_options', 'wbcomplugins' );
+			}
+		add_submenu_page( 'wbcomplugins', esc_html__( 'BuddyPress Member BlogSettings Page', 'buddypress-member-blog' ), esc_html__( 'Member Blog', 'buddypress-member-blog' ), 'manage_options', 'buddypress-member-blog', array( $this, 'bp_member_blog_settings_page' ) );
+		
+	}
+	
+	/**
+	 * Callable function for settings page.
+	 *
+	 * @since 1.0.0
+	 */
+	public function bp_member_blog_settings_page() {
+		$current = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : 'welcome';
+		$member_blog_tabs['welcome'] = __( 'Welcome', 'buddypress-member-blog' );
+		$member_blog_tabs['general'] = __( 'General', 'buddypress-member-blog' );
+		
+		?>
+		<div class="wrap">
+			<hr class="wp-header-end">
+            <div class="wbcom-wrap">
+				<div class="blpro-header">
+					<?php echo do_shortcode( '[wbcom_admin_setting_header]' ); ?>
+					<h1 class="wbcom-plugin-heading">
+						<?php esc_html_e( 'BuddyPress Member Blog Settings', 'buddypress-member-blog' ); ?>
+					</h1>
+				</div>
+				<div class="wbcom-admin-settings-page">
+					<div class="wbcom-tabs-section">
+						<div class="nav-tab-wrapper">
+							<div class="wb-responsive-menu">
+								<span><?php esc_html_e( 'Menu','buddypress-member-blog' );?></span>
+								<input class="wb-toggle-btn" type="checkbox" id="wb-toggle-btn">
+								<label class="wb-toggle-icon" for="wb-toggle-btn">
+									<span class="wb-icon-bars"></span>
+								</label>
+							</div>
+							<ul>
+							<?php
+							foreach ( $member_blog_tabs as $bmpro_tab => $bmpro_name ) {
+								$class     = ( $bmpro_tab == $current ) ? 'nav-tab-active' : '';							
+								echo '<li><a class="nav-tab ' . $class . '" href="admin.php?page=buddypress-member-blog&tab=' . $bmpro_tab . '">' . $bmpro_name . '</a></li>';
+							}
+							?>
+							</ul>
+						</div>
+					</div>
+					<?php include 'inc/bp-member-blog-options-page.php'; ?>
+				</div>
+			</div> <!-- closing div class wbcom-wrap -->
+		</div> <!-- closing div class wrap -->
+		<?php
+	}
 
 }

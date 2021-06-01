@@ -37,6 +37,13 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'BUDDYPRESS_MEMBER_BLOG_VERSION', '1.0.0' );
 
+
+define( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'BUDDYPRESS_MEMBER_BLOG_ACF_PATH', BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'includes/acf-pro/' );
+define( 'BUDDYPRESS_MEMBER_BLOG_ACF_URL', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'includes/acf-pro/' );
+
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-buddypress-member-blog-activator.php
@@ -93,4 +100,13 @@ function bp_member_blog_activation_redirect_settings( $plugin ){
 		wp_redirect( admin_url( 'admin.php?page=buddypress-member-blog' ) ) ;
 		exit;
 	}
+}
+
+
+function buddypress_member_blo_admin_notices() {
+	?>
+    <div class="notice notice-error is-dismissible">
+        <p><?php _e( 'BuddyPress Member Blog Plugin already use ACF Pro plugin. So, Please deactivate ACF Free plugin to use Woo Sell Service Plugin.', 'woo-sell-services' ); ?></p>
+    </div>
+    <?php
 }

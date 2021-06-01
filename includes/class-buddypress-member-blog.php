@@ -98,6 +98,17 @@ class Buddypress_Member_Blog {
 	 * @access   private
 	 */
 	private function load_dependencies() {
+		
+		/* Include ACF Pro plugin file */
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' )) {
+			require_once( BUDDYPRESS_MEMBER_BLOG_ACF_PATH . 'acf.php' );
+			add_filter('acf/settings/show_admin', '__return_false');
+		}
+		
+		if (  is_plugin_active( 'advanced-custom-fields/acf.php' )) {
+			add_action( 'admin_notices', 'buddypress_member_blo_admin_notices' );
+		}
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the

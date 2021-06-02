@@ -103,7 +103,7 @@ class Buddypress_Member_Blog {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' )) {
 			require_once( BUDDYPRESS_MEMBER_BLOG_ACF_PATH . 'acf.php' );
-			add_filter('acf/settings/show_admin', '__return_false');
+			//add_filter('acf/settings/show_admin', '__return_false');
 		}
 		
 		if (  is_plugin_active( 'advanced-custom-fields/acf.php' )) {
@@ -131,7 +131,8 @@ class Buddypress_Member_Blog {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';		
+		
 
 		$this->loader = new Buddypress_Member_Blog_Loader();
 
@@ -188,7 +189,13 @@ class Buddypress_Member_Blog {
 		$plugin_public = new Buddypress_Member_Blog_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );		
+		
+		$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_setup_nav', 100);
+		
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish');
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish');
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete');
 
 	}
 

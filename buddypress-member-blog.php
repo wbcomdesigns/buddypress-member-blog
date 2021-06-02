@@ -72,6 +72,11 @@ register_deactivation_hook( __FILE__, 'deactivate_buddypress_member_blog' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-buddypress-member-blog.php';
 
 /**
+ * The core plugin functions that is used to define internationalization, 
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/buddypress-member-blog-functions.php';
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,

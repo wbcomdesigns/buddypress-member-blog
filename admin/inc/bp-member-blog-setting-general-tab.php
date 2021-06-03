@@ -18,6 +18,13 @@ $category = get_terms( array(
     'hide_empty' => false,
 ) );
 
+
+$member_types_exist = false;
+$member_types       = bp_get_member_types( $args = array(), $output = 'object' );
+if ( ! empty( $member_types ) ) {
+	$member_types_exist = true;
+}
+
 ?>
 <div class="wbcom-tab-content">
 <form method="post" action="options.php" class="bp-member-blog-gen-form">
@@ -26,6 +33,45 @@ $category = get_terms( array(
 	do_settings_sections( 'bp_member_blog_general_settigs' );
 	?>
 	<table class="form-table">
+	
+		<tr>
+			<th scope="row">
+				<label><?php esc_html_e( 'Allowed user roles to create post?', 'buddypress-member-blog' ); ?></label>
+			</th>
+			<td>
+				<ul>
+					<?php 
+					foreach ( get_editable_roles() as $id => $role ) {
+						?>
+						<li>
+							<label class="wb-switch">
+								<input type="checkbox" id="bp_create_post_<?php echo esc_attr($id)?>" name="bp_member_blog_gen_stngs[bp_create_post][]" value="<?php echo esc_attr($id);?>" <?php if ( isset($bp_member_blog_gen_stngs['bp_create_post']) && in_array( $id,$bp_member_blog_gen_stngs['bp_create_post'])){ echo "checked";}?>/>
+								<div class="wb-slider wb-round"></div>
+							</label>
+							<label for="bp_create_post_<?php echo esc_attr($id)?>"><?php echo esc_html($role['name']);?></label>
+						</li>
+						<?php						
+					}
+					?>
+				</ul>
+				<p class="description"><?php esc_html_e('Selected user roles will be allowed to create post.','buddypress-member-blog'); ?></p>
+			</td>
+		</tr>
+		
+		<?php if ( $member_types_exist ): ?>
+		<tr>
+			<th scope="row"><label><?php esc_html_e( 'Allowed member types wise to create post?', 'buddypress-private-community-pro' ); ?></label></th>
+			<td>
+				<select id="bp-member-types-list" name="bp_member_blog_gen_stngs[member_types][]" multiple data-placeholder="<?php esc_html_e( 'Select member type to create post', 'buddypress-member-blog');?>">
+					<?php foreach ( $member_types as $key => $type_obj ) { ?>
+						<?php $selected = ( ! empty( $bp_member_blog_gen_stngs['member_types'] ) && in_array( $key, $bp_member_blog_gen_stngs['member_types'] ) ) ? 'selected' : ''; ?>
+					<option value="<?php echo $key; ?>" <?php echo $selected; ?>><?php echo $type_obj->labels['name']; ?></option>
+					<?php } ?>
+				</select>
+				<p class="description"><?php esc_html_e('Selected member type will be allowed to create post.','buddypress-member-blog'); ?></p>
+			</td>
+		</tr>
+		<?php endif;?>
 		<tr>
 			<th scope="row">
 				<label for="bp_member_blog_publish_post">
@@ -38,33 +84,6 @@ $category = get_terms( array(
 					<div class="wb-slider wb-round"></div>
 				</label>
 				<p class="description"><?php esc_html_e( 'Allow user to publish posts. if not enable, they can only submit post as pending for review.', 'buddypress-member-blog' ); ?></p>
-		    </td>
-	    </tr>
-		
-		<tr>
-			<th scope="row">
-				<label for="bp_member_blog_auto_save_post">
-					<?php esc_html_e( 'Enable auto save', 'buddypress-member-blog' ); ?>
-				</label>
-			</th>
-			<td>
-				<label class="wb-switch">
-					<input name='bp_member_blog_gen_stngs[auto_save_post]' type='checkbox' value='yes' <?php ( isset( $bp_member_blog_gen_stngs['auto_save_post'] ) ) ? checked( $bp_member_blog_gen_stngs['auto_save_post'], 'yes' ) : ''; ?> id="bp_member_blog_auto_save_post"/>
-					<div class="wb-slider wb-round"></div>
-				</label>
-				<p class="description"><?php esc_html_e( 'Enable post auto saving while editing.', 'buddypress-member-blog' ); ?></p>
-		    </td>
-	    </tr>
-		
-		<tr>
-			<th scope="row">
-				<label for="bp_member_blog_files_per_post">
-					<?php esc_html_e( 'Max files per post', 'buddypress-member-blog' ); ?>
-				</label>
-			</th>
-			<td>
-				<input type="text" id="custom_form_content" name="bp_member_blog_gen_stngs[files_per_post]" value="<?php echo esc_attr( $files_per_post) ; ?>" class="reguler-text" id="bp_member_blog_files_per_post">
-				<p class="description"><?php esc_html_e( 'Maximum number of images that user can upload in post.', 'buddypress-member-blog' ); ?></p>
 		    </td>
 	    </tr>
 		

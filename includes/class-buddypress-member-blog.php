@@ -132,6 +132,7 @@ class Buddypress_Member_Blog {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';		
 		
 
 		$this->loader = new Buddypress_Member_Blog_Loader();
@@ -196,6 +197,8 @@ class Buddypress_Member_Blog {
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish');
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish');
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete');
+		
+		$this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
 
 	}
 

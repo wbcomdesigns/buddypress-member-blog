@@ -30,7 +30,7 @@
 	 */
 	 
 	 $(document).ready(function($) {
-		 $('#bp-blog-category-select').selectize({
+		 $('#bp-blog-category-select, #bp-member-types-list').selectize({
 	 		placeholder		: $( '#bp-blog-category-select').data( 'placeholder' ),
 	 		plugins			: ['remove_button']
 	 	});

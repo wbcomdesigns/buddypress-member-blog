@@ -53,7 +53,11 @@ function bp_member_blog_get_post_publish_unpublish_link( $post_id = 0, $label_ac
 	if ( ! $post_id ) {
 		return '';
 	}
-
+	
+	if ( get_post_field( 'post_status', $post_id ) ==  'pending' ) {
+		return '';
+	}
+	
 	$is_published = bp_member_blog_is_post_published( $post_id );
 	
 	$post = get_post( $post_id );
@@ -170,7 +174,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 		return '';
 	}
 
-	$action_name = 'edit';
+	$action_name = 'bp-new-post';
 
 	
 

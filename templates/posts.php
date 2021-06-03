@@ -7,10 +7,29 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+global $current_user;
+$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 $user_id       = bp_displayed_user_id();
 $is_my_profile = bp_is_my_profile();
 
+/*
+ * Check current user role to allowed create post or not
+ *
+ */
+$action_button = true;
+$member_types = bp_get_member_type( get_current_user_id(), false );
+if ( (isset($bp_member_blog_gen_stngs['bp_create_post']) && !empty($bp_member_blog_gen_stngs['bp_create_post']) )
+		|| (isset($bp_member_blog_gen_stngs['member_types']) && !empty($bp_member_blog_gen_stngs['member_types']) ) ) {
+	$bp_member_blog_gen_stngs['bp_create_post'] = ( isset($bp_member_blog_gen_stngs['bp_create_post'])) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
+	$bp_member_blog_gen_stngs['member_types'] = ( isset($bp_member_blog_gen_stngs['member_types'])) ? $bp_member_blog_gen_stngs['member_types'] : array();
+	$user_roles = array_intersect ((array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post']);
+
+	$user_types = array_intersect ((array) $member_types, $bp_member_blog_gen_stngs['member_types']);
+	if ( empty($user_roles) && empty($user_types)) {
+		$action_button = false;
+	}
+}
 
 
 //let us build the post query
@@ -33,7 +52,7 @@ query_posts( $query_args );
 ?>
 
 <?php if ( have_posts() ): ?>
-	
+
 	<?php while ( have_posts() ): the_post();
 		global $post;
 	?>
@@ -41,9 +60,9 @@ query_posts( $query_args );
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<div class="post-content">
-				
+
 				<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
-					
+
 					<div class="post-featured-image">
 						<?php  the_post_thumbnail();?>
 					</div>
@@ -62,15 +81,17 @@ query_posts( $query_args );
 
 				<p class="postmetadata"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress-member-blog' ), ', ', '</span>' ); ?> <span class="comments"><?php comments_popup_link( __( 'No Comments &#187;', 'buddypress-member-blog' ), __( '1 Comment &#187;', 'buddypress-member-blog' ), __( '% Comments &#187;', 'buddypress-member-blog' ) ); ?></span></p>
 
-				<div class="post-actions">
-					<?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?>
-					<?php echo bp_member_blog_get_edit_link();?>
-					<?php echo bp_member_blog_get_delete_link();?>
-				</div>     
+				<?php if ( $action_button == true ): ?>
+					<div class="post-actions">
+						<?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?>
+						<?php echo bp_member_blog_get_edit_link();?>
+						<?php echo bp_member_blog_get_delete_link();?>
+					</div>
+				<?php endif; ?>
 			</div>
 
 		</div>
-			   
+
 	<?php endwhile;?>
 		<div class="pagination">
 			<?php bp_member_blog_paginate(); ?>
@@ -79,6 +100,6 @@ query_posts( $query_args );
 		<p><?php echo sprintf( "<p>%s haven't posted anything yet.</p>", bp_get_displayed_user_fullname() );?></p>
 <?php endif; ?>
 
-<?php 
+<?php
    wp_reset_postdata();
    wp_reset_query();

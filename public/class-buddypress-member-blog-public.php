@@ -350,5 +350,14 @@ class Buddypress_Member_Blog_Public {
 			bp_core_add_message( __( 'Post created successfully.', 'buddypress-member-blog' ) );
 		}
 	}
+	
+	public function buddypress_member_blog_wp_loaded() {
+		global $wp_query;
+		if ( isset($wp_query->query_vars['pagename']) && $wp_query->query_vars['pagename'] == 'bp-new-post' ) {
+			global $update_post;
+			$update_post = false;
+			acf_form_head();
+		}		
+	}
 
 }

@@ -106,6 +106,10 @@ class Buddypress_Member_Blog {
 			//add_filter('acf/settings/show_admin', '__return_false');
 		}
 		
+		if ( ! is_plugin_active( 'acf-medium-editor-field/acf-medium-editor.php' )) {
+			require_once( BUDDYPRESS_MEMBER_BLOG_ACF_MEF_PATH . 'acf-medium-editor.php' );			
+		}
+		
 		if (  is_plugin_active( 'advanced-custom-fields/acf.php' )) {
 			add_action( 'admin_notices', 'buddypress_member_blo_admin_notices' );
 		}

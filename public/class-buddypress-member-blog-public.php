@@ -124,7 +124,7 @@ class Buddypress_Member_Blog_Public {
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 				array(
-					'name'                => esc_html__( 'BP Blog', 'buddypress-member-blog' ),
+					'name'                => esc_html__( 'Blog', 'buddypress-member-blog' ),
 					'slug'                => 'bp-member-blog',
 					'screen_function'     => array( $this, 'bp_member_posts' ),
 					'default_subnav_slug' => 'bp-member-blog',
@@ -367,7 +367,8 @@ class Buddypress_Member_Blog_Public {
 	 */
 	
 	public function buddypress_member_blog_wp_loaded() {
-		global $wp_querym, $post;
+		global $wp_query, $post;
+		
 		if ( isset($wp_query->query_vars['pagename']) && $wp_query->query_vars['pagename'] == 'bp-new-post' ) {
 			global $update_post;
 			$update_post = false;

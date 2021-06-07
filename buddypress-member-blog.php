@@ -104,17 +104,53 @@ run_buddypress_member_blog();
 add_action( 'activated_plugin', 'bp_member_blog_activation_redirect_settings' );
 function bp_member_blog_activation_redirect_settings( $plugin ){
 
-	if( $plugin == plugin_basename( __FILE__ ) ) {
+	if( $plugin == plugin_basename( __FILE__ )  && class_exists( 'Buddypress' )) {
 		wp_redirect( admin_url( 'admin.php?page=buddypress-member-blog' ) ) ;
 		exit;
 	}
 }
 
 
-function buddypress_member_blo_admin_notices() {
+function buddypress_member_blog_admin_notices() {
 	?>
     <div class="notice notice-error is-dismissible">
         <p><?php _e( 'BuddyPress Member Blog Plugin already use ACF Pro plugin. So, Please deactivate ACF Free plugin to use Woo Sell Service Plugin.', 'woo-sell-services' ); ?></p>
     </div>
     <?php
+}
+
+
+/**
+ *  Check if buddypress activate.
+ */
+function buddypress_member_blog_requires_buddypress()
+{
+
+    if ( !class_exists( 'Buddypress' ) ) {
+        deactivate_plugins( plugin_basename( __FILE__ ) );        
+        add_action( 'admin_notices', 'buddypress_member_blog_required_plugin_admin_notice' );
+        unset($_GET['activate']);
+    }
+}
+
+add_action( 'admin_init', 'buddypress_member_blog_requires_buddypress' );
+
+
+/**
+ * Throw an Alert to tell the Admin why it didn't activate.
+ *
+ * @author wbcomdesigns
+ * @since  2.3.0
+ */
+function buddypress_member_blog_required_plugin_admin_notice()
+{
+
+    $bpmb_plugin          = esc_html__(' BuddyPress Member Blog', 'buddypress-member-blog');
+    $bp_plugin                = esc_html__('BuddyPress', 'buddypress-member-blog');
+    echo '<div class="error"><p>';
+    echo sprintf(esc_html__('%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog'), '<strong>' . esc_html($bpmb_plugin) . '</strong>', '<strong>' . esc_html($bp_plugin) . '</strong>');
+    echo '</p></div>';
+    if (isset($_GET['activate']) ) {
+        unset($_GET['activate']);
+    }
 }

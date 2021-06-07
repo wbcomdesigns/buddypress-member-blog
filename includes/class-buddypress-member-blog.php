@@ -111,7 +111,7 @@ class Buddypress_Member_Blog {
 		}
 		
 		if (  is_plugin_active( 'advanced-custom-fields/acf.php' )) {
-			add_action( 'admin_notices', 'buddypress_member_blo_admin_notices' );
+			add_action( 'admin_notices', 'buddypress_member_blog_admin_notices' );
 		}
 
 		/**
@@ -205,6 +205,9 @@ class Buddypress_Member_Blog {
 		$this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
 		
 		$this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);
+		
+		
+		$this->loader->add_shortcode( 'bp-member-blog', $plugin_public, 'buddypress_shortcodes_member_blog' );
 
 	}
 

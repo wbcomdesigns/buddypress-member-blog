@@ -136,8 +136,18 @@ function bp_member_blog_get_edit_link( $id = 0, $label = '' ) {
 	if ( empty( $label ) ) {
 		$label = __( 'Edit', 'buddypress-member-blog' );
 	}
-
-	$url = bp_member_blog_get_edit_url( $id );
+	$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+	
+	if ( isset($bp_member_blog_gen_stngs['bp_post_page']) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+		if ( empty( $id ) ) {
+			$id = get_the_ID();
+		}
+		$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) . "?post_id=" . $id . "&action=edit";
+		
+	} else {
+	
+		$url = bp_member_blog_get_edit_url( $id );
+	}
 
 	if ( ! $url ) {
 		return '';

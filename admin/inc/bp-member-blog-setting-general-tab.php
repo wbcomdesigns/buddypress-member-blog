@@ -33,7 +33,42 @@ if ( ! empty( $member_types ) ) {
 	do_settings_sections( 'bp_member_blog_general_settigs' );
 	?>
 	<table class="form-table">
-	
+		
+		<tr>
+			<th scope="row">
+				<label><?php esc_html_e( 'Create new post page', 'buddypress-member-blog' ); ?></label>
+			</th>
+			<td>
+				<?php
+				$args						 = array(
+					'name'				 => 'bp_member_blog_gen_stngs[bp_post_page]',
+					'id'				 => 'my_dashboard_page',
+					'sort_column'		 => 'menu_order',
+					'sort_order'		 => 'ASC',
+					'show_option_none'	 => ' ',
+					'class'				 => 'my_dashboard_page',
+					'echo'				 => false,
+					'selected'			 => absint( ( isset( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ) ) ? $bp_member_blog_gen_stngs[ 'bp_post_page' ] : 0 ),
+					'post_status'		 => 'publish',
+				);
+
+				if ( isset( $value[ 'args' ] ) ) {
+					$args = wp_parse_args( $value[ 'args' ], $args );
+				}
+
+				echo wp_dropdown_pages( $args ); // WPCS: XSS ok.
+				?>
+				<?php if ( isset( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ) && $bp_member_blog_gen_stngs[ 'bp_post_page' ] != 0 ): ?>
+					<a href="<?php echo get_permalink( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ); ?>" class="button-secondary" target="_bp">
+						<?php esc_html_e( 'View', 'ld-dashboard' ); ?>
+						<span class="dashicons dashicons-external" aria-hidden="true"></span>
+						<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'buddypress-member-blog' ); ?></span>
+					</a>
+				<?php endif; ?>
+				<p class="description"><?php esc_html_e( 'This sets the page used to create new post. This page should contain the following shortcode. [bp-member-blog]', 'buddypress-member-blog' ); ?></p>
+			</td>
+		</tr>
+		
 		<tr>
 			<th scope="row">
 				<label><?php esc_html_e( 'Allowed user roles to create post?', 'buddypress-member-blog' ); ?></label>

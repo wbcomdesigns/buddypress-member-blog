@@ -1,7 +1,10 @@
 
-<div>
+<div  class="bp-member-blog-container">
 	<?php	
 	$post_id = bp_action_variable( 0 );
+	if ( isset($_GET['post_id']) && $_GET['post_id'] != 0 && isset($_GET['action']) && $_GET['action'] == 'edit' ) {
+		$post_id = $_GET['post_id'];
+	}
 	
 	$settings = array(
 		'id'                    => 'bp-member-post-form',
@@ -22,7 +25,8 @@
 		'uploader'              => 'wp',
 		'honeypot'              => false,
 		'submit_value' 			=> ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-member-blog') : __("Create a new post", 'buddypress-member-blog'),
-		'html_updated_message'  => '',
+		'updated_message'		=> esc_html__('Post created successfully.', 'buddypress-member-blog'),
+		'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
 		'html_submit_button'    => '<input type="submit" class="acf-button btn button button-primary button-large" value="%s" />',
 		'html_submit_spinner'   => '<span class="acf-spinner"></span>',
 		'kses'                  => true,

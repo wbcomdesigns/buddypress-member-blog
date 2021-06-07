@@ -30,7 +30,46 @@ class Buddypress_Member_Blog_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		global $wpdb;
+		
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		
+		$new_post_page = get_page_by_title( 'Add new post'  ) ;		
+		if ( empty( $new_post_page ) ) {
+			$new_post_page = wp_insert_post(
+										array(
+											'post_title'     => 'Add new post',
+											'post_content'   => '[bp-member-blog]',
+											'post_status'    => 'publish',
+											'post_author'    => 1,
+											'post_type'      => 'page',
+											'comment_status' => 'closed'
+										)
+									);
+									
+			$reign_wbcom_metabox_data = array (
+											  'layout' 			=> array (
+																	'site_layout' => 'full_width',
+																	'primary_sidebar' => '0',
+																	'secondary_sidebar' => '0',
+																),
+											  'header_footer' 	=> array (
+																	'elementor_topbar' => '0',
+																	'elementor_header' => '0',
+																	'elementor_footer' => '0',
+																 ),
+										);
+			update_post_meta( $my_dashboard, 'reign_wbcom_metabox_data', $reign_wbcom_metabox_data );
+		}
+		
+		$bp_member_blog_gen_stngs = array(
+											'bp_post_page'		=> $new_post_page,
+											'bp_create_post'	=> array('administrator'),
+											'image_delete'		=> 'yes',
+										);
+		
+		
+		update_option( 'bp_member_blog_gen_stngs', $bp_member_blog_gen_stngs );
 	}
 
 }

@@ -160,7 +160,11 @@ class Buddypress_Member_Blog_Public {
 			}
 		}
 		
-		
+		$link = '';
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );	
+		if ( isset($bp_member_blog_gen_stngs['bp_post_page']) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+			$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );			
+		} 
 		bp_core_new_subnav_item(
 				array(
 					'name'                  => __( 'New Post', 'buddypress-member-blog' ),
@@ -168,6 +172,7 @@ class Buddypress_Member_Blog_Public {
 					'parent_url'            => trailingslashit( bp_loggedin_user_domain() . 'bp-member-blog' ),
 					'parent_slug'           => 'bp-member-blog',
 					'screen_function'       => array( $this, 'bp_member_new_post' ),
+					'link'					=> $link,
 					'position'        		=> 30,
 				)
 			);
@@ -304,9 +309,6 @@ class Buddypress_Member_Blog_Public {
 
 		wp_delete_post( $post_id, true );
 		
-		
-		
-		
 		bp_core_add_message( __( 'Post deleted successfully' ), 'buddypress-member-blog' );
 		// redirect.
 		wp_redirect( bp_member_blog_get_home_url() );
@@ -314,6 +316,12 @@ class Buddypress_Member_Blog_Public {
 		
 	}
 	
+	
+	/**
+	 * Save Post
+	 *
+	 * @since 1.0.0
+	 */
 	public function buddypress_member_blog_save_post( $post_ID, $post,  $update) {
 		global $update_post;
 		if ( is_admin() ) {
@@ -351,13 +359,60 @@ class Buddypress_Member_Blog_Public {
 		}
 	}
 	
+	
+	/**
+	 * call acf_form_head() function on acf form
+	 *
+	 * @since 1.0.0
+	 */
+	
 	public function buddypress_member_blog_wp_loaded() {
-		global $wp_query;
+		global $wp_querym, $post;
 		if ( isset($wp_query->query_vars['pagename']) && $wp_query->query_vars['pagename'] == 'bp-new-post' ) {
 			global $update_post;
 			$update_post = false;
 			acf_form_head();
-		}		
+		}
+		
+		if( isset($post->post_content) && ( has_shortcode( $post->post_content, 'bp-member-blog' ) ) ) {
+			global $update_post;
+			$update_post = false;
+			acf_form_head();
+		}
+	}
+	
+	
+	/**
+	 * Edit Post data using shortcode 
+	 *
+	 * @since 1.0.0
+	 */
+	
+	
+	public function buddypress_shortcodes_member_blog( $atts, $content = null ) {
+		
+		$bp = buddypress();
+		
+		ob_start();
+		?>
+		<div class="buddypress-wrap">
+			<?php
+			if ( !empty( $bp->template_message ) ) {
+				$type    = ( 'success' === $bp->template_message_type ) ? 'success' : 'error';
+				?>
+				<aside class="bp-feedback bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
+					<span class="bp-icon" aria-hidden="true"></span>
+					<?php echo $bp->template_message; ?>
+				</aside>
+			<?php
+			}
+			
+			load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/edit.php' );
+			?>
+		</div>
+		<?php
+
+		return ob_get_clean();
 	}
 
 }

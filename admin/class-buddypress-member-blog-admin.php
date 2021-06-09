@@ -72,7 +72,7 @@ class Buddypress_Member_Blog_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -95,7 +95,7 @@ class Buddypress_Member_Blog_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-admin.js', array( 'jquery' ), $this->version, false );
 
 	}

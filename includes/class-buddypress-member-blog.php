@@ -99,20 +99,6 @@ class Buddypress_Member_Blog {
 	 */
 	private function load_dependencies() {
 		
-		/* Include ACF Pro plugin file */
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' )) {
-			require_once( BUDDYPRESS_MEMBER_BLOG_ACF_PATH . 'acf.php' );
-			//add_filter('acf/settings/show_admin', '__return_false');
-		}
-		
-		if ( ! is_plugin_active( 'acf-medium-editor-field/acf-medium-editor.php' )) {
-			require_once( BUDDYPRESS_MEMBER_BLOG_ACF_MEF_PATH . 'acf-medium-editor.php' );			
-		}
-		
-		if (  is_plugin_active( 'advanced-custom-fields/acf.php' )) {
-			add_action( 'admin_notices', 'buddypress_member_blog_admin_notices' );
-		}
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
@@ -142,7 +128,7 @@ class Buddypress_Member_Blog {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';		
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';		
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';		
 		
 
 		$this->loader = new Buddypress_Member_Blog_Loader();
@@ -208,12 +194,15 @@ class Buddypress_Member_Blog {
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish');
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete');
 		
-		$this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
+		//$this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
 		
 		$this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);
 		
 		
 		$this->loader->add_shortcode( 'bp-member-blog', $plugin_public, 'buddypress_shortcodes_member_blog' );
+		
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'buddypress_member_blog_post_submit' );
+		
 
 	}
 

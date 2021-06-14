@@ -28,5 +28,30 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	 
+	  $(document).ready(function($) {
+		 $('#bp-blog-category-select').selectize({
+	 		placeholder		: $( '#bp-blog-category-select').data( 'placeholder' ),
+	 		plugins			: ['remove_button']
+	 	});
+		
+		$('#bp-blog-tag-select').selectize({
+	 		placeholder		: $( '#bp-blog-tag-select').data( 'placeholder' ),
+	 		plugins			: ['remove_button']
+	 	});
+		
+		$( document ).on('change', '#bp_member_blog_post_featured_image', function () {
+			console.log(this.files);
+			const file = this.files[0];
+			if (file) {
+				let reader = new FileReader();
+				reader.onload = function (event) {
+					$("#bp_member_post_img_preview")
+					  .attr("src", event.target.result);
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+	 });
 
 })( jQuery );

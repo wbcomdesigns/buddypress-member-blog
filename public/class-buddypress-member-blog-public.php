@@ -72,7 +72,8 @@ class Buddypress_Member_Blog_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		
+		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-public.css', array(), $this->version, 'all' );
 
 	}
@@ -95,7 +96,7 @@ class Buddypress_Member_Blog_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
 
 	}	
@@ -317,6 +318,75 @@ class Buddypress_Member_Blog_Public {
 	}
 	
 	
+	public function buddypress_member_blog_post_submit() {
+				
+		
+		if ( isset( $_POST[ '_wpnonce' ] ) && wp_verify_nonce( $_POST[ '_wpnonce' ], 'bp_member_blog_post' ) && isset( $_POST[ 'bp_member_blog_form_subimitted' ] )  && isset($_POST['action']) && $_POST['action'] == 'bp_member_blog_post' ) {
+			
+			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+			
+			$post_title = '';
+			if ( ! empty( $_POST['bp_member_blog_post_title'] ) ) {
+				$post_title =  $_POST['bp_member_blog_post_title'] ;
+			}
+
+			$post_content = '';
+			if ( ! empty( $_POST['bp_member_blog_post_content'] ) ) {
+				$post_content = $_REQUEST['bp_member_blog_post_content']  ;
+			}
+			
+			if ( isset($_POST['bp_member_blog_post_id']) && $_POST['bp_member_blog_post_id'] != 0 && $_POST['bp_member_blog_post_id'] != '' ) {
+				
+				/* Update Post */
+				$post_id = wp_update_post( array(
+						'ID'			=> $_POST['bp_member_blog_post_id'],
+						'post_title'  	=> $post_title,
+						'post_type'   	=> 'post',
+						'post_content'   => $post_content,
+						'post_status' 	=> ( isset($bp_member_blog_gen_stngs['publish_post'])) ? 'publish' : 'pending',
+						'post_author' 	=> get_current_user_id(),
+					) );
+				bp_core_add_message( __( 'Post created successfully.', 'buddypress-member-blog' ) );
+			} else {
+				/* Create Post */
+				$post_id = wp_insert_post( array(
+						'post_title'  	=> $post_title,
+						'post_type'   	=> 'post',
+						'post_content'   => $post_content,
+						'post_status' 	=> ( isset($bp_member_blog_gen_stngs['publish_post'])) ? 'publish' : 'pending',
+						'post_author' 	=> get_current_user_id(),
+					) );
+				
+				bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) );
+			}
+			
+			/*  Assign Category */
+			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_category'],'category', false);
+			
+			/*  Assign Post Tags */
+			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_tag'],'post_tag', false);
+			
+			
+			if ( isset($_FILES['bp_member_blog_post_featured_image']) && !empty($_FILES['bp_member_blog_post_featured_image']) ) {
+				
+				// These files need to be included as dependencies when on the front end.
+				require_once( ABSPATH . 'wp-admin/includes/image.php' );
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+				require_once( ABSPATH . 'wp-admin/includes/media.php' );
+				 
+				// Let WordPress handle the upload.
+				// Remember, 'my_image_upload' is the name of our file input in our form above.
+				$attachment_id = media_handle_upload( 'bp_member_blog_post_featured_image', $post_id );
+				 
+				if ( !is_wp_error( $attachment_id ) ) {
+					update_post_meta( $post_id,'_thumbnail_id', $attachment_id );
+				} 
+				
+			}
+			
+		}
+	}
+	
 	/**
 	 * Save Post
 	 *
@@ -331,7 +401,7 @@ class Buddypress_Member_Blog_Public {
 		if ( isset($update_post) && $update_post == true) {
 			return;
 		}
-		
+		/*
 		if ( isset($_POST['acf']['field_60b73fa05b244']) ) {
 			$update_post = true;
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
@@ -342,13 +412,14 @@ class Buddypress_Member_Blog_Public {
 					);
 			wp_update_post( $save );
 		}
-		
+		*/
+		/*
 		if ( isset($_POST['acf']['field_60b73fe35b246']) && $_POST['acf']['field_60b73fe35b246'] !='') {
 			update_post_meta( $post_ID,'_thumbnail_id', $_POST['acf']['field_60b73fe35b246'] );
 		} else {
 			delete_post_meta( $post_ID, '_thumbnail_id' );
 		}
-		
+		*/
 		$update_post = true;
 		if ( $update == true && $post_ID != '' ) {
 			bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) );

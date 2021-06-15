@@ -1,7 +1,7 @@
 <?php
 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 $post_id = bp_action_variable( 0 );
-$post = (object) array(
+$blog_post = (object) array(
 			'post_title'	=> '',
 			'post_content'	=> ''
 		);
@@ -9,7 +9,7 @@ $post_selected_category = $post_selected_tag = array();
 $post_thumbnail = '';
 if ( isset($_GET['post_id']) && $_GET['post_id'] != 0 && isset($_GET['action']) && $_GET['action'] == 'edit' ) {
 	$post_id = $_GET['post_id'];	
-	$post = get_post($post_id);	
+	$blog_post = get_post($post_id);	
 	
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );	
 	$post_seleced_tag = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'ids' ) ) );
@@ -48,7 +48,7 @@ $submit_btn_value = ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-memb
 			<?php do_action( 'bp_post_before_title', $post_id ); ?>            
 
             <label for="bp_member_blog_post_title"><?php _e( 'Title:', 'bp-simple-front-end-post' ); ?>
-                <input type="text" name="bp_member_blog_post_title" value="<?php echo $post->post_title; ?>"/>
+                <input type="text" name="bp_member_blog_post_title" value="<?php echo $blog_post->post_title; ?>"/>
             </label>
 
 			<?php do_action( 'bp_post_after_title', $post_id ); ?>
@@ -58,7 +58,7 @@ $submit_btn_value = ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-memb
 
             <label for="bp_member_blog_post_content"><?php _e( 'Post Content:', 'buddypress-member-blog' ); ?>
 
-				<?php wp_editor( $post->post_content, 'bp_member_blog_post_content', array(
+				<?php wp_editor( $blog_post->post_content, 'bp_member_blog_post_content', array(
 					'media_buttons' => true,					
 				) ); ?>
             </label>

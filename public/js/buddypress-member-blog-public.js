@@ -48,7 +48,7 @@
 				reader.onload = function (event) {
 					$("#bp_member_post_img_preview")
 					  .attr("src", event.target.result);
-					$( '#bp_member_blog_post_img_preview').show();
+					$( '.bp_member_blog_post_img_preview').show();
 				};
 				reader.readAsDataURL(file);
 			}

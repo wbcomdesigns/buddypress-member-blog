@@ -96,7 +96,7 @@ class Buddypress_Member_Blog_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
 
 	}	

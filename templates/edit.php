@@ -59,8 +59,7 @@ $submit_btn_value = ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-memb
             <label for="bp_member_blog_post_content"><?php _e( 'Post Content:', 'buddypress-member-blog' ); ?>
 
 				<?php wp_editor( $post->post_content, 'bp_member_blog_post_content', array(
-					'media_buttons' => true,
-					'quicktags'     => false,
+					'media_buttons' => true,					
 				) ); ?>
             </label>
 			

@@ -6,7 +6,7 @@ $post = (object) array(
 			'post_content'	=> ''
 		);
 $post_selected_category = $post_selected_tag = array();
-$post_thumbnail = '#';
+$post_thumbnail = '';
 if ( isset($_GET['post_id']) && $_GET['post_id'] != 0 && isset($_GET['action']) && $_GET['action'] == 'edit' ) {
 	$post_id = $_GET['post_id'];	
 	$post = get_post($post_id);	
@@ -109,7 +109,7 @@ $submit_btn_value = ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-memb
 			
 				<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" value="<?php echo $title; ?>"/>
 				
-				<div class="bp_member_blog_post_img_preview">
+				<div class="bp_member_blog_post_img_preview" <?php if ($post_thumbnail == '' ):?>style="display:none;" <?php endif;?>>
 					<img id="bp_member_post_img_preview" src="<?php echo $post_thumbnail;?>" alt="pic"  width="200", height="200"/>
 				</div>
 			</label>

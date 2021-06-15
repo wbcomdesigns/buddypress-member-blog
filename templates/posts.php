@@ -69,17 +69,18 @@ query_posts( $query_args );
 
 					<?php endif;?>
 
-					<h2 class="posttitle"> <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h2>
+					<h2 class="entry-title"> <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h2>
 
-					<p class="date"><?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></p>
+					<div class="post-date"><?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></div>
 
-					<div class="entry">
+					<div class="entry-content">
 
 						<?php the_content( __( 'Read the rest of this entry &rarr;', 'buddypress-member-blog' ) ); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><p>' . __( 'Pages: ', 'buddypress-member-blog' ), 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
 					</div>
 
-					<p class="postmetadata"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress-member-blog' ), ', ', '</span>' ); ?> <span class="comments"><?php comments_popup_link( __( 'No Comments &#187;', 'buddypress-member-blog' ), __( '1 Comment &#187;', 'buddypress-member-blog' ), __( '% Comments &#187;', 'buddypress-member-blog' ) ); ?></span></p>
+					<div class="post-tags"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress-member-blog' ), ', ', '</span>' ); ?></div>
+                                        <div class="post-comments"><?php comments_popup_link( __( 'No Comments &#187;', 'buddypress-member-blog' ), __( '1 Comment &#187;', 'buddypress-member-blog' ), __( '% Comments &#187;', 'buddypress-member-blog' ) ); ?></div>
 
 					<?php if ( $action_button == true ): ?>
 						<div class="post-actions">
@@ -93,7 +94,7 @@ query_posts( $query_args );
 			</div>
 
 		<?php endwhile;?>
-			<div class="pagination">
+			<div class="navigation pagination">
 				<?php bp_member_blog_paginate(); ?>
 			</div>
 	<?php else: ?>

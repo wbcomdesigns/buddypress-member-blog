@@ -1,4 +1,138 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Add New Post / Update Post
+# Single Profile Page	
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Add New Post / Update Post
+--------------------------------------------------------------*/
+button#insert-media-button {
+    background: #fff;
+    border-color: #ccc;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-radius: 0;
+    color: #555;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    outline: 0;
+    padding: .3em .5em;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    min-height: 100%;
+    line-height: 1;
+    display: inline-block;
+}
+
+button#insert-media-button:hover {
+    background: #ededed;
+    color: #555;
+}
+
+.selectize-input input {
+    height: auto !important;
+}
+
+.buddypress-wrap .standard-form.bp-member-blog-post-form .wp-editor-container input {
+    width: auto;
+}
+
+.buddypress-wrap .standard-form.bp-member-blog-post-form label {
+    margin: 15px 0;
+}
+
+#bp_member_blog_post_featured_image {
+    margin: 0 0 15px;
+}
+
+/*--------------------------------------------------------------
+# Single Profile Page
+--------------------------------------------------------------*/
+.bp-member-blog-container {
+    margin: 15px 0;
+}
+
+.bp-member-blog-container > div.bp_members {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.bp-member-blog-container > div.bp_members:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+body.buddypress .buddypress-wrap .bp-member-blog-container h2 {
+    margin: 15px 0 5px;
+    font-size: 30px;
+}
+
+.bp-member-blog-container p {
+    margin: 0 0 10px !important;
+}
+
+.bp-member-blog-container .entry-content {
+    margin: 0;
+}
+
+.bp-member-blog-container .post-date {
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.bp-member-blog-container .post-date a {
+    font-style: normal;
+    text-decoration: underline !important;
+}
+
+.bp-member-blog-container .entry-content {
+    margin: 0 0 20px;
+}
+
+.bp-member-blog-container .post-tags,
+.bp-member-blog-container .post-comments,
+.bp-member-blog-container .post-actions {
+    margin: 0 0 10px;
+}
+
+.bp-member-blog-container  .post-tags {
+    font-size: 14px;
+}
+
+.bp-member-blog-container .post-tags a {
+    text-decoration: underline !important;
+}
+
+.bp-member-blog-container .post-actions > a {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #fff;
+    border-color: #ccc;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-radius: 0;
+    color: #555;
+    text-transform: capitalize;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.bp-member-blog-container .post-actions > a:hover {
+    background: #ededed;
+    color: #555;
+}
+
+.bp-member-blog-container .pagination {
+    clear: both;
+}

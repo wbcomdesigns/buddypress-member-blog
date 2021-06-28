@@ -353,7 +353,8 @@ class Buddypress_Member_Blog_Public {
 						'post_status' 	=> ( isset($bp_member_blog_gen_stngs['publish_post'])) ? 'publish' : 'pending',
 						'post_author' 	=> get_current_user_id(),
 					) );
-				bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) );				
+				$post_link = get_permalink( $post_id );
+				bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) . '<span class="bp-blog-view-link"><a href="' . $post_link . '">'.__('View Post', 'buddypress-member-blog').'</a></span>' );
 				
 			} else {
 				/* Create Post */
@@ -366,7 +367,8 @@ class Buddypress_Member_Blog_Public {
 					) );
 				
 				if ( isset($bp_member_blog_gen_stngs['publish_post']) ) {
-					bp_core_add_message( __( 'Post created successfully.', 'buddypress-member-blog' ) );
+					$post_link = get_permalink( $post_id );
+					bp_core_add_message( __( 'Post created successfully.', 'buddypress-member-blog' ) . '<span class="bp-blog-view-link"><a href="' . $post_link . '">'.__('View Post', 'buddypress-member-blog').'</a></span>' );
 				} else {
 					bp_core_add_message( __( 'Your post is under review, It will appear after the approval.', 'buddypress-member-blog' ) );
 				}

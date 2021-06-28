@@ -517,7 +517,7 @@ class Buddypress_Member_Blog_Public {
 				?>
 				<aside class="bp-feedback bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
 					<span class="bp-icon" aria-hidden="true"></span>
-					<?php echo $bp->template_message; ?>
+					<p><?php echo $bp->template_message; ?></p>
 				</aside>
 			<?php
 				$bp->template_message = '';

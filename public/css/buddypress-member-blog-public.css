@@ -60,6 +60,11 @@ button#insert-media-button:hover {
     padding-right: 5px;
 }
 
+.buddypress-wrap .bp-member-blog-container .standard-form label,
+.buddypress-wrap .bp-member-blog-container .standard-form span.label {
+    display: block;
+}
+
 /*--------------------------------------------------------------
 # Single Profile Page
 --------------------------------------------------------------*/

@@ -34,8 +34,8 @@ class Buddypress_Member_Blog_Activator {
 		
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 		
-		$new_post_page = get_page_by_title( 'Add new post'  ) ;		
-		if ( empty( $new_post_page ) ) {
+		$add_new_post = get_page_by_title( 'Add new post'  ) ;		
+		if ( empty( $add_new_post ) ) {
 			$new_post_page = wp_insert_post(
 										array(
 											'post_title'     => 'Add new post',
@@ -59,7 +59,10 @@ class Buddypress_Member_Blog_Activator {
 																	'elementor_footer' => '0',
 																 ),
 										);
-			update_post_meta( $my_dashboard, 'reign_wbcom_metabox_data', $reign_wbcom_metabox_data );
+			update_post_meta( $new_post_page, 'reign_wbcom_metabox_data', $reign_wbcom_metabox_data );
+			
+		} else {
+			$new_post_page = $add_new_post->ID;
 		}
 		
 		$bp_member_blog_gen_stngs = array(

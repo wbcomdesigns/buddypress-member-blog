@@ -51,6 +51,23 @@ button#insert-media-button:hover {
     margin: 0 0 15px;
 }
 
+.bp-blog-view-link {
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+.bp-nouveau .bp-feedback.bp-feedback,
+.bp-nouveau .bp-messages.bp-messages {
+    padding: 10px 0;
+}
+
+.bp-nouveau .bp-feedback .bp-icon.bp-icon,
+.bp-nouveau .bp-messages .bp-icon.bp-icon {
+    margin: 0;
+    margin: -10px 0;
+    margin-right: 10px;
+}
+
 /*--------------------------------------------------------------
 # Single Profile Page
 --------------------------------------------------------------*/

@@ -40,6 +40,14 @@
 	 		plugins			: ['remove_button']
 	 	});
 		
+		$( document ).on('click', '.bp-member-blog-container .post-actions a.confirm', function () {
+			if ( confirm("This post will be permanently deleted.") ){
+				return true;
+			} 
+			return false;
+			
+		});
+		
 		$( document ).on('change', '#bp_member_blog_post_featured_image', function () {
 			console.log(this.files);
 			const file = this.files[0];

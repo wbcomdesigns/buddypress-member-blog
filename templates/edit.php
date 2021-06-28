@@ -8,7 +8,10 @@ $blog_post = (object) array(
 $post_selected_category = $post_selected_tag = array();
 $post_thumbnail = '';
 if ( isset($_GET['post_id']) && $_GET['post_id'] != 0 && isset($_GET['action']) && $_GET['action'] == 'edit' ) {
-	$post_id = $_GET['post_id'];	
+	$post_id = $_GET['post_id'];
+}
+
+if ( $post_id != 0 && $post_id != '' )  {
 	$blog_post = get_post($post_id);	
 	
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );	

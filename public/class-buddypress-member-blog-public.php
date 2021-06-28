@@ -470,6 +470,35 @@ class Buddypress_Member_Blog_Public {
 		
 		$bp = buddypress();
 		
+		
+		if ( ! is_user_logged_in() ) {
+			return $content;
+		}		
+		
+		global  $bp,$current_user;
+		/* 
+		 * Check current user role to allowed create post or not
+		 *
+		 */
+		 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		 
+		$member_types = bp_get_member_type( get_current_user_id(), false );		
+		if ( (isset($bp_member_blog_gen_stngs['bp_create_post']) && !empty($bp_member_blog_gen_stngs['bp_create_post']) )
+		|| (isset($bp_member_blog_gen_stngs['member_types']) && !empty($bp_member_blog_gen_stngs['member_types']) ) ) {
+			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset($bp_member_blog_gen_stngs['bp_create_post'])) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
+			$bp_member_blog_gen_stngs['member_types'] = ( isset($bp_member_blog_gen_stngs['member_types'])) ? $bp_member_blog_gen_stngs['member_types'] : array();
+			$user_roles = array_intersect ((array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post']);
+			$user_types = array_intersect ((array) $member_types, $bp_member_blog_gen_stngs['member_types']);
+			if ( empty($user_roles) && empty($user_types)) {
+				ob_start();
+				echo '<div class="bp-feedback bp-messages bp-template-notice error"><span class="bp-icon" aria-hidden="true"></span>';
+				esc_html_e( 'You are not allowed to access this page.', 'buddypress-member-blog');
+				echo "</div>";
+				return ob_get_clean();
+			}
+		}
+		
+		
 		ob_start();
 		?>
 		<div class="buddypress-wrap">

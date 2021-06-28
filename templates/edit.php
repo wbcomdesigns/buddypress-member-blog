@@ -48,7 +48,7 @@ $submit_btn_value = ( ! empty( $post_id ) ) ? __("Update post", 'buddypress-memb
 			<?php do_action( 'bp_post_before_title', $post_id ); ?>            
 
             <label for="bp_member_blog_post_title"><?php _e( 'Title:', 'bp-simple-front-end-post' ); ?>
-                <input type="text" name="bp_member_blog_post_title" value="<?php echo $blog_post->post_title; ?>"/>
+                <input type="text" name="bp_member_blog_post_title" value="<?php echo $blog_post->post_title; ?>" required/>
             </label>
 
 			<?php do_action( 'bp_post_after_title', $post_id ); ?>

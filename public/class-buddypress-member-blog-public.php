@@ -518,6 +518,8 @@ class Buddypress_Member_Blog_Public {
 					<?php echo $bp->template_message; ?>
 				</aside>
 			<?php
+				$bp->template_message = '';
+				$bp->template_message_type = '';
 			}
 			
 			load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/edit.php' );

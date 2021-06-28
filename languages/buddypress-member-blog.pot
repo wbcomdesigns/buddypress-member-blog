@@ -1,0 +1,741 @@
+# Copyright (C) 2021
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-28 13:45:57+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Varun Dubey\n"
+"Language-Team: Wbcom Designs\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: admin/class-buddypress-member-blog-admin.php:112
+msgid "WB Plugins"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:114
+#: admin/class-buddypress-member-blog-admin.php:138
+msgid "General"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:116
+msgid "BuddyPress Member BlogSettings Page"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:116
+msgid "Member Blog"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:137
+msgid "Welcome"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:147
+msgid "BuddyPress Member Blog Settings"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:154
+msgid "Menu"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:40
+msgid "Create new post page"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:64
+#: admin/wbcom/templates/wbcom-plugins-page.php:28
+#: admin/wbcom/templates/wbcom-themes-page.php:118
+#: admin/wbcom/templates/wbcom-themes-page.php:139
+msgid "View"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:66
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:69
+msgid ""
+"This sets the page used to create new post. This page should contain the "
+"following shortcode. [bp-member-blog]"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:75
+msgid "Allowed user roles to create post?"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:98
+msgid "Selected user roles will be allowed to create post."
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:104
+msgid "Allowed member types wise to create post?"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:106
+msgid "Select member type to create post"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:112
+msgid "Selected member type will be allowed to create post."
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:119
+msgid "Enable user publishing"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:127
+msgid ""
+"Allow user to publish posts. if not enable, they can only submit post as "
+"pending for review."
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:134
+msgid "Media management"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:142
+msgid "When blog post removed permanently delete the associated media file."
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:149
+msgid "Exclude categories"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:153
+msgid "Select category to exclude on fronted"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:15
+msgid "BuddyPress Member Blog"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:16
+msgid ""
+"Allow your BuddyPress members to create and manage their blog posts.  Allow "
+"them to publish their posts directly or send them for review. one you can "
+"easily navigate to any member's profile to read  their posts."
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:26
+msgid "Help &amp; Support Resources"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:27
+msgid ""
+"Here are all the resources you may need to get help from us. Documentation "
+"is usually the best place to start. Should you require help anytime, our "
+"customer care team is available to assist you at the support center."
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:33
+msgid "Documentation"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:34
+msgid ""
+"We have prepared an extensive guide on BuddyPress Auto Friends to learn all "
+"aspects of the plugin. You will find most of your answers here."
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:35
+msgid "Read Documentation"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:39
+msgid "Support Center"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:40
+msgid ""
+"We strive to offer the best customer care via our support center. Once your "
+"theme is activated, you can ask us for help anytime."
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:41
+msgid "Get Support"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:45
+msgid "Got Feedback?"
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:46
+msgid ""
+"We want to hear about your experience with the plugin. We would also love "
+"to hear any suggestions you may for future updates."
+msgstr ""
+
+#: admin/inc/bp-member-blog-welcome-page.php:47
+msgid "Send Feedback"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:5
+msgid "Plugin License Settings"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:10
+#: admin/wbcom/templates/wbcom-license-page.php:22
+msgid "Product"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:11
+#: admin/wbcom/templates/wbcom-license-page.php:23
+msgid "Version"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:12
+#: admin/wbcom/templates/wbcom-license-page.php:24
+msgid "Key"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:13
+#: admin/wbcom/templates/wbcom-license-page.php:25
+msgid "Status"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:14
+#: admin/wbcom/templates/wbcom-license-page.php:26
+msgid "Action"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:10
+msgid "Paid Addons"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:37
+msgid "Free Addons"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:43
+msgid "Install"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:47
+#: admin/wbcom/wbcom-admin-settings.php:362
+msgid "Activate"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:51
+#: admin/wbcom/wbcom-admin-settings.php:363
+msgid "Deactivate"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:5
+#: admin/wbcom/wbcom-admin-settings.php:390
+#: admin/wbcom/wbcom-admin-settings.php:475
+msgid "Support"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:7
+msgid "Having any question or issue ?"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:8
+msgid ""
+"Our team is here to help you out at anytime. If you have any idea about how "
+"we could improve. You can share access to your site on our helpdesk if it "
+"can help getting faster. There are two ways to in touch with us :"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:20
+msgid "Tickets Support"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:21
+msgid ""
+"Open a ticket on our helpdesk, we don't guarantee a fast response but "
+"within a week. Except if you've purchased one of our product we'll reply "
+"within 24 hours."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:25
+msgid "Open a ticket"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:40
+#: admin/wbcom/templates/wbcom-support-page.php:45
+msgid "Contact Us"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-support-page.php:41
+msgid ""
+"Create a new thread on our plugin page, participation is open to anyone "
+"from all around the world. We'll be there to help as well but can't "
+"guarantee any delay."
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:13
+msgid "Reign Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:15
+msgid "Multiple Member Directory Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:16
+msgid "Multiple Member Header Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:17
+msgid "Multiple Group Directory Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:18
+msgid "Multiple Group Header Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:19
+msgid "BuddyPress Customization Options"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:20
+msgid "BuddyPress Extra Widgets"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:21
+msgid "Inbuilt Social Profile Module"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:24
+#: admin/wbcom/templates/wbcom-themes-page.php:49
+#: admin/wbcom/templates/wbcom-themes-page.php:72
+#: admin/wbcom/templates/wbcom-themes-page.php:94
+msgid "Purchase"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:25
+#: admin/wbcom/templates/wbcom-themes-page.php:50
+#: admin/wbcom/templates/wbcom-themes-page.php:73
+#: admin/wbcom/templates/wbcom-themes-page.php:95
+msgid "Preview"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:38
+msgid "LearnMate Solution"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:40
+msgid "Add Review to your course"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:41
+msgid "Course Coming Soon"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:42
+#: admin/wbcom/templates/wbcom-themes-page.php:68
+msgid "Grid And List Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:43
+msgid "Learndash/LifterLMS Extra Widgets"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:44
+msgid "Unparalleled Course Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:45
+msgid "Awesome Learndash/LifterLMS Pages"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:46
+msgid "Distraction Free Reading"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:63
+msgid "StoreMate Solution"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:65
+msgid "Dokan Extra Widgets"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:66
+msgid "Unique Single Product Page Customization"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:67
+msgid "Awesome WooCommerce Pages"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:69
+msgid "Automated Mega Menu Support"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:86
+msgid "Jobmate Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:88
+msgid "Simple live searching and filtering"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:89
+msgid "Unique Job listing Page"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:90
+msgid "Awesome Resume list Page"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:91
+msgid "Outstanding all job maanger pagesLayout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:108
+msgid "BuddyX Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:110
+msgid "Responsive BuddyPress Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:111
+#: admin/wbcom/templates/wbcom-themes-page.php:134
+msgid "Site Ready In One-Click"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:112
+msgid "Members and Groups Layout"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:113
+msgid "WooCommerce Ready"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:114
+msgid "Supported Muitiple Plugins"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:115
+#: admin/wbcom/templates/wbcom-themes-page.php:136
+msgid "Suitable for All Devices"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:131
+msgid "KnowX Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:133
+msgid "Free WordPress Theme"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-themes-page.php:135
+msgid "Create Knowledge base"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:179
+msgid "Custom Font Uploader"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:181
+msgid ""
+"It also allows you to upload your own custom font to your site and use them "
+"using custom css."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:187
+msgid "BuddyPress Create Group Type"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:189
+msgid "It will help to create group type for BuddyPress Groups."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:195
+msgid "BuddyPress Member Reviews"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:197
+msgid ""
+"This plugin allows only site members to add reviews to the buddypress "
+"members on the site and even rate the member’s profile out of 5 points with "
+"multiple review criteria."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:203
+msgid "BuddyPress Group Reviews"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:205
+msgid ""
+"This plugin allows the BuddyPress Members to give reviews to the BuddyPress "
+"groups on the site. The review form allows the users to give text review, "
+"even rate the group on the basis of multiple criterias."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:223
+msgid "BuddyPress Moderation Pro"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:224
+msgid ""
+"BuddyPress Community Moderation offers a solution for site owners to keep "
+"their communities straight. With community policing strategy, members of "
+"the community have an option for moderation sitewide by attaching flags to "
+"content created within the various components."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:229
+msgid "BuddyPress Polls"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:230
+msgid ""
+"Use BuddyPress Polls plugin to create polls inside the activity, let your "
+"user response to your polls. Members can create pools like activities, "
+"easily votes on them."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:235
+msgid "BuddyPress Hashtags"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:236
+msgid ""
+"Allows members to use hashtags in BuddyPress activities and bbPress topics "
+"and ready with widgets."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:241
+msgid "BuddyPress Profanity"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:242
+msgid ""
+"Use BuddyPress Profanity plugin to censor content in your community! Easily "
+"Censor all the unwanted words in activities, private messages contents by "
+"specifying a list of keywords to be filtered."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:247
+msgid "BuddyPress Private Community Pro"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:248
+msgid ""
+"This plugin offers a lockdown for BuddyPress Component and will ask users "
+"to log in go further to check profile or any other protected details."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:253
+msgid "BuddyPress Profile Pro"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:254
+msgid ""
+"This plugin gives you the power to extend BuddyPress Profiles with repeater "
+"fields and groups. You can easily add multiple field groups and display "
+"them at member’s profile."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:259
+msgid "BuddyPress Sticky Post"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:260
+msgid ""
+"This will make it easier for the site administrator to make the pinned "
+"activity item recognized first by the community whenever they visit the "
+"site."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:265
+msgid "BuddyPress Auto Friends"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:266
+msgid ""
+"Allow the site admin to select global friends for all his members with "
+"BuddyPress Auto friends plugin."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:271
+msgid "BuddyPress Quotes"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:272
+msgid ""
+"BuddyPress quotes plugin comes with the feature to let users post their "
+"activity updates with interactive backgrounds selection such as colors and "
+"images set by the site administrator, so they can tell a more expressive "
+"story."
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:384
+#: admin/wbcom/wbcom-admin-settings.php:463
+msgid "Our Plugins"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:387
+#: admin/wbcom/wbcom-admin-settings.php:469
+msgid "Our Themes"
+msgstr ""
+
+#: admin/wbcom/wbcom-admin-settings.php:457
+msgid "Settings"
+msgstr ""
+
+#: admin/wbcom/wbcom-paid-plugin-settings.php:29
+#: admin/wbcom/wbcom-paid-plugin-settings.php:43
+msgid "License"
+msgstr ""
+
+#: buddypress-member-blog.php:138
+msgid " BuddyPress Member Blog"
+msgstr ""
+
+#: buddypress-member-blog.php:139
+msgid "BuddyPress"
+msgstr ""
+
+#: buddypress-member-blog.php:141
+msgid "%1$s is ineffective now as it requires %2$s to be installed and active."
+msgstr ""
+
+#: includes/buddypress-member-blog-functions.php:69
+msgid "Publish"
+msgstr ""
+
+#: includes/buddypress-member-blog-functions.php:73
+msgid "Unpublish"
+msgstr ""
+
+#: includes/buddypress-member-blog-functions.php:137
+msgid "Edit"
+msgstr ""
+
+#: includes/buddypress-member-blog-functions.php:208
+msgid "Delete"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:133
+msgid "Blog"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:143
+msgid "Posts"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:176
+msgid "New Post"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:257
+msgid "Post Published"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:285
+msgid "Post unpublished"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:316
+msgid "Post deleted successfully"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:354
+#: public/class-buddypress-member-blog-public.php:435
+msgid "Post updated successfully."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:354
+#: public/class-buddypress-member-blog-public.php:370
+msgid "View Post"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:370
+#: public/class-buddypress-member-blog-public.php:439
+msgid "Post created successfully."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:372
+msgid "Your post is under review, It will appear after the approval."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:499
+msgid "You are not allowed to access this page."
+msgstr ""
+
+#: templates/edit.php:42
+msgid "Update post"
+msgstr ""
+
+#: templates/edit.php:42
+msgid "Create a new post"
+msgstr ""
+
+#: templates/edit.php:53
+msgid "Title:"
+msgstr ""
+
+#: templates/edit.php:62
+msgid "Post Content:"
+msgstr ""
+
+#: templates/edit.php:81
+msgid "Post Category:"
+msgstr ""
+
+#: templates/edit.php:83
+msgid "Select post category"
+msgstr ""
+
+#: templates/edit.php:100
+msgid "Post tag:"
+msgstr ""
+
+#: templates/edit.php:102
+msgid "Select post tag"
+msgstr ""
+
+#: templates/edit.php:118
+msgid "Featured Image:"
+msgstr ""
+
+#: templates/posts.php:72
+msgid "Permanent Link to"
+msgstr ""
+
+#: templates/posts.php:74
+msgid "%1$s <span>in %2$s</span>"
+msgstr ""
+
+#: templates/posts.php:78
+msgid "Read the rest of this entry &rarr;"
+msgstr ""
+
+#: templates/posts.php:79
+msgid "Pages: "
+msgstr ""
+
+#: templates/posts.php:82
+msgid "Tags: "
+msgstr ""
+
+#: templates/posts.php:83
+msgid "No Comments &#187;"
+msgstr ""
+
+#: templates/posts.php:83
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: templates/posts.php:83
+msgid "% Comments &#187;"
+msgstr ""

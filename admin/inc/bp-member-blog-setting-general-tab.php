@@ -2,7 +2,6 @@
 /**
  *
  * This file is used for rendering and saving plugin general settings.
- *
  */
 
 // Exit if accessed directly.
@@ -13,10 +12,12 @@ $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 $files_per_post = ( isset( $blpro_nl_settings['files_per_post'] ) ) ? $blpro_nl_settings['files_per_post'] : '5';
 
-$category = get_terms( array(
-    'taxonomy' => 'category',
-    'hide_empty' => false,
-) );
+$category = get_terms(
+	array(
+		'taxonomy'   => 'category',
+		'hide_empty' => false,
+	)
+);
 
 
 $member_types_exist = false;
@@ -33,34 +34,34 @@ if ( ! empty( $member_types ) ) {
 	do_settings_sections( 'bp_member_blog_general_settigs' );
 	?>
 	<table class="form-table">
-		
+
 		<tr>
 			<th scope="row">
 				<label><?php esc_html_e( 'Create new post page', 'buddypress-member-blog' ); ?></label>
 			</th>
 			<td>
 				<?php
-				$args						 = array(
-					'name'				 => 'bp_member_blog_gen_stngs[bp_post_page]',
-					'id'				 => 'my_dashboard_page',
-					'sort_column'		 => 'menu_order',
-					'sort_order'		 => 'ASC',
-					'show_option_none'	 => ' ',
-					'class'				 => 'my_dashboard_page',
-					'echo'				 => false,
-					'selected'			 => absint( ( isset( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ) ) ? $bp_member_blog_gen_stngs[ 'bp_post_page' ] : 0 ),
-					'post_status'		 => 'publish',
+				$args = array(
+					'name'             => 'bp_member_blog_gen_stngs[bp_post_page]',
+					'id'               => 'my_dashboard_page',
+					'sort_column'      => 'menu_order',
+					'sort_order'       => 'ASC',
+					'show_option_none' => ' ',
+					'class'            => 'my_dashboard_page',
+					'echo'             => false,
+					'selected'         => absint( ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) ) ? $bp_member_blog_gen_stngs['bp_post_page'] : 0 ),
+					'post_status'      => 'publish',
 				);
 
-				if ( isset( $value[ 'args' ] ) ) {
-					$args = wp_parse_args( $value[ 'args' ], $args );
+				if ( isset( $value['args'] ) ) {
+					$args = wp_parse_args( $value['args'], $args );
 				}
 
 				echo wp_dropdown_pages( $args ); // WPCS: XSS ok.
 				?>
-				<?php if ( isset( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ) && $bp_member_blog_gen_stngs[ 'bp_post_page' ] != 0 ): ?>
-					<a href="<?php echo get_permalink( $bp_member_blog_gen_stngs[ 'bp_post_page' ] ); ?>" class="button-secondary" target="_bp">
-						<?php esc_html_e( 'View', 'ld-dashboard' ); ?>
+				<?php if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) : ?>
+					<a href="<?php echo get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ); ?>" class="button-secondary" target="_bp">
+						<?php esc_html_e( 'View', 'buddypress-member-blog' ); ?>
 						<span class="dashicons dashicons-external" aria-hidden="true"></span>
 						<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'buddypress-member-blog' ); ?></span>
 					</a>
@@ -68,45 +69,50 @@ if ( ! empty( $member_types ) ) {
 				<p class="description"><?php esc_html_e( 'This sets the page used to create new post. This page should contain the following shortcode. [bp-member-blog]', 'buddypress-member-blog' ); ?></p>
 			</td>
 		</tr>
-		
+
 		<tr>
 			<th scope="row">
 				<label><?php esc_html_e( 'Allowed user roles to create post?', 'buddypress-member-blog' ); ?></label>
 			</th>
 			<td>
 				<ul>
-					<?php 
+					<?php
 					foreach ( get_editable_roles() as $id => $role ) {
 						?>
 						<li>
 							<label class="wb-switch">
-								<input type="checkbox" id="bp_create_post_<?php echo esc_attr($id)?>" name="bp_member_blog_gen_stngs[bp_create_post][]" value="<?php echo esc_attr($id);?>" <?php if ( isset($bp_member_blog_gen_stngs['bp_create_post']) && in_array( $id,$bp_member_blog_gen_stngs['bp_create_post'])){ echo "checked";}?>/>
+								<input type="checkbox" id="bp_create_post_<?php echo esc_attr( $id ); ?>" name="bp_member_blog_gen_stngs[bp_create_post][]" value="<?php echo esc_attr( $id ); ?>"
+																					 <?php
+																						if ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && in_array( $id, $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
+																							echo 'checked';}
+																						?>
+								/>
 								<div class="wb-slider wb-round"></div>
 							</label>
-							<label for="bp_create_post_<?php echo esc_attr($id)?>"><?php echo esc_html($role['name']);?></label>
+							<label for="bp_create_post_<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $role['name'] ); ?></label>
 						</li>
-						<?php						
+						<?php
 					}
 					?>
 				</ul>
-				<p class="description"><?php esc_html_e('Selected user roles will be allowed to create post.','buddypress-member-blog'); ?></p>
+				<p class="description"><?php esc_html_e( 'Selected user roles will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
 			</td>
 		</tr>
-		
-		<?php if ( $member_types_exist ): ?>
+
+		<?php if ( $member_types_exist ) : ?>
 		<tr>
-			<th scope="row"><label><?php esc_html_e( 'Allowed member types wise to create post?', 'buddypress-private-community-pro' ); ?></label></th>
+			<th scope="row"><label><?php esc_html_e( 'Allowed member types wise to create post?', 'buddypress-member-blog' ); ?></label></th>
 			<td>
-				<select id="bp-member-types-list" name="bp_member_blog_gen_stngs[member_types][]" multiple data-placeholder="<?php esc_html_e( 'Select member type to create post', 'buddypress-member-blog');?>">
+				<select id="bp-member-types-list" name="bp_member_blog_gen_stngs[member_types][]" multiple data-placeholder="<?php esc_html_e( 'Select member type to create post', 'buddypress-member-blog' ); ?>">
 					<?php foreach ( $member_types as $key => $type_obj ) { ?>
 						<?php $selected = ( ! empty( $bp_member_blog_gen_stngs['member_types'] ) && in_array( $key, $bp_member_blog_gen_stngs['member_types'] ) ) ? 'selected' : ''; ?>
 					<option value="<?php echo $key; ?>" <?php echo $selected; ?>><?php echo $type_obj->labels['name']; ?></option>
 					<?php } ?>
 				</select>
-				<p class="description"><?php esc_html_e('Selected member type will be allowed to create post.','buddypress-member-blog'); ?></p>
+				<p class="description"><?php esc_html_e( 'Selected member type will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
 			</td>
 		</tr>
-		<?php endif;?>
+		<?php endif; ?>
 		<tr>
 			<th scope="row">
 				<label for="bp_member_blog_publish_post">
@@ -119,9 +125,9 @@ if ( ! empty( $member_types ) ) {
 					<div class="wb-slider wb-round"></div>
 				</label>
 				<p class="description"><?php esc_html_e( 'Allow user to publish posts. if not enable, they can only submit post as pending for review.', 'buddypress-member-blog' ); ?></p>
-		    </td>
-	    </tr>
-		
+			</td>
+		</tr>
+
 		<tr>
 			<th scope="row">
 				<label for="bp_member_blog_image_delete">
@@ -134,9 +140,9 @@ if ( ! empty( $member_types ) ) {
 					<div class="wb-slider wb-round"></div>
 				</label>
 				<p class="description"><?php esc_html_e( 'When blog post removed permanently delete the associated media file.', 'buddypress-member-blog' ); ?></p>
-		    </td>
-	    </tr>
-		
+			</td>
+		</tr>
+
 		<tr>
 			<th scope="row">
 				<label>
@@ -144,14 +150,16 @@ if ( ! empty( $member_types ) ) {
 				</label>
 			</th>
 			<td>
-				<select id="bp-blog-category-select" name="bp_member_blog_gen_stngs[exclude_category][]" multiple data-placeholder="<?php esc_html_e( 'Select category to exclude on fronted', 'buddypress-member-blog');?>">
-				<?php foreach ( $category as $cat ) { 
-					$selected = (!empty( $bp_member_blog_gen_stngs['exclude_category'] ) && in_array( $cat->term_id, $bp_member_blog_gen_stngs['exclude_category'] ) ) ? 'selected' : ''; ?>
+				<select id="bp-blog-category-select" name="bp_member_blog_gen_stngs[exclude_category][]" multiple data-placeholder="<?php esc_html_e( 'Select category to exclude on fronted', 'buddypress-member-blog' ); ?>">
+				<?php
+				foreach ( $category as $cat ) {
+					$selected = ( ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) && in_array( $cat->term_id, $bp_member_blog_gen_stngs['exclude_category'] ) ) ? 'selected' : '';
+					?>
 					<option value="<?php echo $cat->term_id; ?>" <?php echo $selected; ?>><?php echo $cat->name; ?></option>
 				<?php } ?>
-				</select>			
-		    </td>
-	    </tr>
+				</select>
+			</td>
+		</tr>
 		<?php
 
 		/**
@@ -162,8 +170,9 @@ if ( ! empty( $member_types ) ) {
 		 * @since 1.0.0
 		 * @param array $bp_member_blog_gen_stngs Plugin general setting option.
 		 */
-		do_action( 'bmpro_add_general_settings_options', $bp_member_blog_gen_stngs ); ?>
+		do_action( 'bmpro_add_general_settings_options', $bp_member_blog_gen_stngs );
+		?>
 	</table>
 	<?php submit_button(); ?>
-</form>	
+</form>
 </div>

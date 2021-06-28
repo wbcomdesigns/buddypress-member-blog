@@ -50,6 +50,7 @@ class Buddypress_Member_Blog_Loader {
 
 		$this->actions = array();
 		$this->filters = array();
+		$this->shortcode = array();
 
 	}
 

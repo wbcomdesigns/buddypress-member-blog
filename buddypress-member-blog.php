@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       BuddyPress Member Blog
  * Plugin URI:        https://wbcomdesigns.com/downloads/buddypress-member-blog
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Allow your BuddyPress members to create and manage their blog posts from there profile.  Allow them to publish their posts directly or send them for review. one you can easily navigate to any member's profile to read  their posts.
  * Version:           1.0.0
  * Author:            Wbcom Designs
  * Author URI:        https://wbcomdesigns.com/
@@ -75,7 +75,7 @@ register_deactivation_hook( __FILE__, 'deactivate_buddypress_member_blog' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-buddypress-member-blog.php';
 
 /**
- * The core plugin functions that is used to define internationalization, 
+ * The core plugin functions that is used to define internationalization,
  */
 require plugin_dir_path( __FILE__ ) . 'includes/buddypress-member-blog-functions.php';
 
@@ -104,8 +104,8 @@ run_buddypress_member_blog();
 add_action( 'activated_plugin', 'bp_member_blog_activation_redirect_settings' );
 function bp_member_blog_activation_redirect_settings( $plugin ) {
 
-	if( $plugin == plugin_basename( __FILE__ )  && class_exists( 'Buddypress' )) {
-		wp_redirect( admin_url( 'admin.php?page=buddypress-member-blog' ) ) ;
+	if ( $plugin == plugin_basename( __FILE__ ) && class_exists( 'Buddypress' ) ) {
+		wp_redirect( admin_url( 'admin.php?page=buddypress-member-blog' ) );
 		exit;
 	}
 }
@@ -117,11 +117,11 @@ function bp_member_blog_activation_redirect_settings( $plugin ) {
  */
 function buddypress_member_blog_requires_buddypress() {
 
-    if ( !class_exists( 'Buddypress' ) ) {
-        deactivate_plugins( plugin_basename( __FILE__ ) );        
-        add_action( 'admin_notices', 'buddypress_member_blog_required_plugin_admin_notice' );
-        unset($_GET['activate']);
-    }
+	if ( ! class_exists( 'Buddypress' ) ) {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		add_action( 'admin_notices', 'buddypress_member_blog_required_plugin_admin_notice' );
+		unset( $_GET['activate'] );
+	}
 }
 
 add_action( 'admin_init', 'buddypress_member_blog_requires_buddypress' );
@@ -135,12 +135,19 @@ add_action( 'admin_init', 'buddypress_member_blog_requires_buddypress' );
  */
 function buddypress_member_blog_required_plugin_admin_notice() {
 
-    $bpmb_plugin          = esc_html__(' BuddyPress Member Blog', 'buddypress-member-blog');
-    $bp_plugin                = esc_html__('BuddyPress', 'buddypress-member-blog');
-    echo '<div class="error"><p>';
-    echo sprintf(esc_html__('%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog'), '<strong>' . esc_html($bpmb_plugin) . '</strong>', '<strong>' . esc_html($bp_plugin) . '</strong>');
-    echo '</p></div>';
-    if (isset($_GET['activate']) ) {
-        unset($_GET['activate']);
-    }
+	$bpmb_plugin = esc_html__( ' BuddyPress Member Blog', 'buddypress-member-blog' );
+	$bp_plugin   = esc_html__( 'BuddyPress', 'buddypress-member-blog' );
+	echo '<div class="error"><p>';
+	echo sprintf( esc_html__( '%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog' ), '<strong>' . esc_html( $bpmb_plugin ) . '</strong>', '<strong>' . esc_html( $bp_plugin ) . '</strong>' );
+	echo '</p></div>';
+	if ( isset( $_GET['activate'] ) ) {
+		unset( $_GET['activate'] );
+	}
 }
+
+require plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://demos.wbcomdesigns.com/exporter/free-plugins/buddypress-member-blog.json',
+	__FILE__, // Full path to the main plugin file or functions.php.
+	'buddypress-member-blog'
+);

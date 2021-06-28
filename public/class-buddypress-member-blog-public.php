@@ -84,6 +84,13 @@ class Buddypress_Member_Blog_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
+		
+		global $post;		
+		if ( ! is_user_logged_in() &&  is_a( $post, 'WP_Post' ) && isset( $post->post_content ) &&  has_shortcode( $post->post_content, 'bp-member-blog' ) ) {
+			wp_redirect( site_url());
+			exit;
+		}
+				
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -319,7 +326,7 @@ class Buddypress_Member_Blog_Public {
 	
 	
 	public function buddypress_member_blog_post_submit() {
-				
+		
 		
 		if ( isset( $_POST[ '_wpnonce' ] ) && wp_verify_nonce( $_POST[ '_wpnonce' ], 'bp_member_blog_post' ) && isset( $_POST[ 'bp_member_blog_form_subimitted' ] )  && isset($_POST['action']) && $_POST['action'] == 'bp_member_blog_post' ) {
 			

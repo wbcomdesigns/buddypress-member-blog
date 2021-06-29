@@ -89,9 +89,8 @@ query_posts( $query_args );
                     
 					<?php if ( $action_button == true ): ?>
 						<div class="post-actions">
-							<?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?>
-							
-							<?php echo bp_member_blog_get_delete_link();?>
+							<span class="publish-post"><?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?></span>
+							<span class="delete-post"><?php echo bp_member_blog_get_delete_link();?></span>
 						</div>
 					<?php endif; ?>
 				</div>

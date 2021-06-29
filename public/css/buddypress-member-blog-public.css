@@ -46,6 +46,7 @@ button#insert-media-button:hover {
 
 .buddypress-wrap .standard-form.bp-member-blog-post-form label {
     margin: 15px 0;
+    font-weight: 400;
 }
 
 #bp_member_blog_post_featured_image {
@@ -120,12 +121,12 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content {
 
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entry-title {
     margin: 0 0 10px;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 24px;
 }
 
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edit-post {
-    font-size: 12px;
+    font-size: 13px;
     margin-left: 10px;
     font-weight: 400;
     font-style: italic;
@@ -150,21 +151,12 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 .bp-member-blog-container .entry-content {
-    margin: 0 0 20px;
+    margin: 0 0 20px !important;
 }
 
-.bp-member-blog-container .post-tags,
-.bp-member-blog-container .post-comments,
-.bp-member-blog-container .post-actions {
-    margin: 0 0 10px;
-}
 
-.bp-member-blog-container .post-tags {
-    font-size: 14px;
-}
-
-.bp-member-blog-container .post-tags a {
-    text-decoration: underline !important;
+/* .bp-member-blog-container .post-actions {
+    margin: 0 0 0px;
 }
 
 .bp-member-blog-container .post-actions>a {
@@ -181,11 +173,52 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     margin-right: 5px;
     margin-bottom: 5px;
     font-weight: 400;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .bp-member-blog-container .post-actions>a:hover {
     background: #ededed;
     color: #555;
+}*/
+
+.post-actions {
+    display: flex;
+}
+
+.post-actions span a {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.post-actions span.publish-post a:before {
+    content: '';
+    display: inline-block;
+    background: url(../images/document.svg) no-repeat center center;
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -4px;
+    opacity: 0.6;
+}
+
+.post-actions span.delete-post a:before {
+    content: '';
+    display: inline-block;
+    background: url(../images/trash.svg) no-repeat center center;
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -4px;
+    opacity: 0.6;
 }
 
 .bp-member-blog-container .pagination {
@@ -200,5 +233,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     .bp-member-blog-container .post-featured-image {
         display: inline-block;
         margin-bottom: 15px;
+    }
+    .bp-member-blog-container .post-actions {
+        justify-content: center;
     }
 }

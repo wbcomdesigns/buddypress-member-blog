@@ -126,11 +126,24 @@ class Buddypress_Member_Blog_Public {
 		$is_my_profile = bp_is_my_profile();
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-
+		
+		
+		$post_count_query = new WP_Query(
+                            array(
+                                'author' => bp_displayed_user_id(),
+                                'post_type' => 'post',
+                                'posts_per_page' => 1,
+                                'post_status' => 'publish'
+                            )
+                        );
+                    
+		$user_post_count = $post_count_query->found_posts;
+		wp_reset_postdata();
+		
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(
-				'name'                => esc_html__( 'Blog', 'buddypress-member-blog' ),
+				'name'                => sprintf(esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 				'slug'                => 'bp-member-blog',
 				'screen_function'     => array( $this, 'bp_member_posts' ),
 				'default_subnav_slug' => 'bp-member-blog',

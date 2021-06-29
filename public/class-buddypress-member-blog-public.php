@@ -394,6 +394,13 @@ class Buddypress_Member_Blog_Public {
 					update_post_meta( $post_id, '_thumbnail_id', $attachment_id );
 				}
 			}
+			
+			/* Redirect to single post page when user publish post */
+			if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {
+				$post_link = get_permalink( $post_id );
+				wp_redirect( $post_link );
+				exit;
+			}
 		}
 	}
 

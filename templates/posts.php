@@ -59,33 +59,30 @@ query_posts( $query_args );
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+			<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
+
+				<div class="post-featured-image">
+					<?php  the_post_thumbnail();?>
+				</div>
+
+				<?php endif;?>
+
 				<div class="post-content">
 
-					<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
+					<h3 class="entry-title"> <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a><span class="bp-edit-post"><?php echo bp_member_blog_get_edit_link();?></span></h3>
 
-						<div class="post-featured-image">
-							<?php  the_post_thumbnail();?>
-						</div>
-
-					<?php endif;?>
-
-					<h2 class="entry-title"> <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a> </h2>
-
-					<div class="post-date"><?php printf( __( '%1$s <span>in %2$s</span>', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></div>
+					<div class="post-date"><?php printf( __( '%1$s', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></div>
 
 					<div class="entry-content">
 
-						<?php the_content( __( 'Read the rest of this entry &rarr;', 'buddypress-member-blog' ) ); ?>
+						<?php the_excerpt( __( 'Read the rest of this entry &rarr;', 'buddypress-member-blog' ) ); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><p>' . __( 'Pages: ', 'buddypress-member-blog' ), 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
 					</div>
-
-					<div class="post-tags"><?php the_tags( '<span class="tags">' . __( 'Tags: ', 'buddypress-member-blog' ), ', ', '</span>' ); ?></div>
-                                        <div class="post-comments"><?php comments_popup_link( __( 'No Comments &#187;', 'buddypress-member-blog' ), __( '1 Comment &#187;', 'buddypress-member-blog' ), __( '% Comments &#187;', 'buddypress-member-blog' ) ); ?></div>
-
+                    
 					<?php if ( $action_button == true ): ?>
 						<div class="post-actions">
 							<?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?>
-							<?php echo bp_member_blog_get_edit_link();?>
+							
 							<?php echo bp_member_blog_get_delete_link();?>
 						</div>
 					<?php endif; ?>

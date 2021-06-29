@@ -335,9 +335,11 @@ class Buddypress_Member_Blog_Public {
 
 
 	public function buddypress_member_blog_post_submit() {
-
-		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( $_POST['_wpnonce'], 'bp_member_blog_post' ) && isset( $_POST['bp_member_blog_form_subimitted'] ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
-
+		
+		
+		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( $_POST['_wpnonce'], 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
+			
+			
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 			$post_title = '';
@@ -359,12 +361,16 @@ class Buddypress_Member_Blog_Public {
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
-						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' : 'pending',
+						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' :  ((isset( $_POST['bp_member_blog_form_save'] )) ? 'draft' :'pending' ),
 						'post_author'  => get_current_user_id(),
 					)
 				);
 				$post_link = get_permalink( $post_id );
-				bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) . '<span class="bp-blog-view-link"><a href="' . $post_link . '">' . __( 'View Post', 'buddypress-member-blog' ) . '</a></span>' );
+				if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {					
+					bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) . '<span class="bp-blog-view-link"><a href="' . $post_link . '">' . __( 'View Post', 'buddypress-member-blog' ) . '</a></span>' );
+				} else {
+					bp_core_add_message( __( 'Your post is under review, It will appear after the approval.', 'buddypress-member-blog' ) );
+				}
 
 			} else {
 				/* Create Post */
@@ -373,7 +379,7 @@ class Buddypress_Member_Blog_Public {
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
-						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' : 'pending',
+						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' : ((isset( $_POST['bp_member_blog_form_save'] )) ? 'draft' :'pending' ),
 						'post_author'  => get_current_user_id(),
 					)
 				);
@@ -408,12 +414,27 @@ class Buddypress_Member_Blog_Public {
 				}
 			}
 			
+			if ( isset($_POST['bp_member_blog_form_save'])) {
+				
+				if ( isset($bp_member_blog_gen_stngs['bp_post_page']) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+					
+					$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) . "?post_id=" . $post_id . "&action=edit&is_draft=1";
+					
+				} else {
+				
+					$url = bp_member_blog_get_edit_url( $post_id ) . "?is_draft=1";
+				}
+				bp_core_add_message( __( 'Post saved successfully.', 'buddypress-member-blog' )  );
+				wp_redirect( $url );
+				exit;
+			}
+			
 			/* Redirect to single post page when user publish post */
 			if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {
 				$post_link = get_permalink( $post_id );
 				wp_redirect( $post_link );
 				exit;
-			}
+			} 
 		}
 	}
 

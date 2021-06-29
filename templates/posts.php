@@ -58,18 +58,26 @@ query_posts( $query_args );
 		?>
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
-
+			
 				<div class="post-featured-image">
-					<?php  the_post_thumbnail();?>
+					<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
+						<?php  the_post_thumbnail( 'thumbnail' );?>
+					<?php else : ?>
+						<img src="<?php echo BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL."public/images/no-post-image.jpg";?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="<?php the_title(); ?>" width="150" height="150">
+					<?php endif;?>
 				</div>
 
-				<?php endif;?>
+				
 
 				<div class="post-content">
 
-					<h3 class="entry-title"> <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a><span class="bp-edit-post"><?php echo bp_member_blog_get_edit_link();?></span></h3>
+					<h3 class="entry-title">
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+						<?php if ( $action_button == true ): ?>
+							<span class="bp-edit-post"><?php echo bp_member_blog_get_edit_link();?></span>
+						<?php endif;?>
+					</h3>
+					
 
 					<div class="post-date"><?php printf( __( '%1$s', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></div>
 

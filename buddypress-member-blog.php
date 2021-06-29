@@ -40,12 +40,6 @@ define( 'BUDDYPRESS_MEMBER_BLOG_VERSION', '1.0.0' );
 
 define( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'BUDDYPRESS_MEMBER_BLOG_ACF_PATH', BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'includes/acf-pro/' );
-define( 'BUDDYPRESS_MEMBER_BLOG_ACF_URL', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'includes/acf-pro/' );
-
-define( 'BUDDYPRESS_MEMBER_BLOG_ACF_MEF_PATH', BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'includes/acf-medium-editor-field/' );
-define( 'BUDDYPRESS_MEMBER_BLOG_ACF_MEF_URL', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'includes/acf-medium-editor-field/' );
-
 
 /**
  * The code that runs during plugin activation.

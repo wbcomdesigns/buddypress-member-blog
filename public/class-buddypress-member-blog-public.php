@@ -143,7 +143,7 @@ class Buddypress_Member_Blog_Public {
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(
-				'name'                => sprintf(esc_html__( 'Blog %s', 'bp-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
+				'name'                => sprintf(esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 				'slug'                => 'blog',
 				'screen_function'     => array( $this, 'bp_member_posts' ),
 				'default_subnav_slug' => 'blog',
@@ -156,7 +156,7 @@ class Buddypress_Member_Blog_Public {
 				'name'            => __( 'Posts', 'buddypress-member-blog' ),
 				'slug'            => 'bp-member-blog',
 				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'bp-member-blog' ),
-				'parent_slug'     => 'bp-member-blog',
+				'parent_slug'     => 'blog',
 				'screen_function' => array( $this, 'bp_member_posts' ),
 				'position'        => 30,
 			)

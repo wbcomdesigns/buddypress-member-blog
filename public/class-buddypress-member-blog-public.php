@@ -154,8 +154,8 @@ class Buddypress_Member_Blog_Public {
 		bp_core_new_subnav_item(
 			array(
 				'name'            => __( 'Posts', 'buddypress-member-blog' ),
-				'slug'            => 'bp-member-blog',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'bp-member-blog' ),
+				'slug'            => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
 				'parent_slug'     => 'blog',
 				'screen_function' => array( $this, 'bp_member_posts' ),
 				'position'        => 30,
@@ -188,8 +188,8 @@ class Buddypress_Member_Blog_Public {
 			array(
 				'name'            => __( 'New Post', 'buddypress-member-blog' ),
 				'slug'            => 'bp-new-post',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'bp-member-blog' ),
-				'parent_slug'     => 'bp-member-blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
+				'parent_slug'     => 'blog',
 				'screen_function' => array( $this, 'bp_member_new_post' ),
 				'link'            => $link,
 				'position'        => 30,

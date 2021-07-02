@@ -26,6 +26,8 @@ e.g.
 
 
 == Changelog ==
+= 1.1.0 =
+* Fix: Blog slug on user profile
 
 = 1.0.0 =
 * Initial Release

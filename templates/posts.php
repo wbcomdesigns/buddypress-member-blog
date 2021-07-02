@@ -58,7 +58,7 @@ query_posts( $query_args );
 		?>
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
+
 				<div class="post-featured-image">
 					<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ):?>
 						<?php  the_post_thumbnail( 'thumbnail' );?>
@@ -67,7 +67,7 @@ query_posts( $query_args );
 					<?php endif;?>
 				</div>
 
-				
+
 
 				<div class="post-content">
 
@@ -77,7 +77,7 @@ query_posts( $query_args );
 							<span class="bp-edit-post"><?php echo bp_member_blog_get_edit_link();?></span>
 						<?php endif;?>
 					</h3>
-					
+
 
 					<div class="post-date"><?php printf( __( '%1$s', 'buddypress-member-blog' ), get_the_date(), get_the_category_list( ', ' ) ); ?></div>
 
@@ -86,7 +86,7 @@ query_posts( $query_args );
 						<?php the_excerpt( __( 'Read the rest of this entry &rarr;', 'buddypress-member-blog' ) ); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><p>' . __( 'Pages: ', 'buddypress-member-blog' ), 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
 					</div>
-                    
+
 					<?php if ( $action_button == true ): ?>
 						<div class="post-actions">
 							<span class="publish-post"><?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() );?></span>
@@ -109,5 +109,4 @@ query_posts( $query_args );
 	   wp_reset_postdata();
 	   wp_reset_query();
 	?>
-</div>
 </div>

@@ -31,7 +31,7 @@ if (!defined('ABSPATH')) {
 
                     <div class="col">
                         <h3><span class="dashicons dashicons-book"></span><?php esc_html_e( 'Documentation', 'buddypress-member-blog' ); ?></h3>
-                        <p><?php esc_html_e( 'We have prepared an extensive guide on BuddyPress Auto Friends to learn all aspects of the plugin. You will find most of your answers here.', 'buddypress-member-blog' ); ?></p>
+                        <p><?php esc_html_e( 'We have prepared an extensive guide on BuddyPress Member Blog to learn all aspects of the plugin. You will find most of your answers here.', 'buddypress-member-blog' ); ?></p>
                         <a href="<?php echo esc_url( 'https://wbcomdesigns.com/docs/buddypress-paid-addons/buddypress-member-blog/' ); ?>" class="button button-primary button-welcome-support" target="_blank"><?php esc_html_e( 'Read Documentation', 'buddypress-member-blog' ); ?></a>
                     </div>
 

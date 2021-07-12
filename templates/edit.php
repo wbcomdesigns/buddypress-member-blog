@@ -15,7 +15,7 @@ if ( $post_id != 0 && $post_id != '' ) {
 	$blog_post = get_post( $post_id );
 
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
-	$post_seleced_tag       = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'ids' ) ) );
+	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );
 
 	$post_thumbnail = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 }
@@ -30,13 +30,6 @@ if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_memb
 }
 
 $category = get_terms( $args );
-
-
-$args     = array(
-	'taxonomy'   => 'post_tag',
-	'hide_empty' => false,
-);
-$post_tag = get_terms( $args );
 
 
 $submit_btn_value = ( ! empty( $post_id ) ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
@@ -101,16 +94,9 @@ if ( !isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $
 			<?php do_action( 'bp_post_before_tag', $post_id ); ?>
 
 			<label for="bp_member_blog_post_tag"><?php _e( 'Post tag:', 'buddypress-member-blog' ); ?>
-
-				<select id="bp-blog-tag-select" name="bp_member_blog_post_tag[]" multiple data-placeholder="<?php esc_html_e( 'Select post tag', 'buddypress-member-blog' ); ?>">
-				<?php
-				foreach ( $post_tag as $tag ) {
-					$selected = ( ! empty( $post_selected_tag ) && in_array( $tag->term_id, $post_selected_tag ) ) ? 'selected' : '';
-					?>
-					<option value="<?php echo $tag->name; ?>"  <?php echo $selected; ?>><?php echo $tag->name; ?></option>
-				<?php } ?>
-				</select>
-
+				
+				<input type="text" name="bp_member_blog_post_tag" value="<?php echo (!empty($post_selected_tag) )? implode(',', $post_selected_tag): '';?>" />
+				
 			</label>
 
 			<?php do_action( 'bp_post_after_tag', $post_id ); ?>

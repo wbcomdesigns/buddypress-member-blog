@@ -396,7 +396,7 @@ class Buddypress_Member_Blog_Public {
 			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_category'], 'category', false );
 
 			/*  Assign Post Tags */
-			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_tag'], 'post_tag', false );
+			wp_set_post_tags( $post_id, $_POST['bp_member_blog_post_tag'],  false );
 
 			if ( isset( $_FILES['bp_member_blog_post_featured_image'] ) && ! empty( $_FILES['bp_member_blog_post_featured_image'] ) ) {
 

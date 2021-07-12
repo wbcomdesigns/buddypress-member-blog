@@ -126,6 +126,23 @@ class Buddypress_Member_Blog_Public {
 		$is_my_profile = bp_is_my_profile();
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		
+		
+		/*
+		 * Check current user role to allowed create post or not
+		 *
+		 */
+		$member_types = bp_get_member_type( get_current_user_id(), false );
+		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
+		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
+			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
+			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
+			$user_roles                                 = array_intersect( (array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
+			if ( empty( $user_roles ) && empty( $user_types ) ) {
+				return;
+			}
+		}
 
 
 		$post_count_query = new WP_Query(
@@ -138,8 +155,8 @@ class Buddypress_Member_Blog_Public {
                         );
 
 		$user_post_count = $post_count_query->found_posts;
-		wp_reset_postdata();
-
+		wp_reset_postdata();		
+		
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(
@@ -162,22 +179,7 @@ class Buddypress_Member_Blog_Public {
 			)
 		);
 
-		/*
-		 * Check current user role to allowed create post or not
-		 *
-		 */
-
-		$member_types = bp_get_member_type( get_current_user_id(), false );
-		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
-		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
-			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
-			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
-			$user_roles                                 = array_intersect( (array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
-			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
-			if ( empty( $user_roles ) && empty( $user_types ) ) {
-				return;
-			}
-		}
+		
 
 		$link                     = '';
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
@@ -195,6 +197,86 @@ class Buddypress_Member_Blog_Public {
 				'position'        => 30,
 			)
 		);
+	}
+	
+	
+	/**
+	 * Adds the user's navigation in WP Admin Bar
+	 *
+	 * @since 1.0.0
+	 */
+	public function buddypress_member_blog_setup_admin_bar( $wp_admin_nav = array() ) {
+		global $wp_admin_bar;
+		
+		$blog_slug = bp_loggedin_user_domain().'blog';		
+		
+
+		// Menus for logged in user
+		if ( is_user_logged_in() ) {
+			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+			
+			/*
+			 * Check current user role to allowed create post or not
+			 *
+			 */
+			$member_types = bp_get_member_type( get_current_user_id(), false );
+			if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
+			|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
+				$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
+				$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
+				$user_roles                                 = array_intersect( (array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+				$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
+				if ( empty( $user_roles ) && empty( $user_types ) ) {
+					return;
+				}
+			}
+			
+			
+
+			$wp_admin_bar->add_menu( array(
+				'parent' => 'my-account-buddypress',
+				'id' => 'my-account-blog',
+				'title' => __( 'Blog', 'buddypress-member-blog' ),
+				'href' => trailingslashit( $blog_slug )
+			) );
+
+
+			$create_new_post_page  = $blog_slug.'/bp-new-post';			
+			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+				$create_new_post_page = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
+			}
+			
+			$href = trailingslashit( $create_new_post_page );
+
+			//Keeping addnew post same if network activated
+			if (is_multisite()) {
+				if (!function_exists('is_plugin_active_for_network'))
+					require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+				if (is_plugin_active_for_network(basename(constant('BP_PLUGIN_DIR')) . '/bp-loader.php') && is_plugin_active_for_network(basename(constant('BUDDYBOSS_SAP_PLUGIN_DIR')) . '/bp-user-blog.php') ) {
+					$href = trailingslashit(get_blog_permalink( 1,$create_new_post_page ));
+				}
+			}
+
+			// Add add-new submenu
+			$wp_admin_bar->add_menu( array(
+				'parent' => 'my-account-blog',
+				'id'     => 'my-account-blog-'.'posts',
+				'title'  => __( 'Posts', 'buddypress-member-blog' ),
+				'href'   => trailingslashit( $blog_slug )
+			) );
+						
+			
+
+			if ( $create_new_post_page ) {
+				$wp_admin_bar->add_menu( array(
+						'parent' => 'my-account-blog',
+						'id'     => 'my-account-blog'.'-'. __( 'add-new', 'buddypress-member-blog' ),
+						'title'  => __( 'New Post', 'buddypress-member-blog' ),
+						'href'   => $href
+				) );
+			}
+			
+		}
 	}
 
 

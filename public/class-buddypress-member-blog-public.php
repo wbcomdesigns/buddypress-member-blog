@@ -141,12 +141,13 @@ class Buddypress_Member_Blog_Public {
 		 * Check current user role to allowed create post or not
 		 *
 		 */
-		$member_types = bp_get_member_type( get_current_user_id(), false );
+		$member_types = bp_get_member_type( bp_displayed_user_id(), false );
+		$display_user = get_userdata( bp_displayed_user_id() );
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
 			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
-			$user_roles                                 = array_intersect( (array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+			$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
 			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
 			if ( empty( $user_roles ) && empty( $user_types ) ) {
 				return;

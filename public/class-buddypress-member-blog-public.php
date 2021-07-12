@@ -504,7 +504,8 @@ class Buddypress_Member_Blog_Public {
 
 			/*  Assign Category */
 			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_category'], 'category', false );
-
+			
+			
 			/*  Assign Post Tags */
 			wp_set_post_tags( $post_id, $_POST['bp_member_blog_post_tag'],  false );
 

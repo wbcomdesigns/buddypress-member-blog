@@ -61,6 +61,59 @@
 				reader.readAsDataURL(file);
 			}
 		});
+		
+		/* Member Report Subject */
+		$( '#bp_member_blog_post_tag' ).keypress( function( e ) {
+			var keycode = (e.keyCode ? e.keyCode : e.which);
+
+			// If user Clicks Enter
+			if ( keycode == 13 ) {
+				var report_subject 		 = $( this ).val(),
+					tags_form 	 = $( '.bpmb-post-tag-lists' ),
+					field_name	 = 'bp_member_blog_post_tag[]',
+					current_elts = $.bpmb_check_post_tags_existence( tags_form, report_subject );
+
+				if ( $.trim( report_subject ) != '' && current_elts.length == 0 ) {
+
+					// Add item in Case Isn't Already Exist
+					 $(".bpmb-post-tag-lists").append( '<li class="added-post-tag">' + report_subject +
+						'<span class="bpmb-tag-remove">x</span>'+
+						'<input type="hidden" value="' + report_subject + '" name="' + field_name +'">'+
+						'</li>'
+					);
+
+					// Clear Input
+					$( this ).val( '' );
+
+				} else {
+
+					// Add Flash Element In Case is Already Exist.
+					current_elts.addClass( 'flash' );
+					setTimeout( function () { current_elts.removeClass( 'flash' ); }, 1000);
+					$( this ).val( '' );
+
+				}
+				e.preventDefault();
+			}
+		});
+		
+		$.bpmb_check_post_tags_existence = function( elt, keyword ) {
+
+			// Setup Variables.
+			var tag_obj = $();
+			// Check Old Tags.
+			elt.find( '.added-post-tag' ).each( function() {
+	            var str = $.trim( $.trim($( this ).text()).slice(0,-1) );
+                if ( str.toLowerCase() === $.trim( keyword ).toLowerCase() ) {
+					tag_obj = $( this );
+					return false;
+                }
+			});
+
+			// Return Result.
+			return tag_obj;
+		}
+		
 	 });
 
 })( jQuery );

@@ -95,7 +95,21 @@ if ( !isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $
 
 			<label for="bp_member_blog_post_tag"><?php _e( 'Post tag:', 'buddypress-member-blog' ); ?>
 				
-				<input type="text" name="bp_member_blog_post_tag" value="<?php echo (!empty($post_selected_tag) )? implode(',', $post_selected_tag): '';?>" />
+				<!--input type="text" name="bp_member_blog_post_tag" value="<?php //echo (!empty($post_selected_tag) )? implode(',', $post_selected_tag): '';?>" /-->
+				
+				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1" placeholder="<?php esc_html_e('Type post tag then hit enter!','buddypress-member-blog' );?>" value="">
+				
+				<ul class="bpmb-post-tag-lists">
+					<?php if (!empty($post_selected_tag)):?>
+						<?php foreach( $post_selected_tag as $post_tag): ?>
+						<li class="added-post-tag">
+							<?php echo $post_tag;?>
+							<span class="bpmb-tag-remove">x</span>
+							<input type="hidden" value="<?php echo $post_tag;?>" name="bp_member_blog_post_tag[]">
+						</li>
+						<?php endforeach;?>
+					<?php endif;?>
+				</ul>
 				
 			</label>
 

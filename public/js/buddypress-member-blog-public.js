@@ -114,6 +114,11 @@
 			return tag_obj;
 		}
 		
+		$( document ).on( 'click','.bpmb-tag-remove', function( e ) {
+			e.preventDefault();
+			$( this ).parent().remove();
+		});
+		
 	 });
 
 })( jQuery );

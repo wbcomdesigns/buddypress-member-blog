@@ -13,7 +13,7 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 	}
 	
 
-	$url = bp_core_get_user_domain( $user_id ) . "bp-member-blog" . '/';
+	$url = bp_core_get_user_domain( $user_id ) . "blog" . '/';
 
 	return $url;
 }
@@ -35,7 +35,7 @@ function bp_member_blog_get_new_url() {
 	}
 
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $user_id ) . "bp-member-blog" . '/edit/';
+	return bp_core_get_user_domain( $user_id ) . "blog" . '/edit/';
 }
 
 
@@ -100,7 +100,7 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 	$url  = '';
 	
 	// check if post is published.
-	$url = bp_core_get_user_domain( $post->post_author ) . "bp-member-blog" . '/';
+	$url = bp_core_get_user_domain( $post->post_author ) . "blog" . '/';
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
@@ -189,7 +189,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	
 
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $post->post_author ) . "bp-member-blog" . "/{$action_name}/" . $post->ID . '/';
+	return bp_core_get_user_domain( $post->post_author ) . "blog" . "/{$action_name}/" . $post->ID . '/';
 }
 
 
@@ -214,7 +214,7 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 
 	$action_name = 'delete';
 
-	$url = bp_core_get_user_domain( $post->post_author ) . "bp-member-blog" . "/{$action_name}/" . $post->ID . '/';
+	$url = bp_core_get_user_domain( $post->post_author ) . "blog" . "/{$action_name}/" . $post->ID . '/';
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 
@@ -241,7 +241,7 @@ function bp_member_blog_paginate() {
 		// structure of “format” depends on whether we’re using pretty permalinks.
 		$format = '?paged=%#%';
 		$user_id = get_current_user_id();
-		$base   = trailingslashit( bp_core_get_user_domain( $user_id ) . "bp-member-blog" );
+		$base   = trailingslashit( bp_core_get_user_domain( $user_id ) . "blog" );
 		
 		echo paginate_links( array(
 			'base'     => $base . '%_%',

@@ -26,6 +26,12 @@ e.g.
 
 
 == Changelog ==
+= 1.2.0 =
+* Fix: Hide Blog Menu for not allowed user role or member type to create post
+* Fix: Added Blog in BuddyPress Mmeber Menu Section
+* Fix: Post Tags issue and set Input field to add Post Tags
+* Fix: #18 - when unpublish or delete the blog redirects to 404
+
 = 1.1.0 =
 * Fix: Blog slug on user profile
 

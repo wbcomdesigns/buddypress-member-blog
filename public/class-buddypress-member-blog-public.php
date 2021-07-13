@@ -135,6 +135,8 @@ class Buddypress_Member_Blog_Public {
 					'item_css_id'         => 'bp-member-blog',
 				)
 			);
+			
+			return;
 		}
 		
 		/*
@@ -142,7 +144,7 @@ class Buddypress_Member_Blog_Public {
 		 *
 		 */
 		$member_types = bp_get_member_type( bp_displayed_user_id(), false );
-		$display_user = get_userdata( bp_displayed_user_id() );
+		$display_user = get_userdata( bp_displayed_user_id() );		
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
@@ -234,7 +236,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function buddypress_member_blog_setup_admin_bar( $wp_admin_nav = array() ) {
-		global $wp_admin_bar;
+		global $wp_admin_bar, $current_user;
 		
 		$blog_slug = bp_loggedin_user_domain().'blog';		
 		

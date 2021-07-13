@@ -119,7 +119,6 @@ class Buddypress_Member_Blog_Public {
 		
 		global  $bp,$current_user;
 		$user_id       = bp_displayed_user_id();
-		$is_my_profile = bp_is_my_profile();
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 		
@@ -144,7 +143,11 @@ class Buddypress_Member_Blog_Public {
 		 *
 		 */
 		$member_types = bp_get_member_type( bp_displayed_user_id(), false );
-		$display_user = get_userdata( bp_displayed_user_id() );		
+		$display_user = get_userdata( bp_displayed_user_id() );
+		if ( empty($display_user)) {
+			return;
+		}		
+		
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();

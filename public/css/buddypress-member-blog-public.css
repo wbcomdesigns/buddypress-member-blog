@@ -105,6 +105,10 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
+.bp-member-blog-post-form .bp-member-blog-btn {
+    margin: 8px 0;
+}
+
 /*--------------------------------------------------------------
 # Single Profile Page
 --------------------------------------------------------------*/

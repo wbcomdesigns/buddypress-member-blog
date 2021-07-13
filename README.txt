@@ -31,6 +31,7 @@ e.g.
 * Fix: Added Blog in BuddyPress Mmeber Menu Section
 * Fix: Post Tags issue and set Input field to add Post Tags
 * Fix: #18 - when unpublish or delete the blog redirects to 404
+* Fix: Managed post tags UI
 
 = 1.1.0 =
 * Fix: Blog slug on user profile

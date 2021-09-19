@@ -28,6 +28,8 @@ if ( (isset($bp_member_blog_gen_stngs['bp_create_post']) && !empty($bp_member_bl
 	$user_types = array_intersect ((array) $member_types, $bp_member_blog_gen_stngs['member_types']);
 	if ( empty($user_roles) && empty($user_types)) {
 		$action_button = false;
+	} elseif (! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id()) {
+		$action_button = false;
 	}
 }
 

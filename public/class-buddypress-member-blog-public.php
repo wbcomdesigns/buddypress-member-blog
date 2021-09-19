@@ -116,17 +116,28 @@ class Buddypress_Member_Blog_Public {
 	 */
 
 	public function buddypress_member_blog_setup_nav() {
-		
+
 		global  $bp,$current_user;
 		$user_id       = bp_displayed_user_id();
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-		
-		
+
+		$post_count_query = new WP_Query(
+														array(
+																'author' => bp_displayed_user_id(),
+																'post_type' => 'post',
+																'posts_per_page' => 1,
+																'post_status' => 'publish'
+														)
+												);
+
+		$user_post_count = $post_count_query->found_posts;
+		wp_reset_postdata();
+
 		if ( is_admin() ) {
 			bp_core_new_nav_item(
 				array(
-					'name'                => esc_html__( 'Blog', 'buddypress-member-blog' ),
+					'name'                => sprintf(esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 					'slug'                => 'blog',
 					'screen_function'     => array( $this, 'bp_member_posts' ),
 					'default_subnav_slug' => 'blog',
@@ -134,10 +145,10 @@ class Buddypress_Member_Blog_Public {
 					'item_css_id'         => 'bp-member-blog',
 				)
 			);
-			
+
 			return;
 		}
-		
+
 		/*
 		 * Check current user role to allowed create post or not
 		 *
@@ -146,8 +157,8 @@ class Buddypress_Member_Blog_Public {
 		$display_user = get_userdata( bp_displayed_user_id() );
 		if ( empty($display_user)) {
 			return;
-		}		
-		
+		}
+
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
@@ -159,7 +170,7 @@ class Buddypress_Member_Blog_Public {
 			} else {
 				bp_core_new_nav_item(
 				array(
-					'name'                => esc_html__( 'Blog', 'buddypress-member-blog' ),
+					'name'                => sprintf(esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 					'slug'                => 'blog',
 					'screen_function'     => array( $this, 'bp_member_posts' ),
 					'default_subnav_slug' => 'blog',
@@ -169,25 +180,12 @@ class Buddypress_Member_Blog_Public {
 			);
 			}
 		}
-		
-		
-		
+
+
+
 		if ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) {
 			return;
 		}
-
-
-		$post_count_query = new WP_Query(
-                            array(
-                                'author' => bp_displayed_user_id(),
-                                'post_type' => 'post',
-                                'posts_per_page' => 1,
-                                'post_status' => 'publish'
-                            )
-                        );
-
-		$user_post_count = $post_count_query->found_posts;
-		wp_reset_postdata();
 
 
 		// Add 'Blog' to the main navigation.
@@ -212,7 +210,7 @@ class Buddypress_Member_Blog_Public {
 			)
 		);
 
-		
+
 
 		$link                     = '';
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
@@ -231,8 +229,8 @@ class Buddypress_Member_Blog_Public {
 			)
 		);
 	}
-	
-	
+
+
 	/**
 	 * Adds the user's navigation in WP Admin Bar
 	 *
@@ -240,14 +238,14 @@ class Buddypress_Member_Blog_Public {
 	 */
 	public function buddypress_member_blog_setup_admin_bar( $wp_admin_nav = array() ) {
 		global $wp_admin_bar, $current_user;
-		
-		$blog_slug = bp_loggedin_user_domain().'blog';		
-		
+
+		$blog_slug = bp_loggedin_user_domain().'blog';
+
 
 		// Menus for logged in user
 		if ( is_user_logged_in() ) {
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-			
+
 			/*
 			 * Check current user role to allowed create post or not
 			 *
@@ -263,8 +261,8 @@ class Buddypress_Member_Blog_Public {
 					return;
 				}
 			}
-			
-			
+
+
 
 			$wp_admin_bar->add_menu( array(
 				'parent' => 'my-account-buddypress',
@@ -274,11 +272,11 @@ class Buddypress_Member_Blog_Public {
 			) );
 
 
-			$create_new_post_page  = $blog_slug.'/bp-new-post';			
+			$create_new_post_page  = $blog_slug.'/bp-new-post';
 			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
 				$create_new_post_page = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
 			}
-			
+
 			$href = trailingslashit( $create_new_post_page );
 
 			//Keeping addnew post same if network activated
@@ -297,8 +295,8 @@ class Buddypress_Member_Blog_Public {
 				'title'  => __( 'Posts', 'buddypress-member-blog' ),
 				'href'   => trailingslashit( $blog_slug )
 			) );
-						
-			
+
+
 
 			if ( $create_new_post_page ) {
 				$wp_admin_bar->add_menu( array(
@@ -308,7 +306,7 @@ class Buddypress_Member_Blog_Public {
 						'href'   => $href
 				) );
 			}
-			
+
 		}
 	}
 
@@ -509,8 +507,8 @@ class Buddypress_Member_Blog_Public {
 
 			/*  Assign Category */
 			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_category'], 'category', false );
-			
-			
+
+
 			/*  Assign Post Tags */
 			wp_set_post_tags( $post_id, $_POST['bp_member_blog_post_tag'],  false );
 

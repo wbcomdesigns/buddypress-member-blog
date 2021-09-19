@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 1.3.0 =
+* Fix: updated permissions for displayed member profile
+
 = 1.2.0 =
 * Fix: Hide Blog Menu for not allowed user role or member type to create post
 * Fix: Added Blog in BuddyPress Mmeber Menu Section

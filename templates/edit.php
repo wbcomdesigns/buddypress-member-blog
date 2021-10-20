@@ -97,7 +97,7 @@ if ( !isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $
 				
 				<!--input type="text" name="bp_member_blog_post_tag" value="<?php //echo (!empty($post_selected_tag) )? implode(',', $post_selected_tag): '';?>" /-->
 				
-				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1" placeholder="<?php esc_html_e('Type post tag then hit enter!','buddypress-member-blog' );?>" value="">
+				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1"  name="bp_member_blog_post_tag" placeholder="<?php esc_html_e('Please add post tags with comma separator.','buddypress-member-blog' );?>" value="">
 				
 				<ul class="bpmb-post-tag-lists">
 					<?php if (!empty($post_selected_tag)):?>

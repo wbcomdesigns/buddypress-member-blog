@@ -78,8 +78,9 @@ if ( ! empty( $member_types ) ) {
 				<ul>
 					<?php
 					foreach ( get_editable_roles() as $id => $role ) {
+						
 						?>
-						<li>
+						<li <?php if( $id == 'administrator' ):?> style="display:none;" <?php endif;?>>
 							<label class="wb-switch">
 								<input type="checkbox" id="bp_create_post_<?php echo esc_attr( $id ); ?>" name="bp_member_blog_gen_stngs[bp_create_post][]" value="<?php echo esc_attr( $id ); ?>"
 																					 <?php

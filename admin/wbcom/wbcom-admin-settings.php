@@ -5,10 +5,11 @@
  * @author   Wbcom Designs
  * @package  Bp_Hashtags
  */
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
+if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 
 	/**
 	 * Class to add wbcom plugin's admin settings.
@@ -38,12 +39,12 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 * @access public
 		 */
 		public function wbcom_do_plugin_action() {
-			$action	= !empty( $_POST[ 'plugin_action' ] ) ? $_POST[ 'plugin_action' ] : false;
-			$slug   = !empty( $_POST[ 'plugin_slug' ] ) ? $_POST[ 'plugin_slug' ] : false;
+			$action = ! empty( $_POST['plugin_action'] ) ? $_POST['plugin_action'] : false;
+			$slug   = ! empty( $_POST['plugin_slug'] ) ? $_POST['plugin_slug'] : false;
 
 			if ( 'install_plugin' == $action ) {
 				$this->wbcom_do_plugin_install( $slug );
-			} else if ( 'activate_plugin' == $action ) {
+			} elseif ( 'activate_plugin' == $action ) {
 				$this->wbcom_do_plugin_activate( $slug );
 			} else {
 				$this->wbcom_do_plugin_deactivate( $slug );
@@ -83,11 +84,11 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 * @param string $slug Plugin's slug.
 		 */
 		public function _get_plugin_file_path_from_slug( $slug ) {
-			if ( !function_exists( 'get_plugins' ) ) {
+			if ( ! function_exists( 'get_plugins' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 			$plugins_list = get_plugins();
-			$keys		  = array_keys( $plugins_list );
+			$keys         = array_keys( $plugins_list );
 			foreach ( $keys as $key ) {
 				if ( preg_match( '|^' . $slug . '/|', $key ) ) {
 					return $key;
@@ -107,12 +108,12 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 			include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 			wp_cache_flush();
 
-			$upgrader	= new Plugin_Upgrader();
-			$plugin_zip	= $this->get_download_url( $slug );
-			$installed	= $upgrader->install( $plugin_zip );
+			$upgrader   = new Plugin_Upgrader();
+			$plugin_zip = $this->get_download_url( $slug );
+			$installed  = $upgrader->install( $plugin_zip );
 			if ( $installed ) {
 				$response = array( 'status' => 'installed' );
-				echo wp_send_json_success( $response );
+				echo wp_send_json_success( $response ); //phpcs:ignore
 			} else {
 				return false;
 			}
@@ -137,7 +138,7 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Function for return plugin's wordpress repo download url.
+		 * Function for return plugin's WordPress repo download url.
 		 *
 		 * @since 2.0.0
 		 * @access public
@@ -148,7 +149,7 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Function for get plugin's wordpress repo download url.
+		 * Function for get plugin's WordPress repo download url.
 		 *
 		 * @since 2.0.0
 		 * @access public
@@ -156,11 +157,17 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 */
 		public function get_wp_repo_download_url( $slug ) {
 			$status = array();
-			include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' ); // for plugins_api..
-			$api = plugins_api( 'plugin_information', array( 'slug' => $slug, 'fields' => array( 'sections' => false ) ) ); //Save on a bit of bandwidth.
+			include_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // for plugins_api..
+			$api = plugins_api(
+				'plugin_information',
+				array(
+					'slug'   => $slug,
+					'fields' => array( 'sections' => false ),
+				)
+			); // Save on a bit of bandwidth.
 
 			if ( is_wp_error( $api ) ) {
-				$status[ 'error' ] = $api->get_error_message();
+				$status['error'] = $api->get_error_message();
 				wp_send_json_error( $status );
 			}
 
@@ -175,38 +182,38 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 */
 		public function wbcom_all_free_plugins() {
 			$free_plugins = array(
-				'0'	 => array(
-					'name'			 => esc_html__( 'Custom Font Uploader', 'buddypress-member-blog' ),
-					'slug'			 => 'custom-font-uploader',
-					'description'	 => esc_html__( 'It also allows you to upload your own custom font to your site and use them using custom css.', 'buddypress-member-blog' ),
-					'status'		 => $this->wbcom_plugin_status( 'custom-font-uploader' ),
-					'wp_url'		 => 'https://wordpress.org/plugins/custom-font-uploader/',
-					'icon'			 => 'fa fa-upload'
+				'0' => array(
+					'name'        => esc_html__( 'Custom Font Uploader', 'buddypress-member-blog' ),
+					'slug'        => 'custom-font-uploader',
+					'description' => esc_html__( 'It also allows you to upload your own custom font to your site and use them using custom css.', 'buddypress-member-blog' ),
+					'status'      => $this->wbcom_plugin_status( 'custom-font-uploader' ),
+					'wp_url'      => 'https://wordpress.org/plugins/custom-font-uploader/',
+					'icon'        => 'fa fa-upload',
 				),
-				'1'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Create Group Type', 'buddypress-member-blog' ),
-					'slug'			 => 'bp-create-group-type',
-					'description'	 => esc_html__( 'It will help to create group type for BuddyPress Groups.', 'buddypress-member-blog' ),
-					'status'		 => $this->wbcom_plugin_status( 'bp-create-group-type' ),
-					'wp_url'		 => 'https://wordpress.org/plugins/bp-create-group-type/',
-					'icon'			 => 'fa fa-sitemap'
+				'1' => array(
+					'name'        => esc_html__( 'BuddyPress Create Group Type', 'buddypress-member-blog' ),
+					'slug'        => 'bp-create-group-type',
+					'description' => esc_html__( 'It will help to create group type for BuddyPress Groups.', 'buddypress-member-blog' ),
+					'status'      => $this->wbcom_plugin_status( 'bp-create-group-type' ),
+					'wp_url'      => 'https://wordpress.org/plugins/bp-create-group-type/',
+					'icon'        => 'fa fa-sitemap',
 				),
-				'2'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Member Reviews', 'buddypress-member-blog' ),
-					'slug'			 => 'bp-user-profile-reviews',
-					'description'	 => esc_html__( 'This plugin allows only site members to add reviews to the buddypress members on the site and even rate the member’s profile out of 5 points with multiple review criteria.', 'buddypress-member-blog' ),
-					'status'		 => $this->wbcom_plugin_status( 'bp-user-profile-reviews' ),
-					'wp_url'		 => 'https://wordpress.org/plugins/bp-user-profile-reviews/',
-					'icon'			 => 'fa fa-user'
+				'2' => array(
+					'name'        => esc_html__( 'BuddyPress Member Reviews', 'buddypress-member-blog' ),
+					'slug'        => 'bp-user-profile-reviews',
+					'description' => esc_html__( 'This plugin allows only site members to add reviews to the buddypress members on the site and even rate the member’s profile out of 5 points with multiple review criteria.', 'buddypress-member-blog' ),
+					'status'      => $this->wbcom_plugin_status( 'bp-user-profile-reviews' ),
+					'wp_url'      => 'https://wordpress.org/plugins/bp-user-profile-reviews/',
+					'icon'        => 'fa fa-user',
 				),
-				'3'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Group Reviews', 'buddypress-member-blog' ),
-					'slug'			 => 'review-buddypress-groups',
-					'description'	 => esc_html__( 'This plugin allows the BuddyPress Members to give reviews to the BuddyPress groups on the site. The review form allows the users to give text review, even rate the group on the basis of multiple criterias.', 'buddypress-member-blog' ),
-					'status'		 => $this->wbcom_plugin_status( 'review-buddypress-groups' ),
-					'wp_url'		 => 'https://wordpress.org/plugins/review-buddypress-groups/',
-					'icon'			 => 'fa fa-2x fa-users'
-				)
+				'3' => array(
+					'name'        => esc_html__( 'BuddyPress Group Reviews', 'buddypress-member-blog' ),
+					'slug'        => 'review-buddypress-groups',
+					'description' => esc_html__( 'This plugin allows the BuddyPress Members to give reviews to the BuddyPress groups on the site. The review form allows the users to give text review, even rate the group on the basis of multiple criterias.', 'buddypress-member-blog' ),
+					'status'      => $this->wbcom_plugin_status( 'review-buddypress-groups' ),
+					'wp_url'      => 'https://wordpress.org/plugins/review-buddypress-groups/',
+					'icon'        => 'fa fa-2x fa-users',
+				),
 			);
 			return $free_plugins;
 		}
@@ -219,59 +226,59 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 */
 		public function wbcom_all_paid_plugins() {
 			$paid_plugins = array(
-				'0'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Moderation Pro', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'BuddyPress Community Moderation offers a solution for site owners to keep their communities straight. With community policing strategy, members of the community have an option for moderation sitewide by attaching flags to content created within the various components.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-moderation-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-exclamation-triangle'
+				'0' => array(
+					'name'         => esc_html__( 'BuddyPress Moderation Pro', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'BuddyPress Community Moderation offers a solution for site owners to keep their communities straight. With community policing strategy, members of the community have an option for moderation sitewide by attaching flags to content created within the various components.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-moderation-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-exclamation-triangle',
 				),
-				'1'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Polls', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'Use BuddyPress Polls plugin to create polls inside the activity, let your user response to your polls. Members can create pools like activities, easily votes on them.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-polls/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-bar-chart'
+				'1' => array(
+					'name'         => esc_html__( 'BuddyPress Polls', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'Use BuddyPress Polls plugin to create polls inside the activity, let your user response to your polls. Members can create pools like activities, easily votes on them.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-polls/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-bar-chart',
 				),
-				'2'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Hashtags', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'Allows members to use hashtags in BuddyPress activities and bbPress topics and ready with widgets.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-hashtags/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-hashtag'
+				'2' => array(
+					'name'         => esc_html__( 'BuddyPress Hashtags', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'Allows members to use hashtags in BuddyPress activities and bbPress topics and ready with widgets.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-hashtags/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-hashtag',
 				),
-				'3'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Profanity', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'Use BuddyPress Profanity plugin to censor content in your community! Easily Censor all the unwanted words in activities, private messages contents by specifying a list of keywords to be filtered.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-profanity/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-ban'
+				'3' => array(
+					'name'         => esc_html__( 'BuddyPress Profanity', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'Use BuddyPress Profanity plugin to censor content in your community! Easily Censor all the unwanted words in activities, private messages contents by specifying a list of keywords to be filtered.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-profanity/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-ban',
 				),
-				'4'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Private Community Pro', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'This plugin offers a lockdown for BuddyPress Component and will ask users to log in go further to check profile or any other protected details.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-private-community-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-user-times'
+				'4' => array(
+					'name'         => esc_html__( 'BuddyPress Private Community Pro', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'This plugin offers a lockdown for BuddyPress Component and will ask users to log in go further to check profile or any other protected details.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-private-community-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-user-times',
 				),
-				'5'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Profile Pro', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'This plugin gives you the power to extend BuddyPress Profiles with repeater fields and groups. You can easily add multiple field groups and display them at member’s profile.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-profile-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-user-circle-o'
+				'5' => array(
+					'name'         => esc_html__( 'BuddyPress Profile Pro', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'This plugin gives you the power to extend BuddyPress Profiles with repeater fields and groups. You can easily add multiple field groups and display them at member’s profile.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-profile-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-user-circle-o',
 				),
-				'6'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Sticky Post', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'This will make it easier for the site administrator to make the pinned activity item recognized first by the community whenever they visit the site.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-sticky-post/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-thumb-tack'
+				'6' => array(
+					'name'         => esc_html__( 'BuddyPress Sticky Post', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'This will make it easier for the site administrator to make the pinned activity item recognized first by the community whenever they visit the site.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-sticky-post/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-thumb-tack',
 				),
-				'7'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Auto Friends', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'Allow the site admin to select global friends for all his members with BuddyPress Auto friends plugin.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-auto-friends/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-user-plus'
+				'7' => array(
+					'name'         => esc_html__( 'BuddyPress Auto Friends', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'Allow the site admin to select global friends for all his members with BuddyPress Auto friends plugin.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-auto-friends/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-user-plus',
 				),
-				'8'	 => array(
-					'name'			 => esc_html__( 'BuddyPress Quotes', 'buddypress-member-blog' ),
-					'description'	 => esc_html__( 'BuddyPress quotes plugin comes with the feature to let users post their activity updates with interactive backgrounds selection such as colors and images set by the site administrator, so they can tell a more expressive story.', 'buddypress-member-blog' ),
-					'download_url'	 => 'https://wbcomdesigns.com/downloads/buddypress-quotes/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'			 => 'fa fa-quote-left'
+				'8' => array(
+					'name'         => esc_html__( 'BuddyPress Quotes', 'buddypress-member-blog' ),
+					'description'  => esc_html__( 'BuddyPress quotes plugin comes with the feature to let users post their activity updates with interactive backgrounds selection such as colors and images set by the site administrator, so they can tell a more expressive story.', 'buddypress-member-blog' ),
+					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-quotes/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
+					'icon'         => 'fa fa-quote-left',
 				),
 			);
 			return $paid_plugins;
@@ -285,11 +292,11 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 * @param string $slug Plugin's slug.
 		 */
 		public function wbcom_is_plugin_installed( $slug ) {
-			if ( !function_exists( 'get_plugins' ) ) {
+			if ( ! function_exists( 'get_plugins' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 			$all_plugins = get_plugins();
-			$keys		 = array_keys( $all_plugins );
+			$keys        = array_keys( $all_plugins );
 			foreach ( $keys as $key ) {
 				if ( preg_match( '|^' . $slug . '/|', $key ) ) {
 					return true;
@@ -325,12 +332,12 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 * @param string $slug Plugin's slug.
 		 */
 		public function wbcom_is_plugin_active( $slug ) {
-			if ( !function_exists( 'get_plugins' ) ) {
+			if ( ! function_exists( 'get_plugins' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 			$all_plugins = get_plugins();
-			$keys		 = array_keys( $all_plugins );
-			$response	 = false;
+			$keys        = array_keys( $all_plugins );
+			$response    = false;
 			foreach ( $keys as $key ) {
 				if ( preg_match( '|^' . $slug . '/|', $key ) ) {
 					if ( is_plugin_active( $key ) ) {
@@ -351,23 +358,29 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 			if ( ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
 				wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
 			}
-			if ( !wp_script_is( 'wbcom_admin_setting_js', 'enqueued' ) ) {
+			if ( ! wp_script_is( 'wbcom_admin_setting_js', 'enqueued' ) ) {
 
 				wp_register_script(
-				$handle		 = 'wbcom_admin_setting_js', $src		 = BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/js/wbcom-admin-setting.js', $deps		 = array( 'jquery' ), $ver		 = time(), $in_footer	 = true
+					$handle    = 'wbcom_admin_setting_js',
+					$src       = BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/js/wbcom-admin-setting.js',
+					$deps      = array( 'jquery' ),
+					$ver       = time(),
+					$in_footer = true
 				);
 				wp_localize_script(
-				'wbcom_admin_setting_js', 'wbcom_plugin_installer_params', array(
-					'ajax_url'			 => admin_url( 'admin-ajax.php' ),
-					'activate_text'		 => esc_html__( 'Activate', 'buddypress-member-blog' ),
-					'deactivate_text'	 => esc_html__( 'Deactivate', 'buddypress-member-blog' )
-				)
+					'wbcom_admin_setting_js',
+					'wbcom_plugin_installer_params',
+					array(
+						'ajax_url'        => admin_url( 'admin-ajax.php' ),
+						'activate_text'   => esc_html__( 'Activate', 'buddypress-member-blog' ),
+						'deactivate_text' => esc_html__( 'Deactivate', 'buddypress-member-blog' ),
+					)
 				);
 				wp_enqueue_script( 'wbcom_admin_setting_js' );
 
 			}
 
-			if ( !wp_style_is( 'wbcom-admin-setting-css', 'enqueued' ) ) {
+			if ( ! wp_style_is( 'wbcom-admin-setting-css', 'enqueued' ) ) {
 				wp_enqueue_style( 'wbcom-admin-setting-css', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/css/wbcom-admin-setting.css' );
 			}
 
@@ -381,13 +394,28 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 */
 		public function wbcom_admin_additional_pages() {
 			add_submenu_page(
-			'wbcomplugins', esc_html__( 'Our Plugins', 'buddypress-member-blog' ), esc_html__( 'Our Plugins', 'buddypress-member-blog' ), 'manage_options', 'wbcom-plugins-page', array( $this, 'wbcom_plugins_submenu_page_callback' )
+				'wbcomplugins',
+				esc_html__( 'Our Plugins', 'buddypress-member-blog' ),
+				esc_html__( 'Our Plugins', 'buddypress-member-blog' ),
+				'manage_options',
+				'wbcom-plugins-page',
+				array( $this, 'wbcom_plugins_submenu_page_callback' )
 			);
 			add_submenu_page(
-			'wbcomplugins', esc_html__( 'Our Themes', 'buddypress-member-blog' ), esc_html__( 'Our Themes', 'buddypress-member-blog' ), 'manage_options', 'wbcom-themes-page', array( $this, 'wbcom_themes_submenu_page_callback' )
+				'wbcomplugins',
+				esc_html__( 'Our Themes', 'buddypress-member-blog' ),
+				esc_html__( 'Our Themes', 'buddypress-member-blog' ),
+				'manage_options',
+				'wbcom-themes-page',
+				array( $this, 'wbcom_themes_submenu_page_callback' )
 			);
 			add_submenu_page(
-			'wbcomplugins', esc_html__( 'Support', 'buddypress-member-blog' ), esc_html__( 'Support', 'buddypress-member-blog' ), 'manage_options', 'wbcom-support-page', array( $this, 'wbcom_support_submenu_page_callback' )
+				'wbcomplugins',
+				esc_html__( 'Support', 'buddypress-member-blog' ),
+				esc_html__( 'Support', 'buddypress-member-blog' ),
+				'manage_options',
+				'wbcom-support-page',
+				array( $this, 'wbcom_support_submenu_page_callback' )
 			);
 		}
 
@@ -428,49 +456,54 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 		 * @access public
 		 */
 		public function wbcom_admin_setting_header_html() {
-			$page			 = filter_input( INPUT_GET, 'page' ) ? filter_input( INPUT_GET, 'page' ) : 'wbcom-themes-page';
-			$plugin_active	 = $theme_active = $support_active = $settings_active = '';
+			$page          = filter_input( INPUT_GET, 'page' ) ? filter_input( INPUT_GET, 'page' ) : 'wbcom-themes-page';
+			$plugin_active = $theme_active = $support_active = $settings_active = '';
 			switch ( $page ) {
-				case 'wbcom-plugins-page': $plugin_active	 = 'is_active';
+				case 'wbcom-plugins-page':
+					$plugin_active = 'is_active';
 					break;
-				case 'wbcom-themes-page' : $theme_active	 = 'is_active';
+				case 'wbcom-themes-page':
+					$theme_active = 'is_active';
 					break;
-				case 'wbcom-support-page' : $support_active	 = 'is_active';
+				case 'wbcom-support-page':
+					$support_active = 'is_active';
 					break;
-				case 'wbcom-license-page' : $license_active	 = 'is_active';
+				case 'wbcom-license-page':
+					$license_active = 'is_active';
 					break;
-				default : $settings_active = 'is_active';
+				default:
+					$settings_active = 'is_active';
 			}
 			?>
 			<div id="wb_admin_header" class="wp-clearfix">
 
 				<div id="wb_admin_logo">
-					<img src="<?php echo BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/logowbcom.png'; ?>">
+					<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'admin/wbcom/assets/imgs/logowbcom.png'; ?>">
 					<div class="wb_admin_right"></div>
 				</div>
 
 				<nav id="wb_admin_nav">
 					<ul>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $settings_active ); ?>">
-							<a href="<?php echo get_admin_url() . 'admin.php?page=wbcomplugins'; ?>" id="wb_admin_nav_trigger_settings">
+							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcomplugins'; ?>" id="wb_admin_nav_trigger_settings">
 								<i class="fa fa-sliders"></i>
 								<h4><?php esc_html_e( 'Settings', 'buddypress-member-blog' ); ?></h4>
 							</a>
 						</li>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $plugin_active ); ?>">
-							<a href="<?php echo get_admin_url() . 'admin.php?page=wbcom-plugins-page'; ?>" id="wb_admin_nav_trigger_extensions">
+							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcom-plugins-page'; ?>" id="wb_admin_nav_trigger_extensions">
 								<i class="fa fa-th"></i>
 								<h4><?php esc_html_e( 'Our Plugins', 'buddypress-member-blog' ); ?></h4>
 							</a>
 						</li>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $theme_active ); ?>">
-							<a href="<?php echo get_admin_url() . 'admin.php?page=wbcom-themes-page'; ?>" id="wb_admin_nav_trigger_themes">
+							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcom-themes-page'; ?>" id="wb_admin_nav_trigger_themes">
 								<i class="fa fa-magic"></i>
 								<h4><?php esc_html_e( 'Our Themes', 'buddypress-member-blog' ); ?></h4>
 							</a>
 						</li>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $support_active ); ?>">
-							<a href="<?php echo get_admin_url() . 'admin.php?page=wbcom-support-page'; ?>" id="wb_admin_nav_trigger_support">
+							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcom-support-page'; ?>" id="wb_admin_nav_trigger_support">
 								<i class="fa fa-question-circle"></i>
 								<h4><?php esc_html_e( 'Support', 'buddypress-member-blog' ); ?></h4>
 							</a>
@@ -478,11 +511,17 @@ if ( !class_exists( 'Wbcom_Admin_Settings' ) ) {
 						<?php do_action( 'wbcom_add_header_menu' ); ?>
 					</ul>
 				</nav>
-			</div><?php
+			</div>
+			<?php
 		}
 
 	}
 
+	/**
+	 * Instantiate_wbcom_plugin_manager
+	 *
+	 * @return void
+	 */
 	function instantiate_wbcom_plugin_manager() {
 		new Wbcom_Admin_Settings();
 	}

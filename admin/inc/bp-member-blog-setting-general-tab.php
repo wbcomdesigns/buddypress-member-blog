@@ -2,6 +2,8 @@
 /**
  *
  * This file is used for rendering and saving plugin general settings.
+ *
+ * @package Buddypress_Member_Blog
  */
 
 // Exit if accessed directly.
@@ -21,7 +23,8 @@ $category = get_terms(
 
 
 $member_types_exist = false;
-$member_types       = bp_get_member_types( $args = array(), $output = 'object' );
+$args               = array();
+$member_types       = bp_get_member_types( $args, $output = 'object' );
 if ( ! empty( $member_types ) ) {
 	$member_types_exist = true;
 }
@@ -59,8 +62,8 @@ if ( ! empty( $member_types ) ) {
 
 				echo wp_dropdown_pages( $args ); // WPCS: XSS ok.
 				?>
-				<?php if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) : ?>
-					<a href="<?php echo get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ); ?>" class="button-secondary" target="_bp">
+				<?php if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && 0 != $bp_member_blog_gen_stngs['bp_post_page'] ) : ?>
+					<a href="<?php echo esc_url( get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) ); ?>" class="button-secondary" target="_bp">
 						<?php esc_html_e( 'View', 'buddypress-member-blog' ); ?>
 						<span class="dashicons dashicons-external" aria-hidden="true"></span>
 						<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'buddypress-member-blog' ); ?></span>
@@ -78,15 +81,19 @@ if ( ! empty( $member_types ) ) {
 				<ul>
 					<?php
 					foreach ( get_editable_roles() as $id => $role ) {
-						
+
 						?>
-						<li <?php if( $id == 'administrator' ):?> style="display:none;" <?php endif;?>>
+						<li 
+						<?php
+						if ( 'administrator' === $id ) :
+							?>
+							style="display:none;" <?php endif; ?>>
 							<label class="wb-switch">
 								<input type="checkbox" id="bp_create_post_<?php echo esc_attr( $id ); ?>" name="bp_member_blog_gen_stngs[bp_create_post][]" value="<?php echo esc_attr( $id ); ?>"
-																					 <?php
-																						if ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && in_array( $id, $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
-																							echo 'checked';}
-																						?>
+																					<?php
+																					if ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && in_array( $id, $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
+																						echo 'checked';}
+																					?>
 								/>
 								<div class="wb-slider wb-round"></div>
 							</label>
@@ -107,7 +114,7 @@ if ( ! empty( $member_types ) ) {
 				<select id="bp-member-types-list" name="bp_member_blog_gen_stngs[member_types][]" multiple data-placeholder="<?php esc_html_e( 'Select member type to create post', 'buddypress-member-blog' ); ?>">
 					<?php foreach ( $member_types as $key => $type_obj ) { ?>
 						<?php $selected = ( ! empty( $bp_member_blog_gen_stngs['member_types'] ) && in_array( $key, $bp_member_blog_gen_stngs['member_types'] ) ) ? 'selected' : ''; ?>
-					<option value="<?php echo $key; ?>" <?php echo $selected; ?>><?php echo $type_obj->labels['name']; ?></option>
+					<option value="<?php echo esc_attr( $key ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $type_obj->labels['name'] ); ?></option>
 					<?php } ?>
 				</select>
 				<p class="description"><?php esc_html_e( 'Selected member type will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
@@ -156,7 +163,7 @@ if ( ! empty( $member_types ) ) {
 				foreach ( $category as $cat ) {
 					$selected = ( ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) && in_array( $cat->term_id, $bp_member_blog_gen_stngs['exclude_category'] ) ) ? 'selected' : '';
 					?>
-					<option value="<?php echo $cat->term_id; ?>" <?php echo $selected; ?>><?php echo $cat->name; ?></option>
+					<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $cat->name ); ?></option>
 				<?php } ?>
 				</select>
 			</td>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -91,11 +90,14 @@ function run_buddypress_member_blog() {
 run_buddypress_member_blog();
 
 
-/**
- * redirect to plugin settings page after activated
- */
 
 add_action( 'activated_plugin', 'bp_member_blog_activation_redirect_settings' );
+/**
+ * Bp_member_blog_activation_redirect_settings
+ *
+ * @param  string $plugin plugin.
+ * @return void
+ */
 function bp_member_blog_activation_redirect_settings( $plugin ) {
 
 	if ( $plugin == plugin_basename( __FILE__ ) && class_exists( 'Buddypress' ) ) {
@@ -132,6 +134,7 @@ function buddypress_member_blog_required_plugin_admin_notice() {
 	$bpmb_plugin = esc_html__( ' BuddyPress Member Blog', 'buddypress-member-blog' );
 	$bp_plugin   = esc_html__( 'BuddyPress', 'buddypress-member-blog' );
 	echo '<div class="error"><p>';
+	/* translators: %s: */
 	echo sprintf( esc_html__( '%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog' ), '<strong>' . esc_html( $bpmb_plugin ) . '</strong>', '<strong>' . esc_html( $bp_plugin ) . '</strong>' );
 	echo '</p></div>';
 	if ( isset( $_GET['activate'] ) ) {

@@ -2,6 +2,8 @@
 /**
  *
  * This template file is used for fetching desired options page file at admin settings end.
+ *
+ * @package Buddypress_Member_Blog
  */
 
 // Exit if accessed directly.
@@ -9,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 if ( isset( $_GET['tab'] ) ) {
-	$bautof_tab = sanitize_text_field( $_GET['tab'] );
+	$bautof_tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) );
 } else {
 	$bautof_tab = 'welcome';
 }

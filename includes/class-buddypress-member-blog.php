@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -98,7 +97,6 @@ class Buddypress_Member_Blog {
 	 * @access   private
 	 */
 	private function load_dependencies() {
-		
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
@@ -116,8 +114,8 @@ class Buddypress_Member_Blog {
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-buddypress-member-blog-admin.php';
-                
-                /* Enqueue wbcom plugin folder file. */
+
+				/* Enqueue wbcom plugin folder file. */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/wbcom/wbcom-admin-settings.php';
 
 		/* Enqueue wbcom license file. */
@@ -127,9 +125,8 @@ class Buddypress_Member_Blog {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';		
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';		
-		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';
 
 		$this->loader = new Buddypress_Member_Blog_Loader();
 
@@ -165,12 +162,12 @@ class Buddypress_Member_Blog {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		
+
 		/* Plugin settings page */
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'bp_member_blog_add_plugin_settings_page' );
-		
+
 		/* Plugin register settings */
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'bp_member_blog_add_plugin_settings' );		
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'bp_member_blog_add_plugin_settings' );
 
 	}
 
@@ -186,23 +183,21 @@ class Buddypress_Member_Blog {
 		$plugin_public = new Buddypress_Member_Blog_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );		
-		
-		$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_setup_nav', 100);
-		$this->loader->add_action( 'bp_setup_admin_bar', $plugin_public, 'buddypress_member_blog_setup_admin_bar', 100);
-		
-		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish');
-		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish');
-		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete');
-		
-		//$this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);		
-		//$this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);
-		
-		
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_setup_nav', 100 );
+		$this->loader->add_action( 'bp_setup_admin_bar', $plugin_public, 'buddypress_member_blog_setup_admin_bar', 100 );
+
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish' );
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish' );
+		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete' );
+
+		// $this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
+		// $this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);
+
 		$this->loader->add_shortcode( 'bp-member-blog', $plugin_public, 'buddypress_shortcodes_member_blog' );
-		
+
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'buddypress_member_blog_post_submit' );
-		
 
 	}
 

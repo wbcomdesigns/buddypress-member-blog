@@ -158,7 +158,10 @@ class Buddypress_Member_Blog_Public {
 		if ( empty($display_user)) {
 			return;
 		}
-
+		if (  !isset( $bp_member_blog_gen_stngs['bp_create_post'] )  ){
+			$bp_member_blog_gen_stngs['bp_create_post'] = array( 'administrator' );
+		}
+		
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();

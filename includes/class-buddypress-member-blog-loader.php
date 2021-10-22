@@ -130,14 +130,14 @@ class Buddypress_Member_Blog_Loader {
 
 	}
 
-	 /**
-	  * Add a new shortcode to the collection to be registered with WordPress.
-	  *
-	  * @since    1.0.0
-	  * @param    string $hook             The name of the shortcode that is being registered.
-	  * @param    object $component        A reference to the instance of the object on which the filter is defined.
-	  * @param    string $callback         The name of the function definition on the $component.
-	  */
+	/**
+	 * Add a new shortcode to the collection to be registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 * @param    string $hook             The name of the shortcode that is being registered.
+	 * @param    object $component        A reference to the instance of the object on which the filter is defined.
+	 * @param    string $callback         The name of the function definition on the $component.
+	 */
 	public function add_shortcode( $hook, $component, $callback ) {
 		$this->shortcode = $this->add( $this->shortcode, $hook, $component, $callback, '', '' );
 	}

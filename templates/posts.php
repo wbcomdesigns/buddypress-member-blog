@@ -50,7 +50,7 @@ $query_args = array(
 	'paged'       => intval( $paged ),
 );
 // do the query.
-query_posts( $query_args );
+query_posts( $query_args );// phpcs:ignore
 ?>
 <div  class="bp-member-blog-container">
 	<?php if ( have_posts() ) : ?>
@@ -77,7 +77,7 @@ query_posts( $query_args );
 
 					<h3 class="entry-title">
 						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_html_e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						<?php if ( $action_button == true ) : ?>
+						<?php if ( true == $action_button ) : ?>
 							<span class="bp-edit-post"><?php echo bp_member_blog_get_edit_link(); //phpcs:ignore ?></span>
 						<?php endif; ?>
 					</h3>
@@ -103,7 +103,7 @@ query_posts( $query_args );
 						?>
 					</div>
 
-					<?php if ( $action_button == true ) : ?>
+					<?php if ( true == $action_button ) : ?>
 						<div class="post-actions">
 							<span class="publish-post"><?php echo bp_member_blog_get_post_publish_unpublish_link( get_the_ID() ); //phpcs:ignore ?></span>
 							<span class="delete-post"><?php echo bp_member_blog_get_delete_link(); //phpcs:ignore ?></span>
@@ -128,6 +128,6 @@ query_posts( $query_args );
 
 	<?php
 	wp_reset_postdata();
-	wp_reset_query();
+	wp_reset_query();//phpcs:ignore
 	?>
 </div>

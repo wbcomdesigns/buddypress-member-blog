@@ -100,7 +100,6 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( 0 == $post_id || 
 			<?php do_action( 'bp_post_before_tag', $post_id ); ?>
 
 			<label for="bp_member_blog_post_tag"><?php esc_html_e( 'Post tag:', 'buddypress-member-blog' ); ?>
-				<!--input type="text" name="bp_member_blog_post_tag" value="<?php // echo (!empty($post_selected_tag) )? implode(',', $post_selected_tag): ''; ?>" /-->
 				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1"  name="bp_member_blog_post_tag" placeholder="<?php esc_html_e( 'Please add post tags with comma separator.', 'buddypress-member-blog' ); ?>" value="">
 				<ul class="bpmb-post-tag-lists">
 					<?php if ( ! empty( $post_selected_tag ) ) : ?>
@@ -126,7 +125,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( 0 == $post_id || 
 
 				<div class="bp_member_blog_post_img_preview" 
 				<?php
-				if ( $post_thumbnail == '' ) :
+				if ( '' == $post_thumbnail ) :
 					?>
 					style="display:none;" <?php endif; ?>>
 					<img id="bp_member_post_img_preview" src="<?php echo esc_url( $post_thumbnail ); ?>" alt="pic"  width="200", height="200"/>
@@ -142,7 +141,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( 0 == $post_id || 
 				<input type="hidden" name="bp_member_blog_post_id" value="<?php echo esc_attr( $post_id ); ?>" id="post_ID"/>
 			<?php endif; ?>
 
-			<input type="hidden" value="<?php echo $_SERVER['REQUEST_URI']; ?>" name="post_form_url"/>
+			<input type="hidden" value="<?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?>" name="post_form_url"/>
 			<input id="submit" name="bp_member_blog_form_subimitted" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr( $submit_btn_value ); ?>"/>
 			<?php if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) ) : ?>
 				<input id="submit" name="bp_member_blog_form_save" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr__( 'Save', 'buddypress-member-blog' ); ?>"/>

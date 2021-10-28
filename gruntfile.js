@@ -35,6 +35,7 @@ module.exports = function(grunt) {
 							'**/*.php',
 							'!node_modules/**',
 							'!options/framework/**',
+							'!plugin-update-checker/**',
 							'!tests/**'
 						], // all php
 						expand: true
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
 					options: {
 						cwd: '.', // Directory of files to internationalize.
 						domainPath: 'languages/', // Where to save the POT file.
-						exclude: ['node_modules/*', 'options/framework/*'], // List of files or directories to ignore.
+						exclude: ['node_modules/*', 'options/framework/*', 'plugin-update-checker/**',], // List of files or directories to ignore.
 						mainFile: 'index.php', // Main project file.
 						potFilename: 'buddypress-member-blog.pot', // Name of the POT file.
 						potHeaders: { // Headers to add to the generated POT file.

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 13:45:57+00:00\n"
+"POT-Creation-Date: 2021-10-28 07:09:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,109 +78,109 @@ msgstr ""
 msgid "Allowed user roles to create post?"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:98
+#: admin/inc/bp-member-blog-setting-general-tab.php:99
 msgid "Selected user roles will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:104
+#: admin/inc/bp-member-blog-setting-general-tab.php:105
 msgid "Allowed member types wise to create post?"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:106
+#: admin/inc/bp-member-blog-setting-general-tab.php:107
 msgid "Select member type to create post"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:112
+#: admin/inc/bp-member-blog-setting-general-tab.php:113
 msgid "Selected member type will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:119
+#: admin/inc/bp-member-blog-setting-general-tab.php:120
 msgid "Enable user publishing"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:127
+#: admin/inc/bp-member-blog-setting-general-tab.php:128
 msgid ""
 "Allow user to publish posts. if not enable, they can only submit post as "
 "pending for review."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:134
+#: admin/inc/bp-member-blog-setting-general-tab.php:135
 msgid "Media management"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:142
+#: admin/inc/bp-member-blog-setting-general-tab.php:143
 msgid "When blog post removed permanently delete the associated media file."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:149
+#: admin/inc/bp-member-blog-setting-general-tab.php:150
 msgid "Exclude categories"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:153
+#: admin/inc/bp-member-blog-setting-general-tab.php:154
 msgid "Select category to exclude on fronted"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:15
+#: admin/inc/bp-member-blog-welcome-page.php:20
 msgid "BuddyPress Member Blog"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:16
+#: admin/inc/bp-member-blog-welcome-page.php:21
 msgid ""
 "Allow your BuddyPress members to create and manage their blog posts.  Allow "
 "them to publish their posts directly or send them for review. one you can "
 "easily navigate to any member's profile to read  their posts."
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:26
+#: admin/inc/bp-member-blog-welcome-page.php:29
 msgid "Help &amp; Support Resources"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:27
+#: admin/inc/bp-member-blog-welcome-page.php:30
 msgid ""
 "Here are all the resources you may need to get help from us. Documentation "
 "is usually the best place to start. Should you require help anytime, our "
 "customer care team is available to assist you at the support center."
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:33
+#: admin/inc/bp-member-blog-welcome-page.php:36
 msgid "Documentation"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:34
+#: admin/inc/bp-member-blog-welcome-page.php:37
 msgid ""
-"We have prepared an extensive guide on BuddyPress Auto Friends to learn all "
+"We have prepared an extensive guide on BuddyPress Member Blog to learn all "
 "aspects of the plugin. You will find most of your answers here."
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:35
+#: admin/inc/bp-member-blog-welcome-page.php:38
 msgid "Read Documentation"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:39
+#: admin/inc/bp-member-blog-welcome-page.php:42
 msgid "Support Center"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:40
+#: admin/inc/bp-member-blog-welcome-page.php:43
 msgid ""
 "We strive to offer the best customer care via our support center. Once your "
 "theme is activated, you can ask us for help anytime."
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:41
+#: admin/inc/bp-member-blog-welcome-page.php:44
 msgid "Get Support"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:45
+#: admin/inc/bp-member-blog-welcome-page.php:48
 msgid "Got Feedback?"
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:46
+#: admin/inc/bp-member-blog-welcome-page.php:49
 msgid ""
 "We want to hear about your experience with the plugin. We would also love "
 "to hear any suggestions you may for future updates."
 msgstr ""
 
-#: admin/inc/bp-member-blog-welcome-page.php:47
+#: admin/inc/bp-member-blog-welcome-page.php:50
 msgid "Send Feedback"
 msgstr ""
 
@@ -597,145 +597,189 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: buddypress-member-blog.php:138
+#: buddypress-member-blog.php:132
 msgid " BuddyPress Member Blog"
 msgstr ""
 
-#: buddypress-member-blog.php:139
+#: buddypress-member-blog.php:133
 msgid "BuddyPress"
 msgstr ""
 
-#: buddypress-member-blog.php:141
+#: buddypress-member-blog.php:135
 msgid "%1$s is ineffective now as it requires %2$s to be installed and active."
 msgstr ""
 
-#: includes/buddypress-member-blog-functions.php:69
+#: includes/buddypress-member-blog-functions.php:78
 msgid "Publish"
 msgstr ""
 
-#: includes/buddypress-member-blog-functions.php:73
+#: includes/buddypress-member-blog-functions.php:82
 msgid "Unpublish"
 msgstr ""
 
-#: includes/buddypress-member-blog-functions.php:137
+#: includes/buddypress-member-blog-functions.php:146
 msgid "Edit"
 msgstr ""
 
-#: includes/buddypress-member-blog-functions.php:208
+#: includes/buddypress-member-blog-functions.php:213
 msgid "Delete"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:133
-msgid "Blog"
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
+msgid "View details"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:143
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:77
+msgid "More information about %s"
+msgstr ""
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr ""
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:223
+msgid "Unknown update checker status \"%s\""
+msgstr ""
+
+#: plugin-update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:140
+#: public/class-buddypress-member-blog-public.php:176
+#: public/class-buddypress-member-blog-public.php:197
+msgid "Blog %s"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:207
+#: public/class-buddypress-member-blog-public.php:298
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:176
+#: public/class-buddypress-member-blog-public.php:225
+#: public/class-buddypress-member-blog-public.php:308
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:257
+#: public/class-buddypress-member-blog-public.php:273
+msgid "Blog"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:307
+msgid "add-new"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:386
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:285
+#: public/class-buddypress-member-blog-public.php:414
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:316
+#: public/class-buddypress-member-blog-public.php:445
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:354
-#: public/class-buddypress-member-blog-public.php:435
+#: public/class-buddypress-member-blog-public.php:486
+#: public/class-buddypress-member-blog-public.php:593
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:354
-#: public/class-buddypress-member-blog-public.php:370
+#: public/class-buddypress-member-blog-public.php:486
+#: public/class-buddypress-member-blog-public.php:505
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:370
-#: public/class-buddypress-member-blog-public.php:439
-msgid "Post created successfully."
-msgstr ""
-
-#: public/class-buddypress-member-blog-public.php:372
+#: public/class-buddypress-member-blog-public.php:488
+#: public/class-buddypress-member-blog-public.php:507
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:499
+#: public/class-buddypress-member-blog-public.php:505
+#: public/class-buddypress-member-blog-public.php:597
+msgid "Post created successfully."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:544
+msgid "Post saved successfully."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:657
 msgid "You are not allowed to access this page."
 msgstr ""
 
-#: templates/edit.php:42
+#: templates/edit.php:35
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:42
+#: templates/edit.php:35
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:53
+#: templates/edit.php:38
+msgid "Submit for Review"
+msgstr ""
+
+#: templates/edit.php:49
 msgid "Title:"
 msgstr ""
 
-#: templates/edit.php:62
+#: templates/edit.php:58
 msgid "Post Content:"
 msgstr ""
 
-#: templates/edit.php:81
+#: templates/edit.php:77
 msgid "Post Category:"
 msgstr ""
 
-#: templates/edit.php:83
+#: templates/edit.php:79
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:100
+#: templates/edit.php:96
 msgid "Post tag:"
 msgstr ""
 
-#: templates/edit.php:102
-msgid "Select post tag"
+#: templates/edit.php:100
+msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:118
+#: templates/edit.php:121
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/posts.php:72
+#: templates/edit.php:147
+msgid "Save"
+msgstr ""
+
+#: templates/posts.php:77
 msgid "Permanent Link to"
 msgstr ""
 
-#: templates/posts.php:74
-msgid "%1$s <span>in %2$s</span>"
+#: templates/posts.php:84
+msgid "%1$s"
 msgstr ""
 
-#: templates/posts.php:78
+#: templates/posts.php:88
 msgid "Read the rest of this entry &rarr;"
 msgstr ""
 
-#: templates/posts.php:79
+#: templates/posts.php:89
 msgid "Pages: "
 msgstr ""
 
-#: templates/posts.php:82
-msgid "Tags: "
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
 msgstr ""
 
-#: templates/posts.php:83
-msgid "No Comments &#187;"
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:215
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
 msgstr ""
 
-#: templates/posts.php:83
-msgid "1 Comment &#187;"
-msgstr ""
-
-#: templates/posts.php:83
-msgid "% Comments &#187;"
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:217
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
 msgstr ""

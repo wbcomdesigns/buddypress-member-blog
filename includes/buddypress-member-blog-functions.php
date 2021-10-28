@@ -1,5 +1,15 @@
 <?php
 /**
+ * BuddyPress Member Blog plugin functions file.
+ *
+ * @link       https://wbcomdesigns.com/
+ * @since      1.0.0
+ *
+ * @package    Buddypress_Member_Blog
+ * @subpackage Buddypress_Member_Blog/admin/includes
+ */
+
+/**
  * Get the url of the bp member blog component for the given user
  *
  * @param int|bool $user_id id of user.
@@ -11,9 +21,8 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 	if ( ! $user_id ) {
 		$user_id = bp_displayed_user_id();
 	}
-	
 
-	$url = bp_core_get_user_domain( $user_id ) . "blog" . '/';
+	$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
 
 	return $url;
 }
@@ -35,7 +44,7 @@ function bp_member_blog_get_new_url() {
 	}
 
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $user_id ) . "blog" . '/edit/';
+	return bp_core_get_user_domain( $user_id ) . 'blog' . '/edit/';
 }
 
 
@@ -53,13 +62,13 @@ function bp_member_blog_get_post_publish_unpublish_link( $post_id = 0, $label_ac
 	if ( ! $post_id ) {
 		return '';
 	}
-	
-	if ( get_post_field( 'post_status', $post_id ) ==  'pending' ) {
+
+	if ( get_post_field( 'post_status', $post_id ) == 'pending' ) {
 		return '';
 	}
-	
+
 	$is_published = bp_member_blog_is_post_published( $post_id );
-	
+
 	$post = get_post( $post_id );
 
 	$url = '';
@@ -98,15 +107,15 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 
 	$post = get_post( $post_id );
 	$url  = '';
-	
+
 	// check if post is published.
-	$url = bp_core_get_user_domain( $post->post_author ) . "blog" . '/';
+	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . '/';
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
 	} else {
 		$url = $url . 'publish/' . $post_id . '/';
-	}	
+	}
 
 	return $url;
 
@@ -132,20 +141,20 @@ function bp_member_blog_is_post_published( $post_id ) {
  * @return string
  */
 function bp_member_blog_get_edit_link( $id = 0, $label = '' ) {
-	
+
 	if ( empty( $label ) ) {
 		$label = __( 'Edit', 'buddypress-member-blog' );
 	}
 	$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-	
-	if ( isset($bp_member_blog_gen_stngs['bp_post_page']) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+
+	if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
 		if ( empty( $id ) ) {
 			$id = get_the_ID();
 		}
-		$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) . "?post_id=" . $id . "&action=edit";
-		
+		$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) . '?post_id=' . $id . '&action=edit';
+
 	} else {
-	
+
 		$url = bp_member_blog_get_edit_url( $id );
 	}
 
@@ -178,7 +187,6 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 	// check if current user can edit the post.
 	$post = get_post( $post_id );
-	
 
 	if ( $post->post_author != $user_id && ! is_super_admin() ) {
 		return '';
@@ -186,10 +194,8 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 
 	$action_name = 'bp-new-post';
 
-	
-
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $post->post_author ) . "blog" . "/{$action_name}/" . $post->ID . '/';
+	return bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 }
 
 
@@ -202,7 +208,6 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
  * @return string
  */
 function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
-	
 
 	if ( empty( $label ) ) {
 		$label = __( 'Delete', 'buddypress-member-blog' );
@@ -214,7 +219,7 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 
 	$action_name = 'delete';
 
-	$url = bp_core_get_user_domain( $post->post_author ) . "blog" . "/{$action_name}/" . $post->ID . '/';
+	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 
@@ -239,20 +244,24 @@ function bp_member_blog_paginate() {
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 		// structure of “format” depends on whether we’re using pretty permalinks.
-		$format = '?paged=%#%';
+		$format  = '?paged=%#%';
 		$user_id = get_current_user_id();
-		$base   = trailingslashit( bp_core_get_user_domain( $user_id ) . "blog" );
-		
-		echo paginate_links( array(
-			'base'     => $base . '%_%',
-			'format'   => $format,
-			'current'  => $current_page,
-			'total'    => $total,						
-			'end_size' =>   1,
-			'mid_size' =>   2,
-			'prev_next'=>   true,      
-			'type'     =>   'plain',
-		) );
-		
+		$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );
+
+		echo wp_kses_post(
+			paginate_links(
+				array(
+					'base'      => $base . '%_%',
+					'format'    => $format,
+					'current'   => $current_page,
+					'total'     => $total,
+					'end_size'  => 1,
+					'mid_size'  => 2,
+					'prev_next' => true,
+					'type'      => 'plain',
+				)
+			)
+		);
+
 	}
 }

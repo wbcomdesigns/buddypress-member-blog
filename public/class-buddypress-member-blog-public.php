@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -137,6 +136,7 @@ class Buddypress_Member_Blog_Public {
 		if ( is_admin() ) {
 			bp_core_new_nav_item(
 				array(
+					/* translators: %s: */
 					'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 					'slug'                => 'blog',
 					'screen_function'     => array( $this, 'bp_member_posts' ),
@@ -173,6 +173,7 @@ class Buddypress_Member_Blog_Public {
 			} else {
 				bp_core_new_nav_item(
 					array(
+						/* translators: %s: */
 						'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 						'slug'                => 'blog',
 						'screen_function'     => array( $this, 'bp_member_posts' ),
@@ -191,6 +192,7 @@ class Buddypress_Member_Blog_Public {
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(
+				/* translators: %s: */
 				'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
 				'slug'                => 'blog',
 				'screen_function'     => array( $this, 'bp_member_posts' ),
@@ -239,7 +241,7 @@ class Buddypress_Member_Blog_Public {
 
 		$blog_slug = bp_loggedin_user_domain() . 'blog';
 
-		// Menus for logged in user
+		// Menus for logged in user.
 		if ( is_user_logged_in() ) {
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
@@ -275,7 +277,7 @@ class Buddypress_Member_Blog_Public {
 
 			$href = trailingslashit( $create_new_post_page );
 
-			// Keeping addnew post same if network activated
+			// Keeping addnew post same if network activated.
 			if ( is_multisite() ) {
 				if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
 					require_once ABSPATH . '/wp-admin/includes/plugin.php';
@@ -285,7 +287,7 @@ class Buddypress_Member_Blog_Public {
 				}
 			}
 
-			// Add add-new submenu
+			// Add add-new submenu.
 			$wp_admin_bar->add_menu(
 				array(
 					'parent' => 'my-account-blog',
@@ -299,7 +301,7 @@ class Buddypress_Member_Blog_Public {
 				$wp_admin_bar->add_menu(
 					array(
 						'parent' => 'my-account-blog',
-						'id'     => 'my-account-blog' . '-' . __( 'add-new', 'buddypress-member-blog' ),
+						'id'     => 'my-account-blog-' . __( 'add-new', 'buddypress-member-blog' ),
 						'title'  => __( 'New Post', 'buddypress-member-blog' ),
 						'href'   => $href,
 					)
@@ -326,7 +328,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function load_member_blog_content_nav_content() {
-		 load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/posts.php' );
+		load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/posts.php' );
 	}
 
 
@@ -447,18 +449,18 @@ class Buddypress_Member_Blog_Public {
 
 	public function buddypress_member_blog_post_submit() {
 
-		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( $_POST['_wpnonce'], 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
+		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
 
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 			$post_title = '';
 			if ( ! empty( $_POST['bp_member_blog_post_title'] ) ) {
-				$post_title = $_POST['bp_member_blog_post_title'];
+				$post_title = wp_kses_post( wp_unslash( $_POST['bp_member_blog_post_title'] ) );
 			}
 
 			$post_content = '';
-			if ( ! empty( $_POST['bp_member_blog_post_content'] ) ) {
-				$post_content = $_REQUEST['bp_member_blog_post_content'];
+			if ( isset( $_REQUEST['bp_member_blog_post_content'] ) && ! empty( $_POST['bp_member_blog_post_content'] ) ) {
+				$post_content = wp_kses_post( wp_unslash( $_REQUEST['bp_member_blog_post_content'] ) );
 			}
 
 			if ( isset( $_POST['bp_member_blog_post_id'] ) && $_POST['bp_member_blog_post_id'] != 0 && $_POST['bp_member_blog_post_id'] != '' ) {
@@ -466,7 +468,7 @@ class Buddypress_Member_Blog_Public {
 				/* Update Post */
 				$post_id   = wp_update_post(
 					array(
-						'ID'           => $_POST['bp_member_blog_post_id'],
+						'ID'           => wp_kses_post( wp_unslash( $_POST['bp_member_blog_post_id'] ) ),
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
@@ -500,11 +502,15 @@ class Buddypress_Member_Blog_Public {
 				}
 			}
 
-			/*  Assign Category */
-			wp_set_post_terms( $post_id, $_POST['bp_member_blog_post_category'], 'category', false );
+			if ( isset( $_POST['bp_member_blog_post_category'] ) ) {
+				/*  Assign Category */
+				wp_set_post_terms( $post_id, sanitize_text_field( wp_unslash( $_POST['bp_member_blog_post_category'] ) ), 'category', false );
+			}
 
-			/*  Assign Post Tags */
-			wp_set_post_tags( $post_id, $_POST['bp_member_blog_post_tag'], false );
+			if ( isset( $_POST['bp_member_blog_post_tag'] ) ) {
+				/*  Assign Post Tags */
+				wp_set_post_tags( $post_id, sanitize_text_field( wp_unslash( $_POST['bp_member_blog_post_tag'] ) ), false );
+			}
 
 			if ( isset( $_FILES['bp_member_blog_post_featured_image'] ) && ! empty( $_FILES['bp_member_blog_post_featured_image'] ) ) {
 
@@ -633,7 +639,7 @@ class Buddypress_Member_Blog_Public {
 		 * Check current user role to allowed create post or not
 		 *
 		 */
-		 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$member_types = bp_get_member_type( get_current_user_id(), false );
 		if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
@@ -660,7 +666,7 @@ class Buddypress_Member_Blog_Public {
 				?>
 				<aside class="bp-feedback bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
 					<span class="bp-icon" aria-hidden="true"></span>
-					<p><?php echo $bp->template_message; ?></p>
+					<p><?php echo wp_kses_post( $bp->template_message ); ?></p>
 				</aside>
 				<?php
 				$bp->template_message      = '';

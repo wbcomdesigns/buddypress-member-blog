@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -132,7 +131,7 @@ class Buddypress_Member_Blog_Admin {
 	 * @since 1.0.0
 	 */
 	public function bp_member_blog_settings_page() {
-		$current          = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : 'welcome';
+		$current          = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'welcome';
 		$member_blog_tabs = apply_filters(
 			'bp_member_blog_admin_setting_tabs',
 			array(
@@ -164,7 +163,7 @@ class Buddypress_Member_Blog_Admin {
 							<?php
 							foreach ( $member_blog_tabs as $bmpro_tab => $bmpro_name ) {
 								$class = ( $bmpro_tab == $current ) ? 'nav-tab-active' : '';
-								echo '<li><a class="nav-tab ' . $class . '" href="admin.php?page=buddypress-member-blog&tab=' . $bmpro_tab . '">' . $bmpro_name . '</a></li>';
+								echo '<li><a class="nav-tab ' . esc_attr( $class ) . '" href="admin.php?page=buddypress-member-blog&tab=' . esc_attr( $bmpro_tab ) . '">' . esc_html( $bmpro_name ) . '</a></li>';
 							}
 							?>
 							</ul>

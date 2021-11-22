@@ -21,8 +21,5 @@ switch ( $bautof_tab ) {
 	case 'general':
 		include 'bp-member-blog-setting-general-tab.php';
 		break;
-	default:
-		include 'bp-member-blog-welcome-page.php';
-		break;
 }
 

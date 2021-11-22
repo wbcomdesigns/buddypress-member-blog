@@ -124,7 +124,6 @@ class Buddypress_Member_Blog_Admin {
 	 */
 	public function bp_member_blog_add_plugin_settings() {
 		register_setting( 'bp_member_blog_general_settigs', 'bp_member_blog_gen_stngs' );
-
 	}
 
 	/**
@@ -171,7 +170,10 @@ class Buddypress_Member_Blog_Admin {
 							</ul>
 						</div>
 					</div>
-					<?php include 'inc/bp-member-blog-options-page.php'; ?>
+					<?php
+					include 'inc/bp-member-blog-options-page.php';
+					do_action( 'bp_member_blog_tab_contents' );
+					?>
 				</div>
 			</div> <!-- closing div class wbcom-wrap -->
 		</div> <!-- closing div class wrap -->

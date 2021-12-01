@@ -119,7 +119,7 @@ query_posts( $query_args );
 				<?php bp_member_blog_paginate(); ?>
 			</div>
 	<?php else : ?>
-			<p><?php echo sprintf( "<p>%s haven't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) ); ?></p>
+			<p><?php echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) ); ?></p>
 	<?php endif; ?>
 
 	<?php

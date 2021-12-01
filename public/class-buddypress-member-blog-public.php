@@ -282,7 +282,7 @@ class Buddypress_Member_Blog_Public {
 				if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
 					require_once ABSPATH . '/wp-admin/includes/plugin.php';
 				}
-				if ( is_plugin_active_for_network( basename( constant( 'BP_PLUGIN_DIR' ) ) . '/bp-loader.php' ) && is_plugin_active_for_network( basename( constant( 'BUDDYBOSS_SAP_PLUGIN_DIR' ) ) . '/bp-user-blog.php' ) ) {
+				if ( is_plugin_active_for_network( basename( constant( 'BP_PLUGIN_DIR' ) ) . '/bp-loader.php' ) && is_plugin_active_for_network( basename( constant( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL' ) ) . '/bp-user-blog.php' ) ) {
 					$href = trailingslashit( get_blog_permalink( 1, $create_new_post_page ) );
 				}
 			}

@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.8.1
-Stable tag: 1.3.0
+Tested up to: 5.8.2
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,13 @@ e.g.
 
 
 == Changelog ==
+= 1.4.0 =
+* Fix: (#30) Fixed Grammatical error
+* Fix: (#33) Fixed admin warning
+* Fix: Introduce new admin action hooks
+* Fix: Fixed phpcs errors
+* Fix: Fixed escaping function error
+
 = 1.3.0 =
 * Fix: updated permissions for displayed member profile
 

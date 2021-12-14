@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 1.4.1 =
+* Fix: (#36) Fixed category and tags are not adding from front-end
+
 = 1.4.0 =
 * Fix: (#30) Fixed Grammatical error
 * Fix: (#33) Fixed admin warning

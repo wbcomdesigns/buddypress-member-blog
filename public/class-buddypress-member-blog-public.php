@@ -684,4 +684,45 @@ class Buddypress_Member_Blog_Public {
 		return ob_get_clean();
 	}
 
+	/**
+	 * Filter to edit the URL of the nav item.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $link     The URL for the nav item.
+	 * @param object $nav_item The current nav item object.
+	 */
+	public function buddypress_member_blog_bp_nouveau_get_nav_link( $link, $nav_item ) {
+		$bp_nouveau = bp_nouveau();
+		$nav_item   = $bp_nouveau->current_nav_item;
+		$link       = '#';
+		if ( ! empty( $nav_item->link ) ) {
+			$link = $nav_item->link;
+		}
+		if ( 'personal' === $bp_nouveau->displayed_nav && ! empty( $nav_item->primary ) ) {
+			if ( bp_loggedin_user_domain() ) {
+				$link = str_replace( bp_loggedin_user_domain(), bp_displayed_user_domain(), $link );
+			} else {
+				$link = trailingslashit( bp_displayed_user_domain() . $link );
+			}
+		}
+		return $link;
+	}
+
+	/**
+	 * Fire the 'bp_setup_nav' action, where plugins should register their navigation items.
+	 */
+	public function buddypress_member_blog_bp_legecy_get_nav_link() {
+		$user_nav_items = buddypress()->members->nav->get_primary();
+		if ( $user_nav_items ) {
+			foreach ( $user_nav_items as $user_nav_item ) {
+				if ( ! isset( $user_nav_item->css_id ) || ! $user_nav_item->css_id ) {
+					continue;
+				}
+				remove_filter( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, 'BP\Rewrites\bp_get_displayed_user_nav', 1, 2 );
+			}
+		}
+
+	}
+
 }

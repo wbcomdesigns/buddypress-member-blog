@@ -196,7 +196,10 @@ class Buddypress_Member_Blog {
 		$this->loader->add_shortcode( 'bp-member-blog', $plugin_public, 'buddypress_shortcodes_member_blog' );
 
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'buddypress_member_blog_post_submit' );
-
+		if ( in_array( 'bp-rewrites/class-bp-rewrites.php', get_option( 'active_plugins' ) ) ) {
+			$this->loader->add_filter( 'bp_nouveau_get_nav_link', $plugin_public, 'buddypress_member_blog_bp_nouveau_get_nav_link', 10, 2 );
+			$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_bp_legecy_get_nav_link', 9999 );
+		}
 	}
 
 	/**

@@ -3,6 +3,7 @@
 ----------------------------------------------------------------
 # Add New Post / Update Post
 # Single Profile Page
+# RTL Support
 --------------------------------------------------------------*/
 
 
@@ -128,6 +129,7 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     padding-bottom: 30px;
     padding-top: 30px;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .bp-member-blog-container>div.bp_members:last-child {
@@ -256,4 +258,22 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     .bp-member-blog-container .post-actions {
         justify-content: center;
     }
+}
+
+/*--------------------------------------------------------------
+# RTL Support
+--------------------------------------------------------------*/
+[dir='rtl'] .bp-member-blog-container .post-featured-image {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+[dir='rtl'] .post-actions span a {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+[dir='rtl'] .post-actions span.publish-post a:before {
+    margin-right: 0;
+    margin-left: 4px;
 }

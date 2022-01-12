@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.8.2
-Stable tag: 1.4.1
+Tested up to: 5.8.3
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,13 @@ e.g.
 
 
 == Changelog ==
+
+= 1.4.2 =
+* Fix: (#42) Fixed BuddyPress Nav tab redirection issue with BP Rewrites plugin
+* Fix: (#41) Fixed conflict issue with BP Rewrites plugin
+* Fix: Managed RTL fixes
+* Fix: (#40) Fixed reset setting issue after activation
+
 = 1.4.1 =
 * Fix: (#36) Fixed category and tags are not adding from front-end
 

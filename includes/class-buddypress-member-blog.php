@@ -189,6 +189,7 @@ class Buddypress_Member_Blog {
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish' );
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_unpublish' );
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_delete' );
+		$this->loader->add_action( 'init', $plugin_public, 'buddypress_member_blog_users_to_upload_media' );
 
 		// $this->loader->add_action( 'save_post', $plugin_public, 'buddypress_member_blog_save_post', 999, 3);
 		// $this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);

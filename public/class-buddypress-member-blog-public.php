@@ -725,4 +725,22 @@ class Buddypress_Member_Blog_Public {
 
 	}
 
+	/**
+	 * Check if a contributor have the needed rights to upload images and add this capabilities if needed.
+	 */
+	public function buddypress_member_blog_users_to_upload_media() {
+		$contributor = get_role( 'contributor' );
+		$subscriber  = get_role( 'subscriber' );
+
+		if ( ! empty( $contributor ) ) {
+			$contributor->add_cap( 'upload_files' );
+		}
+
+		if ( ! empty( $subscriber ) ) {
+			$subscriber->add_cap( 'upload_files' );
+		}
+
+	}
+
+
 }

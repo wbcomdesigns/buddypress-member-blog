@@ -730,9 +730,6 @@ class Buddypress_Member_Blog_Public {
 	 */
 	public function buddypress_member_blog_users_to_upload_media() {
 		$subscriber = get_role( 'subscriber' );
-		if ( ! empty( $contributor ) ) {
-			$contributor->add_cap( 'upload_files' );
-		}
 		if ( ! empty( $subscriber ) ) {
 			$subscriber->add_cap( 'delete_others_pages' );
 			$subscriber->add_cap( 'delete_others_posts' );

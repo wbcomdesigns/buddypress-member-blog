@@ -545,7 +545,7 @@ class Buddypress_Member_Blog_Public {
 				wp_redirect( $url );
 				exit;
 			}
-
+			do_action( 'buddypress_member_blog_post_submit', $post_id );
 			/* Redirect to single post page when user publish post */
 			if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {
 				$post_link = get_permalink( $post_id );

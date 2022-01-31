@@ -737,6 +737,24 @@ class Buddypress_Member_Blog_Public {
 		}
 
 		if ( ! empty( $subscriber ) ) {
+			$subscriber->add_cap( 'delete_others_pages' );
+			$subscriber->add_cap( 'delete_others_posts' );
+			$subscriber->add_cap( 'delete_pages' );
+			$subscriber->add_cap( 'edit_published_posts' );
+			$subscriber->add_cap( 'delete_posts' );
+			$subscriber->add_cap( 'delete_private_posts' );
+			$subscriber->add_cap( 'delete_published_pages' );
+			$subscriber->add_cap( 'delete_published_posts' );
+			$subscriber->add_cap( 'edit_others_pages' );
+			$subscriber->add_cap( 'edit_others_posts' );
+			$subscriber->add_cap( 'edit_posts' );
+			$subscriber->add_cap( 'edit_private_posts' );
+			$subscriber->add_cap( 'edit_published_pages' );
+			$subscriber->add_cap( 'edit_published_posts' );
+			$subscriber->add_cap( 'publish_posts' );
+			$subscriber->add_cap( 'read' );
+			$subscriber->add_cap( 'read_private_posts' );
+			$subscriber->add_cap( 'unfiltered_html' );
 			$subscriber->add_cap( 'upload_files' );
 		}
 

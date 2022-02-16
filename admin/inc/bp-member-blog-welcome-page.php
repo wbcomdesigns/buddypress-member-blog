@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="wbcom-welcome-main-wrapper">
 		<div class="wbcom-welcome-head">
 			<h2 class="wbcom-welcome-title"><?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?></h2>
-			<p class="wbcom-welcome-description"><?php esc_html_e( 'Allow your BuddyPress members to create and manage their blog posts.  Allow them to publish their posts directly or send them for review. one you can easily navigate to any member\'s profile to read  their posts.', 'buddypress-member-blog' ); ?></p>
+			<p class="wbcom-welcome-description"><?php esc_html_e( 'Allow your BuddyPress members to create and manage their blog posts.  Allow them to publish their posts directly or send them for review. You can easily navigate to any member\'s profile to read  their posts.', 'buddypress-member-blog' ); ?></p>
 		</div><!-- .wbcom-welcome-head -->
 
 		<div class="wbcom-welcome-content">

@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       BuddyPress Member Blog
  * Plugin URI:        https://wbcomdesigns.com/downloads/buddypress-member-blog
- * Description:       Allow your BuddyPress members to create and manage their blog posts from there profile.  Allow them to publish their posts directly or send them for review. one you can easily navigate to any member's profile to read  their posts.
+ * Description:       Allow your BuddyPress members to create and manage their blog posts from there profile.  Allow them to publish their posts directly or send them for review. you can easily navigate to any member's profile to read  their posts.
  * Version:           1.4.2
  * Author:            Wbcom Designs
  * Author URI:        https://wbcomdesigns.com/

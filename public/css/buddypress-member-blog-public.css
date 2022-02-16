@@ -10,7 +10,11 @@
 /*--------------------------------------------------------------
 # Add New Post / Update Post
 --------------------------------------------------------------*/
-
+.bp-member-blog-container form#bp-member-post {
+    padding: 20px;
+    border: 1px solid #eee;
+    background: #fff;
+}
 button#insert-media-button {
     background: #fff;
     border-color: #ccc;
@@ -66,6 +70,7 @@ button#insert-media-button:hover {
 .buddypress-wrap .bp-member-blog-container .standard-form label,
 .buddypress-wrap .bp-member-blog-container .standard-form span.label {
     display: block;
+    font-size: 15px;
 }
 
 ul.bpmb-post-tag-lists {
@@ -110,12 +115,24 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     margin: 8px 0;
 }
 
+.buddypress-wrap .bp-member-blog-container input[type=text]{
+    background: #fff;
+}
+.buddypress-wrap .bp-member-blog-container .wp-editor-container textarea {
+    background: #fff;
+    width: 100%;
+    border: none;
+}
+.buddypress-wrap .bp-member-blog-container input#submit {
+    width: auto;
+}
+
 /*--------------------------------------------------------------
 # Single Profile Page
 --------------------------------------------------------------*/
 
 .bp-member-blog-container {
-    margin: 15px 0;
+    margin:0;
 }
 
 .bp-member-blog-container>div.bp_members {
@@ -276,4 +293,12 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 [dir='rtl'] .post-actions span.publish-post a:before {
     margin-right: 0;
     margin-left: 4px;
+}
+
+/*buddyboss-theme*/
+.buddyboss-theme #wp-bp_member_blog_post_content-wrap input {
+    height: auto;
+}
+.buddyboss-theme .wp-switch-editor {
+    border-radius: 0;
 }

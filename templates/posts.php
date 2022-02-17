@@ -52,7 +52,8 @@ $query_args = array(
 // do the query.
 query_posts( $query_args );
 ?>
-<div  class="bp-member-blog-container">
+<?php  do_action( 'bp_member_blog_before_posts' ); ?>
+<div  class="bp-member-blog-container bpmb-blog-posts">
 	<?php if ( have_posts() ) : ?>
 
 		<?php

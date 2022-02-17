@@ -142,7 +142,7 @@ class Buddypress_Member_Blog_Admin {
 		?>
 		<div class="wrap">
 			<hr class="wp-header-end">
-			<div class="wbcom-wrap bp-member-blog-wrap">
+			<div class="wbcom-wrap">
 				<div class="blpro-header">
 					<?php echo do_shortcode( '[wbcom_admin_setting_header]' ); ?>
 					<h1 class="wbcom-plugin-heading">

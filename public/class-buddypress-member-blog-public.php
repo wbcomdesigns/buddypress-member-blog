@@ -128,8 +128,8 @@ class Buddypress_Member_Blog_Public {
 		);
 
 		// get his posts 'ASC'.
-		$current_user_posts = get_posts( $bp_member_blogs );
-		$user_post_count    = count( $current_user_posts );
+		$current_user_posts = new WP_Query( $bp_member_blogs );
+		$user_post_count    = $current_user_posts->found_posts;
 		wp_reset_postdata();
 
 		if ( is_admin() ) {

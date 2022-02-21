@@ -2,3 +2,6 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+.bp-member-blog-wrap .wbcom-admin-settings-page {
+  overflow: visible !important;
+}

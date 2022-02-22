@@ -122,7 +122,7 @@ class Buddypress_Member_Blog_Public {
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$bp_member_blogs = array(
-			'author'  => $current_user->ID, // I could also use $user_ID, right?
+			'author'  => $user_id, // I could also use $user_ID, right?
 			'orderby' => 'post_date',
 			'order'   => 'ASC',
 		);

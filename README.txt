@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.8.3
-Stable tag: 1.4.2
+Tested up to: 5.9.1
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,15 @@ e.g.
 
 
 == Changelog ==
+= 1.5.0 =
+* Fix: (#68) Fixed blog count issue on display user
+* Fix: (#65) Managed UI conflict issue with other plugins
+* Fix: (#58) Fixed category display issue on admin
+* Fix: Introduce new action hook for blog profile tab
+* Fix: #34 Fixed grammatical error on admin dashboard
+* Fix: #57 Managed Add New Blog UI
+* Fix: Fixed upload image issue
+* Fix: Added hookable position after submit post
 
 = 1.4.2 =
 * Fix: (#42) Fixed BuddyPress Nav tab redirection issue with BP Rewrites plugin

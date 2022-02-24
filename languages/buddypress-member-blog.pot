@@ -1,14 +1,14 @@
-# Copyright (C) 2021
+# Copyright (C) 2022
 # This file is distributed under the same license as the  package.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-28 07:09:52+00:00\n"
+"POT-Creation-Date: 2022-02-24 20:09:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Varun Dubey\n"
 "Language-Team: Wbcom Designs\n"
 "Language: en\n"
@@ -24,32 +24,32 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: admin/class-buddypress-member-blog-admin.php:112
+#: admin/class-buddypress-member-blog-admin.php:111
 msgid "WB Plugins"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:114
-#: admin/class-buddypress-member-blog-admin.php:138
+#: admin/class-buddypress-member-blog-admin.php:113
+#: admin/class-buddypress-member-blog-admin.php:139
 msgid "General"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:116
+#: admin/class-buddypress-member-blog-admin.php:115
 msgid "BuddyPress Member BlogSettings Page"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:116
+#: admin/class-buddypress-member-blog-admin.php:115
 msgid "Member Blog"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:137
+#: admin/class-buddypress-member-blog-admin.php:138
 msgid "Welcome"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:147
+#: admin/class-buddypress-member-blog-admin.php:149
 msgid "BuddyPress Member Blog Settings"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:154
+#: admin/class-buddypress-member-blog-admin.php:156
 msgid "Menu"
 msgstr ""
 
@@ -78,45 +78,45 @@ msgstr ""
 msgid "Allowed user roles to create post?"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:99
+#: admin/inc/bp-member-blog-setting-general-tab.php:102
 msgid "Selected user roles will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:105
+#: admin/inc/bp-member-blog-setting-general-tab.php:108
 msgid "Allowed member types wise to create post?"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:107
+#: admin/inc/bp-member-blog-setting-general-tab.php:110
 msgid "Select member type to create post"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:113
+#: admin/inc/bp-member-blog-setting-general-tab.php:116
 msgid "Selected member type will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:120
+#: admin/inc/bp-member-blog-setting-general-tab.php:123
 msgid "Enable user publishing"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:128
+#: admin/inc/bp-member-blog-setting-general-tab.php:131
 msgid ""
 "Allow user to publish posts. if not enable, they can only submit post as "
 "pending for review."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:135
+#: admin/inc/bp-member-blog-setting-general-tab.php:138
 msgid "Media management"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:143
+#: admin/inc/bp-member-blog-setting-general-tab.php:146
 msgid "When blog post removed permanently delete the associated media file."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:150
+#: admin/inc/bp-member-blog-setting-general-tab.php:153
 msgid "Exclude categories"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:154
+#: admin/inc/bp-member-blog-setting-general-tab.php:157
 msgid "Select category to exclude on fronted"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 #: admin/inc/bp-member-blog-welcome-page.php:21
 msgid ""
 "Allow your BuddyPress members to create and manage their blog posts.  Allow "
-"them to publish their posts directly or send them for review. one you can "
+"them to publish their posts directly or send them for review. You can "
 "easily navigate to any member's profile to read  their posts."
 msgstr ""
 
@@ -226,18 +226,19 @@ msgid "Install"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-plugins-page.php:47
-#: admin/wbcom/wbcom-admin-settings.php:362
+#: admin/wbcom/wbcom-admin-settings.php:375
 msgid "Activate"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-plugins-page.php:51
-#: admin/wbcom/wbcom-admin-settings.php:363
+#: admin/wbcom/wbcom-admin-settings.php:376
 msgid "Deactivate"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-support-page.php:5
-#: admin/wbcom/wbcom-admin-settings.php:390
-#: admin/wbcom/wbcom-admin-settings.php:475
+#: admin/wbcom/wbcom-admin-settings.php:414
+#: admin/wbcom/wbcom-admin-settings.php:415
+#: admin/wbcom/wbcom-admin-settings.php:508
 msgid "Support"
 msgstr ""
 
@@ -440,51 +441,51 @@ msgstr ""
 msgid "Create Knowledge base"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:179
+#: admin/wbcom/wbcom-admin-settings.php:186
 msgid "Custom Font Uploader"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:181
+#: admin/wbcom/wbcom-admin-settings.php:188
 msgid ""
 "It also allows you to upload your own custom font to your site and use them "
 "using custom css."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:187
+#: admin/wbcom/wbcom-admin-settings.php:194
 msgid "BuddyPress Create Group Type"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:189
+#: admin/wbcom/wbcom-admin-settings.php:196
 msgid "It will help to create group type for BuddyPress Groups."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:195
+#: admin/wbcom/wbcom-admin-settings.php:202
 msgid "BuddyPress Member Reviews"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:197
+#: admin/wbcom/wbcom-admin-settings.php:204
 msgid ""
 "This plugin allows only site members to add reviews to the buddypress "
 "members on the site and even rate the member’s profile out of 5 points with "
 "multiple review criteria."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:203
+#: admin/wbcom/wbcom-admin-settings.php:210
 msgid "BuddyPress Group Reviews"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:205
+#: admin/wbcom/wbcom-admin-settings.php:212
 msgid ""
 "This plugin allows the BuddyPress Members to give reviews to the BuddyPress "
 "groups on the site. The review form allows the users to give text review, "
 "even rate the group on the basis of multiple criterias."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:223
+#: admin/wbcom/wbcom-admin-settings.php:230
 msgid "BuddyPress Moderation Pro"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:224
+#: admin/wbcom/wbcom-admin-settings.php:231
 msgid ""
 "BuddyPress Community Moderation offers a solution for site owners to keep "
 "their communities straight. With community policing strategy, members of "
@@ -492,85 +493,85 @@ msgid ""
 "content created within the various components."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:229
+#: admin/wbcom/wbcom-admin-settings.php:236
 msgid "BuddyPress Polls"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:230
+#: admin/wbcom/wbcom-admin-settings.php:237
 msgid ""
 "Use BuddyPress Polls plugin to create polls inside the activity, let your "
 "user response to your polls. Members can create pools like activities, "
 "easily votes on them."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:235
+#: admin/wbcom/wbcom-admin-settings.php:242
 msgid "BuddyPress Hashtags"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:236
+#: admin/wbcom/wbcom-admin-settings.php:243
 msgid ""
 "Allows members to use hashtags in BuddyPress activities and bbPress topics "
 "and ready with widgets."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:241
+#: admin/wbcom/wbcom-admin-settings.php:248
 msgid "BuddyPress Profanity"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:242
+#: admin/wbcom/wbcom-admin-settings.php:249
 msgid ""
 "Use BuddyPress Profanity plugin to censor content in your community! Easily "
 "Censor all the unwanted words in activities, private messages contents by "
 "specifying a list of keywords to be filtered."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:247
+#: admin/wbcom/wbcom-admin-settings.php:254
 msgid "BuddyPress Private Community Pro"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:248
+#: admin/wbcom/wbcom-admin-settings.php:255
 msgid ""
 "This plugin offers a lockdown for BuddyPress Component and will ask users "
 "to log in go further to check profile or any other protected details."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:253
+#: admin/wbcom/wbcom-admin-settings.php:260
 msgid "BuddyPress Profile Pro"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:254
+#: admin/wbcom/wbcom-admin-settings.php:261
 msgid ""
 "This plugin gives you the power to extend BuddyPress Profiles with repeater "
 "fields and groups. You can easily add multiple field groups and display "
 "them at member’s profile."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:259
+#: admin/wbcom/wbcom-admin-settings.php:266
 msgid "BuddyPress Sticky Post"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:260
+#: admin/wbcom/wbcom-admin-settings.php:267
 msgid ""
 "This will make it easier for the site administrator to make the pinned "
 "activity item recognized first by the community whenever they visit the "
 "site."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:265
+#: admin/wbcom/wbcom-admin-settings.php:272
 msgid "BuddyPress Auto Friends"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:266
+#: admin/wbcom/wbcom-admin-settings.php:273
 msgid ""
 "Allow the site admin to select global friends for all his members with "
 "BuddyPress Auto friends plugin."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:271
+#: admin/wbcom/wbcom-admin-settings.php:278
 msgid "BuddyPress Quotes"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:272
+#: admin/wbcom/wbcom-admin-settings.php:279
 msgid ""
 "BuddyPress quotes plugin comes with the feature to let users post their "
 "activity updates with interactive backgrounds selection such as colors and "
@@ -578,22 +579,25 @@ msgid ""
 "story."
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:384
-#: admin/wbcom/wbcom-admin-settings.php:463
+#: admin/wbcom/wbcom-admin-settings.php:398
+#: admin/wbcom/wbcom-admin-settings.php:399
+#: admin/wbcom/wbcom-admin-settings.php:496
 msgid "Our Plugins"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:387
-#: admin/wbcom/wbcom-admin-settings.php:469
+#: admin/wbcom/wbcom-admin-settings.php:406
+#: admin/wbcom/wbcom-admin-settings.php:407
+#: admin/wbcom/wbcom-admin-settings.php:502
 msgid "Our Themes"
 msgstr ""
 
-#: admin/wbcom/wbcom-admin-settings.php:457
+#: admin/wbcom/wbcom-admin-settings.php:490
 msgid "Settings"
 msgstr ""
 
-#: admin/wbcom/wbcom-paid-plugin-settings.php:29
-#: admin/wbcom/wbcom-paid-plugin-settings.php:43
+#: admin/wbcom/wbcom-paid-plugin-settings.php:31
+#: admin/wbcom/wbcom-paid-plugin-settings.php:32
+#: admin/wbcom/wbcom-paid-plugin-settings.php:49
 msgid "License"
 msgstr ""
 
@@ -645,58 +649,59 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:140
+#: public/class-buddypress-member-blog-public.php:139
 #: public/class-buddypress-member-blog-public.php:176
-#: public/class-buddypress-member-blog-public.php:197
+#: public/class-buddypress-member-blog-public.php:195
+#. translators: %s:
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:207
-#: public/class-buddypress-member-blog-public.php:298
+#: public/class-buddypress-member-blog-public.php:205
+#: public/class-buddypress-member-blog-public.php:294
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:225
-#: public/class-buddypress-member-blog-public.php:308
+#: public/class-buddypress-member-blog-public.php:221
+#: public/class-buddypress-member-blog-public.php:304
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:273
+#: public/class-buddypress-member-blog-public.php:267
 msgid "Blog"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:307
+#: public/class-buddypress-member-blog-public.php:303
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:386
+#: public/class-buddypress-member-blog-public.php:382
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:414
+#: public/class-buddypress-member-blog-public.php:410
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:445
+#: public/class-buddypress-member-blog-public.php:441
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:486
+#: public/class-buddypress-member-blog-public.php:480
 #: public/class-buddypress-member-blog-public.php:593
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:486
-#: public/class-buddypress-member-blog-public.php:505
+#: public/class-buddypress-member-blog-public.php:480
+#: public/class-buddypress-member-blog-public.php:498
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:488
-#: public/class-buddypress-member-blog-public.php:507
+#: public/class-buddypress-member-blog-public.php:482
+#: public/class-buddypress-member-blog-public.php:500
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:505
+#: public/class-buddypress-member-blog-public.php:498
 #: public/class-buddypress-member-blog-public.php:597
 msgid "Post created successfully."
 msgstr ""
@@ -741,31 +746,32 @@ msgstr ""
 msgid "Post tag:"
 msgstr ""
 
-#: templates/edit.php:100
+#: templates/edit.php:98
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:121
+#: templates/edit.php:119
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:147
+#: templates/edit.php:145
 msgid "Save"
 msgstr ""
 
-#: templates/posts.php:77
+#: templates/posts.php:80
 msgid "Permanent Link to"
 msgstr ""
 
-#: templates/posts.php:84
+#: templates/posts.php:90
+#. translators: %s:
 msgid "%1$s"
 msgstr ""
 
-#: templates/posts.php:88
+#: templates/posts.php:96
 msgid "Read the rest of this entry &rarr;"
 msgstr ""
 
-#: templates/posts.php:89
+#: templates/posts.php:100
 msgid "Pages: "
 msgstr ""
 

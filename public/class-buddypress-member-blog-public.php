@@ -122,14 +122,16 @@ class Buddypress_Member_Blog_Public {
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$bp_member_blogs = array(
-			'author'  => $user_id, // I could also use $user_ID, right?
-			'orderby' => 'post_date',
-			'order'   => 'ASC',
+			'author'      => $user_id, // I could also use $user_ID, right?
+			'orderby'     => 'post_date',
+			'post_type'   => 'post',
+			'order'       => 'ASC',
+			'numberposts' => -1,
 		);
 
 		// get his posts 'ASC'.
-		$current_user_posts = new WP_Query( $bp_member_blogs );
-		$user_post_count    = $current_user_posts->found_posts;
+		$current_user_posts = get_posts( $bp_member_blogs );
+		$user_post_count    = count( $current_user_posts );
 		wp_reset_postdata();
 
 		if ( is_admin() ) {

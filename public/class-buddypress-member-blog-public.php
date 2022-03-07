@@ -669,7 +669,7 @@ class Buddypress_Member_Blog_Public {
 			if ( ! empty( $bp->template_message ) ) {
 				$type = ( 'success' === $bp->template_message_type ) ? 'success' : 'error';
 				?>
-				<aside class="bp-feedback bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
+				<aside class="bp-feedback saved-successfully bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
 					<span class="bp-icon" aria-hidden="true"></span>
 					<p><?php echo wp_kses_post( $bp->template_message ); ?></p>
 				</aside>

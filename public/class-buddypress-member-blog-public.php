@@ -113,10 +113,9 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_setup_nav() {
 		if ( class_exists( 'Youzify' ) ) {
-			$link                     = '';
+			$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
 				$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
@@ -128,7 +127,7 @@ class Buddypress_Member_Blog_Public {
 					'parent_slug'     => 'posts',
 					'name'            => __( 'Add new post', 'buddypress-member-blog' ),
 					'parent_url'      => bp_displayed_user_domain() . 'posts/',
-					'screen_function' => array( $this, 'bp_member_posts' ),
+					'screen_function' => array( $this, 'bp_member_new_post' ),
 					'link'            => $link,
 					'position'        => 100,
 				)

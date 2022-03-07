@@ -57,6 +57,11 @@ button#insert-media-button:hover {
 .buddypress-wrap .standard-form.bp-member-blog-post-form label {
     margin: 15px 0;
     font-weight: 400;
+    border:none !important;
+}
+
+[for="bp_member_blog_post_content"] div#wp-bp_member_blog_post_content-wrap{
+    border:none !important;
 }
 
 #bp_member_blog_post_featured_image {

@@ -28,6 +28,10 @@ if ( ! empty( $member_types ) ) {
 
 ?>
 <div class="wbcom-tab-content">
+<div class="wbcom-wrapper-admin">	
+<div class="wbcom-admin-title-section">
+	<h3><?php esc_html_e( 'Member Blog Settings', 'buddypress-member-blog' ); ?></h3>
+</div>
 <form method="post" action="options.php" class="bp-member-blog-gen-form">
 	<?php
 	settings_fields( 'bp_member_blog_general_settigs' );
@@ -99,7 +103,7 @@ if ( ! empty( $member_types ) ) {
 					}
 					?>
 				</ul>
-				<p class="description"><?php esc_html_e( 'Selected user roles will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
+				<p class="description description-bp"><?php esc_html_e( 'Selected user roles will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
 			</td>
 		</tr>
 
@@ -179,4 +183,5 @@ if ( ! empty( $member_types ) ) {
 	</table>
 	<?php submit_button(); ?>
 </form>
+</div>
 </div>

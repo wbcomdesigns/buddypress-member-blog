@@ -365,3 +365,17 @@ Youzify Support
 #youzify .bp-member-blog-container .post-featured-image {
     width:35%;
 }
+#youzify .bp-member-blog-post-form label {
+    margin-bottom: 15px;
+    display: block;
+}
+#youzify [for="bp_member_blog_pro_post_group"] .nice-select.selectized {
+    display: none;
+}
+#youzify input#submit {
+    border: none;
+}
+.youzify-main-column #wp-bp_member_blog_post_content-media-buttons {
+    float: left;
+    margin-bottom: -3px;
+}

@@ -11,6 +11,9 @@
 .nav-tab-wrapper ul li.Restrictions a.nav-tab:before{
   content: "\f528";
 }
+.nav-tab-wrapper ul li.Groups.Integration a.nav-tab:before{
+  content: "\f307";
+}
 
 .wbcom-wrapper-admin {
   position: relative;

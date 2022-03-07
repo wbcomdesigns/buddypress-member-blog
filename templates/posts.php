@@ -52,7 +52,7 @@ $query_args = array(
 // do the query.
 query_posts( $query_args );
 ?>
-<?php  do_action( 'bp_member_blog_before_posts' ); ?>
+<?php do_action( 'bp_member_blog_before_posts' ); ?>
 <div  class="bp-member-blog-container bpmb-blog-posts">
 	<?php if ( have_posts() ) : ?>
 
@@ -119,12 +119,48 @@ query_posts( $query_args );
 			<div class="navigation pagination">
 				<?php bp_member_blog_paginate(); ?>
 			</div>
-	<?php else : ?>
-			<p><?php echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) ); ?></p>
-	<?php endif; ?>
+		<?php
+	else :
+		if ( is_user_logged_in() ) {
+			if ( bp_is_my_profile() ) {
+				$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+				if ( 'nouveau' === $bp_template_option ) {
+					echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+					echo '<span class="bp-icon" aria-hidden="true"></span>';
+				} else {
+					echo '<div id="message" class="info">';
+				}
+				echo '<p>';
+				esc_html_e( 'You have not posted anything yet.', 'buddypress-member-blog' );
+				echo '</p>';
+				echo '</div>';
+			} else {
+				$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+				if ( 'nouveau' === $bp_template_option ) {
+					echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+					echo '<span class="bp-icon" aria-hidden="true"></span>';
+				} else {
+					echo '<div id="message" class="info">';
+				}
+				echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) );
+				echo '</div>';
+			}
+		} else {
+			$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+			if ( 'nouveau' === $bp_template_option ) {
+				echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+				echo '<span class="bp-icon" aria-hidden="true"></span>';
+			} else {
+				echo '<div id="message" class="info">';
+			}
+			echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) );
+			echo '</div>';
+		}
+	endif;
+	?>
 
 	<?php
-	   wp_reset_postdata();
-	   wp_reset_query();
+	wp_reset_postdata();
+	wp_reset_query();
 	?>
 </div>

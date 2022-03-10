@@ -1,7 +1,13 @@
 <?php
 /**
- *
  * This file is used for rendering and saving plugin general settings.
+ *
+ * @link       https://wbcomdesigns.com/
+ *
+ * @since      1.0.0
+ *
+ * @package    Buddypress_Member_Blog
+ * @subpackage Buddypress_Member_Blog/admin/inc
  */
 
 // Exit if accessed directly.

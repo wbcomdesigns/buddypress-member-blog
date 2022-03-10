@@ -380,7 +380,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_publish() {
 
 		if ( ! bp_is_current_action( 'publish' ) ) {
@@ -410,7 +409,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_unpublish() {
 
 		if ( ! bp_is_current_action( 'unpublish' ) ) {
@@ -438,7 +436,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_delete() {
 
 		if ( ! bp_is_current_action( 'delete' ) ) {
@@ -466,6 +463,9 @@ class Buddypress_Member_Blog_Public {
 	}
 
 
+	/**
+	 * Blogs posts submit from front-end.
+	 */
 	public function buddypress_member_blog_post_submit() {
 
 		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
@@ -576,9 +576,13 @@ class Buddypress_Member_Blog_Public {
 	}
 
 	/**
-	 * Save Post
+	 * Save Post.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param int    $post_ID Post ID.
+	 * @param object $post Post Object.
+	 * @param string $update  Update Post.
 	 */
 	public function buddypress_member_blog_save_post( $post_ID, $post, $update ) {
 		global $update_post;
@@ -589,25 +593,6 @@ class Buddypress_Member_Blog_Public {
 		if ( isset( $update_post ) && $update_post == true ) {
 			return;
 		}
-		/*
-		if ( isset($_POST['acf']['field_60b73fa05b244']) ) {
-			$update_post = true;
-			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-			$save = array(
-						'ID'			=> $post_ID,
-						'post_status'	=> ( isset($bp_member_blog_gen_stngs['publish_post'])) ? 'publish' : 'pending',
-						'post_content'	=> $_POST['acf']['field_60b73fa05b244'],
-					);
-			wp_update_post( $save );
-		}
-		*/
-		/*
-		if ( isset($_POST['acf']['field_60b73fe35b246']) && $_POST['acf']['field_60b73fe35b246'] !='') {
-			update_post_meta( $post_ID,'_thumbnail_id', $_POST['acf']['field_60b73fe35b246'] );
-		} else {
-			delete_post_meta( $post_ID, '_thumbnail_id' );
-		}
-		*/
 		$update_post = true;
 		if ( $update == true && $post_ID != '' ) {
 			bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) );
@@ -620,11 +605,10 @@ class Buddypress_Member_Blog_Public {
 
 
 	/**
-	 * call acf_form_head() function on acf form
+	 * Call acf_form_head() function on acf form
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_wp_loaded() {
 		global $wp_query, $post;
 
@@ -643,12 +627,12 @@ class Buddypress_Member_Blog_Public {
 
 
 	/**
-	 * Edit Post data using shortcode
+	 * Edit Post data using shortcode.
 	 *
 	 * @since 1.0.0
+	 * @param array|string $atts User defined attributes for this shortcode instance.
+	 * @param string       $content Shortcode Content.
 	 */
-
-
 	public function buddypress_shortcodes_member_blog( $atts, $content = null ) {
 
 		$bp = buddypress();
@@ -658,10 +642,7 @@ class Buddypress_Member_Blog_Public {
 		}
 
 		global  $bp,$current_user;
-		/*
-		 * Check current user role to allowed create post or not
-		 *
-		 */
+		// Check current user role to allowed create post or not.
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$member_types = bp_get_member_type( get_current_user_id(), false );

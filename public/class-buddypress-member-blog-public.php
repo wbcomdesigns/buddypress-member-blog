@@ -523,14 +523,14 @@ class Buddypress_Member_Blog_Public {
 
 			$post_category = '';
 			if ( ! empty( $_POST['bp_member_blog_post_category'] ) ) {
-				$post_category = $_POST['bp_member_blog_post_category'];
+				$post_category = map_deep( wp_unslash( $_POST['bp_member_blog_post_category'] ), 'sanitize_text_field' );
 			}
 			/* Assign Category. */
 			wp_set_post_terms( $post_id, $post_category, 'category', false );
 
 			$post_tag = '';
 			if ( ! empty( $_POST['bp_member_blog_post_tag'] ) ) {
-				$post_tag = $_POST['bp_member_blog_post_tag'];
+				$post_tag = map_deep( wp_unslash( $_POST['bp_member_blog_post_tag'] ), 'sanitize_text_field' );
 			}
 			/*  Assign Post Tags */
 			wp_set_post_tags( $post_id, $post_tag, false );

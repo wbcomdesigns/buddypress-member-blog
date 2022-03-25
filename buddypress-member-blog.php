@@ -88,8 +88,7 @@ function run_buddypress_member_blog() {
 	$plugin->run();
 
 }
-run_buddypress_member_blog();
-
+add_action( 'bp_include', 'run_buddypress_member_blog' );
 
 /**
  * redirect to plugin settings page after activated

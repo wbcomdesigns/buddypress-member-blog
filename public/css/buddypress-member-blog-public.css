@@ -35,6 +35,11 @@ button#insert-media-button {
     line-height: 1;
     display: inline-block;
 }
+#wp-bp_member_blog_post_content-media-buttons button#insert-media-button {
+    margin-top: 4px;
+    border-bottom: none !important;
+    display: block;
+}
 
 button#insert-media-button:hover {
     background: #ededed;
@@ -52,6 +57,11 @@ button#insert-media-button:hover {
 .buddypress-wrap .standard-form.bp-member-blog-post-form label {
     margin: 15px 0;
     font-weight: 400;
+    border:none !important;
+}
+
+[for="bp_member_blog_post_content"] div#wp-bp_member_blog_post_content-wrap{
+    border:none !important;
 }
 
 #bp_member_blog_post_featured_image {
@@ -126,6 +136,38 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
 .buddypress-wrap .bp-member-blog-container input#submit {
     width: auto;
 }
+.bp-member-blog-container input[type="text"] {
+    display: block;
+    width: 100%;
+}
+.buddypress-wrap .bp-member-blog-container input#submit {
+    border: unset;
+    width: auto;
+}
+
+.buddypress-wrap .bp-member-blog-container .selectize-control.multi .selectize-input.has-items {
+    box-shadow: none;
+    padding: 10px 10px 8px;
+}
+
+aside.bp-feedback.saved-successfully.bp-messages.bp-template-notice.success {
+    background: #ebf9eb;
+    border: 1px solid green;
+    border-left: 4px solid green;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+aside.bp-feedback.saved-successfully span.bp-icon {
+    display: none;
+}
+.buddypress-wrap aside.bp-feedback.saved-successfully p {
+    font-size: 15px;
+    color: green;
+    font-weight: 500;
+    margin: 0;
+}
+
+
 
 /*--------------------------------------------------------------
 # Single Profile Page
@@ -141,6 +183,7 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    align-items: center;
     width: 100%;
     margin-bottom: 0;
     padding-bottom: 30px;
@@ -157,13 +200,14 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
 
 .bp-member-blog-container .post-featured-image {
     margin-right: 20px;
-    width: 120px;
+    width: 30%;
 }
 
 .bp-member-blog-container .post-featured-image img {
-    height: auto !important;
+    height: 210px !important;
     max-width: 100%;
     width: 100%;
+    object-fit: cover;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -185,7 +229,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content {
 }
 
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entry-title {
-    margin: 0 0 10px;
+    margin: 0;
     font-size: 22px;
     line-height: 24px;
 }
@@ -217,7 +261,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 .bp-member-blog-container .entry-content {
-    margin: 0 0 20px !important;
+    margin: 0 0 15px !important;
+    line-height: 1.5;
 }
 
 .post-actions {
@@ -260,10 +305,10 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     clear: both;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
     .bp-member-blog-container>div.bp_members {
         display: block;
-        text-align: center;
+        text-align: left;
     }
     .bp-member-blog-container .post-featured-image {
         display: inline-block;
@@ -271,9 +316,11 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     }
     .bp-member-blog-container .post-content {
         width: 100%;
+        justify-content: left;
     }
-    .bp-member-blog-container .post-actions {
-        justify-content: center;
+    .bp-member-blog-container .post-featured-image {
+        margin:0 0 20px !important;
+        width: 100% !important;
     }
 }
 
@@ -295,10 +342,40 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     margin-left: 4px;
 }
 
-/*buddyboss-theme*/
+/*--------------------------------------------------------------
+buddyboss-theme
+--------------------------------------------------------------*/
 .buddyboss-theme #wp-bp_member_blog_post_content-wrap input {
     height: auto;
 }
 .buddyboss-theme .wp-switch-editor {
     border-radius: 0;
+}
+
+/*--------------------------------------------------------------
+Youzify Support
+--------------------------------------------------------------*/
+#youzify .bp-member-blog-container.bpmb-blog-posts .type-bp_members.post {
+    background: #fff;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+#youzify .bp-member-blog-container .post-featured-image {
+    width:35%;
+}
+#youzify .bp-member-blog-post-form label {
+    margin-bottom: 15px;
+    display: block;
+}
+#youzify [for="bp_member_blog_pro_post_group"] .nice-select.selectized {
+    display: none;
+}
+#youzify input#submit {
+    border: none;
+}
+.youzify-main-column #wp-bp_member_blog_post_content-media-buttons {
+    float: left;
+    margin-bottom: -3px;
 }

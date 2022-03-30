@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -25,7 +24,6 @@
  * @author     Wbcom Designs <admin@wbcomdesigns.com>
  */
 class Buddypress_Member_Blog_i18n {
-
 
 	/**
 	 * Load the plugin text domain for translation.

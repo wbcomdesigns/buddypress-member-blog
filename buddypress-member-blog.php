@@ -88,8 +88,7 @@ function run_buddypress_member_blog() {
 	$plugin->run();
 
 }
-run_buddypress_member_blog();
-
+add_action( 'bp_include', 'run_buddypress_member_blog' );
 
 /**
  * redirect to plugin settings page after activated
@@ -114,7 +113,6 @@ function buddypress_member_blog_requires_buddypress() {
 	if ( ! class_exists( 'Buddypress' ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 		add_action( 'admin_notices', 'buddypress_member_blog_required_plugin_admin_notice' );
-		unset( $_GET['activate'] );
 	}
 }
 
@@ -134,9 +132,6 @@ function buddypress_member_blog_required_plugin_admin_notice() {
 	echo '<div class="error"><p>';
 	echo sprintf( esc_html__( '%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog' ), '<strong>' . esc_html( $bpmb_plugin ) . '</strong>', '<strong>' . esc_html( $bp_plugin ) . '</strong>' );
 	echo '</p></div>';
-	if ( isset( $_GET['activate'] ) ) {
-		unset( $_GET['activate'] );
-	}
 }
 
 require plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';

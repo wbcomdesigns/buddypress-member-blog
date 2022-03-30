@@ -5,3 +5,89 @@
 .bp-member-blog-wrap .wbcom-admin-settings-page {
   overflow: visible !important;
 }
+.nav-tab-wrapper ul li#general a.nav-tab:before {
+    content: "\f111";
+}
+.nav-tab-wrapper ul li#restriction a.nav-tab:before {
+    content: "\f528";
+}
+.nav-tab-wrapper ul li#group-integration a.nav-tab:before {
+    content: "\f307";
+}
+
+.wbcom-wrapper-admin,
+.wbcom-welcome-main-wrapper {
+  position: relative;
+  font-size: 15px;
+  background: #f6f6f6;
+  padding: 0 15px 15px;
+  margin: 25px 0;
+}
+.wbcom-admin-title-section h3,
+.wbcom-welcome-head h2.wbcom-welcome-title {
+  padding: 18px 25px;
+  font-size: 15px;
+  background: #2094F3;
+  color: #fff;
+  margin: 0 -15px 20px;
+}
+.wrap .wbcom-plugin-heading {
+    display: block !important;
+}
+form.bp-member-blog-gen-form{
+  margin: 0 !important;
+  background: #fff;
+}
+form.bp-member-blog-gen-form .form-table th {
+  padding: 20px;
+}
+form.bp-member-blog-gen-form p.submit {
+  overflow: hidden;
+  padding: 0 20px 30px;
+}
+p.description.description-bp {
+  margin: 0;
+  padding: 0;
+}
+.wbcom-wrapper-admin .form-field.preview_files {
+  overflow: hidden;
+  padding: 0 0 10px;
+}
+.wbcom-welcome-support-info {
+  box-shadow: none;
+}
+.wbcom-welcome-support-info .col p {
+  height:70px;
+}
+
+/* Pro */
+a.bp-member-blog-pro-add-form-section span,
+a#bp-member-blog-pro-delete-table span {
+  color: #3faf3f;
+  text-align: center;
+  display: block;
+}
+a#bp-member-blog-pro-delete-table span {
+  color: #f62828;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

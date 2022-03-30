@@ -7,8 +7,8 @@ $blog_post                = (object) array(
 );
 $post_selected_category   = $post_selected_tag = array();
 $post_thumbnail           = '';
-if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) {
-	$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
+if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 }
 
 if ( $post_id != 0 && $post_id != '' ) {
@@ -34,7 +34,7 @@ $category = get_terms( $args );
 
 $submit_btn_value = ( ! empty( $post_id ) ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
 
-if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) {
+if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$submit_btn_value = __( 'Submit for Review', 'buddypress-member-blog' );
 }
 

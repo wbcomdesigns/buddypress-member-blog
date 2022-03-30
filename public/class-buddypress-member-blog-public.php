@@ -113,23 +113,43 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_setup_nav() {
-
+		if ( class_exists( 'Youzify' ) ) {
+			$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
+			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+				$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
+			}
+			// Add Sub Tab.
+			bp_core_new_subnav_item(
+				array(
+					'slug'            => 'bp-new-post',
+					'parent_slug'     => 'posts',
+					'name'            => __( 'Add new post', 'buddypress-member-blog' ),
+					'parent_url'      => bp_displayed_user_domain() . 'posts/',
+					'screen_function' => array( $this, 'bp_member_new_post' ),
+					'link'            => $link,
+					'position'        => 100,
+				)
+			);
+			return false;
+		}
 		global  $bp,$current_user;
 		$user_id = bp_displayed_user_id();
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$bp_member_blogs = array(
-			'author'  => $user_id, // I could also use $user_ID, right?
-			'orderby' => 'post_date',
-			'order'   => 'ASC',
+			'author'      => $user_id, // I could also use $user_ID, right?
+			'orderby'     => 'post_date',
+			'post_type'   => 'post',
+			'order'       => 'ASC',
+			'numberposts' => -1,
 		);
 
 		// get his posts 'ASC'.
-		$current_user_posts = new WP_Query( $bp_member_blogs );
-		$user_post_count    = $current_user_posts->found_posts;
+		$current_user_posts = get_posts( $bp_member_blogs );
+		$user_post_count    = count( $current_user_posts );
 		wp_reset_postdata();
 
 		if ( is_admin() ) {
@@ -360,7 +380,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_publish() {
 
 		if ( ! bp_is_current_action( 'publish' ) ) {
@@ -390,7 +409,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_unpublish() {
 
 		if ( ! bp_is_current_action( 'unpublish' ) ) {
@@ -418,7 +436,6 @@ class Buddypress_Member_Blog_Public {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_delete() {
 
 		if ( ! bp_is_current_action( 'delete' ) ) {
@@ -446,6 +463,9 @@ class Buddypress_Member_Blog_Public {
 	}
 
 
+	/**
+	 * Blogs posts submit from front-end.
+	 */
 	public function buddypress_member_blog_post_submit() {
 
 		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
@@ -503,14 +523,14 @@ class Buddypress_Member_Blog_Public {
 
 			$post_category = '';
 			if ( ! empty( $_POST['bp_member_blog_post_category'] ) ) {
-				$post_category = $_POST['bp_member_blog_post_category'];
+				$post_category = map_deep( wp_unslash( $_POST['bp_member_blog_post_category'] ), 'sanitize_text_field' );
 			}
 			/* Assign Category. */
 			wp_set_post_terms( $post_id, $post_category, 'category', false );
 
 			$post_tag = '';
 			if ( ! empty( $_POST['bp_member_blog_post_tag'] ) ) {
-				$post_tag = $_POST['bp_member_blog_post_tag'];
+				$post_tag = map_deep( wp_unslash( $_POST['bp_member_blog_post_tag'] ), 'sanitize_text_field' );
 			}
 			/*  Assign Post Tags */
 			wp_set_post_tags( $post_id, $post_tag, false );
@@ -556,9 +576,13 @@ class Buddypress_Member_Blog_Public {
 	}
 
 	/**
-	 * Save Post
+	 * Save Post.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param int    $post_ID Post ID.
+	 * @param object $post Post Object.
+	 * @param string $update  Update Post.
 	 */
 	public function buddypress_member_blog_save_post( $post_ID, $post, $update ) {
 		global $update_post;
@@ -569,25 +593,6 @@ class Buddypress_Member_Blog_Public {
 		if ( isset( $update_post ) && $update_post == true ) {
 			return;
 		}
-		/*
-		if ( isset($_POST['acf']['field_60b73fa05b244']) ) {
-			$update_post = true;
-			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-			$save = array(
-						'ID'			=> $post_ID,
-						'post_status'	=> ( isset($bp_member_blog_gen_stngs['publish_post'])) ? 'publish' : 'pending',
-						'post_content'	=> $_POST['acf']['field_60b73fa05b244'],
-					);
-			wp_update_post( $save );
-		}
-		*/
-		/*
-		if ( isset($_POST['acf']['field_60b73fe35b246']) && $_POST['acf']['field_60b73fe35b246'] !='') {
-			update_post_meta( $post_ID,'_thumbnail_id', $_POST['acf']['field_60b73fe35b246'] );
-		} else {
-			delete_post_meta( $post_ID, '_thumbnail_id' );
-		}
-		*/
 		$update_post = true;
 		if ( $update == true && $post_ID != '' ) {
 			bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) );
@@ -600,11 +605,10 @@ class Buddypress_Member_Blog_Public {
 
 
 	/**
-	 * call acf_form_head() function on acf form
+	 * Call acf_form_head() function on acf form
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function buddypress_member_blog_wp_loaded() {
 		global $wp_query, $post;
 
@@ -623,12 +627,12 @@ class Buddypress_Member_Blog_Public {
 
 
 	/**
-	 * Edit Post data using shortcode
+	 * Edit Post data using shortcode.
 	 *
 	 * @since 1.0.0
+	 * @param array|string $atts User defined attributes for this shortcode instance.
+	 * @param string       $content Shortcode Content.
 	 */
-
-
 	public function buddypress_shortcodes_member_blog( $atts, $content = null ) {
 
 		$bp = buddypress();
@@ -638,10 +642,7 @@ class Buddypress_Member_Blog_Public {
 		}
 
 		global  $bp,$current_user;
-		/*
-		 * Check current user role to allowed create post or not
-		 *
-		 */
+		// Check current user role to allowed create post or not.
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 		$member_types = bp_get_member_type( get_current_user_id(), false );
@@ -667,7 +668,7 @@ class Buddypress_Member_Blog_Public {
 			if ( ! empty( $bp->template_message ) ) {
 				$type = ( 'success' === $bp->template_message_type ) ? 'success' : 'error';
 				?>
-				<aside class="bp-feedback bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
+				<aside class="bp-feedback saved-successfully bp-messages bp-template-notice <?php echo esc_attr( $type ); ?>">
 					<span class="bp-icon" aria-hidden="true"></span>
 					<p><?php echo wp_kses_post( $bp->template_message ); ?></p>
 				</aside>

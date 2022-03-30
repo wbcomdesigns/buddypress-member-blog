@@ -245,7 +245,7 @@ function bp_member_blog_paginate() {
 
 		// structure of “format” depends on whether we’re using pretty permalinks.
 		$format  = '?paged=%#%';
-		$user_id = get_current_user_id();
+		$user_id = bp_displayed_user_id();
 		$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );
 
 		echo wp_kses_post(

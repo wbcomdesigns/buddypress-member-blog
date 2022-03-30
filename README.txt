@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.9.1
-Stable tag: 1.5.0
+Tested up to: 5.9.2
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,20 @@ e.g.
 
 
 == Changelog ==
+= 1.6.0 =
+* Fix: backend UI Updated tab icons
+* Fix: (#80)Fixed wbcom wrapper display even if plugin is deactivated
+* Fix: (#79)Fixed pagination issue for logout user
+* Fix: Removed install plugin button from wrapper and phpcs fixes
+* Fix: Managed Profile blog form UI
+* Fix: (#74) Fixed add new post sub tab post form issue with youzify
+* Fix: Set Groups Integration icon
+* Fix: Removed blog tab and added sub tab in posts tab if youzify activated
+* Fix: (#76)changed the blog tab notice for loggedin user
+* Fix: #73, #74 Member Post Listing and Add New post form
+* Fix: (#76) changed the blog tab notice for loggedin user
+* Fix: (#75) Fixed conflict issue with BP rewrites plugin
+
 = 1.5.0 =
 * Fix: (#68) Fixed blog count issue on display user
 * Fix: (#65) Managed UI conflict issue with other plugins

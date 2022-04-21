@@ -5,7 +5,9 @@
 # Single Profile Page
 # RTL Support
 --------------------------------------------------------------*/
-
+.blog.buddypress .page.hentry {
+    border: none !important;
+}
 
 /*--------------------------------------------------------------
 # Add New Post / Update Post
@@ -178,18 +180,17 @@ aside.bp-feedback.saved-successfully span.bp-icon {
 }
 
 .bp-member-blog-container>div.bp_members {
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .1);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 0;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-radius: 5px !important;
+    margin-bottom: 20px;
+    padding:15px;
+    background: #fff;
 }
 
 .bp-member-blog-container>div.bp_members:last-child {
@@ -321,6 +322,9 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     .bp-member-blog-container .post-featured-image {
         margin:0 0 20px !important;
         width: 100% !important;
+    }
+    .bp-member-blog-container.bpmb-blog-posts {
+        margin-top: 20px;
     }
 }
 

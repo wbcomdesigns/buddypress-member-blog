@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.9.2
-Stable tag: 1.6.0
+Tested up to: 5.9.3
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ e.g.
 
 
 == Changelog ==
+= 1.6.1 =
+* Fix: remove extra div
+* Fix: #101 Profile Blog List UI issue 
+
 = 1.6.0 =
 * Fix: backend UI Updated tab icons
 * Fix: (#80)Fixed wbcom wrapper display even if plugin is deactivated

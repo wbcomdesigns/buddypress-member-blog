@@ -41,6 +41,10 @@ button#insert-media-button {
     margin-top: 4px;
     border-bottom: none !important;
     display: block;
+    border-radius: 0 !important;
+    background: transparent;
+    border-color: #ccc;
+    color: #333;
 }
 
 button#insert-media-button:hover {
@@ -146,7 +150,12 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     border: unset;
     width: auto;
 }
-
+form#bp-member-post.bp-member-blog-post-form input#submit {
+    background: #2468c6;
+    border-radius: 5px;
+    line-height: 1;
+    padding: 10px 20px;
+}
 .buddypress-wrap .bp-member-blog-container .selectize-control.multi .selectize-input.has-items {
     box-shadow: none;
     padding: 10px 10px 8px;
@@ -355,6 +364,25 @@ buddyboss-theme
 .buddyboss-theme .wp-switch-editor {
     border-radius: 0;
 }
+.buddyboss-theme .standard-form button.wp-switch-editor {
+    line-height: 28px !important;
+    min-height: 28px !important;
+}
+.buddyboss-theme textarea#bp_member_blog_post_content {
+    height: 150px !important;
+    border: none !important;
+}
+#wp-bp_member_blog_post_content-media-buttons button#insert-media-button {
+    margin-bottom: 0;
+    min-height: 28px;
+    line-height: 28px;
+}
+#wp-bp_member_blog_post_content-wrap button.wp-switch-editor {
+    line-height: 28px;
+    min-height: 28px;
+    border:none !important
+}
+
 
 /*--------------------------------------------------------------
 Youzify Support

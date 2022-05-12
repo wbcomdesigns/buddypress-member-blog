@@ -51,6 +51,7 @@ $query_args = array(
 );
 // do the query.
 query_posts( $query_args );
+
 ?>
 <?php do_action( 'bp_member_blog_before_posts' ); ?>
 <div  class="bp-member-blog-container bpmb-blog-posts">
@@ -90,7 +91,22 @@ query_posts( $query_args );
 						printf( esc_html__( '%1$s', 'buddypress-member-blog' ), get_the_date(), wp_kses_post( get_the_category_list( ', ' ) ) );
 						?>
 					</div>
-
+					<div class="post-categories">
+							<?php
+							$categories = get_the_category();
+							if ( ! empty( $categories ) ) {
+								foreach ( $categories as $category ) {
+									?>
+									<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>">
+									<?php
+									echo esc_html( $category->name );
+									?>
+									</a>
+									<?php
+								}
+							}
+							?>
+					</div>
 					<div class="entry-content">
 
 						<?php the_excerpt( __( 'Read the rest of this entry &rarr;', 'buddypress-member-blog' ) ); ?>

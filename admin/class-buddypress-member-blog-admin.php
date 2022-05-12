@@ -137,6 +137,8 @@ class Buddypress_Member_Blog_Admin {
 			array(
 				'welcome' => __( 'Welcome', 'buddypress-member-blog' ),
 				'general' => __( 'General', 'buddypress-member-blog' ),
+				'restriction'       => __( 'Restrictions', 'buddypress-member-blog' ),
+				'group-integration' => __( 'Groups Integration', 'buddypress-member-blog' ),
 			)
 		);
 		?>

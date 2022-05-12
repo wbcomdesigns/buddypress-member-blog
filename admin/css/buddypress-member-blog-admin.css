@@ -71,6 +71,17 @@ a#bp-member-blog-pro-delete-table span {
   color: #f62828;
 }
 
+.bp-member-blog-add-form-section{
+  background: #2094f3;
+    display: inline-block;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none !important;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+}
+
 
 
 

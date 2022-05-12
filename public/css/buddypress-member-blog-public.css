@@ -261,8 +261,34 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 .bp-member-blog-container .post-date {
-    margin: 0 0 10px;
+    margin: 5px 0;
     font-size: 14px;
+}
+
+.bp-member-blog-container  .post-categories {
+    margin:8px 0 12px;
+    position: relative;
+}
+
+.bp-member-blog-container  .post-categories a {
+    padding: 2px 10px;
+    font-size: 13px;
+    background: #ececec;    
+    line-height: 1;
+    margin-right: 8px;
+    border-radius: 10px;
+}
+.bp-member-blog-container .post-date:before {
+    content: '';
+    display: inline-block;
+    background: url(../images/calendar-alt.svg) no-repeat center center;
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -4px;
+    opacity: 0.6;
 }
 
 .bp-member-blog-container .post-date a {

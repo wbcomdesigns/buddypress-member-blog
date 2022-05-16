@@ -131,14 +131,14 @@ class Buddypress_Member_Blog_Admin {
 	 * @since 1.0.0
 	 */
 	public function bp_member_blog_settings_page() {
-		$current = filter_input( INPUT_GET, 'tab' ) ? filter_input( INPUT_GET, 'tab' ) : 'welcome';
+		$current          = filter_input( INPUT_GET, 'tab' ) ? filter_input( INPUT_GET, 'tab' ) : 'welcome';
 		$member_blog_tabs = apply_filters(
 			'bp_member_blog_admin_setting_tabs',
 			array(
-				'welcome' => __( 'Welcome', 'buddypress-member-blog' ),
-				'general' => __( 'General', 'buddypress-member-blog' ),
-				'restriction'       => __( 'Restrictions', 'buddypress-member-blog' ),
-				'group-integration' => __( 'Groups Integration', 'buddypress-member-blog' ),
+				'welcome'               => __( 'Welcome', 'buddypress-member-blog' ),
+				'general'               => __( 'General', 'buddypress-member-blog' ),
+				'restriction-pro'       => __( 'Restrictions ( PRO )', 'buddypress-member-blog' ),
+				'group-integration-pro' => __( 'Groups Integration ( PRO )', 'buddypress-member-blog' ),
 			)
 		);
 		?>

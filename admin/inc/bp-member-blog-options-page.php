@@ -24,11 +24,11 @@ switch ( $bautof_tab ) {
 	case 'general':
 		include 'bp-member-blog-setting-general-tab.php';
 		break;
-	case 'restriction':
+	case 'restriction-pro':
 		include 'bp-member-blog-setting-restriction-tab.php';
 		break;
-	case 'group-integration':
+	case 'group-integration-pro':
 		include 'bp-member-blog-setting-group-integration-tab.php';
-		break;	
+		break;
 }
 

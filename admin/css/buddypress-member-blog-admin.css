@@ -82,6 +82,46 @@ a#bp-member-blog-pro-delete-table span {
 }
 }
 
+.wbcom-admin-settings-page .wbcom-tab-content {
+  width: 100%;
+  background: #fff;
+  padding: 20px 40px;
+}
+
+.member-blog-pro-tab .wbcom-welcome-main-wrapper a {
+  display: block;
+  position: relative;
+  z-index: 99;
+}
+.member-blog-pro-tab .wbcom-welcome-main-wrapper small {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffd400;
+  margin-top: -15px;
+  text-transform: uppercase;
+  margin-left: -85px;
+  font-weight: 500;
+  z-index: 9;
+  letter-spacing: 1px;
+}
+.member-blog-pro-tab .wbcom-welcome-main-wrapper img {
+  width: 100%;
+  margin: 0;
+  transition: all 0.3s;
+  opacity: 0.5;
+}
+.member-blog-pro-tab .wbcom-welcome-main-wrapper:after {
+  background: #000;
+  height: 100%;
+  width: 100%;
+  bottom: 4px;
+  content: "";
+  position: absolute;
+}
+
 
 
 

@@ -8,10 +8,12 @@
 .nav-tab-wrapper ul li#general a.nav-tab:before {
     content: "\f111";
 }
-.nav-tab-wrapper ul li#restriction a.nav-tab:before {
+.nav-tab-wrapper ul li#restriction a.nav-tab:before,
+.nav-tab-wrapper ul li#restriction-pro a.nav-tab:before {
     content: "\f528";
 }
-.nav-tab-wrapper ul li#group-integration a.nav-tab:before {
+.nav-tab-wrapper ul li#group-integration a.nav-tab:before,
+.nav-tab-wrapper ul li#group-integration-pro a.nav-tab:before {
     content: "\f307";
 }
 
@@ -58,6 +60,11 @@ p.description.description-bp {
 }
 .wbcom-welcome-support-info .col p {
   height:70px;
+}
+
+.wbcom-tab-content.member-blog-pro-tab .wbcom-welcome-main-wrapper {
+  overflow: hidden;
+  padding: 0;
 }
 
 /* Pro */

@@ -183,6 +183,10 @@ aside.bp-feedback.saved-successfully span.bp-icon {
 /*--------------------------------------------------------------
 # Single Profile Page
 --------------------------------------------------------------*/
+.bp-member-blog-container.bpmb-blog-posts{
+    overflow: hidden;
+    width: 100%;
+}
 
 .bp-member-blog-container {
     margin:0;
@@ -408,6 +412,48 @@ buddyboss-theme
     min-height: 28px;
     border:none !important
 }
+
+/*--------------------------------------------------------------
+ Dark Mode
+--------------------------------------------------------------*/
+.dark-scheme .bp-member-blog-container>div.bp_members,
+.dark-scheme .bp-member-blog-container form#bp-member-post {
+    border: 1px solid #3e3e3e;
+    background: #242526;
+}
+.dark-scheme .bp-member-blog-container .post-date:before,
+.dark-scheme .post-actions span.publish-post a:before,
+.dark-scheme .post-actions span.delete-post a:before{
+    display: none;
+}
+.dark-scheme .bp-member-blog-container  .post-categories a {
+    background: #69696a;
+}
+.dark-scheme .bp-member-blog-container.bpmb-blog-posts img.loader-image{
+    filter: brightness(0) invert(1);
+}
+.dark-scheme #bp-member-post input#bp_member_blog_post_tag,
+.dark-scheme #bp-member-post input[type="text"] {
+    background: #2f3031 !important;
+    border-color: #5d5e5e !important;
+}
+.dark-scheme button#bp_member_blog_post_content-html,
+.dark-scheme button#bp_member_blog_post_content-tmce {
+    background: #18191a !important;
+}
+.dark-scheme #wp-bp_member_blog_post_content-media-buttons button#insert-media-button {
+    border-color: #3e3e3e;
+    color: #fff;
+}
+.dark-scheme .quicktags-toolbar,
+.dark-scheme div#wp-bp_member_blog_post_content-editor-container {
+    border-color: #3e3e3e !important;
+}
+.dark-scheme div#qt_bp_member_blog_post_content_toolbar {
+    background: #18191a;
+}
+
+
 
 
 /*--------------------------------------------------------------

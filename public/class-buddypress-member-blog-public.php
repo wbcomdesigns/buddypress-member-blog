@@ -72,8 +72,10 @@ class Buddypress_Member_Blog_Public {
 		 * class.
 		 */
 
+		$rtl_css = is_rtl() ? '-rtl' : '';
+
 		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css' . $rtl_css . '/buddypress-member-blog-public.css', array(), $this->version, 'all' );
 
 	}
 

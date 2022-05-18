@@ -83,8 +83,8 @@ button#insert-media-button:hover {
 }
 
 .bp-blog-view-link {
-    float: right;
-    padding-right: 5px;
+    float: left;
+    padding-left: 5px;
 }
 
 .buddypress-wrap .bp-member-blog-container .standard-form label,
@@ -105,9 +105,9 @@ ul.bpmb-post-tag-lists li {
     height: auto;
     background: #f2f2f2;
     font-size: 13px;
-    margin: 4px 4px 2px 0;
+    margin: 4px 0 2px 4px;
     padding: 0 6px;
-    padding-right: 25px;
+    padding-left: 25px;
     color: #303030;
     position: relative;
 }
@@ -121,9 +121,9 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove {
     vertical-align: middle;
     display: inline-block;
     padding: 0 6px;
-    border-left: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
     position: absolute;
-    right: 0;
+    left: 0;
     cursor: pointer;
 }
 
@@ -174,7 +174,7 @@ form#bp-member-post.bp-member-blog-post-form input#submit {
 aside.bp-feedback.saved-successfully.bp-messages.bp-template-notice.success {
     background: #ebf9eb;
     border: 1px solid green;
-    border-left: 4px solid green;
+    border-right: 4px solid green;
     border-radius: 0;
     margin-bottom: 20px;
 }
@@ -229,7 +229,7 @@ select#bp-blog-category-select {
 }
 
 .bp-member-blog-container .post-featured-image {
-    margin-right: 20px;
+    margin-left: 20px;
     width: 30%;
 }
 
@@ -267,7 +267,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entr
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edit-post,
 .bp-member-blog-container .post-content .bp-edit-post {
     font-size: 13px;
-    margin-left: 10px;
+    margin-right: 10px;
     font-weight: 400;
     font-style: italic;
 }
@@ -295,7 +295,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     font-size: 13px;
     background: #ececec;
     line-height: 1;
-    margin-right: 8px;
+    margin-left: 8px;
     border-radius: 10px;
 }
 
@@ -307,7 +307,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     width: 16px;
     background-size: cover;
     vertical-align: middle;
-    margin-right: 4px;
+    margin-left: 4px;
     margin-top: -4px;
     opacity: 0.6;
 }
@@ -327,7 +327,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 .post-actions span a {
-    margin-right: 10px;
+    margin-left: 10px;
     display: inline-block;
     font-size: 14px;
 }
@@ -340,7 +340,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     width: 16px;
     background-size: cover;
     vertical-align: middle;
-    margin-right: 4px;
+    margin-left: 4px;
     margin-top: -4px;
     opacity: 0.6;
 }
@@ -353,7 +353,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     width: 16px;
     background-size: cover;
     vertical-align: middle;
-    margin-right: 4px;
+    margin-left: 4px;
     margin-top: -4px;
     opacity: 0.6;
 }
@@ -365,7 +365,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 @media only screen and (max-width: 580px) {
     .bp-member-blog-container>div.bp_members {
         display: block;
-        text-align: left;
+        text-align: right;
     }
     .bp-member-blog-container .post-featured-image {
         display: inline-block;
@@ -476,7 +476,7 @@ buddyboss-theme
 }
 
 .dark-mode #bp-member-post .selectize-control.plugin-remove_button [data-value] .remove {
-    border-left: 1px solid #525252 !important;
+    border-right: 1px solid #525252 !important;
 }
 
 .dark-mode #bp-member-post [for="bp_member_blog_post_category"] .selectize-dropdown {
@@ -526,6 +526,7 @@ Youzify Support
 }
 
 .youzify-main-column #wp-bp_member_blog_post_content-media-buttons {
-    float: left;
+    float: right;
     margin-bottom: -3px;
 }
+/*# sourceMappingURL=buddypress-member-blog-public.css.map */

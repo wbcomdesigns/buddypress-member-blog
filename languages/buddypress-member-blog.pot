@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 13:15:27+00:00\n"
+"POT-Creation-Date: 2022-05-18 10:12:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,11 +46,11 @@ msgid "Welcome"
 msgstr ""
 
 #: admin/class-buddypress-member-blog-admin.php:140
-msgid "Restrictions"
+msgid "Restrictions ( PRO )"
 msgstr ""
 
 #: admin/class-buddypress-member-blog-admin.php:141
-msgid "Groups Integration"
+msgid "Groups Integration ( PRO )"
 msgstr ""
 
 #: admin/class-buddypress-member-blog-admin.php:151
@@ -133,63 +133,9 @@ msgstr ""
 msgid "Select category to exclude on fronted"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:29
-msgid "Group Integration"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:43
-msgid "Enable Group integration"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:51
-msgid "Allow users to create blog posts in the groups."
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:57
-msgid "Who can links the group?"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:63
-msgid "Group Admin"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:64
-msgid "Group Moderator"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:65
-msgid "Group Member"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:68
-msgid ""
-"Select the group roles to assign the capability of blog posting within the "
-"groups."
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:74
-msgid "Enable group posts activity"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:82
-msgid "Enable this setting to generate the activity on blog posting in the groups."
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-group-integration-tab.php:101
-msgid "Enable BuddyPress groups component to allow groups integration %1$s."
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-restriction-tab.php:24
-msgid "Member Blog Restriction"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-restriction-tab.php:35
-msgid "Add Restriction"
-msgstr ""
-
-#: admin/inc/bp-member-blog-setting-restriction-tab.php:42
-#: admin/inc/bp-member-blog-setting-restriction-tab.php:87
-msgid "Select Role"
+#: admin/inc/bp-member-blog-setting-group-integration-tab.php:20
+#: admin/inc/bp-member-blog-setting-restriction-tab.php:19
+msgid "Get Pro Version"
 msgstr ""
 
 #: admin/inc/bp-member-blog-welcome-page.php:20
@@ -715,72 +661,72 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:128
+#: public/class-buddypress-member-blog-public.php:130
 msgid "Add new post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:159
-#: public/class-buddypress-member-blog-public.php:196
-#: public/class-buddypress-member-blog-public.php:215
+#: public/class-buddypress-member-blog-public.php:161
+#: public/class-buddypress-member-blog-public.php:198
+#: public/class-buddypress-member-blog-public.php:217
 #. translators: %s:
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:225
-#: public/class-buddypress-member-blog-public.php:314
+#: public/class-buddypress-member-blog-public.php:227
+#: public/class-buddypress-member-blog-public.php:316
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:241
-#: public/class-buddypress-member-blog-public.php:324
+#: public/class-buddypress-member-blog-public.php:243
+#: public/class-buddypress-member-blog-public.php:326
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:287
+#: public/class-buddypress-member-blog-public.php:289
 msgid "Blog"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:323
+#: public/class-buddypress-member-blog-public.php:325
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:401
+#: public/class-buddypress-member-blog-public.php:403
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:428
+#: public/class-buddypress-member-blog-public.php:430
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:458
+#: public/class-buddypress-member-blog-public.php:460
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:500
-#: public/class-buddypress-member-blog-public.php:598
+#: public/class-buddypress-member-blog-public.php:502
+#: public/class-buddypress-member-blog-public.php:600
 msgid "Post updated successfully."
-msgstr ""
-
-#: public/class-buddypress-member-blog-public.php:500
-#: public/class-buddypress-member-blog-public.php:518
-msgid "View Post"
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:502
 #: public/class-buddypress-member-blog-public.php:520
+msgid "View Post"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:504
+#: public/class-buddypress-member-blog-public.php:522
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:518
-#: public/class-buddypress-member-blog-public.php:602
+#: public/class-buddypress-member-blog-public.php:520
+#: public/class-buddypress-member-blog-public.php:604
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:564
+#: public/class-buddypress-member-blog-public.php:566
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:658
+#: public/class-buddypress-member-blog-public.php:660
 msgid "You are not allowed to access this page."
 msgstr ""
 

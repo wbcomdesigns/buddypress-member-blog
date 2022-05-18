@@ -6,8 +6,8 @@
   "description": "buddypress-member-blog",
   "devDependencies": {
     "grunt": "^1.1.0",
-    "minimist": ">=1.2.2",
-    "grunt-wp-i18n": "^1.0.3"
+    "grunt-wp-i18n": "^1.0.3",
+    "minimist": ">=1.2.2"
   },
   "engines": {
     "node": "16.4.0",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "grunt-checktextdomain": "^1.0.1",
+    "grunt-rtlcss": "^2.0.2",
     "load-grunt-tasks": "^3.5.2"
   }
 }

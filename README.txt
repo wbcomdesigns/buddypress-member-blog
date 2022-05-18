@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 5.9.3
-Stable tag: 1.6.1
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,14 @@ e.g.
 
 
 == Changelog ==
+= 1.7.0 =
+* Fix: Add Dark Mode and filter category issue
+* Fix: (#108) Managed pro tabs UI
+* Fix: (#105) Added Pro options as a disabled mode
+* Fix: (#107) post category UI managed
+* Fix: (#32) Display post category name on the blog tab
+* Fix: (#103) Managed UI with buddyboss
+
 = 1.6.1 =
 * Fix: remove extra div
 * Fix: #101 Profile Blog List UI issue 

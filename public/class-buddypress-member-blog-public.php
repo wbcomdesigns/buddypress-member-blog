@@ -732,24 +732,6 @@ class Buddypress_Member_Blog_Public {
 	public function buddypress_member_blog_users_to_upload_media() {
 		$subscriber = get_role( 'subscriber' );
 		if ( ! empty( $subscriber ) ) {
-			$subscriber->remove_cap( 'delete_others_pages' );
-			$subscriber->remove_cap( 'delete_others_posts' );
-			$subscriber->remove_cap( 'delete_pages' );
-			$subscriber->remove_cap( 'edit_published_posts' );
-			$subscriber->remove_cap( 'delete_posts' );
-			$subscriber->remove_cap( 'delete_private_posts' );
-			$subscriber->remove_cap( 'delete_published_pages' );
-			$subscriber->remove_cap( 'delete_published_posts' );
-			$subscriber->remove_cap( 'edit_others_pages' );
-			$subscriber->remove_cap( 'edit_others_posts' );
-			$subscriber->remove_cap( 'edit_posts' );
-			$subscriber->remove_cap( 'edit_private_posts' );
-			$subscriber->remove_cap( 'edit_published_pages' );
-			$subscriber->remove_cap( 'edit_published_posts' );
-			$subscriber->remove_cap( 'publish_posts' );
-			$subscriber->remove_cap( 'read' );
-			$subscriber->remove_cap( 'read_private_posts' );
-			$subscriber->remove_cap( 'unfiltered_html' );
 			$subscriber->add_cap( 'upload_files' );
 		}
 

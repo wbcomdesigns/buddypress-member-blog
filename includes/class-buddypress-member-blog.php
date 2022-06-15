@@ -194,6 +194,7 @@ class Buddypress_Member_Blog {
 		// $this->loader->add_action( 'wp_head', $plugin_public, 'buddypress_member_blog_wp_loaded', 999, 3);
 
 		$this->loader->add_shortcode( 'bp-member-blog', $plugin_public, 'buddypress_shortcodes_member_blog' );
+		$this->loader->add_action( 'wp_ajax_bpmp_auto_draft', $plugin_public, 'buddypress_member_blog_post_auto_draft' );
 
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'buddypress_member_blog_post_submit' );
 		if ( in_array( 'bp-rewrites/class-bp-rewrites.php', get_option( 'active_plugins' ) ) ) {

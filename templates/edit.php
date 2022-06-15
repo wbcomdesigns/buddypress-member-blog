@@ -1,38 +1,37 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-$post_id                  = bp_action_variable( 0 );
-$blog_post                = (object) array(
-	'post_title'   => '',
-	'post_content' => '',
-);
 $post_selected_category   = $post_selected_tag = array();
 $post_thumbnail           = '';
-if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 ) {
+	$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
 }
+
 
 if ( $post_id != 0 && $post_id != '' ) {
-	$blog_post = get_post( $post_id );
-
+	$post                   = get_post( $post_id );
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
 	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );
-
-	$post_thumbnail = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
+	$post_thumbnail         = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
+	setup_postdata( $post );
 }
-
 
 $args = array(
 	'taxonomy'   => 'category',
 	'hide_empty' => false,
 );
+
 if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) ) {
 	$args['exclude'] = $bp_member_blog_gen_stngs['exclude_category'];
 }
 
-$category = get_terms( $args );
-
-
-$submit_btn_value = ( ! empty( $post_id ) ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
+$category         = get_terms( $args );
+$submit_btn_value = ( 'publish' === $post->post_status  ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
 
 if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$submit_btn_value = __( 'Submit for Review', 'buddypress-member-blog' );
@@ -47,7 +46,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<?php do_action( 'bp_post_before_title', $post_id ); ?>
 
 			<label for="bp_member_blog_post_title"><?php esc_html_e( 'Title:', 'buddypress-member-blog' ); ?>
-				<input type="text" name="bp_member_blog_post_title" value="<?php echo esc_attr( $blog_post->post_title ); ?>" required/>
+				<input type="text" name="bp_member_blog_post_title" value="<?php echo 'auto-draft' !== $post->post_status ? esc_attr( $post->post_title ) : ''; ?>" required/>
 			</label>
 
 			<?php do_action( 'bp_post_after_title', $post_id ); ?>
@@ -58,13 +57,15 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<label for="bp_member_blog_post_content"><?php esc_html_e( 'Post Content:', 'buddypress-member-blog' ); ?>
 
 				<?php
-				wp_editor(
-					$blog_post->post_content,
-					'bp_member_blog_post_content',
-					array(
-						'media_buttons' => true,
-					)
-				);
+				if( 'auto-draft' !== $post->post_status ) {
+					wp_editor(
+						$post->post_content,
+						'bp_member_blog_post_content',
+						array(
+							'media_buttons' => true,
+						)
+					);
+				}
 				?>
 			</label>
 
@@ -147,7 +148,6 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php wp_nonce_field( 'bp_member_blog_post' ); ?>
 		</form>
-
 	</div>
-
 </div>
+<?php wp_reset_postdata(); ?>

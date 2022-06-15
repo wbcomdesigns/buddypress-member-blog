@@ -13,6 +13,14 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 
 if ( $post_id != 0 && $post_id != '' ) {
 	$blog_post = get_post( $post_id );
+	$user_id   = get_current_user_id();
+	$author_id = $blog_post->post_author;	
+	if ( $user_id != $author_id) { ?>
+		<script>
+		window.location = '<?php echo get_the_permalink();?>';
+		</script>
+		<?php
+	}	
 
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
 	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );

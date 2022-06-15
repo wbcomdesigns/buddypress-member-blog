@@ -31,7 +31,7 @@ if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_memb
 }
 
 $category         = get_terms( $args );
-$submit_btn_value = ( 'publish' === $post->post_status  ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
+$submit_btn_value = ( 'publish' === $post->post_status ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
 
 if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$submit_btn_value = __( 'Submit for Review', 'buddypress-member-blog' );
@@ -57,15 +57,15 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<label for="bp_member_blog_post_content"><?php esc_html_e( 'Post Content:', 'buddypress-member-blog' ); ?>
 
 				<?php
-				if( 'auto-draft' !== $post->post_status ) {
-					wp_editor(
-						$post->post_content,
-						'bp_member_blog_post_content',
-						array(
-							'media_buttons' => true,
-						)
-					);
-				}
+
+				wp_editor(
+					$post->post_content,
+					'bp_member_blog_post_content',
+					array(
+						'media_buttons' => true,
+					)
+				);
+
 				?>
 			</label>
 

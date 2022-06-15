@@ -762,6 +762,7 @@ class Buddypress_Member_Blog_Public {
 		$subscriber = get_role( 'subscriber' );
 		if ( ! empty( $subscriber ) ) {
 			$subscriber->add_cap( 'upload_files' );
+			$subscriber->add_cap( 'edit_posts' );
 		}
 
 	}

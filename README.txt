@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 1.7.1 =
+* Fix: (#117) Fixed Subscriber user can't upload media from fronted
+
 = 1.7.0 =
 * Fix: Add Dark Mode and filter category issue
 * Fix: (#108) Managed pro tabs UI

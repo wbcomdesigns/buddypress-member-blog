@@ -165,7 +165,8 @@ class Buddypress_Member_Blog_Admin {
 							<?php
 							foreach ( $member_blog_tabs as $bmpro_tab => $bmpro_name ) {
 								$class = ( $bmpro_tab == $current ) ? 'nav-tab-active' : '';
-								echo '<li id="' . esc_attr( $bmpro_tab ) . '"><a class="nav-tab ' . esc_attr( $class ) . '" href="admin.php?page=buddypress-member-blog&tab=' . esc_attr( $bmpro_tab ) . '">' . esc_html( $bmpro_name ) . '</a></li>';
+								$bmb_nonce = wp_create_nonce( 'bmb_nonce' );
+								echo '<li id="' . esc_attr( $bmpro_tab ) . '"><a class="nav-tab ' . esc_attr( $class ) . '" href="admin.php?page=buddypress-member-blog&tab=' . esc_attr( $bmpro_tab ) . '&nonce='. esc_attr( $bmb_nonce ) .'">' . esc_html( $bmpro_name ) . '</a></li>';
 							}
 							?>
 							</ul>

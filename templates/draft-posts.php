@@ -46,7 +46,7 @@ $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 $query_args = array(
 	'author'      => $user_id,
 	'post_type'   => 'post',
-	'post_status' => 'publish',
+	'post_status' => 'draft',
 	'paged'       => intval( $paged ),
 );
 // do the query.

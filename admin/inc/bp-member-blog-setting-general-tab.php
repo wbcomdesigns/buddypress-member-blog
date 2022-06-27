@@ -141,6 +141,20 @@ if ( ! empty( $member_types ) ) {
 				<p class="description"><?php esc_html_e( 'Allow user to publish posts. if not enable, they can only submit post as pending for review.', 'buddypress-member-blog' ); ?></p>
 			</td>
 		</tr>
+		<tr>
+			<th scope="row">
+				<label for="bp_member_blog_publish_post">
+					<?php esc_html_e( 'Enable create category', 'buddypress-member-blog' ); ?>
+				</label>
+			</th>
+			<td>
+				<label class="wb-switch">
+					<input name='bp_member_blog_gen_stngs[create_category]' type='checkbox' value='yes' <?php ( isset( $bp_member_blog_gen_stngs['create_category'] ) ) ? checked( $bp_member_blog_gen_stngs['create_category'], 'yes' ) : ''; ?> id="bp_member_blog_publish_post"/>
+					<div class="wb-slider wb-round"></div>
+				</label>
+				<p class="description"><?php esc_html_e( 'Enable this option if you want to create category from the font-end.', 'buddypress-member-blog' ); ?></p>
+			</td>
+		</tr>
 
 		<tr>
 			<th scope="row">

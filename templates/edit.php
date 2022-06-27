@@ -14,13 +14,13 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 if ( $post_id != 0 && $post_id != '' ) {
 	$blog_post = get_post( $post_id );
 	$user_id   = get_current_user_id();
-	$author_id = $blog_post->post_author;	
-	if ( $user_id != $author_id) { ?>
+	$author_id = $blog_post->post_author;
+	if ( $user_id != $author_id ) { ?>
 		<script>
-		window.location = '<?php echo get_the_permalink();?>';
+		window.location = '<?php echo get_the_permalink(); ?>';
 		</script>
 		<?php
-	}	
+	}
 
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
 	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );
@@ -35,6 +35,11 @@ $args = array(
 );
 if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) ) {
 	$args['exclude'] = $bp_member_blog_gen_stngs['exclude_category'];
+}
+
+$create_cat = '';
+if ( isset( $bp_member_blog_gen_stngs['create_category'] ) && ! empty( $bp_member_blog_gen_stngs['create_category'] ) ) {
+	$create_cat = $bp_member_blog_gen_stngs['create_category'];
 }
 
 $category = get_terms( $args );
@@ -92,12 +97,20 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 					<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $cat->name ); ?></option>
 				<?php } ?>
 				</select>
-
+				<?php if ( 'yes' === $create_cat ) { ?>
+					<a href="javascript:void(0);" class="add-bpmb-category"><i class="fa fa-plus" aria-hidden="true"></i></a>
+				<?php } ?>	
 			</label>
-
+			<?php if ( 'yes' === $create_cat ) { ?>
+				<div class="add-bpmb-cat-row">
+					<?php /* translators: Display plural label name */ ?>
+					<input type="text" id="bpmb-category-name" placeholder="<?php echo esc_html_e( 'Add Category', 'buddypress-member-blog' ); ?>">
+					<?php $add_cat_nonce = wp_create_nonce( 'bpmb-add-bpmb-category' ); ?>
+					<input type="hidden" id="bpmb-add-category-nonce" value="<?php echo esc_html( $add_cat_nonce ); ?>">
+					<button type="button" id="add-bpmb-cat" class="btn button"><?php esc_html_e( 'Add', 'buddypress-member-blog' ); ?></button>
+				</div>
+				<?php } ?>		
 			<?php do_action( 'bp_post_after_category', $post_id ); ?>
-
-
 
 			<?php do_action( 'bp_post_before_tag', $post_id ); ?>
 

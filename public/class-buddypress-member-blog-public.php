@@ -103,7 +103,15 @@ class Buddypress_Member_Blog_Public {
 		 */
 		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
-
+		wp_localize_script(
+			$this->plugin_name,
+			'bpmb_ajax_object',
+			array(
+				'ajax_url'          => admin_url( 'admin-ajax.php' ),
+				'ajax_nonce'        => wp_create_nonce( 'bpmb-blog-nonce' ),
+				'required_cat_text' => esc_html__( 'Category name is required.', 'buddypress-member-blog' ),
+			)
+		);
 	}
 
 
@@ -766,5 +774,27 @@ class Buddypress_Member_Blog_Public {
 
 	}
 
-
+	/**
+	 * Actions Performed To Add BP bpmb Category.
+	 *
+	 * @author  wbcomdesigns
+	 * @since   1.0.0
+	 * @access  public
+	 */
+	public function bpmb_add_category_front_end() {
+		check_ajax_referer( 'bpmb-blog-nonce', 'security_nonce' );
+		if ( isset( $_POST['action'] ) && 'bpmb_add_category_front_end' === $_POST['action'] ) {
+			if ( isset( $_POST['name'] ) ) {
+				$term = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+			}
+			$taxonomy    = 'category';
+			$term_exists = term_exists( $term, $taxonomy );
+			if ( 0 === $term_exists || null === $term_exists ) {
+				$demo = wp_insert_term( $term, $taxonomy );
+			}
+			$cat_id = isset( $demo['term_id'] ) ? $demo['term_id'] : '';
+			echo esc_html( $cat_id );
+			die;
+		}
+	}
 }

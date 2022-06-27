@@ -181,6 +181,10 @@ select#bp-blog-category-select {
     width: 100%;
 }
 
+.add-bpmb-cat-row {
+    display: none;
+    margin-top: 15px;
+}
 
 /*--------------------------------------------------------------
 # Single Profile Page

@@ -169,7 +169,7 @@
                 '" class="item">' +
                 name +
                 '<a href="javascript:void(0)" class="remove" tabindex="-1" title="Remove">×</a></div>';
-              jQuery(".selectize-input").append(html);
+              jQuery(".bpmb_category .selectize-input").append(html);
               jQuery(".add-bpmb-cat-row").hide();
               jQuery("#bp-blog-category-select").append(
                 '<option value="' + response + '">' + name + "</option>"

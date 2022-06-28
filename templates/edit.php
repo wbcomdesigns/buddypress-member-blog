@@ -87,7 +87,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_category', $post_id ); ?>
 
-			<label for="bp_member_blog_post_category"><?php esc_html_e( 'Post Category:', 'buddypress-member-blog' ); ?>
+			<label class="bpmb_category" for="bp_member_blog_post_category"><?php esc_html_e( 'Post Category:', 'buddypress-member-blog' ); ?>
 
 				<select id="bp-blog-category-select" name="bp_member_blog_post_category[]" multiple data-placeholder="<?php esc_html_e( 'Select post category', 'buddypress-member-blog' ); ?>">
 				<?php

@@ -173,17 +173,13 @@
                 if (presetvalue.includes(",")) {
                   selectedOptions = presetvalue.split(",");
                   selectedOptions.push(response);
-                  console.log("here1");
                 } else if (Array.isArray(presetvalue)) {
                   selectedOptions = presetvalue;
                   selectedOptions.push(response);
-                  console.log("here2");
                 } else {
                   selectedOptions = [presetvalue];
                   selectedOptions.push(response);
-                  console.log("here3");
                 }
-                console.log(selectedOptions);
                 jQuery("#bp-blog-category-select")[0].selectize.addOption({
                   text: name,
                   value: response,

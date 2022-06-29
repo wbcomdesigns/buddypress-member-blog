@@ -163,18 +163,44 @@
           },
           function (response) {
             if (response) {
-              var html =
-                '<div data-value="' +
-                response +
-                '" class="item">' +
-                name +
-                '<a href="javascript:void(0)" class="remove" tabindex="-1" title="Remove">×</a></div>';
-              jQuery(".bpmb_category .selectize-input").append(html);
               jQuery(".add-bpmb-cat-row").hide();
               jQuery("#bp-blog-category-select").append(
                 '<option value="' + response + '">' + name + "</option>"
               );
-              jQuery("#bp-blog-category-select").val(response);
+              let presetvalue = jQuery("#bp-blog-category-select").val();
+              if ("" != presetvalue) {
+                let selectedOptions = [];
+                if (presetvalue.includes(",")) {
+                  selectedOptions = presetvalue.split(",");
+                  selectedOptions.push(response);
+                  console.log("here1");
+                } else if (Array.isArray(presetvalue)) {
+                  selectedOptions = presetvalue;
+                  selectedOptions.push(response);
+                  console.log("here2");
+                } else {
+                  selectedOptions = [presetvalue];
+                  selectedOptions.push(response);
+                  console.log("here3");
+                }
+                console.log(selectedOptions);
+                jQuery("#bp-blog-category-select")[0].selectize.addOption({
+                  text: name,
+                  value: response,
+                });
+
+                jQuery("#bp-blog-category-select")[0].selectize.setValue(
+                  selectedOptions
+                );
+              } else {
+                jQuery("#bp-blog-category-select")[0].selectize.addOption({
+                  text: name,
+                  value: response,
+                });
+                jQuery("#bp-blog-category-select")[0].selectize.setValue(
+                  response
+                );
+              }
               jQuery("#add-bpmb-cat").html(btn_text);
               jQuery("#bpmb-category-name").val("");
               jQuery(".add-bpmb-category i").attr("class", "fa fa-plus");

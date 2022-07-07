@@ -137,19 +137,28 @@ class Buddypress_Member_Blog_Admin {
 			array(
 				'welcome'               => __( 'Welcome', 'buddypress-member-blog' ),
 				'general'               => __( 'General', 'buddypress-member-blog' ),
-				'restriction-pro'       => __( 'Restrictions ( PRO )', 'buddypress-member-blog' ),
-				'group-integration-pro' => __( 'Groups Integration ( PRO )', 'buddypress-member-blog' ),
+				'restriction-pro'       => __( 'Restrictions', 'buddypress-member-blog' ),
+				'group-integration-pro' => __( 'Groups Integration', 'buddypress-member-blog' ),
 			)
 		);
 		?>
 		<div class="wrap">
-			<hr class="wp-header-end">
+			<div class="wbcom-bb-plugins-offer-wrapper">
+				<div id="wb_admin_logo">
+					<a href="https://wbcomdesigns.com/downloads/buddypress-community-bundle/" target="_blank">
+						<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'admin/wbcom/assets/imgs/wbcom-offer-notice.png'; ?>">
+					</a>
+				</div>
+			</div>
 			<div class="wbcom-wrap bp-member-blog-wrap">
 				<div class="blpro-header">
-					<?php echo do_shortcode( '[wbcom_admin_setting_header]' ); ?>
-					<h1 class="wbcom-plugin-heading">
-						<?php esc_html_e( 'BuddyPress Member Blog Settings', 'buddypress-member-blog' ); ?>
-					</h1>
+					<div class="wbcom_admin_header-wrapper">
+			            <div id="wb_admin_plugin_name">
+							<?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?>
+							<span><?php printf( __( 'Version %s', 'buddypress-member-blog' ), BUDDYPRESS_MEMBER_BLOG_VERSION ); ?></span>
+						</div>
+			            <?php echo do_shortcode('[wbcom_admin_setting_header]'); ?>
+			        </div>
 				</div>
 				<div class="wbcom-admin-settings-page">
 					<div class="wbcom-tabs-section">

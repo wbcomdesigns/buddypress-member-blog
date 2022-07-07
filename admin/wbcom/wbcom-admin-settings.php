@@ -49,116 +49,6 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Function for get all wbcom free plugin's details.
-		 *
-		 * @since 2.0.0
-		 * @access public
-		 */
-		public function wbcom_all_free_plugins() {
-			$free_plugins = array(
-				'0' => array(
-					'name'        => esc_html__( 'Custom Font Uploader', 'buddypress-member-blog' ),
-					'slug'        => 'custom-font-uploader',
-					'description' => esc_html__( 'It also allows you to upload your own custom font to your site and use them using custom css.', 'buddypress-member-blog' ),
-					'status'      => $this->wbcom_plugin_status( 'custom-font-uploader' ),
-					'wp_url'      => 'https://wordpress.org/plugins/custom-font-uploader/',
-					'icon'        => 'fa fa-upload',
-				),
-				'1' => array(
-					'name'        => esc_html__( 'BuddyPress Create Group Type', 'buddypress-member-blog' ),
-					'slug'        => 'bp-create-group-type',
-					'description' => esc_html__( 'It will help to create group type for BuddyPress Groups.', 'buddypress-member-blog' ),
-					'status'      => $this->wbcom_plugin_status( 'bp-create-group-type' ),
-					'wp_url'      => 'https://wordpress.org/plugins/bp-create-group-type/',
-					'icon'        => 'fa fa-sitemap',
-				),
-				'2' => array(
-					'name'        => esc_html__( 'BuddyPress Member Reviews', 'buddypress-member-blog' ),
-					'slug'        => 'bp-user-profile-reviews',
-					'description' => esc_html__( 'This plugin allows only site members to add reviews to the buddypress members on the site and even rate the member’s profile out of 5 points with multiple review criteria.', 'buddypress-member-blog' ),
-					'status'      => $this->wbcom_plugin_status( 'bp-user-profile-reviews' ),
-					'wp_url'      => 'https://wordpress.org/plugins/bp-user-profile-reviews/',
-					'icon'        => 'fa fa-user',
-				),
-				'3' => array(
-					'name'        => esc_html__( 'BuddyPress Group Reviews', 'buddypress-member-blog' ),
-					'slug'        => 'review-buddypress-groups',
-					'description' => esc_html__( 'This plugin allows the BuddyPress Members to give reviews to the BuddyPress groups on the site. The review form allows the users to give text review, even rate the group on the basis of multiple criterias.', 'buddypress-member-blog' ),
-					'status'      => $this->wbcom_plugin_status( 'review-buddypress-groups' ),
-					'wp_url'      => 'https://wordpress.org/plugins/review-buddypress-groups/',
-					'icon'        => 'fa fa-2x fa-users',
-				),
-			);
-			return $free_plugins;
-		}
-
-		/**
-		 * Function for get all wbcom paid plugin's details.
-		 *
-		 * @since 2.0.0
-		 * @access public
-		 */
-		public function wbcom_all_paid_plugins() {
-			$paid_plugins = array(
-				'0' => array(
-					'name'         => esc_html__( 'BuddyPress Moderation Pro', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'BuddyPress Community Moderation offers a solution for site owners to keep their communities straight. With community policing strategy, members of the community have an option for moderation sitewide by attaching flags to content created within the various components.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-moderation-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-exclamation-triangle',
-				),
-				'1' => array(
-					'name'         => esc_html__( 'BuddyPress Polls', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'Use BuddyPress Polls plugin to create polls inside the activity, let your user response to your polls. Members can create pools like activities, easily votes on them.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-polls/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-bar-chart',
-				),
-				'2' => array(
-					'name'         => esc_html__( 'BuddyPress Hashtags', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'Allows members to use hashtags in BuddyPress activities and bbPress topics and ready with widgets.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-hashtags/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-hashtag',
-				),
-				'3' => array(
-					'name'         => esc_html__( 'BuddyPress Profanity', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'Use BuddyPress Profanity plugin to censor content in your community! Easily Censor all the unwanted words in activities, private messages contents by specifying a list of keywords to be filtered.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-profanity/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-ban',
-				),
-				'4' => array(
-					'name'         => esc_html__( 'BuddyPress Private Community Pro', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'This plugin offers a lockdown for BuddyPress Component and will ask users to log in go further to check profile or any other protected details.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-private-community-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-user-times',
-				),
-				'5' => array(
-					'name'         => esc_html__( 'BuddyPress Profile Pro', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'This plugin gives you the power to extend BuddyPress Profiles with repeater fields and groups. You can easily add multiple field groups and display them at member’s profile.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-profile-pro/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-user-circle-o',
-				),
-				'6' => array(
-					'name'         => esc_html__( 'BuddyPress Sticky Post', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'This will make it easier for the site administrator to make the pinned activity item recognized first by the community whenever they visit the site.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-sticky-post/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-thumb-tack',
-				),
-				'7' => array(
-					'name'         => esc_html__( 'BuddyPress Auto Friends', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'Allow the site admin to select global friends for all his members with BuddyPress Auto friends plugin.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-auto-friends/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-user-plus',
-				),
-				'8' => array(
-					'name'         => esc_html__( 'BuddyPress Quotes', 'buddypress-member-blog' ),
-					'description'  => esc_html__( 'BuddyPress quotes plugin comes with the feature to let users post their activity updates with interactive backgrounds selection such as colors and images set by the site administrator, so they can tell a more expressive story.', 'buddypress-member-blog' ),
-					'download_url' => 'https://wbcomdesigns.com/downloads/buddypress-quotes/?utm_source=wporg&utm_medium=plugins&utm_campaign=bp',
-					'icon'         => 'fa fa-quote-left',
-				),
-			);
-			return $paid_plugins;
-		}
-
-		/**
 		 * Function for check plugin is installed or not.
 		 *
 		 * @since 2.0.0
@@ -336,9 +226,6 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 				case 'wbcom-plugins-page':
 					$plugin_active = 'is_active';
 					break;
-				case 'wbcom-themes-page':
-					$theme_active = 'is_active';
-					break;
 				case 'wbcom-support-page':
 					$support_active = 'is_active';
 					break;
@@ -350,12 +237,6 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 			}
 			?>
 			<div id="wb_admin_header" class="wp-clearfix">
-
-				<div id="wb_admin_logo">
-					<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'admin/wbcom/assets/imgs/logowbcom.png'; ?>">
-					<div class="wb_admin_right"></div>
-				</div>
-
 				<nav id="wb_admin_nav">
 					<ul>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $settings_active ); ?>">
@@ -367,13 +248,7 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 						<li class="wb_admin_nav_item <?php echo esc_attr( $plugin_active ); ?>">
 							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcom-plugins-page'; ?>" id="wb_admin_nav_trigger_extensions">
 								<i class="fa fa-th"></i>
-								<h4><?php esc_html_e( 'Our Plugins', 'buddypress-member-blog' ); ?></h4>
-							</a>
-						</li>
-						<li class="wb_admin_nav_item <?php echo esc_attr( $theme_active ); ?>">
-							<a href="<?php echo esc_url( get_admin_url() ) . 'admin.php?page=wbcom-themes-page'; ?>" id="wb_admin_nav_trigger_themes">
-								<i class="fa fa-magic"></i>
-								<h4><?php esc_html_e( 'Our Themes', 'buddypress-member-blog' ); ?></h4>
+								<h4><?php esc_html_e( 'Themes & Extension', 'buddypress-member-blog' ); ?></h4>
 							</a>
 						</li>
 						<li class="wb_admin_nav_item <?php echo esc_attr( $support_active ); ?>">

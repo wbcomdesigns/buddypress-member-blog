@@ -23,7 +23,7 @@
 						<li><a href="#wbcom-learndash-extension"><?php esc_html_e( 'LearnDash Extension', 'buddypress-friend-follow-suggestion' ); ?></a></li>
 						<li><a href="#wbcom-themes-list"><?php esc_html_e( 'Our Themes', 'buddypress-friend-follow-suggestion' ); ?></a></li>
 					</ul>
-					<a href="https://wbcomdesigns.com/plugins/premium-buddypress-add-ons/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View Extension', 'buddypress-friend-follow-suggestion' ); ?></a>
+					<a href="https://wbcomdesigns.com/plugins/premium-buddypress-add-ons/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View More Extension', 'buddypress-friend-follow-suggestion' ); ?></a>
 				</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">
@@ -293,7 +293,7 @@
 			<div id="wbcom-learndash-extension" class="wbcom-bp-addons-plugins-list wbcom-bp-free-addon-plugins">
 				<div class="wbcom-bp-addons-plugins-title-section">
 					<h4 class="wbcom-plugin-heading"><?php esc_html_e( 'Extension for LearnDash', 'buddypress-friend-follow-suggestion' ); ?></h4>
-					<a href="https://wbcomdesigns.com/plugins/learndash-add-ons/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View More Themes', 'buddypress-friend-follow-suggestion' ); ?></a>
+					<a href="https://wbcomdesigns.com/plugins/learndash-add-ons/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View More Extension', 'buddypress-friend-follow-suggestion' ); ?></a>
 				</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">
@@ -418,7 +418,7 @@
 			<div id="wbcom-free-extension" class="wbcom-bp-addons-plugins-list wbcom-bp-free-addon-plugins">
 				<div class="wbcom-bp-addons-plugins-title-section">
 					<h4 class="wbcom-plugin-heading"><?php esc_html_e( 'Our Free Extension', 'buddypress-friend-follow-suggestion' ); ?></h4>
-					<a href="https://wbcomdesigns.com/plugins/buddypress/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View Extension', 'buddypress-friend-follow-suggestion' ); ?></a>
+					<a href="https://wbcomdesigns.com/plugins/buddypress/" class="wbcom-addons-button" target="_blank"><?php esc_html_e( 'View More Extension', 'buddypress-friend-follow-suggestion' ); ?></a>
 				</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">

@@ -461,6 +461,11 @@ ul.wbcom-addons-plugins-links li {
     background:#272B41;
 }
 
+.wbcom-bp-addons-plugins-title-section .wbcom-addons-plugins-links li a:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 .wbcom-addon-plugins-inner-wrapper {
     display: flex;
     flex-wrap: wrap;

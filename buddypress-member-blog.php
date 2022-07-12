@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -145,38 +144,38 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 /*
  *  Remove edit post cap for subscriber user onadmin and fronted
  */
-add_action( 'init', 'bp_member_blog_user_upload_file_permission');
-function bp_member_blog_user_upload_file_permission() {	
-	global $post;	
-	$subscriber  = get_role( 'subscriber' );
+add_action( 'init', 'bp_member_blog_user_upload_file_permission' );
+function bp_member_blog_user_upload_file_permission() {
+	global $post;
+	$subscriber = get_role( 'subscriber' );
 	if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 		$subscriber->remove_cap( 'upload_files' );
 	} else {
 		$subscriber->add_cap( 'upload_files' );
 	}
-	if ( ! defined( 'DOING_AJAX' )  )  {
+	if ( ! defined( 'DOING_AJAX' ) ) {
 		$subscriber->remove_cap( 'edit_published_posts' );
 		$subscriber->remove_cap( 'edit_others_pages' );
-		$subscriber->remove_cap( 'edit_others_posts' );	
+		$subscriber->remove_cap( 'edit_others_posts' );
 		$subscriber->remove_cap( 'edit_published_pages' );
 		$subscriber->remove_cap( 'unfiltered_html' );
 		$subscriber->remove_cap( 'edit_posts' );
 	}
-	
+
 }
 
 
 /*
  *  Assign edit post cap for subscriber user on bp-member-blog shortcode
  */
-add_action('wp_head', 'bp_member_blog_wp_head');
+add_action( 'wp_head', 'bp_member_blog_wp_head' );
 function bp_member_blog_wp_head() {
 	global $post;
 	if ( is_user_logged_in() && is_a( $post, 'WP_Post' ) && isset( $post->post_content ) && has_shortcode( $post->post_content, 'bp-member-blog' ) ) {
 		global $current_user;
-		if ( in_array( 'subscriber', $current_user->roles )) {
-			$subscriber  = get_role( 'subscriber' );		
-			$subscriber->add_cap( 'edit_published_posts' );		
+		if ( in_array( 'subscriber', $current_user->roles ) ) {
+			$subscriber = get_role( 'subscriber' );
+			$subscriber->add_cap( 'edit_published_posts' );
 			$subscriber->add_cap( 'edit_others_pages' );
 			$subscriber->add_cap( 'edit_others_posts' );
 			$subscriber->add_cap( 'edit_posts' );
@@ -191,13 +190,13 @@ function bp_member_blog_wp_head() {
  *  Assign edit post cap for subscriber user on media-form action
  */
 add_action( 'check_ajax_referer', 'bp_member_blog_check_ajax_referer', 10, 2 );
-function bp_member_blog_check_ajax_referer( $action, $result) {
-	
+function bp_member_blog_check_ajax_referer( $action, $result ) {
+
 	if ( $action == 'media-form' && is_user_logged_in() ) {
 		global $current_user;
-		if ( in_array( 'subscriber', $current_user->roles )) {
-			$subscriber  = get_role( 'subscriber' );		
-			$subscriber->add_cap( 'edit_published_posts' );		
+		if ( in_array( 'subscriber', $current_user->roles ) ) {
+			$subscriber = get_role( 'subscriber' );
+			$subscriber->add_cap( 'edit_published_posts' );
 			$subscriber->add_cap( 'edit_others_pages' );
 			$subscriber->add_cap( 'edit_others_posts' );
 			$subscriber->add_cap( 'edit_posts' );

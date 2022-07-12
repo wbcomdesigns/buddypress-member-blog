@@ -557,7 +557,11 @@ ul.wbcom-addons-plugins-links li {
     border-radius: 12px;
 }
 
-
+#wbcom-learndash-extension,
+#wbcom-themes-list,
+#wbcom-free-extension {
+    display: none;
+}
 
 /*================================================
  Support style

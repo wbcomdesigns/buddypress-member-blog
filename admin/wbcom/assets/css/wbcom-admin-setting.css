@@ -93,7 +93,7 @@ h4.wbcom-support-section {
     box-shadow: none;
     height: 40px;
     border-color:#e0e0e0;
-    background: #fafafa;
+    background-color: #fafafa;
 }
 .wbcom-settings-section-options.wbcom-settings-section-options-flex a.button-secondary {
     height: 40px;
@@ -576,7 +576,7 @@ ul.wbcom-addons-plugins-links li {
 }
 #wbcom_admin_content_support p {
     font-size: 16px;
-    color: #000;
+    color: #4c5261;
 }
 
 ul#wbcom_support_list {

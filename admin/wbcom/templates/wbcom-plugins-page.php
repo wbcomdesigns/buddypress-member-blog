@@ -487,6 +487,66 @@
 							</div>
 						</div>		
 					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'reCaptcha for BuddyPress', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'Buddypress reCaptcha is the best solution that provides an all-in-one captcha for  Buddypress, WordPress, and woo-commerce.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/buddypress-recaptcha/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/buddypress-recaptcha/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'BuddyPress WooCommerce Integration', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'BuddyWoo Integration Plugin will help to integrate WooCommerce with Buddypress.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/buddypress-woocommerce-integration/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/buddypress-woocommerce-integration/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'BuddyPress Member Export Import', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'Easily import/export your BuddyPress members. Small but an important features.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/buddypress-member-export-import/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/buddypress-member-export-import/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'BuddyPress Activity Bump', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'ump the most recent activity on the top of newsfeed in your BuddyPress website.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/buddypress-activity-bump/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/buddypress-activity-bump/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'Shortcodes for BuddyPress', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'Use shortcodes to display activity streams, members, group listings, and user notifications on any post.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/shortcodes-for-buddypress/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/shortcodes-for-buddypress/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
+					<div class="wbcom-addons-plugins-card">
+						<div class="wbcom-addons-card-details">
+							<h2><?php esc_html_e( 'BuddyPress Create Group Type', 'buddypress-member-blog' ); ?></h2>
+							<p><?php esc_html_e( 'Create group types on BuddyPress based on the interest areas of your community members.', 'buddypress-member-blog' ); ?></p>
+							<div class="wbcom-addons-card-button">								
+								<a target="_blank" href="https://wbcomdesigns.com/downloads/buddypress-create-group-type/" class="wbcom-addons-button"><?php esc_html_e( 'View Details', 'buddypress-member-blog' ); ?></a>
+								<a href="https://wbcomdesigns.com/downloads/buddypress-create-group-type/" class="wbcom-addons-button wbcom-purchase" target="_blank"><?php esc_html_e( 'Get It Now', 'buddypress-member-blog' ); ?></a>
+							</div>
+						</div>		
+					</div>
 				</div>
 			</div>
 		

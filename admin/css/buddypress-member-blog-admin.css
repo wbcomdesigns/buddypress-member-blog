@@ -16,7 +16,15 @@
 .nav-tab-wrapper ul li#group-integration-pro a.nav-tab:before {
     content: "\f307";
 }
-
+.wbcom-settings-section-options-flex {
+    flex-wrap: wrap;
+}
+.wbcom-settings-section-options ul.wbcom-settings-member-retraction.wbcom-settings-section-options-flex li {
+    margin-bottom: 15px;
+}
+.wbcom-settings-section-options .selectize-input input[type="text"] {
+    height: auto;
+}
 
 /* Pro */
 .member-blog-pro-tab .wbcom-welcome-main-wrapper:after {

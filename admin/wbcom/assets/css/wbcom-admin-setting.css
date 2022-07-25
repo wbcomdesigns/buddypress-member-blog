@@ -122,6 +122,7 @@ h4.wbcom-support-section {
     box-shadow: none !important;
     margin: 0 5px 0px 0px;
 }
+
 .wbcom-settings-section-options input[type=radio]:checked::before {
     width: 18px;
     height: 18px;
@@ -1127,7 +1128,7 @@ License style
 /* Admin Switch Toggle : Start */
 .wb-switch {
     display: inline-block;
-    border: none !important;    
+    border: none !important;
     position: relative;
     line-height: 0;
     height: 32px;
@@ -1168,7 +1169,7 @@ License style
 }
 
 .wb-switch input:checked+.wb-slider {
-    background-color:#4fb845;
+    background-color: #4fb845;
 }
 
 .wb-switch input:checked+.wb-slider:before {
@@ -1218,9 +1219,10 @@ License style
     margin: 0 !important;
     padding: 0 !important;
 }
+
 .wbcom-admin-option-wrap .form-table input[type=checkbox]:after,
 .wbcom-admin-option-wrap .form-table input[type=checkbox]:checked::after,
-.wb-slider.wb-round::after{
+.wb-slider.wb-round::after {
     content: "OFF";
     color: #fff;
     font-size: 12px;
@@ -1229,8 +1231,9 @@ License style
     top: 16px;
     right: 11px;
 }
+
 .wbcom-admin-option-wrap .form-table input[type=checkbox]:checked::after,
-.wb-switch input:checked+.wb-slider::after{
+.wb-switch input:checked+.wb-slider::after {
     content: "ON";
     right: unset;
     left: 10px;
@@ -1251,7 +1254,8 @@ License style
     overflow: hidden;
     border-radius: 12px;
 }
-.wbcom-faq-section-row{
+
+.wbcom-faq-section-row {
     align-self: flex-start;
     width: auto;
     background: #fff;
@@ -1264,17 +1268,19 @@ License style
     transition: all 0.6s ease 0s;
     position: relative;
 }
+
 .wbcom-faq-section-row:hover {
     background-color: #2A32EF;
     border-color: #2A32EF;
 }
+
 .wbcom-faq-section-row:hover p,
-.wbcom-faq-section-row:hover
-button.wbcom-faq-accordion:after,
+.wbcom-faq-section-row:hover button.wbcom-faq-accordion:after,
 .wbcom-faq-section-row:hover .wbcom-faq-panel li,
 .wbcom-faq-section-row:hover button.wbcom-faq-accordion {
     color: #fff;
 }
+
 button.wbcom-faq-accordion {
     border: medium none;
     color: #333;
@@ -1288,16 +1294,20 @@ button.wbcom-faq-accordion {
     transition: all 0.4s ease 0s;
     width: 100%;
 }
-button.wb-ads-accordion.active, button.wb-ads-accordion:hover {
+
+button.wb-ads-accordion.active,
+button.wb-ads-accordion:hover {
     color: #2A32EF;
 }
+
 div.wbcom-faq-panel {
     padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    margin:0px;
+    margin: 0px;
 }
+
 button.wbcom-faq-accordion::after {
     color: hsl(0, 0%, 47%);
     content: "+";
@@ -1309,20 +1319,25 @@ button.wbcom-faq-accordion::after {
     position: absolute;
     top: 10px;
 }
+
 button.wbcom-faq-accordion:hover::after {
     color: white;
 }
+
 button.wbcom-faq-accordion.active::after {
     content: "−";
-    color:white;
+    color: white;
 }
+
 .wbcom-faq-admin-row {
     clear: both;
 }
+
 div.wbcom-faq-panel p {
     font-size: 15px;
     margin: 5px 0 0;
 }
+
 .selectize-control.multi .selectize-input div.item {
     border-radius: 5px;
     background: #ffffff;
@@ -1333,7 +1348,7 @@ div.wbcom-faq-panel p {
     color: red !important;
 }
 
-.selectize-input.items.not-full.has-options.input-active.dropdown-active{
+.selectize-input.items.not-full.has-options.input-active.dropdown-active {
     border-radius: 8px;
 }
 

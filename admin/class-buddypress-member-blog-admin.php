@@ -99,6 +99,22 @@ class Buddypress_Member_Blog_Admin {
 
 	}
 
+		/**
+		 * Hide all notices from the setting page.
+		 *
+		 * @return void
+		 */
+		public function wbcom_hide_all_admin_notices_from_setting_page() {
+			$wbcom_pages_array  = array( 'wbcomplugins', 'wbcom-plugins-page', 'wbcom-support-page', 'buddypress-member-blog' );
+			$wbcom_setting_page = filter_input( INPUT_GET, 'page' ) ? filter_input( INPUT_GET, 'page' ) : '';
+
+			if ( in_array( $wbcom_setting_page, $wbcom_pages_array, true ) ) {
+				remove_all_actions( 'admin_notices' );
+				remove_all_actions( 'all_admin_notices' );
+			}
+
+		}
+
 	/**
 	 * Add admin sub menu for plugin settings.
 	 *
@@ -137,19 +153,28 @@ class Buddypress_Member_Blog_Admin {
 			array(
 				'welcome'               => __( 'Welcome', 'buddypress-member-blog' ),
 				'general'               => __( 'General', 'buddypress-member-blog' ),
-				'restriction-pro'       => __( 'Restrictions ( PRO )', 'buddypress-member-blog' ),
-				'group-integration-pro' => __( 'Groups Integration ( PRO )', 'buddypress-member-blog' ),
+				'restriction-pro'       => __( 'Restrictions', 'buddypress-member-blog' ),
+				'group-integration-pro' => __( 'Groups Integration', 'buddypress-member-blog' ),
 			)
 		);
 		?>
 		<div class="wrap">
-			<hr class="wp-header-end">
+			<div class="wbcom-bb-plugins-offer-wrapper">
+				<div id="wb_admin_logo">
+					<a href="https://wbcomdesigns.com/downloads/buddypress-community-bundle/" target="_blank">
+						<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'admin/wbcom/assets/imgs/wbcom-offer-notice.png'; ?>">
+					</a>
+				</div>
+			</div>
 			<div class="wbcom-wrap bp-member-blog-wrap">
 				<div class="blpro-header">
-					<?php echo do_shortcode( '[wbcom_admin_setting_header]' ); ?>
-					<h1 class="wbcom-plugin-heading">
-						<?php esc_html_e( 'BuddyPress Member Blog Settings', 'buddypress-member-blog' ); ?>
-					</h1>
+					<div class="wbcom_admin_header-wrapper">
+			            <div id="wb_admin_plugin_name">
+							<?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?>
+							<span><?php printf( __( 'Version %s', 'buddypress-member-blog' ), BUDDYPRESS_MEMBER_BLOG_VERSION ); ?></span>
+						</div>
+			            <?php echo do_shortcode('[wbcom_admin_setting_header]'); ?>
+			        </div>
 				</div>
 				<div class="wbcom-admin-settings-page">
 					<div class="wbcom-tabs-section">

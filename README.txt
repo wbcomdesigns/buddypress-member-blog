@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 5.9.3
-Stable tag: 1.7.2
+Tested up to: 6.0.1
+Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ e.g.
 
 
 == Changelog ==
+= 1.8.0 =
+* Fix: Fixed asign category issue
+* Fix: Fixed conflict issue with Member blog pro
+* Fix: (#119) Added front-end create category option
+* Fix: Updated new admin ui
+
 = 1.7.1 =
 * Fix: (#117) Fixed Subscriber user can't upload media from fronted
 

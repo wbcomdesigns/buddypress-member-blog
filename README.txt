@@ -1,4 +1,4 @@
-=== Wbcom Designs- BuddyPress Member Blog ===
+=== Wbcom Designs - BuddyPress Member Blog ===
 Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam

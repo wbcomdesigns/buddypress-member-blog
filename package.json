@@ -6,7 +6,7 @@
   "description": "buddypress-member-blog",
   "devDependencies": {
     "grunt": "^1.1.0",
-    "minimist": ">=1.2.2",
+    "grunt-checktextdomain": "^1.0.1",
     "grunt-wp-i18n": "^1.0.3"
   },
   "engines": {

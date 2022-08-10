@@ -785,15 +785,35 @@ class Buddypress_Member_Blog_Public {
 		check_ajax_referer( 'bpmb-blog-nonce', 'security_nonce' );
 		if ( isset( $_POST['action'] ) && 'bpmb_add_category_front_end' === $_POST['action'] ) {
 			if ( isset( $_POST['name'] ) ) {
-				$term = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+				$term       = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+				$term_label = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+				if ( str_contains( $term, ' ' ) ) {
+					$term_arr   = explode( ' ', $term );
+					$output_arr = array_map(
+						function( $val ) {
+							return strtolower( $val );
+						},
+						$term_arr
+					);
+					$term       = implode( '_', $output_arr );
+				} else {
+					$term = strtolower( $term );
+				}
+				$taxonomy    = 'category';
+				$term_exists = term_exists( $term, $taxonomy );
+				if ( 0 === $term_exists || null === $term_exists ) {
+					$demo = wp_insert_term(
+						$term_label,
+						$taxonomy,
+						array(
+							'description' => '',
+							'slug'        => $term,
+						)
+					);
+				}
+				$cat_id = isset( $demo['term_id'] ) ? $demo['term_id'] : '';
+				echo esc_html( $cat_id );
 			}
-			$taxonomy    = 'category';
-			$term_exists = term_exists( $term, $taxonomy );
-			if ( 0 === $term_exists || null === $term_exists ) {
-				$demo = wp_insert_term( $term, $taxonomy );
-			}
-			$cat_id = isset( $demo['term_id'] ) ? $demo['term_id'] : '';
-			echo esc_html( $cat_id );
 			die;
 		}
 	}

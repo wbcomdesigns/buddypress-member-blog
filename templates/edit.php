@@ -97,11 +97,11 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 					<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $cat->name ); ?></option>
 				<?php } ?>
 				</select>
-				<?php if ( 'yes' === $create_cat ) { ?>
-					<a href="javascript:void(0);" class="add-bpmb-category"><i class="fa fa-plus" aria-hidden="true"></i></a>
+				<?php if ( '' === $create_cat ) { ?>
+					<a href="javascript:void(0);" class="add-bpmb-category"><span class="dashicons dashicons-plus"></span></a>
 				<?php } ?>	
 			</label>
-			<?php if ( 'yes' === $create_cat ) { ?>
+			<?php if ( '' === $create_cat ) { ?>
 				<div class="add-bpmb-cat-row">
 					<?php /* translators: Display plural label name */ ?>
 					<input type="text" id="bpmb-category-name" placeholder="<?php echo esc_html_e( 'Add Category', 'buddypress-member-blog' ); ?>">

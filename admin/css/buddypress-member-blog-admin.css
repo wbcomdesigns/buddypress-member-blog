@@ -5,6 +5,9 @@
 .bp-member-blog-wrap .wbcom-admin-settings-page {
   overflow: visible !important;
 }
+.wbcom-settings-section-wrap {
+    overflow: inherit;
+}
 .nav-tab-wrapper ul li#general a.nav-tab:before {
     content: "\f111";
 }

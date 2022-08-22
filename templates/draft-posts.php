@@ -11,6 +11,7 @@ global $current_user;
 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 $user_id       = bp_displayed_user_id();
+$user_meta = get_userdata( $user_id );
 $is_my_profile = bp_is_my_profile();
 
 /*
@@ -123,7 +124,9 @@ query_posts( $query_args );
 
 					<?php if ( $action_button == true ) : ?>
 						<div class="post-actions">
+							<?php if ( 'administrator' == $user_meta->roles[0] ) { ?>
 							<span class="publish-post"><?php echo wp_kses_post( bp_member_blog_get_post_publish_unpublish_link( get_the_ID() ) ); ?></span>
+							<?php } ?>
 							<span class="delete-post"><?php echo wp_kses_post( bp_member_blog_get_delete_link() ); ?></span>
 						</div>
 					<?php endif; ?>

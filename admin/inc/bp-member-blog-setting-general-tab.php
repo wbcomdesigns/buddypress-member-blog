@@ -147,6 +147,21 @@ if ( ! empty( $member_types ) ) {
 
 		<div class="wbcom-settings-section-wrap">
 			<div class="wbcom-settings-section-options-heading">
+				<label for="bp_member_blog_publish_post">
+					<?php esc_html_e( 'Enable create category', 'buddypress-member-blog' ); ?>
+				</label>
+				<p class="description"><?php esc_html_e( 'Enable this option if you want to create category from the font-end.', 'buddypress-member-blog' ); ?></p>
+			</div>
+			<div class="wbcom-settings-section-options">
+				<label class="wb-switch">
+					<input name='bp_member_blog_gen_stngs[create_category]' type='checkbox' value='yes' <?php ( isset( $bp_member_blog_gen_stngs['create_category'] ) ) ? checked( $bp_member_blog_gen_stngs['create_category'], 'yes' ) : ''; ?> id="bp_member_blog_publish_post"/>
+					<div class="wb-slider wb-round"></div>
+				</label>				
+			</div>
+		</div>
+
+		<div class="wbcom-settings-section-wrap">
+			<div class="wbcom-settings-section-options-heading">
 				<label for="bp_member_blog_image_delete">
 					<?php esc_html_e( 'Media management', 'buddypress-member-blog' ); ?>
 				</label>

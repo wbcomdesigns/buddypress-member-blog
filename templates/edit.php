@@ -98,7 +98,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 				<?php } ?>
 				</select>
 				<?php if ( 'yes' === $create_cat ) { ?>
-					<a href="javascript:void(0);" class="add-bpmb-category"><i class="fa fa-plus" aria-hidden="true"></i></a>
+					<a href="javascript:void(0);" class="add-bpmb-category"><span class="dashicons dashicons-plus"></span></a>
 				<?php } ?>	
 			</label>
 			<?php if ( 'yes' === $create_cat ) { ?>

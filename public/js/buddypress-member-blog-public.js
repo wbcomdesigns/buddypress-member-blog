@@ -138,9 +138,9 @@
         .css("height")
         .match(/\d+/);
       if (element_height[0] > 5) {
-        jQuery(".add-bpmb-category i").attr("class", "fa fa-plus");
+        jQuery(".add-bpmb-category span").attr("class", "dashicons dashicons-plus");
       } else {
-        jQuery(".add-bpmb-category i").attr("class", "fa fa-minus");
+        jQuery(".add-bpmb-category span").attr("class", "dashicons dashicons-minus");
       }
     });
 
@@ -199,7 +199,7 @@
               }
               jQuery("#add-bpmb-cat").html(btn_text);
               jQuery("#bpmb-category-name").val("");
-              jQuery(".add-bpmb-category i").attr("class", "fa fa-plus");
+              jQuery(".add-bpmb-category span").attr("class", "dashicons dashicons-plus");
             }
           }
         );

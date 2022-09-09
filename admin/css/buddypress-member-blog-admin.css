@@ -126,7 +126,31 @@ a#bp-member-blog-pro-delete-table span {
 }
 
 
-.wbcom-wrap .notice.notice-error.is-dismissible.learndash-license-is-dismissible,
-.wbcom-wrap .notice.notice-error {
+.toplevel_page_wbcomplugins .update-nag,
+.toplevel_page_wbcomplugins .updated,
+.toplevel_page_wbcomplugins .error,
+.toplevel_page_wbcomplugins .notice-error,
+.toplevel_page_wbcomplugins .is-dismissible {
+  display: none !important;
+}
+
+.wb-plugins_page_buddypress-member-blog .update-nag,
+.wb-plugins_page_buddypress-member-blog .updated,
+.wb-plugins_page_buddypress-member-blog .error,
+.wb-plugins_page_buddypress-member-blog .notice-error,
+.wb-plugins_page_buddypress-member-blog .is-dismissible {
+  display: none !important;
+}
+
+.wb-plugins_page_wbcom-support-page .update-nag,
+.wb-plugins_page_wbcom-support-page .updated,
+.wb-plugins_page_wbcom-support-page .error,
+.wb-plugins_page_wbcom-support-page .notice-error,
+.wb-plugins_page_wbcom-support-page .is-dismissible,
+.wb-plugins_page_wbcom-plugins-page .update-nag,
+.wb-plugins_page_wbcom-plugins-page .updated,
+.wb-plugins_page_wbcom-plugins-page .error,
+.wb-plugins_page_wbcom-plugins-page .notice-error,
+.wb-plugins_page_wbcom-plugins-page .is-dismissible {
   display: none !important;
 }

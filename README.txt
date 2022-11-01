@@ -26,6 +26,13 @@ e.g.
 
 
 == Changelog ==
+= 1.9.0 =
+* Fix: Category UI fixes frontend form
+* Fix: Fixed buddyboss admin notice issue
+* Fix: (#119) Fixed add category option from the front end
+* Fix: (#118) Fixed add draft subnav issue
+* Fix: (#122) Admin categories field UI fixed
+
 = 1.8.0 =
 * Fix: Fixed asign category issue
 * Fix: Fixed conflict issue with Member blog pro

@@ -147,7 +147,7 @@ function bp_member_blog_get_edit_link( $id = 0, $label = '' ) {
 	}
 	$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
-	if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+	if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != '' ) {
 		if ( empty( $id ) ) {
 			$id = get_the_ID();
 		}

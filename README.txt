@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.0.3
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 1.9.1 =
+* Fix: (#140)Fixed edit blog not working
+
 = 1.9.0 =
 * Fix: Category UI fixes frontend form
 * Fix: Fixed buddyboss admin notice issue

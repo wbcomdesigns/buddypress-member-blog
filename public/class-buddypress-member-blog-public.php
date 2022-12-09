@@ -697,7 +697,8 @@ class Buddypress_Member_Blog_Public {
 				return ob_get_clean();
 			}
 		}
-
+		
+		
 		ob_start();
 		?>
 		<div class="buddypress-wrap">

@@ -1,6 +1,12 @@
 <?php
+global $post;
+
+if ( ! isset( $_GET['action'] ) && 'edit' !== $_GET['action'] ) {
+	$post = bp_member_blog_get_default_post_to_edit( 'post', true );
+}
+
 $bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-$post_id                  = bp_action_variable( 0 );
+$post_id                  = bp_action_variable( 0 ) ? bp_action_variable( 0 ) : $post->ID;
 $blog_post                = (object) array(
 	'post_title'   => '',
 	'post_content' => '',
@@ -8,25 +14,24 @@ $blog_post                = (object) array(
 $post_selected_category   = $post_selected_tag = array();
 $post_thumbnail           = '';
 if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-}
-
-if ( $post_id != 0 && $post_id != '' ) {
+	$post_id   = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$blog_post = get_post( $post_id );
 	$user_id   = get_current_user_id();
 	$author_id = $blog_post->post_author;
 	if ( $user_id != $author_id ) { ?>
-		<script>
-		window.location = '<?php echo get_the_permalink(); ?>';
-		</script>
+	<script>
+	window.location = '<?php echo get_the_permalink(); ?>';
+	</script>
 		<?php
 	}
 
 	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
 	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );
+	$post_thumbnail         = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 
-	$post_thumbnail = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 }
+
+
 
 
 $args = array(
@@ -156,7 +161,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<input type="hidden" name="action" value="bp_member_blog_post"/>
 
 			<?php if ( $post_id ) : ?>
-				<input type="hidden" name="bp_member_blog_post_id" value="<?php echo esc_attr( $post_id ); ?>" id="post_ID"/>
+				<input type="hidden" name="post_id" value="<?php echo esc_attr( $post_id ); ?>" id="post_ID"/>
 			<?php endif; ?>
 
 			<input type="hidden" value="<?php echo ( isset( $_SERVER['REQUEST_URI'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : ''; ?>" name="post_form_url"/>

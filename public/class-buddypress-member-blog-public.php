@@ -519,12 +519,12 @@ class Buddypress_Member_Blog_Public {
 				$post_content = wp_kses_post( wp_unslash( $_REQUEST['bp_member_blog_post_content'] ) );
 			}
 
-			if ( isset( $_POST['bp_member_blog_post_id'] ) && $_POST['bp_member_blog_post_id'] != 0 && $_POST['bp_member_blog_post_id'] != '' ) {
+			if ( isset( $_POST['post_id'] ) && $_POST['post_id'] != 0 && $_POST['post_id'] != '' ) {
 
 				/* Update Post */
 				$post_id   = wp_update_post(
 					array(
-						'ID'           => wp_kses_post( wp_unslash( $_POST['bp_member_blog_post_id'] ) ),
+						'ID'           => wp_kses_post( wp_unslash( $_POST['post_id'] ) ),
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,

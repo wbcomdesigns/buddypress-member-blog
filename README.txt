@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.0.3
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,11 @@ e.g.
 
 
 == Changelog ==
+= 1.9.2 =
+* Fix: (#144)Fixed author unable to post media
+* Fix: (#145)Fixed managed groups activity UI
+* Fix: (#148)Fixed managed issue in edit post
+
 = 1.9.1 =
 * Fix: (#140)Fixed edit blog not working
 

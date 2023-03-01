@@ -1,1 +1,0 @@
-<p>Layout two</p>

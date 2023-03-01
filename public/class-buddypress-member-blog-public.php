@@ -366,25 +366,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function load_member_blog_content_nav_content() {
-		$bpmbp_settings            = get_option( 'blog_template_settings' );
-		$enbale_user_layout       = array_key_exists( 'enable_user_switch_template', $bpmbp_settings ) && isset( $bpmbp_settings['enable_user_switch_template'] ) ? $bpmbp_settings['enable_user_switch_template'] : '';
-		$bpmbp_user_blog_layout  = get_user_meta( bp_displayed_user_id(), 'bpmbp_user_blog_layout' );
-		$bpmbp_user_blog_setting = isset( $bpmbp_user_blog_layout[0] ) ? $bpmbp_user_blog_layout[0] : '';
-		$bpmbp_selected_layout     = isset( $bpmbp_settings['resume_layout'] ) ? $bpmbp_settings['resume_layout'] : 'one';
-		if ( ! empty( $enbale_user_layout ) && ! empty( $bpmbp_user_blog_setting ) ) {
-			if ( 'one' === $bpmbp_user_blog_setting ) {
-				load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/bpmbp-show-layout-one.php' );
-			}elseif( 'two' === $bpmbp_user_blog_setting ){
-				load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/bpmbp-show-layout-two.php' );
-			}
-		}else{
-			if ( 'one' === $bpmbp_selected_layout ) {
-				load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/bpmbp-show-layout-one.php' );
-			}
-			if ( 'two' === $bpmbp_selected_layout ) {
-				load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/bpmbp-show-layout-two.php' );
-			}
-		}
+		load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/posts.php' );		
 	}
 
 	/**

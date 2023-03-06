@@ -198,6 +198,20 @@ select#bp-blog-category-select {
     width: 100%;
 }
 
+.blog nav.bp-navs li#blog-personal-li a,
+.blog nav.bp-navs li#pending-personal-li a,
+.blog nav.bp-navs li#draft-personal-li a {
+    display: flex;
+    align-items: center;
+}
+.blog nav.bp-navs li#blog-personal-li a span,
+.blog nav.bp-navs li#pending-personal-li a span,
+.blog nav.bp-navs li#draft-personal-li a span{
+    padding: 0;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
 .bp-member-blog-container {
     margin:0;
 }
@@ -260,10 +274,20 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entr
 
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edit-post,
 .bp-member-blog-container .post-content .bp-edit-post {
-    font-size: 13px;
-    margin-left: 10px;
+    font-size: 14px;
     font-weight: 400;
-    font-style: italic;
+}
+
+.bp-member-blog-container .post-content span.bp-edit-post:before {
+    content: '';
+    display: inline-block;
+    background: url(../images/edit_square.svg) no-repeat center center;
+    height: 16px;
+    width: 16px;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right:3px;
+    margin-top: -4px;
 }
 
 .bp-member-blog-container p {
@@ -320,7 +344,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 .post-actions span a {
-    margin-right: 10px;
+    margin-right: 12px;
     display: inline-block;
     font-size: 14px;
 }
@@ -333,9 +357,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     width: 16px;
     background-size: cover;
     vertical-align: middle;
-    margin-right: 4px;
+    margin-right: 3px;
     margin-top: -4px;
-    opacity: 0.6;
 }
 
 .post-actions span.delete-post a:before {
@@ -346,9 +369,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     width: 16px;
     background-size: cover;
     vertical-align: middle;
-    margin-right: 4px;
+    margin-right: 3px;
     margin-top: -4px;
-    opacity: 0.6;
 }
 
 .bp-member-blog-container .pagination {
@@ -491,7 +513,6 @@ buddyboss-theme
     color: #fff;
     overflow: hidden;
 }
-
 
 
 /*--------------------------------------------------------------

@@ -79,10 +79,7 @@ query_posts( $query_args );
 				<div class="post-content">
 
 					<h3 class="entry-title">
-						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_html_e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-						<?php if ( $action_button == true ) : ?>
-							<span class="bp-edit-post"><?php echo wp_kses_post( bp_member_blog_get_edit_link() ); ?></span>
-						<?php endif; ?>
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_html_e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>						
 					</h3>
 
 
@@ -124,6 +121,9 @@ query_posts( $query_args );
 
 					<?php if ( $action_button == true ) : ?>
 						<div class="post-actions">
+							<?php if ( $action_button == true ) : ?>
+								<span class="bp-edit-post"><?php echo wp_kses_post( bp_member_blog_get_edit_link() ); ?></span>
+							<?php endif; ?>
 							<?php if ( 'administrator' == $user_meta->roles[0] ) { ?>
 							<span class="publish-post"><?php echo wp_kses_post( bp_member_blog_get_post_publish_unpublish_link( get_the_ID() ) ); ?></span>
 							<?php } ?>

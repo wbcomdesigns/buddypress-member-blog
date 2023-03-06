@@ -254,7 +254,7 @@ class Buddypress_Member_Blog_Public {
 		);
 		bp_core_new_subnav_item(
 			array(
-				'name'            => __( 'Publish Posts', 'buddypress-member-blog' ),
+				'name'            => __( 'Published', 'buddypress-member-blog' ),
 				'slug'            => 'blog',
 				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
 				'parent_slug'     => 'blog',
@@ -265,7 +265,7 @@ class Buddypress_Member_Blog_Public {
 
 		bp_core_new_subnav_item(
 			array(
-				'name'            => __( 'Pending Posts', 'buddypress-member-blog' ),
+				'name'            => __( 'Pending', 'buddypress-member-blog' ),
 				'slug'            => 'pending',
 				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
 				'parent_slug'     => 'blog',

@@ -168,7 +168,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<input id="submit" name="bp_member_blog_form_subimitted" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr( $submit_btn_value ); ?>"/>
 
 			<?php if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) ) : ?>
-				<input id="submit" name="bp_member_blog_form_save" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr__( 'Save', 'buddypress-member-blog' ); ?>"/>
+				<input id="submit" name="bp_member_blog_form_save" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr__( 'Save as Draft', 'buddypress-member-blog' ); ?>"/>
 			<?php endif; ?>
 
 			<?php wp_nonce_field( 'bp_member_blog_post' ); ?>

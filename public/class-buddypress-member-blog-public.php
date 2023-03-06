@@ -241,6 +241,17 @@ class Buddypress_Member_Blog_Public {
 
 		bp_core_new_subnav_item(
 			array(
+				'name'            => __( 'Pending Posts', 'buddypress-member-blog' ),
+				'slug'            => 'pending',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
+				'parent_slug'     => 'blog',
+				'screen_function' => array( $this, 'bp_member_pending_posts' ),
+				'position'        => 30,
+			)
+		);
+
+		bp_core_new_subnav_item(
+			array(
 				'name'            => __( 'Draft Posts', 'buddypress-member-blog' ),
 				'slug'            => 'draft',
 				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
@@ -380,12 +391,31 @@ class Buddypress_Member_Blog_Public {
 	}
 
 	/**
+	 * Handles My Pending Posts screen with the single post/edit post view
+	 *
+	 * @since 1.0.0
+	 */
+	public function bp_member_pending_posts() {
+		add_action( 'bp_template_content', array( $this, 'load_member_pending_blogs_content_nav_content' ) );
+		bp_core_load_template( 'members/single/plugins' );
+	}
+
+	/**
 	 * List of Draft Posts data
 	 *
 	 * @since 1.0.0
 	 */
 	public function load_member_draft_blogs_content_nav_content() {
 		load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/draft-posts.php' );
+	}
+
+	/**
+	 * List of Pending Posts data
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_member_pending_blogs_content_nav_content() {
+		load_template( BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/pending-posts.php' );
 	}
 
 	/**

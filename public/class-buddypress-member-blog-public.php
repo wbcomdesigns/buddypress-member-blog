@@ -103,13 +103,37 @@ class Buddypress_Member_Blog_Public {
 		 */
 		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
+
+		$user_id       = bp_displayed_user_id();
+		$bp_publish_blogs = array(
+			'author'      => $user_id,
+			'post_type'   => 'post',
+			'post_status' => 'publish',
+		);
+		$current_user_publish_posts = count( get_posts( $bp_publish_blogs ) );
+		$bp_draft_blogs = array(
+			'author'      => $user_id,
+			'post_type'   => 'post',
+			'post_status' => 'draft',
+		);
+		$current_user_draft_posts = count( get_posts( $bp_draft_blogs ) );
+		$bp_pending_blogs = array(
+			'author'      => $user_id,
+			'post_type'   => 'post',
+			'post_status' => 'pending',
+		);
+		$current_user_pending_posts = count( get_posts( $bp_pending_blogs ) );
+
 		wp_localize_script(
 			$this->plugin_name,
 			'bpmb_ajax_object',
 			array(
-				'ajax_url'          => admin_url( 'admin-ajax.php' ),
-				'ajax_nonce'        => wp_create_nonce( 'bpmb-blog-nonce' ),
-				'required_cat_text' => esc_html__( 'Category name is required.', 'buddypress-member-blog' ),
+				'ajax_url'          	=> admin_url( 'admin-ajax.php' ),
+				'ajax_nonce'        	=> wp_create_nonce( 'bpmb-blog-nonce' ),
+				'required_cat_text' 	=> esc_html__( 'Category name is required.', 'buddypress-member-blog' ),
+				'publish_post_count'	=> $current_user_publish_posts,
+				'pending_post_count'	=> $current_user_pending_posts,
+				'draft_post_count'		=> $current_user_draft_posts,
 			)
 		);
 	}

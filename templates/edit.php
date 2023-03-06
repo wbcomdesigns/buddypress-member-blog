@@ -50,7 +50,7 @@ if ( isset( $bp_member_blog_gen_stngs['create_category'] ) && ! empty( $bp_membe
 $category = get_terms( $args );
 
 
-$submit_btn_value = ( ! empty( $post_id ) ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
+$submit_btn_value = ( ! empty( $post_id ) ) ? __( 'Submit post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
 
 if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$submit_btn_value = __( 'Submit for Review', 'buddypress-member-blog' );

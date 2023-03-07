@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.1.1
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,13 @@ e.g.
 
 
 == Changelog ==
+= 1.9.4 =
+* Fix: (#183) Fixed update post do not work with BB theme
+* Enhancement: (#169) blog post add pending nav, post count with UI managed
+* Enhancement: (#169) post listing added subnav count
+* Enhancement: (#169) post listing added pending tab
+* Fix: Fixed Plugin redirect issue when multi plugin activate the same time
+
 = 1.9.3 =
 * Fix: (#152) Fixed warning
 

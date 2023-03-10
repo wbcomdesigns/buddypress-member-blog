@@ -559,8 +559,15 @@ class Buddypress_Member_Blog_Public {
 	 */
 	public function buddypress_member_blog_post_submit() {
 
-		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {
-
+		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'bp_member_blog_post' ) && ( isset( $_POST['bp_member_blog_form_subimitted'] ) || isset( $_POST['bp_member_blog_form_save'] ) ) && isset( $_POST['action'] ) && $_POST['action'] == 'bp_member_blog_post' ) {			
+			// for recaptcha
+			do_action( 'buddypress_member_blog_post_save');
+			if( array_key_exists( 'g-recaptcha-response', $_POST ) ){
+				if( empty( $_POST['g-recaptcha-response'] ) ){
+					return;
+				}
+			}
+			// for recaptcha
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
 			$post_title = '';

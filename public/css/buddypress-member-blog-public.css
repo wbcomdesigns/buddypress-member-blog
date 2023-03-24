@@ -385,6 +385,37 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     margin:0;
 }
 
+.bp-member-blog-container.bpmb-blog-posts .navigation.pagination {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+}
+.bp-member-blog-container.bpmb-blog-posts .page-numbers {
+    background: #eee;
+    padding: 8px 10px;
+    border-radius: 100px;
+    width: 32px;
+    font-size: 14px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bp-member-blog-container.bpmb-blog-posts a.prev.page-numbers,
+.bp-member-blog-container.bpmb-blog-posts a.next.page-numbers {
+    width: auto;
+    padding: 5px 20px;
+}
+.bp-member-blog-container.bpmb-blog-posts span.page-numbers.current {
+    background: #fff;
+    border: 2px solid #ccc;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 580px) {
     .bp-member-blog-container>div.bp_members {
         display: block;

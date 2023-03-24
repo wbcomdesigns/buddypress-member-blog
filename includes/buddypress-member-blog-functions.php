@@ -245,10 +245,11 @@ function bp_member_blog_paginate() {
 			$user_id = bp_displayed_user_id();
 		// structure of “format” depends on whether we’re using pretty permalinks.
 			$format  = '?paged=%#%';
-		if( 'blog' == bp_current_action() ){
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );	
+		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
+		if( $blog_slug == bp_current_action() ){
+			$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );	
 		}else{
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . 'blog/' . bp_current_action() );
+			$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . $blog_slug . '/' . bp_current_action() );
 		}
 
 		echo wp_kses_post(

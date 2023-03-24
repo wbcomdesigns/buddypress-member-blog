@@ -183,15 +183,16 @@ class Buddypress_Member_Blog_Public {
 		$current_user_posts = get_posts( $bp_member_blogs );
 		$user_post_count    = count( $current_user_posts );
 		wp_reset_postdata();
-
+		$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ) );
+		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 		if ( is_admin() ) {
 			bp_core_new_nav_item(
 				array(
 					/* translators: %s: */
-					'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
-					'slug'                => 'blog',
+					'name'                => $blog_label,
+					'slug'                => $blog_slug,
 					'screen_function'     => array( $this, 'bp_member_posts' ),
-					'default_subnav_slug' => 'blog',
+					'default_subnav_slug' => $blog_slug,
 					'position'            => 80,
 					'item_css_id'         => 'bp-member-blog',
 				)
@@ -219,16 +220,18 @@ class Buddypress_Member_Blog_Public {
 			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
 			$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
 			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
+			$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ) );
+			$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 			if ( empty( $user_roles ) && empty( $user_types ) ) {
 				return;
 			} else {
 				bp_core_new_nav_item(
 					array(
 						/* translators: %s: */
-						'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
-						'slug'                => 'blog',
+						'name'                => $blog_label,
+						'slug'                => $blog_slug,
 						'screen_function'     => array( $this, 'bp_member_posts' ),
-						'default_subnav_slug' => 'blog',
+						'default_subnav_slug' => $blog_slug,
 						'position'            => 80,
 						'item_css_id'         => 'bp-member-blog',
 					)
@@ -239,15 +242,16 @@ class Buddypress_Member_Blog_Public {
 		if ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) {
 			return;
 		}
-
+		$blog_label = apply_filters('bp_member_change_blog_label', 'Blog');
+		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(
 				/* translators: %s: */
-				'name'                => sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ),
-				'slug'                => 'blog',
+				'name'                => sprintf( esc_html( $blog_label . ' %s') , '<span class="count">' . $user_post_count . '</span>'),
+				'slug'                => $blog_slug,
 				'screen_function'     => array( $this, 'bp_member_posts' ),
-				'default_subnav_slug' => 'blog',
+				'default_subnav_slug' => $blog_slug,
 				'position'            => 80,
 				'item_css_id'         => 'bp-member-blog',
 			)
@@ -256,8 +260,8 @@ class Buddypress_Member_Blog_Public {
 			array(
 				'name'            => __( 'Published', 'buddypress-member-blog' ),
 				'slug'            => 'blog',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
-				'parent_slug'     => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
 				'screen_function' => array( $this, 'bp_member_posts' ),
 				'position'        => 30,
 			)
@@ -267,8 +271,8 @@ class Buddypress_Member_Blog_Public {
 			array(
 				'name'            => __( 'Pending', 'buddypress-member-blog' ),
 				'slug'            => 'pending',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
-				'parent_slug'     => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
 				'screen_function' => array( $this, 'bp_member_pending_posts' ),
 				'position'        => 30,
 			)
@@ -278,8 +282,8 @@ class Buddypress_Member_Blog_Public {
 			array(
 				'name'            => __( 'Draft Posts', 'buddypress-member-blog' ),
 				'slug'            => 'draft',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
-				'parent_slug'     => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
 				'screen_function' => array( $this, 'bp_member_draft_posts' ),
 				'position'        => 30,
 			)
@@ -294,8 +298,8 @@ class Buddypress_Member_Blog_Public {
 			array(
 				'name'            => __( 'New Post', 'buddypress-member-blog' ),
 				'slug'            => 'bp-new-post',
-				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . 'blog' ),
-				'parent_slug'     => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
 				'screen_function' => array( $this, 'bp_member_new_post' ),
 				'link'            => $link,
 				'position'        => 30,

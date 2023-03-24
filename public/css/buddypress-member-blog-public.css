@@ -198,15 +198,15 @@ select#bp-blog-category-select {
     width: 100%;
 }
 
-.blog nav.bp-navs li#blog-personal-li a,
-.blog nav.bp-navs li#pending-personal-li a,
-.blog nav.bp-navs li#draft-personal-li a {
+nav.bp-navs li#blog-personal-li a,
+nav.bp-navs li#pending-personal-li a,
+nav.bp-navs li#draft-personal-li a {
     display: flex;
     align-items: center;
 }
-.blog nav.bp-navs li#blog-personal-li a span,
-.blog nav.bp-navs li#pending-personal-li a span,
-.blog nav.bp-navs li#draft-personal-li a span{
+nav.bp-navs li#blog-personal-li a span,
+nav.bp-navs li#pending-personal-li a span,
+nav.bp-navs li#draft-personal-li a span{
     padding: 0;
     margin-left: 8px;
     font-size: 14px;

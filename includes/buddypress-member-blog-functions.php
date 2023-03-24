@@ -244,7 +244,12 @@ function bp_member_blog_paginate() {
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 		// structure of “format” depends on whether we’re using pretty permalinks.
-		$format  = '?paged=%#%';
+		if( 'blog' == bp_current_action() ){
+			$format  = '?paged=%#%';	
+		}else{
+			$format  = bp_current_action() .'/' .'?paged=%#%';
+		}
+		
 		$user_id = bp_displayed_user_id();
 		$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );
 

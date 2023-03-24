@@ -242,16 +242,14 @@ function bp_member_blog_paginate() {
 	if ( $total > 1 ) {
 		// get the current page.
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-
+			$user_id = bp_displayed_user_id();
 		// structure of “format” depends on whether we’re using pretty permalinks.
+			$format  = '?paged=%#%';
 		if( 'blog' == bp_current_action() ){
-			$format  = '?paged=%#%';	
+			$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );	
 		}else{
-			$format  = bp_current_action() .'/' .'?paged=%#%';
+			$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . 'blog/' . bp_current_action() );
 		}
-		
-		$user_id = bp_displayed_user_id();
-		$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . 'blog' );
 
 		echo wp_kses_post(
 			paginate_links(

@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.1.1
-Stable tag: 1.9.4
+Tested up to: 6.2.0
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ e.g.
 
 
 == Changelog ==
+= 1.9.5 =
+* Fix: Fixed blog post navigation count issue
+* Fix: Create dynamic slug
+* Fix: (#185) Fixed previous pagination issue
+* Fix: (#168) Added integration of recaptcha
+
 = 1.9.4 =
 * Fix: (#183) Fixed update post do not work with BB theme
 * Enhancement: (#169) blog post add pending nav, post count with UI managed

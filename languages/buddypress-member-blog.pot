@@ -1,14 +1,14 @@
-# Copyright (C) 2022
+# Copyright (C) 2023
 # This file is distributed under the same license as the  package.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-03 13:40:23+00:00\n"
+"POT-Creation-Date: 2023-03-26 04:57:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Varun Dubey\n"
 "Language-Team: Wbcom Designs\n"
 "Language: en\n"
@@ -121,18 +121,26 @@ msgid ""
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:151
-msgid "Media management"
+msgid "Enable create category"
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:153
-msgid "When blog post removed permanently delete the associated media file."
+msgid "Enable this option if you want to create category from the font-end."
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:166
+msgid "Media management"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:168
+msgid "When blog post removed permanently delete the associated media file."
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:181
 msgid "Exclude categories"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:170
+#: admin/inc/bp-member-blog-setting-general-tab.php:185
 msgid "Select category to exclude on fronted"
 msgstr ""
 
@@ -836,15 +844,15 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: buddypress-member-blog.php:129
+#: buddypress-member-blog.php:131
 msgid " BuddyPress Member Blog"
 msgstr ""
 
-#: buddypress-member-blog.php:130
+#: buddypress-member-blog.php:132
 msgid "BuddyPress"
 msgstr ""
 
-#: buddypress-member-blog.php:132
+#: buddypress-member-blog.php:134
 msgid "%1$s is ineffective now as it requires %2$s to be installed and active."
 msgstr ""
 
@@ -862,6 +870,10 @@ msgstr ""
 
 #: includes/buddypress-member-blog-functions.php:213
 msgid "Delete"
+msgstr ""
+
+#: includes/buddypress-member-blog-functions.php:301
+msgid "Auto Draft"
 msgstr ""
 
 #: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
@@ -884,157 +896,166 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:112
+#: public/class-buddypress-member-blog-public.php:133
 msgid "Category name is required."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:136
+#: public/class-buddypress-member-blog-public.php:160
 msgid "Add new post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:167
-#: public/class-buddypress-member-blog-public.php:204
+#: public/class-buddypress-member-blog-public.php:186
 #: public/class-buddypress-member-blog-public.php:223
 #. translators: %s:
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:233
-msgid "Publish Posts"
+#: public/class-buddypress-member-blog-public.php:261
+#. translators: %s:
+msgid "Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:244
+#: public/class-buddypress-member-blog-public.php:272
+msgid "Pending"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:283
 msgid "Draft Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:260
-#: public/class-buddypress-member-blog-public.php:343
+#: public/class-buddypress-member-blog-public.php:299
+#: public/class-buddypress-member-blog-public.php:382
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:306
+#: public/class-buddypress-member-blog-public.php:345
 msgid "Blog"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:333
+#: public/class-buddypress-member-blog-public.php:372
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:342
+#: public/class-buddypress-member-blog-public.php:381
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:438
+#: public/class-buddypress-member-blog-public.php:496
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:465
+#: public/class-buddypress-member-blog-public.php:523
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:495
+#: public/class-buddypress-member-blog-public.php:553
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:537
-#: public/class-buddypress-member-blog-public.php:635
+#: public/class-buddypress-member-blog-public.php:602
+#: public/class-buddypress-member-blog-public.php:700
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:537
-#: public/class-buddypress-member-blog-public.php:555
+#: public/class-buddypress-member-blog-public.php:602
+#: public/class-buddypress-member-blog-public.php:620
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:539
-#: public/class-buddypress-member-blog-public.php:557
+#: public/class-buddypress-member-blog-public.php:604
+#: public/class-buddypress-member-blog-public.php:622
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:555
-#: public/class-buddypress-member-blog-public.php:639
+#: public/class-buddypress-member-blog-public.php:620
+#: public/class-buddypress-member-blog-public.php:704
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:601
+#: public/class-buddypress-member-blog-public.php:666
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:695
+#: public/class-buddypress-member-blog-public.php:760
 msgid "You are not allowed to access this page."
 msgstr ""
 
-#: templates/draft-posts.php:81 templates/posts.php:81
+#: templates/draft-posts.php:82 templates/pending-posts.php:84
+#: templates/posts.php:81
 msgid "Permanent Link to"
 msgstr ""
 
-#: templates/draft-posts.php:91 templates/posts.php:91
+#: templates/draft-posts.php:89 templates/pending-posts.php:91
+#: templates/posts.php:88
 #. translators: %s:
 msgid "%1$s"
 msgstr ""
 
-#: templates/draft-posts.php:112 templates/posts.php:112
+#: templates/draft-posts.php:110 templates/pending-posts.php:112
+#: templates/posts.php:109
 msgid "Read the rest of this entry &rarr;"
 msgstr ""
 
-#: templates/draft-posts.php:116 templates/posts.php:116
+#: templates/draft-posts.php:114 templates/pending-posts.php:116
+#: templates/posts.php:113
 msgid "Pages: "
 msgstr ""
 
-#: templates/draft-posts.php:150 templates/posts.php:150
+#: templates/draft-posts.php:153 templates/pending-posts.php:155
+#: templates/posts.php:150
 msgid "You have not posted anything yet."
 msgstr ""
 
-#: templates/edit.php:48
+#: templates/edit.php:52
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:48
+#: templates/edit.php:52
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:51
+#: templates/edit.php:55
 msgid "Submit for Review"
 msgstr ""
 
-#: templates/edit.php:62
+#: templates/edit.php:66
 msgid "Title:"
 msgstr ""
 
-#: templates/edit.php:71
+#: templates/edit.php:75
 msgid "Post Content:"
 msgstr ""
 
-#: templates/edit.php:90
+#: templates/edit.php:94
 msgid "Post Category:"
 msgstr ""
 
-#: templates/edit.php:92
+#: templates/edit.php:96
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:107
+#: templates/edit.php:111
 #. translators: Display plural label name
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:110
+#: templates/edit.php:114
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:117
+#: templates/edit.php:121
 msgid "Post tag:"
 msgstr ""
 
-#: templates/edit.php:119
+#: templates/edit.php:123
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:140
+#: templates/edit.php:144
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:166
+#: templates/edit.php:171
 msgid "Save"
 msgstr ""
 

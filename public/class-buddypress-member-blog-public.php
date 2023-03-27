@@ -315,8 +315,9 @@ class Buddypress_Member_Blog_Public {
 	 */
 	public function buddypress_member_blog_setup_admin_bar( $wp_admin_nav = array() ) {
 		global $wp_admin_bar, $current_user;
-
-		$blog_slug = bp_loggedin_user_domain() . 'blog';
+		$blog_label 	= apply_filters('bp_member_change_blog_label', 'Blog');
+		$bp_blog_slug 	= apply_filters('bp_member_change_blog_slug', 'blog' );
+		$blog_slug 		= bp_loggedin_user_domain() . $bp_blog_slug;
 
 		// Menus for logged in user.
 		if ( is_user_logged_in() ) {
@@ -342,7 +343,7 @@ class Buddypress_Member_Blog_Public {
 				array(
 					'parent' => 'my-account-buddypress',
 					'id'     => 'my-account-blog',
-					'title'  => __( 'Blog', 'buddypress-member-blog' ),
+					'title'  => $blog_label,
 					'href'   => trailingslashit( $blog_slug ),
 				)
 			);

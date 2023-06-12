@@ -1,6 +1,6 @@
 <?php
 global $post;
-
+$temp_post = $post;
 if ( ! isset( $_GET['action'] ) ) {
 	$post = bp_member_blog_get_default_post_to_edit( 'post', true );
 }
@@ -177,3 +177,5 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 	</div>
 
 </div>
+<?php
+$post = $temp_post;

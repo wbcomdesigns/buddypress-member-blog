@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 04:57:26+00:00\n"
+"POT-Creation-Date: 2023-06-13 14:05:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -911,7 +911,6 @@ msgid "Blog %s"
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:261
-#. translators: %s:
 msgid "Published"
 msgstr ""
 
@@ -924,59 +923,55 @@ msgid "Draft Posts"
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:299
-#: public/class-buddypress-member-blog-public.php:382
+#: public/class-buddypress-member-blog-public.php:383
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:345
-msgid "Blog"
-msgstr ""
-
-#: public/class-buddypress-member-blog-public.php:372
+#: public/class-buddypress-member-blog-public.php:373
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:381
+#: public/class-buddypress-member-blog-public.php:382
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:496
+#: public/class-buddypress-member-blog-public.php:497
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:523
+#: public/class-buddypress-member-blog-public.php:524
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:553
+#: public/class-buddypress-member-blog-public.php:554
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:602
-#: public/class-buddypress-member-blog-public.php:700
+#: public/class-buddypress-member-blog-public.php:603
+#: public/class-buddypress-member-blog-public.php:701
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:602
-#: public/class-buddypress-member-blog-public.php:620
+#: public/class-buddypress-member-blog-public.php:603
+#: public/class-buddypress-member-blog-public.php:621
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:604
-#: public/class-buddypress-member-blog-public.php:622
+#: public/class-buddypress-member-blog-public.php:605
+#: public/class-buddypress-member-blog-public.php:623
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:620
-#: public/class-buddypress-member-blog-public.php:704
+#: public/class-buddypress-member-blog-public.php:621
+#: public/class-buddypress-member-blog-public.php:705
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:666
+#: public/class-buddypress-member-blog-public.php:667
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:760
+#: public/class-buddypress-member-blog-public.php:761
 msgid "You are not allowed to access this page."
 msgstr ""
 

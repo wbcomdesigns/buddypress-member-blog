@@ -248,7 +248,7 @@ class Buddypress_Member_Blog_Public {
 		bp_core_new_nav_item(
 			array(
 				/* translators: %s: */
-				'name'                => sprintf( esc_html_e( $blog_label . ' %s', 'buddypress-member-blog' ) , '<span class="count">' . $user_post_count . '</span>'),
+				'name'                => sprintf( esc_html__( $blog_label . ' %s', 'buddypress-member-blog' ) , '<span class="count">' . $user_post_count . '</span>'),
 				'slug'                => $blog_slug,
 				'screen_function'     => array( $this, 'bp_member_posts' ),
 				'default_subnav_slug' => $blog_slug,

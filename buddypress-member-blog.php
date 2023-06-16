@@ -227,3 +227,25 @@ function bp_member_blog_ajax_query_attachments_args( $query ) {
 	}
 	return $query;
 }
+
+/**
+ * Add function for iframe
+ *
+ * @param  mixed $tags
+ * @param  mixed $context
+ * @return void
+ */
+function bp_member_blog_wpkses_post_tags( $tags, $context ) {
+	if ( 'post' === $context ) {
+		$tags['iframe'] = array(
+			'src'             => true,
+			'height'          => true,
+			'width'           => true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+		);
+	}
+
+	return $tags;
+}
+add_filter( 'wp_kses_allowed_html', 'bp_member_blog_wpkses_post_tags', 10, 2 );

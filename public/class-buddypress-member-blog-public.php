@@ -185,7 +185,7 @@ class Buddypress_Member_Blog_Public {
 		wp_reset_postdata();
 		$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ) );
 		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
-		if ( is_admin() ) {
+		if ( is_user_logged_in() ) {
 			bp_core_new_nav_item(
 				array(
 					/* translators: %s: */
@@ -200,7 +200,7 @@ class Buddypress_Member_Blog_Public {
 
 			return;
 		}
-
+		
 		/*
 		 * Check current user role to allowed create post or not
 		 *

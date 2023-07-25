@@ -27,7 +27,7 @@ e.g.
 
 == Changelog ==
 = 1.9.9 =
-* Fix: (#205)fixed category dropdown issue
+* Fix: (#205) Category dropdown issue
 * Fix: (#203) Blog menu disappears when we visit other pages
 
 = 1.9.8 =

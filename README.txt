@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.2.0
-Stable tag: 1.9.8
+Stable tag: 1.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ e.g.
 
 
 == Changelog ==
+= 1.9.9 =
+* Fix: (#205)fixed category dropdown issue
+* Fix: (#203) Blog menu disappears when we visit other pages
+
 = 1.9.8 =
 * Fix: (#126)iframe
 * Fix: (#198) query moniter issue

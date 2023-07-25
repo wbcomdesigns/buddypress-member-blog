@@ -197,10 +197,8 @@ class Buddypress_Member_Blog_Public {
 					'item_css_id'         => 'bp-member-blog',
 				)
 			);
-
-			return;
 		}
-		
+
 		/*
 		 * Check current user role to allowed create post or not
 		 *

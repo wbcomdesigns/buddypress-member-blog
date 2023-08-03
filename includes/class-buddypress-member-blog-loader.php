@@ -41,6 +41,13 @@ class Buddypress_Member_Blog_Loader {
 	protected $filters;
 
 	/**
+	 * Shortcode   Using for objects.
+	 *
+	 * @var mixed
+	 */
+	protected $shortcode;
+
+	/**
 	 * Initialize the collections used to maintain the actions and filters.
 	 *
 	 * @since    1.0.0

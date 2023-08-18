@@ -1,7 +1,7 @@
 <?php
 global $post;
 $temp_post = $post;
-if ( ! isset( $_GET['action'] ) ) {
+if ( ! isset( $_GET['action'] ) ) { //phpcs:ignore
 	$post = bp_member_blog_get_default_post_to_edit( 'post', true );
 }
 
@@ -20,7 +20,7 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 	$author_id = $blog_post->post_author;
 	if ( $user_id != $author_id ) { ?>
 	<script>
-	window.location = '<?php echo get_the_permalink(); ?>';
+	window.location = '<?php echo esc_html( get_the_permalink() ); ?>';
 	</script>
 		<?php
 	}
@@ -49,7 +49,7 @@ if ( isset( $bp_member_blog_gen_stngs['create_category'] ) && ! empty( $bp_membe
 
 $category = get_terms( $args );
 
-$submit_btn_value = ( isset( $_GET ) && isset( $_GET['action'] ) && 'edit' === $_GET['action'] ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' );
+$submit_btn_value = ( isset( $_GET ) && isset( $_GET['action'] ) && 'edit' === $_GET['action'] ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' ); //phpcs:ignore
 
 if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || $post_id == '' || ( isset( $_GET['is_draft'] ) && $_GET['is_draft'] == 1 ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$submit_btn_value = __( 'Submit for Review', 'buddypress-member-blog' );

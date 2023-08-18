@@ -97,7 +97,7 @@ add_action( 'activated_plugin', 'bp_member_blog_activation_redirect_settings' );
 function bp_member_blog_activation_redirect_settings( $plugin ) {
 
 	if ( $plugin == plugin_basename( __FILE__ ) && class_exists( 'Buddypress' ) ) {
-		if ( isset( $_REQUEST['action'] ) && $_REQUEST['action']  == 'activate' && isset( $_REQUEST['plugin'] ) && $_REQUEST['plugin'] == $plugin) {
+		if ( isset( $_REQUEST['action'] ) && $_REQUEST['action']  == 'activate' && isset( $_REQUEST['plugin'] ) && $_REQUEST['plugin'] == $plugin) { //phpcs:ignore
 			wp_redirect( admin_url( 'admin.php?page=buddypress-member-blog' ) );
 			exit;
 		}

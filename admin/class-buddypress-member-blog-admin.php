@@ -171,7 +171,9 @@ class Buddypress_Member_Blog_Admin {
 					<div class="wbcom_admin_header-wrapper">
 			            <div id="wb_admin_plugin_name">
 							<?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?>
-							<span><?php printf( __( 'Version %s', 'buddypress-member-blog' ), BUDDYPRESS_MEMBER_BLOG_VERSION ); ?></span>
+							<span><?php 
+							/* translators: %s: */
+							printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BUDDYPRESS_MEMBER_BLOG_VERSION ) ); ?></span>
 						</div>
 			            <?php echo do_shortcode('[wbcom_admin_setting_header]'); ?>
 			        </div>

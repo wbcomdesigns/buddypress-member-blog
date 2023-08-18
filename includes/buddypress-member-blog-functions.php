@@ -282,18 +282,18 @@ function bp_member_blog_paginate() {
  */
 function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) {
 	$post_title = '';
-	if ( ! empty( $_REQUEST['post_title'] ) ) {
-		$post_title = esc_html( wp_unslash( $_REQUEST['post_title'] ) );
+	if ( ! empty( $_REQUEST['post_title'] ) ) { //phpcs:ignore
+		$post_title = esc_html( wp_unslash( $_REQUEST['post_title'] ) ); //phpcs:ignore
 	}
 
 	$post_content = '';
-	if ( ! empty( $_REQUEST['content'] ) ) {
-		$post_content = esc_html( wp_unslash( $_REQUEST['content'] ) );
+	if ( ! empty( $_REQUEST['content'] ) ) { //phpcs:ignore
+		$post_content = esc_html( wp_unslash( $_REQUEST['content'] ) ); //phpcs:ignore
 	}
 
 	$post_excerpt = '';
-	if ( ! empty( $_REQUEST['excerpt'] ) ) {
-		$post_excerpt = esc_html( wp_unslash( $_REQUEST['excerpt'] ) );
+	if ( ! empty( $_REQUEST['excerpt'] ) ) { //phpcs:ignore
+		$post_excerpt = esc_html( wp_unslash( $_REQUEST['excerpt'] ) ); //phpcs:ignore
 	}
 
 	if ( $create_in_db ) {

@@ -69,7 +69,7 @@ if ( ! empty( $member_types ) ) {
 					$args = wp_parse_args( $value['args'], $args );
 				}
 
-				echo wp_dropdown_pages( $args ); // WPCS: XSS ok.
+				echo wp_dropdown_pages( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 				<?php if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) : ?>
 					<a href="<?php echo esc_url( get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) ); ?>" class="button-secondary" target="_bp">

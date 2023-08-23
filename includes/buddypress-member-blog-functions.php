@@ -109,7 +109,11 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 	$url  = '';
 
 	// check if post is published.
-	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . '/';
+	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+		$url = bp_members_get_user_url( $post->post_author ) . 'blog' . '/';
+	} else {
+		$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . '/';
+	}
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
@@ -218,8 +222,11 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 	$post = get_post( $id );
 
 	$action_name = 'delete';
-
-	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+		$url = bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	} else {
+		$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	}
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 

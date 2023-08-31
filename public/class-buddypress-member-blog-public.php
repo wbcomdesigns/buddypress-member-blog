@@ -146,6 +146,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function buddypress_member_blog_setup_nav() {
+		if( bp_is_my_profile() ){
 		if ( class_exists( 'Youzify' ) ) {
 			$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
@@ -303,6 +304,7 @@ class Buddypress_Member_Blog_Public {
 				'position'        => 30,
 			)
 		);
+		}
 	}
 
 

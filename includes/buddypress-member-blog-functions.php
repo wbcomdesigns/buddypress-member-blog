@@ -21,8 +21,11 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 	if ( ! $user_id ) {
 		$user_id = bp_displayed_user_id();
 	}
-
+	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	$url = bp_members_get_user_url( $user_id ) . 'blog' . '/';
+	} else {
 	$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
+	}
 
 	return $url;
 }
@@ -42,9 +45,13 @@ function bp_member_blog_get_new_url() {
 	if ( ! $user_id ) {
 		return '';
 	}
-
+     if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+    // if we are here, we can allow user to edit the post.
+	return bp_members_get_user_url( $user_id ) . 'blog' . '/edit/';
+	} else {	
 	// if we are here, we can allow user to edit the post.
 	return bp_core_get_user_domain( $user_id ) . 'blog' . '/edit/';
+	}
 }
 
 
@@ -197,9 +204,13 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 
 	$action_name = 'bp-new-post';
-
+    if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+     // if we are here, we can allow user to edit the post.
+	return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	} else {
 	// if we are here, we can allow user to edit the post.
 	return bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	}
 }
 
 
@@ -253,10 +264,18 @@ function bp_member_blog_paginate() {
 		// structure of “format” depends on whether we’re using pretty permalinks.
 			$format  = '?paged=%#%';
 		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
-		if( $blog_slug == bp_current_action() ){
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );	
-		}else{
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . $blog_slug . '/' . bp_current_action() );
+        if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+				if( $blog_slug == bp_current_action() ){
+				$base    = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );	
+				}else{
+				$base    = trailingslashit( bp_members_get_user_url( $user_id )  . $blog_slug . '/' . bp_current_action() );
+				}
+		}else {
+				if( $blog_slug == bp_current_action() ){
+					$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );	
+				}else{
+					$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . $blog_slug . '/' . bp_current_action() );
+				}
 		}
 
 		echo wp_kses_post(

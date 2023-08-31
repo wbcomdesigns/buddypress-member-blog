@@ -39,6 +39,14 @@ class Buddypress_Member_Blog_Loader {
 	 * @var      array    $filters    The filters registered with WordPress to fire when the plugin loads.
 	 */
 	protected $filters;
+	/**
+	 * The array of shortcode registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      array    $shortcode    The shortcode registered with WordPress to fire when the plugin loads.
+	 */
+	protected $shortcode;
 
 	/**
 	 * Initialize the collections used to maintain the actions and filters.

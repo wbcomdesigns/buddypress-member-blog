@@ -22,9 +22,9 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 		$user_id = bp_displayed_user_id();
 	}
 	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
-	$url = bp_members_get_user_url( $user_id ) . 'blog' . '/';
+		$url = bp_members_get_user_url( $user_id ) . 'blog' . '/';
 	} else {
-	$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
+		$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
 	}
 
 	return $url;
@@ -45,12 +45,12 @@ function bp_member_blog_get_new_url() {
 	if ( ! $user_id ) {
 		return '';
 	}
-     if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
-    // if we are here, we can allow user to edit the post.
-	return bp_members_get_user_url( $user_id ) . 'blog' . '/edit/';
-	} else {	
-	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $user_id ) . 'blog' . '/edit/';
+	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+		// if we are here, we can allow user to edit the post.
+		return bp_members_get_user_url( $user_id ) . 'blog' . '/edit/';
+	} else {
+		// if we are here, we can allow user to edit the post.
+		return bp_core_get_user_domain( $user_id ) . 'blog' . '/edit/';
 	}
 }
 
@@ -204,12 +204,12 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 
 	$action_name = 'bp-new-post';
-    if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
-     // if we are here, we can allow user to edit the post.
-	return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+		// if we are here, we can allow user to edit the post.
+		return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 	} else {
-	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+		// if we are here, we can allow user to edit the post.
+		return bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 	}
 }
 
@@ -260,22 +260,22 @@ function bp_member_blog_paginate() {
 	if ( $total > 1 ) {
 		// get the current page.
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-			$user_id = bp_displayed_user_id();
+			$user_id  = bp_displayed_user_id();
 		// structure of “format” depends on whether we’re using pretty permalinks.
-			$format  = '?paged=%#%';
-		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
-        if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
-				if( $blog_slug == bp_current_action() ){
-				$base    = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );	
-				}else{
-				$base    = trailingslashit( bp_members_get_user_url( $user_id )  . $blog_slug . '/' . bp_current_action() );
-				}
-		}else {
-				if( $blog_slug == bp_current_action() ){
-					$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );	
-				}else{
-					$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . $blog_slug . '/' . bp_current_action() );
-				}
+			$format = '?paged=%#%';
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+			if ( $blog_slug == bp_current_action() ) {
+				$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );
+			} else {
+				$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug . '/' . bp_current_action() );
+			}
+		} else {
+			if ( $blog_slug == bp_current_action() ) {
+				$base = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );
+			} else {
+				$base = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug . '/' . bp_current_action() );
+			}
 		}
 
 		echo wp_kses_post(
@@ -323,12 +323,14 @@ function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_i
 	}
 
 	if ( $create_in_db ) {
-		$post_id = wp_insert_post( array(
-			'post_title'  => __( 'Auto Draft', 'buddypress-member-blog' ),
-			'post_type'   => $post_type,
-			'post_status' => 'auto-draft',
-			'post_author' => get_current_user_id(),
-		) );
+		$post_id = wp_insert_post(
+			array(
+				'post_title'  => __( 'Auto Draft', 'buddypress-member-blog' ),
+				'post_type'   => $post_type,
+				'post_status' => 'auto-draft',
+				'post_author' => get_current_user_id(),
+			)
+		);
 
 		$post = get_post( $post_id );
 
@@ -382,4 +384,58 @@ function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_i
 	$post->post_excerpt = apply_filters( 'default_excerpt', $post_excerpt, $post );
 
 	return $post;
+}
+
+/**
+ * Get total no. of Posts  posted by a user
+ *
+ * @param int  $user_id user id.
+ * @param bool $is_my_profile Is user profile.
+ *
+ * @return int
+ *
+ * @todo : may need revisist
+ */
+function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false ) {
+	// Needs revisit.
+	global $wpdb;
+
+	if ( ! $user_id ) {
+		$user_id = bp_displayed_user_id();
+	}
+
+	$status = array( "post_status='publish'" );
+
+	if ( $is_my_profile ) {
+		$status[] = $wpdb->prepare( 'post_status=%s', 'draft' );
+		$status[] = $wpdb->prepare( 'post_status=%s', 'private' );
+	}
+
+	$where_status_query = join( ' || ', $status );
+
+	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE post_author=%d AND post_type=%s AND ({$where_status_query})", $user_id, 'post' ) );
+
+	return intval( $count );
+
+}
+
+
+/**
+ * Get total no. of published post for the user
+ *
+ * @param int $user_id user id.
+ *
+ * @return int
+ */
+function bp_member_blog_get_total_published_posts( $user_id = 0 ) {
+
+	if ( ! $user_id ) {
+		$user_id = get_current_user_id();
+	}
+	// Needs revisit.
+	global $wpdb;
+
+	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE  post_author=%d AND post_type=%s AND post_status='publish'", $user_id, 'post' ) );
+
+	return intval( $count );
 }

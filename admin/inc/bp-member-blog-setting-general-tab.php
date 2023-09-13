@@ -202,7 +202,7 @@ if ( ! empty( $member_types ) ) {
 		 * @since 1.0.0
 		 * @param array $bp_member_blog_gen_stngs Plugin general setting option.
 		 */
-		do_action( 'bmpro_add_general_settings_options', $bp_member_blog_gen_stngs );
+		do_action( 'bp_member_blog_add_general_settings_options', $bp_member_blog_gen_stngs );
 		?>
 	</div>
 	<?php submit_button(); ?>

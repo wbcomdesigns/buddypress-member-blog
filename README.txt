@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.2.0
-Stable tag: 1.9.9
+Tested up to: 6.3.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,11 @@ e.g.
 
 
 == Changelog ==
+= 2.0.0 =
+* Fix: PHPCS fixes
+* Fix: (#247) Issue with PHP 8.2 version
+* Fix: (#214) Blog option showing in moderation plugin
+
 = 1.9.9 =
 * Fix: (#205) Category dropdown issue
 * Fix: (#203) Blog menu disappears when we visit other pages

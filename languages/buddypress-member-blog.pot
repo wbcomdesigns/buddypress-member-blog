@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 11:46:08+00:00\n"
+"POT-Creation-Date: 2023-09-19 08:11:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,12 +59,13 @@ msgstr ""
 msgid "BuddyPress Member Blog"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:174
-#: admin/wbcom/templates/wbcom-license-page.php:13
+#: admin/class-buddypress-member-blog-admin.php:176
+#: admin/wbcom/templates/wbcom-license-page.php:15
+#. translators: %s:
 msgid "Version %s"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:183
+#: admin/class-buddypress-member-blog-admin.php:185
 msgid "Menu"
 msgstr ""
 
@@ -213,32 +214,32 @@ msgstr ""
 msgid "BuddyPress Members Blog"
 msgstr ""
 
-#: admin/wbcom/templates/wbcom-license-page.php:18
+#: admin/wbcom/templates/wbcom-license-page.php:20
 msgid "Plugin License"
-msgstr ""
-
-#: admin/wbcom/templates/wbcom-license-page.php:24
-#: admin/wbcom/templates/wbcom-license-page.php:36
-msgid "Product"
-msgstr ""
-
-#: admin/wbcom/templates/wbcom-license-page.php:25
-#: admin/wbcom/templates/wbcom-license-page.php:37
-msgid "Version"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-license-page.php:26
 #: admin/wbcom/templates/wbcom-license-page.php:38
-msgid "Key"
+msgid "Product"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-license-page.php:27
 #: admin/wbcom/templates/wbcom-license-page.php:39
-msgid "Status"
+msgid "Version"
 msgstr ""
 
 #: admin/wbcom/templates/wbcom-license-page.php:28
 #: admin/wbcom/templates/wbcom-license-page.php:40
+msgid "Key"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:29
+#: admin/wbcom/templates/wbcom-license-page.php:41
+msgid "Status"
+msgstr ""
+
+#: admin/wbcom/templates/wbcom-license-page.php:30
+#: admin/wbcom/templates/wbcom-license-page.php:42
 msgid "Action"
 msgstr ""
 

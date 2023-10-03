@@ -21,7 +21,7 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 	if ( ! $user_id ) {
 		$user_id = bp_displayed_user_id();
 	}
-	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	if ( bp_member_blog_is_buddypress_supported() ) {
 		$url = bp_members_get_user_url( $user_id ) . 'blog' . '/';
 	} else {
 		$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
@@ -45,7 +45,7 @@ function bp_member_blog_get_new_url() {
 	if ( ! $user_id ) {
 		return '';
 	}
-	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	if ( bp_member_blog_is_buddypress_supported() ) {
 		// if we are here, we can allow user to edit the post.
 		return bp_members_get_user_url( $user_id ) . 'blog' . '/edit/';
 	} else {
@@ -116,7 +116,7 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 	$url  = '';
 
 	// check if post is published.
-	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	if ( bp_member_blog_is_buddypress_supported() ) {
 		$url = bp_members_get_user_url( $post->post_author ) . 'blog' . '/';
 	} else {
 		$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . '/';
@@ -204,7 +204,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 
 	$action_name = 'bp-new-post';
-	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	if ( bp_member_blog_is_buddypress_supported() ) {
 		// if we are here, we can allow user to edit the post.
 		return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 	} else {
@@ -233,7 +233,7 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 	$post = get_post( $id );
 
 	$action_name = 'delete';
-	if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+	if ( bp_member_blog_is_buddypress_supported() ) {
 		$url = bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 	} else {
 		$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
@@ -264,7 +264,7 @@ function bp_member_blog_paginate() {
 		// structure of “format” depends on whether we’re using pretty permalinks.
 			$format = '?paged=%#%';
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-		if ( function_exists( 'buddypress' ) && version_compare( buddypress()->version, '12.0', '>=' ) ) {
+		if ( bp_member_blog_is_buddypress_supported() ) {
 			if ( $blog_slug == bp_current_action() ) {
 				$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );
 			} else {

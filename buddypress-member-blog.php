@@ -72,6 +72,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-buddypress-member-blog.php
  */
 require plugin_dir_path( __FILE__ ) . 'includes/buddypress-member-blog-functions.php';
 
+require_once __DIR__ . '/vendor/autoload.php';
+HardG\BuddyPress120URLPolyfills\Loader::init();
+
 /**
  * Begins execution of the plugin.
  *

@@ -2,6 +2,22 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ .wb-info {
+  color: #1c86f2;
+}
+
+.wb-warning {
+  color: #e4a11b;
+}
+
+.wb-success {
+  color: #14a44d;
+}
+
+.wb-error {
+  color: #ef3e46;
+}
+
 .bp-member-blog-wrap .wbcom-admin-settings-page {
   overflow: visible !important;
 }
@@ -18,6 +34,14 @@
 .nav-tab-wrapper ul li#group-integration a.nav-tab:before,
 .nav-tab-wrapper ul li#group-integration-pro a.nav-tab:before {
   content: "\f307";
+}
+
+.nav-tab-wrapper ul li#notifications-pro a.nav-tab:before {
+  content: "\f16d";
+}
+
+.nav-tab-wrapper ul li#email-notification-pro a.nav-tab:before {
+  content: "\f465";
 }
 
 .wbcom-settings-section-options-flex {
@@ -129,4 +153,27 @@ a#bp-member-blog-pro-delete-table span {
 .wbcom-wrap .notice.notice-error.is-dismissible.learndash-license-is-dismissible,
 .wbcom-wrap .notice.notice-error {
   display: none !important;
+}
+
+/* Publish Blog Option Switch Button */
+
+.wbcom-settings-section-wrap.members-blog-publish-wrap .wb-switch {
+  width: 140px;
+}
+
+.wbcom-settings-section-wrap.members-blog-publish-wrap .wb-switch input:checked+.wb-slider:before {
+  -webkit-transform: translateX(103px);
+  -ms-transform: translateX(103px);
+  transform: translateX(103px);
+}
+
+.wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:after,
+.wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:checked::after,
+.wbcom-settings-section-wrap.members-blog-publish-wrap .wb-slider.wb-round::after {
+    content: "Pending Review";
+}
+
+.wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:checked::after,
+.wbcom-settings-section-wrap.members-blog-publish-wrap .wb-switch input:checked+.wb-slider::after {
+    content: "Published";
 }

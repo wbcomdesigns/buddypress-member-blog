@@ -151,10 +151,12 @@ class Buddypress_Member_Blog_Admin {
 		$member_blog_tabs = apply_filters(
 			'bp_member_blog_admin_setting_tabs',
 			array(
-				'welcome'               => __( 'Welcome', 'buddypress-member-blog' ),
-				'general'               => __( 'General', 'buddypress-member-blog' ),
-				'restriction-pro'       => __( 'Restrictions', 'buddypress-member-blog' ),
-				'group-integration-pro' => __( 'Groups Integration', 'buddypress-member-blog' ),
+				'welcome'                => __( 'Welcome', 'buddypress-member-blog' ),
+				'general'                => __( 'General', 'buddypress-member-blog' ),
+				'restriction-pro'        => __( 'Restrictions', 'buddypress-member-blog' ),
+				'group-integration-pro'  => __( 'Groups Integration', 'buddypress-member-blog' ),
+				'notifications-pro'      => __( 'Notifications', 'buddypress-member-blog' ),
+				'email-notification-pro' => __( 'Email Notification Settings', 'buddypress-member-blog' ),
 			)
 		);
 		?>

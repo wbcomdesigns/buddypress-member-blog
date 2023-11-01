@@ -30,5 +30,10 @@ switch ( $bautof_tab ) {
 	case 'group-integration-pro':
 		include 'bp-member-blog-setting-group-integration-tab.php';
 		break;
+	case 'notifications-pro':
+		include 'bp-member-blog-setting-notifications-pro-tab.php';
+		break;
+	case 'email-notification-pro':
+		include 'bp-member-blog-setting-email-notification-pro-tab.php';
+		break;
 }
-

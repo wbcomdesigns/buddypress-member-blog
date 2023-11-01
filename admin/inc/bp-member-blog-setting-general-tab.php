@@ -48,8 +48,8 @@ if ( ! empty( $member_types ) ) {
 	<div class="form-table">
 		<div class="wbcom-settings-section-wrap">
 			<div class="wbcom-settings-section-options-heading">
-				<label><?php esc_html_e( 'Create new post page', 'buddypress-member-blog' ); ?></label>
-				<p class="description"><?php esc_html_e( 'This sets the page used to create new post. This page should contain the following shortcode. [bp-member-blog]', 'buddypress-member-blog' ); ?></p>
+				<label><?php esc_html_e( 'Create a new blog post', 'buddypress-member-blog' ); ?></label>
+				<p class="description"><?php esc_html_e( 'This page should contain the shortcode [bp-member-blog] for creating a new post.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options wbcom-settings-section-options-flex">
 				<?php
@@ -83,7 +83,7 @@ if ( ! empty( $member_types ) ) {
 
 		<div class="wbcom-settings-section-wrap">
 			<div class="wbcom-settings-section-options-heading">
-				<label><?php esc_html_e( 'Allowed user roles to create post?', 'buddypress-member-blog' ); ?></label>
+				<label><?php esc_html_e( 'Restrict the ability by user roles', 'buddypress-member-blog' ); ?></label>
 				<p class="description description-bp"><?php esc_html_e( 'Selected user roles will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">
@@ -130,12 +130,12 @@ if ( ! empty( $member_types ) ) {
 			</div>
 		</div>
 		<?php endif; ?>
-		<div class="wbcom-settings-section-wrap">
+		<div class="wbcom-settings-section-wrap members-blog-publish-wrap">
 			<div class="wbcom-settings-section-options-heading">
 				<label for="bp_member_blog_publish_post">
-					<?php esc_html_e( 'Enable user publishing', 'buddypress-member-blog' ); ?>
+					<?php esc_html_e( 'Default status of the blog', 'buddypress-member-blog' ); ?>
 				</label>
-				<p class="description"><?php esc_html_e( 'Allow user to publish posts. if not enable, they can only submit post as pending for review.', 'buddypress-member-blog' ); ?></p>
+				<p class="description"><?php esc_html_e( 'When a member create a new blog, the status of the blog will be determined.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">
 				<label class="wb-switch">
@@ -148,9 +148,9 @@ if ( ! empty( $member_types ) ) {
 		<div class="wbcom-settings-section-wrap">
 			<div class="wbcom-settings-section-options-heading">
 				<label for="bp_member_blog_publish_post">
-					<?php esc_html_e( 'Enable create category', 'buddypress-member-blog' ); ?>
+					<?php esc_html_e( 'Members can create blog category', 'buddypress-member-blog' ); ?>
 				</label>
-				<p class="description"><?php esc_html_e( 'Enable this option if you want to create category from the font-end.', 'buddypress-member-blog' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Allow members to create new blog categories while submitting new blogs.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">
 				<label class="wb-switch">
@@ -180,9 +180,10 @@ if ( ! empty( $member_types ) ) {
 				<label>
 					<?php esc_html_e( 'Exclude categories', 'buddypress-member-blog' ); ?>
 				</label>
+				<p class="description"><?php esc_html_e( 'Please select the categories that should be excluded for members to associate their blogs with.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">
-				<select id="bp-blog-category-select" name="bp_member_blog_gen_stngs[exclude_category][]" multiple data-placeholder="<?php esc_html_e( 'Select category to exclude on fronted', 'buddypress-member-blog' ); ?>">
+				<select id="bp-blog-category-select" name="bp_member_blog_gen_stngs[exclude_category][]" multiple data-placeholder="<?php esc_html_e( 'Choose the categories', 'buddypress-member-blog' ); ?>">
 				<?php
 				foreach ( $category as $cat ) {
 					$selected = ( ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) && in_array( $cat->term_id, $bp_member_blog_gen_stngs['exclude_category'] ) ) ? 'selected' : '';

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wbcom-tab-content">
 	<div class="wbcom-welcome-main-wrapper">
 		<div class="wbcom-welcome-head">
-			<p class="wbcom-welcome-description"><?php esc_html_e( 'Allow your BuddyPress members to create and manage their blog posts.  Allow them to publish their posts directly or send them for review. You can easily navigate to any member\'s profile to read  their posts.', 'buddypress-member-blog' ); ?></p>
+			<p class="wbcom-welcome-description"><?php esc_html_e( 'Enable BuddyPress members to easily create and manage blog posts, either publishing them directly or sending them for review. It\'s simple to navigate to a member\'s profile to read their posts.', 'buddypress-member-blog' ); ?></p>
 		</div><!-- .wbcom-welcome-head -->
 
 		<div class="wbcom-welcome-content">
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="wbcom-support-inner">
 						<h3><span class="dashicons dashicons-admin-comments"></span><?php esc_html_e( 'Got Feedback?', 'buddypress-member-blog' ); ?></h3>
 						<p><?php esc_html_e( 'We want to hear about your experience with the plugin. We would also love to hear any suggestions you may for future updates.', 'buddypress-member-blog' ); ?></p>
-						<a href="<?php echo esc_url( 'https://wbcomdesigns.com/contact/' ); ?>" class="button button-primary button-welcome-support" target="_blank"><?php esc_html_e( 'Send Feedback', 'buddypress-member-blog' ); ?></a>
+						<a href="<?php echo esc_url( 'https://wbcomdesigns.com/submit-review/' ); ?>" class="button button-primary button-welcome-support" target="_blank"><?php esc_html_e( 'Send Feedback', 'buddypress-member-blog' ); ?></a>
 					</div>
 					</div>
 				</div>

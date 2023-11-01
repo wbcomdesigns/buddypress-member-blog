@@ -72,7 +72,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_after_content', $post_id ); ?>
 
-			<label for="bp_member_blog_post_content"><?php esc_html_e( 'Post Content:', 'buddypress-member-blog' ); ?>
+			<label for="bp_member_blog_post_content"><?php esc_html_e( 'Content:', 'buddypress-member-blog' ); ?>
 
 				<?php
 				wp_editor(
@@ -91,7 +91,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_category', $post_id ); ?>
 
-			<label class="bpmb_category" for="bp_member_blog_post_category"><?php esc_html_e( 'Post Category:', 'buddypress-member-blog' ); ?>
+			<label class="bpmb_category" for="bp_member_blog_post_category"><?php esc_html_e( 'Category:', 'buddypress-member-blog' ); ?>
 
 				<select id="bp-blog-category-select" name="bp_member_blog_post_category[]" multiple data-placeholder="<?php esc_html_e( 'Select post category', 'buddypress-member-blog' ); ?>">
 				<?php
@@ -118,7 +118,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_tag', $post_id ); ?>
 
-			<label for="bp_member_blog_post_tag"><?php esc_html_e( 'Post tag:', 'buddypress-member-blog' ); ?>
+			<label for="bp_member_blog_post_tag"><?php esc_html_e( 'Tag:', 'buddypress-member-blog' ); ?>
 
 				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1"  name="bp_member_blog_post_tag" placeholder="<?php esc_html_e( 'Please add post tags with comma separator.', 'buddypress-member-blog' ); ?>" value="">
 

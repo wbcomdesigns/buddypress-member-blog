@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-01 09:48:08+00:00\n"
+"POT-Creation-Date: 2023-11-01 10:27:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,56 +24,61 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: admin/class-buddypress-member-blog-admin.php:127
+#: admin/class-buddypress-member-blog-admin.php:123
 msgid "WB Plugins"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:129
-#: admin/class-buddypress-member-blog-admin.php:155
+#: admin/class-buddypress-member-blog-admin.php:125
+#: admin/class-buddypress-member-blog-admin.php:150
 msgid "General"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:131
+#: admin/class-buddypress-member-blog-admin.php:127
 msgid "BuddyPress Member BlogSettings Page"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:131
+#: admin/class-buddypress-member-blog-admin.php:127
 msgid "Member Blog"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:154
+#: admin/class-buddypress-member-blog-admin.php:149
 msgid "Welcome"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:156
+#: admin/class-buddypress-member-blog-admin.php:151
 msgid "Restrictions"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:157
+#: admin/class-buddypress-member-blog-admin.php:152
 msgid "Groups Integration"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:158
+#: admin/class-buddypress-member-blog-admin.php:153
 msgid "Notifications"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:159
+#: admin/class-buddypress-member-blog-admin.php:154
 msgid "Email Notification Settings"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:175
+#: admin/class-buddypress-member-blog-admin.php:172
+msgid "BuddyPress Member Blog Pro"
+msgstr ""
+
+#: admin/class-buddypress-member-blog-admin.php:174
 #: admin/wbcom/templates/wbcom-plugins-page.php:115
 #: admin/wbcom/templates/wbcom-plugins-page.php:430
 msgid "BuddyPress Member Blog"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:178
+#: admin/class-buddypress-member-blog-admin.php:181
+#: admin/class-buddypress-member-blog-admin.php:183
 #: admin/wbcom/templates/wbcom-license-page.php:15
 #. translators: %s:
 msgid "Version %s"
 msgstr ""
 
-#: admin/class-buddypress-member-blog-admin.php:187
+#: admin/class-buddypress-member-blog-admin.php:195
 msgid "Menu"
 msgstr ""
 

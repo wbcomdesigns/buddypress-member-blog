@@ -50,7 +50,6 @@ class Buddypress_Member_Blog_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-
 	}
 
 	/**
@@ -73,7 +72,6 @@ class Buddypress_Member_Blog_Admin {
 		 */
 		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-admin.css', array(), $this->version, 'all' );
-
 	}
 
 	/**
@@ -96,7 +94,6 @@ class Buddypress_Member_Blog_Admin {
 		 */
 		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-admin.js', array( 'jquery' ), $this->version, false );
-
 	}
 
 		/**
@@ -104,16 +101,15 @@ class Buddypress_Member_Blog_Admin {
 		 *
 		 * @return void
 		 */
-		public function wbcom_hide_all_admin_notices_from_setting_page() {
-			$wbcom_pages_array  = array( 'wbcomplugins', 'wbcom-plugins-page', 'wbcom-support-page', 'buddypress-member-blog' );
-			$wbcom_setting_page = filter_input( INPUT_GET, 'page' ) ? filter_input( INPUT_GET, 'page' ) : '';
+	public function wbcom_hide_all_admin_notices_from_setting_page() {
+		$wbcom_pages_array  = array( 'wbcomplugins', 'wbcom-plugins-page', 'wbcom-support-page', 'buddypress-member-blog' );
+		$wbcom_setting_page = filter_input( INPUT_GET, 'page' ) ? filter_input( INPUT_GET, 'page' ) : '';
 
-			if ( in_array( $wbcom_setting_page, $wbcom_pages_array, true ) ) {
-				remove_all_actions( 'admin_notices' );
-				remove_all_actions( 'all_admin_notices' );
-			}
-
+		if ( in_array( $wbcom_setting_page, $wbcom_pages_array, true ) ) {
+			remove_all_actions( 'admin_notices' );
+			remove_all_actions( 'all_admin_notices' );
 		}
+	}
 
 	/**
 	 * Add admin sub menu for plugin settings.
@@ -129,7 +125,6 @@ class Buddypress_Member_Blog_Admin {
 			add_submenu_page( 'wbcomplugins', esc_html__( 'General', 'buddypress-member-blog' ), esc_html__( 'General', 'buddypress-member-blog' ), 'manage_options', 'wbcomplugins' );
 		}
 		add_submenu_page( 'wbcomplugins', esc_html__( 'BuddyPress Member BlogSettings Page', 'buddypress-member-blog' ), esc_html__( 'Member Blog', 'buddypress-member-blog' ), 'manage_options', 'buddypress-member-blog', array( $this, 'bp_member_blog_settings_page' ) );
-
 	}
 
 	/**
@@ -171,14 +166,27 @@ class Buddypress_Member_Blog_Admin {
 			<div class="wbcom-wrap bp-member-blog-wrap">
 				<div class="blpro-header">
 					<div class="wbcom_admin_header-wrapper">
-			            <div id="wb_admin_plugin_name">
-							<?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?>
-							<span><?php 
+						<div id="wb_admin_plugin_name">
+							<?php
+							if ( class_exists( 'BuddyPress_Member_Blog_Pro' ) ) {
+								esc_html_e( 'BuddyPress Member Blog Pro', 'buddypress-member-blog' );
+							} else {
+								esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' );
+							}
+							?>
+							<span>
+							<?php
 							/* translators: %s: */
-							printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BUDDYPRESS_MEMBER_BLOG_VERSION ) ); ?></span>
+							if ( class_exists( 'BuddyPress_Member_Blog_Pro' ) ) {
+								printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BuddyPress_Member_Blog_Pro_PLUGIN_VERSION ) );
+							} else {
+								printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BUDDYPRESS_MEMBER_BLOG_VERSION ) );
+							}
+							?>
+							</span>
 						</div>
-			            <?php echo do_shortcode('[wbcom_admin_setting_header]'); ?>
-			        </div>
+						<?php echo do_shortcode( '[wbcom_admin_setting_header]' ); ?>
+					</div>
 				</div>
 				<div class="wbcom-admin-settings-page">
 					<div class="wbcom-tabs-section">
@@ -193,9 +201,9 @@ class Buddypress_Member_Blog_Admin {
 							<ul>
 							<?php
 							foreach ( $member_blog_tabs as $bmpro_tab => $bmpro_name ) {
-								$class = ( $bmpro_tab == $current ) ? 'nav-tab-active' : '';
+								$class     = ( $bmpro_tab == $current ) ? 'nav-tab-active' : '';
 								$bmb_nonce = wp_create_nonce( 'bmb_nonce' );
-								echo '<li id="' . esc_attr( $bmpro_tab ) . '"><a class="nav-tab ' . esc_attr( $class ) . '" href="admin.php?page=buddypress-member-blog&tab=' . esc_attr( $bmpro_tab ) . '&nonce='. esc_attr( $bmb_nonce ) .'">' . esc_html( $bmpro_name ) . '</a></li>';
+								echo '<li id="' . esc_attr( $bmpro_tab ) . '"><a class="nav-tab ' . esc_attr( $class ) . '" href="admin.php?page=buddypress-member-blog&tab=' . esc_attr( $bmpro_tab ) . '&nonce=' . esc_attr( $bmb_nonce ) . '">' . esc_html( $bmpro_name ) . '</a></li>';
 							}
 							?>
 							</ul>
@@ -210,5 +218,4 @@ class Buddypress_Member_Blog_Admin {
 		</div> <!-- closing div class wrap -->
 		<?php
 	}
-
 }

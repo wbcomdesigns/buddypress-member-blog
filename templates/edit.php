@@ -31,9 +31,6 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 
 }
 
-
-
-
 $args = array(
 	'taxonomy'   => 'category',
 	'hide_empty' => false,
@@ -63,7 +60,8 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_title', $post_id ); ?>
 
-			<label for="bp_member_blog_post_title"><?php esc_html_e( 'Title:', 'buddypress-member-blog' ); ?>
+			<label for="bp_member_blog_post_title">
+				<span><?php esc_html_e( 'Title:', 'buddypress-member-blog' ); ?></span>
 				<input type="text" name="bp_member_blog_post_title" value="<?php echo esc_attr( $blog_post->post_title ); ?>" required/>
 			</label>
 
@@ -72,7 +70,8 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_after_content', $post_id ); ?>
 
-			<label for="bp_member_blog_post_content"><?php esc_html_e( 'Content:', 'buddypress-member-blog' ); ?>
+			<label for="bp_member_blog_post_content">
+				<span><?php esc_html_e( 'Content:', 'buddypress-member-blog' ); ?></span>
 
 				<?php
 				wp_editor(
@@ -91,19 +90,21 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_category', $post_id ); ?>
 
-			<label class="bpmb_category" for="bp_member_blog_post_category"><?php esc_html_e( 'Category:', 'buddypress-member-blog' ); ?>
-
-				<select id="bp-blog-category-select" name="bp_member_blog_post_category[]" multiple data-placeholder="<?php esc_html_e( 'Select post category', 'buddypress-member-blog' ); ?>">
-				<?php
-				foreach ( $category as $cat ) {
-					$selected = ( ! empty( $post_selected_category ) && in_array( $cat->term_id, $post_selected_category ) ) ? 'selected' : '';
-					?>
-					<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $cat->name ); ?></option>
-				<?php } ?>
-				</select>
-				<?php if ( 'yes' === $create_cat ) { ?>
-					<a href="javascript:void(0);" class="add-bpmb-category"><span class="dashicons dashicons-plus"></span></a>
-				<?php } ?>	
+			<label class="bpmb_category" for="bp_member_blog_post_category">
+				<span><?php esc_html_e( 'Category:', 'buddypress-member-blog' ); ?></span>
+				<div class="bp-member-blog-post-category-wrapper">
+					<select id="bp-blog-category-select" name="bp_member_blog_post_category[]" multiple data-placeholder="<?php esc_html_e( 'Select post category', 'buddypress-member-blog' ); ?>">
+					<?php
+					foreach ( $category as $cat ) {
+						$selected = ( ! empty( $post_selected_category ) && in_array( $cat->term_id, $post_selected_category ) ) ? 'selected' : '';
+						?>
+						<option value="<?php echo esc_attr( $cat->term_id ); ?>" <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $cat->name ); ?></option>
+					<?php } ?>
+					</select>
+					<?php if ( 'yes' === $create_cat ) { ?>
+						<a href="javascript:void(0);" class="add-bpmb-category"><span class="dashicons dashicons-plus"></span></a>
+					<?php } ?>
+				</div>
 			</label>
 			<?php if ( 'yes' === $create_cat ) { ?>
 				<div class="add-bpmb-cat-row">
@@ -118,7 +119,8 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_tag', $post_id ); ?>
 
-			<label for="bp_member_blog_post_tag"><?php esc_html_e( 'Tag:', 'buddypress-member-blog' ); ?>
+			<label for="bp_member_blog_post_tag">
+				<span><?php esc_html_e( 'Tag:', 'buddypress-member-blog' ); ?></span>
 
 				<input type="text" id="bp_member_blog_post_tag" class="regular-text" tabindex="-1"  name="bp_member_blog_post_tag" placeholder="<?php esc_html_e( 'Please add post tags with comma separator.', 'buddypress-member-blog' ); ?>" value="">
 
@@ -141,9 +143,13 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 			<?php do_action( 'bp_post_before_featured_image', $post_id ); ?>
 
-			<label for="bp_member_blog_post_featured_image"><?php esc_html_e( 'Featured Image:', 'buddypress-member-blog' ); ?>
+			<label for="bp-member-blog-featured-image-wrapper">
+				<span><?php esc_html_e( 'Featured Image:', 'buddypress-member-blog' ); ?></span>
 
-				<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" value="<?php echo esc_attr( $title ); ?>"/>
+				<div class="bp-member-blog-featured-image-wrapper">
+					<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" value="<?php echo esc_attr( $title ); ?>"/>
+					<label for="bp_member_blog_post_featured_image" class="custom-file-upload"><?php esc_html_e( 'Add Image', 'buddypress-member-blog' ); ?></label>
+				</div>
 
 				<div class="bp_member_blog_post_img_preview" 
 				<?php

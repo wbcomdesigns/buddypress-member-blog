@@ -36,10 +36,12 @@
   content: "\f307";
 }
 
+.nav-tab-wrapper ul li#notifications a.nav-tab:before,
 .nav-tab-wrapper ul li#notifications-pro a.nav-tab:before {
   content: "\f16d";
 }
 
+.nav-tab-wrapper ul li#notification-settings a.nav-tab:before,
 .nav-tab-wrapper ul li#email-notification-pro a.nav-tab:before {
   content: "\f465";
 }

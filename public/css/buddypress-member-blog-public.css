@@ -368,6 +368,13 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entr
     font-size: 22px;
     line-height: 24px;
 }
+body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entry-title span.bp-edit-post {
+    margin-left: 10px;
+}
+
+body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entry-title span.bp-edit-post {
+    font-size: 14px;
+}
 
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edit-post,
 .bp-member-blog-container .post-content .bp-edit-post {

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 08:08:58+00:00\n"
+"POT-Creation-Date: 2023-11-02 10:16:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,7 +120,7 @@ msgid "Selected user roles will be allowed to create post."
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:120
-msgid "Allowed member types wise to create post?"
+msgid "Restrict the ability by member types"
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:121

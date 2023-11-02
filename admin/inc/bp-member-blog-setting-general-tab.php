@@ -117,7 +117,7 @@ if ( ! empty( $member_types ) ) {
 		<?php if ( $member_types_exist ) : ?>
 		<div class="wbcom-settings-section-wrap">
 			<div class="wbcom-settings-section-options-heading">
-				<label><?php esc_html_e( 'Allowed member types wise to create post?', 'buddypress-member-blog' ); ?></label>
+				<label><?php esc_html_e( 'Restrict the ability by member types', 'buddypress-member-blog' ); ?></label>
 				<p class="description"><?php esc_html_e( 'Selected member type will be allowed to create post.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">

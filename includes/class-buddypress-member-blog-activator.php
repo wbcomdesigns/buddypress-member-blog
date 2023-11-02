@@ -66,7 +66,6 @@ class Buddypress_Member_Blog_Activator {
 			$bp_member_blog_gen_stngs = array(
 				'bp_post_page'   => $new_post_page,
 				'bp_create_post' => array( 'administrator', 'author', 'subscriber', 'editor' ),
-				'image_delete'   => 'yes',
 			);
 			update_option( 'bp_member_blog_gen_stngs', $bp_member_blog_gen_stngs );
 		}

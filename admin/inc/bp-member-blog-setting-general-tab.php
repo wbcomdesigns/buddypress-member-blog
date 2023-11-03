@@ -37,7 +37,7 @@ if ( ! empty( $member_types ) ) {
 <div class="wbcom-wrapper-admin">
 <div class="wbcom-admin-title-section wbcom-flex">
 	<h3 class="wbcom-welcome-title"><?php esc_html_e( 'General Settings', 'buddypress-member-blog' ); ?></h3>
-	<a href="<?php echo esc_url( 'https://wbcomdesigns.com/docs/buddypress-paid-addons/buddypress-member-blog/' ); ?>" class="wbcom-docslink" target="_blank"><?php esc_html_e( 'Documentation', 'buddypress-member-blog' ); ?></a>
+	<a href="<?php echo esc_url( 'https://docs.wbcomdesigns.com/doc_category/buddypress-member-blog/' ); ?>" class="wbcom-docslink" target="_blank"><?php esc_html_e( 'Documentation', 'buddypress-member-blog' ); ?></a>
 </div>
 
 <div class="wbcom-admin-option-wrap wbcom-admin-option-wrap-view">

@@ -713,13 +713,11 @@ class Buddypress_Member_Blog_Public {
 		if ( isset( $wp_query->query_vars['pagename'] ) && $wp_query->query_vars['pagename'] == 'bp-new-post' ) {
 			global $update_post;
 			$update_post = false;
-			acf_form_head();
 		}
 
 		if ( isset( $post->post_content ) && ( has_shortcode( $post->post_content, 'bp-member-blog' ) ) ) {
 			global $update_post;
 			$update_post = false;
-			acf_form_head();
 		}
 	}
 

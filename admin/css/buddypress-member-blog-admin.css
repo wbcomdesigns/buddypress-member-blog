@@ -179,3 +179,19 @@ a#bp-member-blog-pro-delete-table span {
 .wbcom-settings-section-wrap.members-blog-publish-wrap .wb-switch input:checked+.wb-slider::after {
     content: "Published";
 }
+
+
+.wbcom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wbcom-flex .wbcom-docslink {
+  color: #fff;
+  background: #2a32ef;
+  text-decoration: blink;
+  padding: 13px 30px;
+  line-height: 1;
+  border-radius: 12px;
+}

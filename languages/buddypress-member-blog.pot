@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 10:16:35+00:00\n"
+"POT-Creation-Date: 2023-11-03 11:21:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,79 +93,84 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:51
-msgid "Create a new blog post"
+#: admin/inc/bp-member-blog-setting-general-tab.php:40
+#: admin/inc/bp-member-blog-welcome-page.php:31
+msgid "Documentation"
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:52
+msgid "Create a new blog post"
+msgstr ""
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:53
 msgid ""
 "This page should contain the shortcode [bp-member-blog] for creating a new "
 "post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:76
+#: admin/inc/bp-member-blog-setting-general-tab.php:77
 msgid "View"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:78
+#: admin/inc/bp-member-blog-setting-general-tab.php:79
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:86
+#: admin/inc/bp-member-blog-setting-general-tab.php:87
 msgid "Restrict the ability by user roles"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:87
+#: admin/inc/bp-member-blog-setting-general-tab.php:88
 msgid "Selected user roles will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:120
+#: admin/inc/bp-member-blog-setting-general-tab.php:121
 msgid "Restrict the ability by member types"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:121
+#: admin/inc/bp-member-blog-setting-general-tab.php:122
 msgid "Selected member type will be allowed to create post."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:124
+#: admin/inc/bp-member-blog-setting-general-tab.php:125
 msgid "Select member type to create post"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:136
+#: admin/inc/bp-member-blog-setting-general-tab.php:137
 msgid "Default status of the blog"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:138
+#: admin/inc/bp-member-blog-setting-general-tab.php:139
 msgid "When a member create a new blog, the status of the blog will be determined."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:151
+#: admin/inc/bp-member-blog-setting-general-tab.php:152
 msgid "Members can create blog category"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:153
+#: admin/inc/bp-member-blog-setting-general-tab.php:154
 msgid "Allow members to create new blog categories while submitting new blogs."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:166
+#: admin/inc/bp-member-blog-setting-general-tab.php:167
 msgid "Media management"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:168
+#: admin/inc/bp-member-blog-setting-general-tab.php:169
 msgid "When blog post removed permanently delete the associated media file."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:181
+#: admin/inc/bp-member-blog-setting-general-tab.php:182
 msgid "Exclude categories"
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:183
+#: admin/inc/bp-member-blog-setting-general-tab.php:184
 msgid ""
 "Please select the categories that should be excluded for members to "
 "associate their blogs with."
 msgstr ""
 
-#: admin/inc/bp-member-blog-setting-general-tab.php:186
+#: admin/inc/bp-member-blog-setting-general-tab.php:187
 msgid "Choose the categories"
 msgstr ""
 
@@ -185,10 +190,6 @@ msgid ""
 "Here are all the resources you may need to get help from us. Documentation "
 "is usually the best place to start. If you require help anytime, our "
 "customer care team is available to assist you at the support center."
-msgstr ""
-
-#: admin/inc/bp-member-blog-welcome-page.php:31
-msgid "Documentation"
 msgstr ""
 
 #: admin/inc/bp-member-blog-welcome-page.php:32

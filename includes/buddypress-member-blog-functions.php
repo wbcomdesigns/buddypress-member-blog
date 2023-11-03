@@ -378,11 +378,6 @@ function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false )
 
 	$status = array( "post_status='publish'" );
 
-	if ( $is_my_profile ) {
-		$status[] = $wpdb->prepare( 'post_status=%s', 'draft' );
-		$status[] = $wpdb->prepare( 'post_status=%s', 'private' );
-	}
-
 	$where_status_query = join( ' || ', $status );
 
 	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE post_author=%d AND post_type=%s AND ({$where_status_query})", $user_id, 'post' ) );

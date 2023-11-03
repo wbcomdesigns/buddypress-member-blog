@@ -123,7 +123,6 @@ class Buddypress_Member_Blog {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-buddypress-member-blog-public.php';
-		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bp-member-blog-fields.php';
 
 		$this->loader = new Buddypress_Member_Blog_Loader();
 

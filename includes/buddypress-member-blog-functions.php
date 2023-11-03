@@ -22,7 +22,7 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 		$user_id = bp_displayed_user_id();
 	}
 
-	$url = bp_core_get_user_domain( $user_id ) . 'blog' . '/';
+	$url = bp_members_get_user_url( $user_id ) . 'blog' . '/';
 
 	return $url;
 }
@@ -44,7 +44,7 @@ function bp_member_blog_get_new_url() {
 	}
 
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $user_id ) . 'blog' . '/edit/';
+	return bp_members_get_user_url( $user_id ) . 'blog' . '/edit/';
 }
 
 
@@ -195,7 +195,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	$action_name = 'bp-new-post';
 
 	// if we are here, we can allow user to edit the post.
-	return bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 }
 
 
@@ -247,9 +247,9 @@ function bp_member_blog_paginate() {
 			$format  = '?paged=%#%';
 		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 		if( $blog_slug == bp_current_action() ){
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id ) . $blog_slug );	
+			$base    = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );	
 		}else{
-			$base    = trailingslashit( bp_core_get_user_domain( $user_id )  . $blog_slug . '/' . bp_current_action() );
+			$base    = trailingslashit( bp_members_get_user_url( $user_id )  . $blog_slug . '/' . bp_current_action() );
 		}
 
 		echo wp_kses_post(

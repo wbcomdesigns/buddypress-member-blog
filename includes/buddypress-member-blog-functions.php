@@ -109,7 +109,7 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 	$url  = '';
 
 	// check if post is published.
-	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . '/';
+	$url = bp_members_get_user_url( $post->post_author ) . 'blog' . '/';
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
@@ -219,7 +219,7 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 
 	$action_name = 'delete';
 
-	$url = bp_core_get_user_domain( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	$url = bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 
@@ -356,4 +356,58 @@ function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_i
 	$post->post_excerpt = apply_filters( 'default_excerpt', $post_excerpt, $post );
 
 	return $post;
+}
+
+/**
+ * Get total no. of Posts  posted by a user
+ *
+ * @param int  $user_id user id.
+ * @param bool $is_my_profile Is user profile.
+ *
+ * @return int
+ *
+ * @todo : may need revisist
+ */
+function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false ) {
+	// Needs revisit.
+	global $wpdb;
+
+	if ( ! $user_id ) {
+		$user_id = bp_displayed_user_id();
+	}
+
+	$status = array( "post_status='publish'" );
+
+	if ( $is_my_profile ) {
+		$status[] = $wpdb->prepare( 'post_status=%s', 'draft' );
+		$status[] = $wpdb->prepare( 'post_status=%s', 'private' );
+	}
+
+	$where_status_query = join( ' || ', $status );
+
+	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE post_author=%d AND post_type=%s AND ({$where_status_query})", $user_id, 'post' ) );
+
+	return intval( $count );
+
+}
+
+
+/**
+ * Get total no. of published post for the user
+ *
+ * @param int $user_id user id.
+ *
+ * @return int
+ */
+function bp_member_blog_get_total_published_posts( $user_id = 0 ) {
+
+	if ( ! $user_id ) {
+		$user_id = get_current_user_id();
+	}
+	// Needs revisit.
+	global $wpdb;
+
+	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE  post_author=%d AND post_type=%s AND post_status='publish'", $user_id, 'post' ) );
+
+	return intval( $count );
 }

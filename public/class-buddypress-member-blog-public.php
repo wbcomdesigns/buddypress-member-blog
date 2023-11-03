@@ -173,19 +173,14 @@ class Buddypress_Member_Blog_Public {
 
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
-		$bp_member_blogs = array(
-			'author'      => $user_id, // I could also use $user_ID, right?
-			'orderby'     => 'post_date',
-			'post_type'   => 'post',
-			'order'       => 'ASC',
-			'numberposts' => -1,
-		);
+		$is_my_profile            = bp_is_my_profile();
 
-		// get his posts 'ASC'.
-		$current_user_posts = get_posts( $bp_member_blogs );
-		$user_post_count    = count( $current_user_posts );
-		wp_reset_postdata();
-		$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ) );
+		if ( $is_my_profile ) {
+			$total_posts = bp_member_blog_get_total_posted( $user_id, $is_my_profile );
+		} else {
+			$total_posts = bp_member_blog_get_total_published_posts( $user_id );
+		}
+		$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
 		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 		if ( is_user_logged_in() ) {
 			bp_core_new_nav_item(
@@ -202,9 +197,9 @@ class Buddypress_Member_Blog_Public {
 		}
 
 		/*
-		 * Check current user role to allowed create post or not
-		 *
-		 */
+		* Check current user role to allowed create post or not
+		*
+		*/
 		$member_types = bp_get_member_type( bp_displayed_user_id(), false );
 		$display_user = get_userdata( bp_displayed_user_id() );
 		if ( empty( $display_user ) ) {
@@ -220,7 +215,7 @@ class Buddypress_Member_Blog_Public {
 			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
 			$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
 			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
-			$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $user_post_count . '</span>' ) );
+			$blog_label = apply_filters('bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
 			$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
 			if ( empty( $user_roles ) && empty( $user_types ) ) {
 				return;
@@ -248,7 +243,7 @@ class Buddypress_Member_Blog_Public {
 		bp_core_new_nav_item(
 			array(
 				/* translators: %s: */
-				'name'                => sprintf( esc_html__( $blog_label . ' %s', 'buddypress-member-blog' ) , '<span class="count">' . $user_post_count . '</span>'),
+				'name'                => sprintf( esc_html__( $blog_label . ' %s', 'buddypress-member-blog' ) , '<span class="count">' . $total_posts . '</span>'),
 				'slug'                => $blog_slug,
 				'screen_function'     => array( $this, 'bp_member_posts' ),
 				'default_subnav_slug' => $blog_slug,

@@ -360,24 +360,26 @@ function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_i
 
 /**
  * Get total no. of Posts  posted by a user
- * It will take bp_displayed_user_id, if display id not found then it will take current user id.
  *
  * @param int  $user_id user id.
  * @param bool $is_my_profile Is user profile.
  *
  * @return int
- *
- * @todo : may need revisist
  */
 function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false ) {
 	// Needs revisit.
 	global $wpdb;
 
 	if ( ! $user_id ) {
-		$user_id = get_current_user_id();
+		$user_id = bp_displayed_user_id();
 	}
 
 	$status = array( "post_status='publish'" );
+
+	if ( $is_my_profile ) {
+		$status[] = $wpdb->prepare( "post_status=%s", 'draft' );
+		$status[] = $wpdb->prepare( "post_status=%s", 'pending' );
+	}
 
 	$where_status_query = join( ' || ', $status );
 
@@ -390,7 +392,6 @@ function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false )
 
 /**
  * Get total no. of published post for the user
- * It will take bp_displayed_user_id, if display id not found then it will take current user id.
  *
  * @param int $user_id user id.
  *

@@ -147,24 +147,35 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 
 
 /*
- *  Remove edit post cap for subscriber user onadmin and fronted
+ *  Remove edit post cap for subscriber user on admin and fronted
  */
 add_action( 'init', 'bp_member_blog_user_upload_file_permission' );
 function bp_member_blog_user_upload_file_permission() {
-	global $post;
-	$subscriber = get_role( 'subscriber' );
-	if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-		$subscriber->remove_cap( 'upload_files' );
-	} else {
-		$subscriber->add_cap( 'upload_files' );
-	}
-	if ( ! defined( 'DOING_AJAX' ) ) {
-		$subscriber->remove_cap( 'edit_published_posts' );
-		$subscriber->remove_cap( 'edit_others_pages' );
-		$subscriber->remove_cap( 'edit_others_posts' );
-		$subscriber->remove_cap( 'edit_published_pages' );
-		$subscriber->remove_cap( 'unfiltered_html' );
-		$subscriber->remove_cap( 'edit_posts' );
+	if ( is_user_logged_in() ) {
+		global $post, $current_user;
+
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+
+		$user_roles = array_intersect( $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+
+		if ( ! empty( $user_roles ) ) {
+			foreach ( $user_roles as $user_role ) {
+				$role = get_role( $user_role );
+				if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+					$role->remove_cap( 'upload_files' );
+				} else {
+					$role->add_cap( 'upload_files' );
+				}
+				if ( ! defined( 'DOING_AJAX' ) ) {
+					$role->remove_cap( 'edit_published_posts' );
+					$role->remove_cap( 'edit_others_pages' );
+					$role->remove_cap( 'edit_others_posts' );
+					$role->remove_cap( 'edit_published_pages' );
+					$role->remove_cap( 'unfiltered_html' );
+					$role->remove_cap( 'edit_posts' );
+				}
+			}
+		}
 	}
 
 }
@@ -178,15 +189,23 @@ function bp_member_blog_wp_head() {
 	global $post;
 	if ( is_user_logged_in() && is_a( $post, 'WP_Post' ) && isset( $post->post_content ) && has_shortcode( $post->post_content, 'bp-member-blog' ) ) {
 		global $current_user;
-		if ( in_array( 'subscriber', $current_user->roles ) ) {
-			$subscriber = get_role( 'subscriber' );
-			$subscriber->add_cap( 'edit_published_posts' );
-			$subscriber->add_cap( 'edit_others_pages' );
-			$subscriber->add_cap( 'edit_others_posts' );
-			$subscriber->add_cap( 'edit_posts' );
-			$subscriber->add_cap( 'unfiltered_html' );
-			$subscriber->add_cap( 'edit_published_pages' );
-			$subscriber->add_cap( 'upload_files' );
+
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		$user_roles               = array_intersect( $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+
+		if ( ! empty( $user_roles ) ) {
+			foreach ( $user_roles as $user_role ) {
+				$role = get_role( $user_role );
+
+				$role->add_cap( 'edit_published_posts' );
+				$role->add_cap( 'edit_others_pages' );
+				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'edit_posts' );
+				$role->add_cap( 'unfiltered_html' );
+				$role->add_cap( 'edit_published_pages' );
+				$role->add_cap( 'upload_files' );
+
+			}
 		}
 	}
 }
@@ -199,15 +218,21 @@ function bp_member_blog_check_ajax_referer( $action, $result ) {
 
 	if ( $action == 'media-form' && is_user_logged_in() ) {
 		global $current_user;
-		if ( in_array( 'subscriber', $current_user->roles ) ) {
-			$subscriber = get_role( 'subscriber' );
-			$subscriber->add_cap( 'edit_published_posts' );
-			$subscriber->add_cap( 'edit_others_pages' );
-			$subscriber->add_cap( 'edit_others_posts' );
-			$subscriber->add_cap( 'edit_posts' );
-			$subscriber->add_cap( 'unfiltered_html' );
-			$subscriber->add_cap( 'edit_published_pages' );
-			$subscriber->add_cap( 'upload_files' );
+
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		$user_roles               = array_intersect( $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+
+		if ( ! empty( $user_roles ) ) {
+			foreach ( $user_roles as $user_role ) {
+				$role = get_role( $user_role );
+				$role->add_cap( 'edit_published_posts' );
+				$role->add_cap( 'edit_others_pages' );
+				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'edit_posts' );
+				$role->add_cap( 'unfiltered_html' );
+				$role->add_cap( 'edit_published_pages' );
+				$role->add_cap( 'upload_files' );
+			}
 		}
 	}
 }

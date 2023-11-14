@@ -242,14 +242,14 @@ function bp_member_blog_paginate() {
 	if ( $total > 1 ) {
 		// get the current page.
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-			$user_id = bp_displayed_user_id();
+			$user_id  = bp_displayed_user_id();
 		// structure of “format” depends on whether we’re using pretty permalinks.
-			$format  = '?paged=%#%';
-		$blog_slug = apply_filters('bp_member_change_blog_slug', 'blog' );
-		if( $blog_slug == bp_current_action() ){
-			$base    = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );	
-		}else{
-			$base    = trailingslashit( bp_members_get_user_url( $user_id )  . $blog_slug . '/' . bp_current_action() );
+			$format = '?paged=%#%';
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		if ( $blog_slug == bp_current_action() ) {
+			$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );
+		} else {
+			$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug . '/' . bp_current_action() );
 		}
 
 		echo wp_kses_post(
@@ -297,12 +297,14 @@ function bp_member_blog_get_default_post_to_edit( $post_type = 'post', $create_i
 	}
 
 	if ( $create_in_db ) {
-		$post_id = wp_insert_post( array(
-			'post_title'  => __( 'Auto Draft', 'buddypress-member-blog' ),
-			'post_type'   => $post_type,
-			'post_status' => 'auto-draft',
-			'post_author' => get_current_user_id(),
-		) );
+		$post_id = wp_insert_post(
+			array(
+				'post_title'  => __( 'Auto Draft', 'buddypress-member-blog' ),
+				'post_type'   => $post_type,
+				'post_status' => 'auto-draft',
+				'post_author' => get_current_user_id(),
+			)
+		);
 
 		$post = get_post( $post_id );
 
@@ -377,8 +379,8 @@ function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false )
 	$status = array( "post_status='publish'" );
 
 	if ( $is_my_profile ) {
-		$status[] = $wpdb->prepare( "post_status=%s", 'draft' );
-		$status[] = $wpdb->prepare( "post_status=%s", 'pending' );
+		$status[] = $wpdb->prepare( 'post_status=%s', 'draft' );
+		$status[] = $wpdb->prepare( 'post_status=%s', 'pending' );
 	}
 
 	$where_status_query = join( ' || ', $status );

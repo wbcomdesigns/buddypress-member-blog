@@ -75,7 +75,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 				<?php
 				wp_editor(
-					$blog_post->post_content,
+					apply_filters( 'bp_post_add_some_content_to_show' , $blog_post->post_content ),
 					'bp_member_blog_post_content',
 					array(
 						'media_buttons' => true,

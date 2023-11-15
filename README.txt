@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.3.0
-Stable tag: 2.0.0
+Tested up to: 6.4.1
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,22 @@ e.g.
 
 
 == Changelog ==
+= 2.0.1 =
+* Added: Filter hook
+* Added: (#216) Documentation link and updated top banner
+* Added: (#216) Icon classes and fixes
+* Fix: Post tab hidden for admin user
+* Fix: (#225) Media uploading is not working
+* Fix: (#216) Media management option disabled by default
+* Fix: Removed ACF code
+* Fix: Count issue
+* Fix: BP v12 fixes
+* Updated: (#216) Member type option label and description
+* Updated: (#216) Featured Image and edit form UI
+* Updated: (#216) Frontend form labels
+* Updated: (#216) Display the pro plugin label and version
+* Updated: (#216) Backend settings label, description, and pro tabs and images
+
 = 2.0.0 =
 * Fix: PHPCS fixes
 * Fix: (#247) Issue with PHP 8.2 version

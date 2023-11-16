@@ -148,7 +148,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 				<span><?php esc_html_e( 'Featured Image:', 'buddypress-member-blog' ); ?></span>
 
 				<div class="bp-member-blog-featured-image-wrapper">
-					<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" value="<?php echo esc_attr( $title ); ?>"/>
+					<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image"/>
 					<label for="bp_member_blog_post_featured_image" class="custom-file-upload"><?php esc_html_e( 'Add Image', 'buddypress-member-blog' ); ?></label>
 				</div>
 

@@ -13,6 +13,7 @@ $blog_post                = (object) array(
 );
 $post_selected_category   = $post_selected_tag = array();
 $post_thumbnail           = '';
+$args                     = array();
 if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$post_id   = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$blog_post = get_post( $post_id );
@@ -75,7 +76,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 
 				<?php
 				wp_editor(
-					apply_filters( 'bp_member_blog_post_content' , $blog_post->post_content ),
+					apply_filters( 'bp_member_blog_post_content', $blog_post->post_content ),
 					'bp_member_blog_post_content',
 					array(
 						'media_buttons' => true,

@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.4.1
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 2.0.2 =
+* Updated: Added option for template override 
+
 = 2.0.1 =
 * Added: Filter hook
 * Added: (#216) Documentation link and updated top banner

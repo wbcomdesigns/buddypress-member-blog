@@ -411,3 +411,27 @@ function bp_member_blog_get_total_published_posts( $user_id = 0 ) {
 
 	return intval( $count );
 }
+
+
+
+/**
+ * Loads a template from theme or the plugin directory
+ * It checks theme directory first. looks inside the bp-member-blog dir of the theme first.
+ *
+ * @param string $template template name.
+ */
+function bp_member_blog_load_template( $template ) {
+
+	$template_dir = apply_filters( 'bp_member_blog_template_dir', 'bp-member-blog' );
+
+	// check for bp-member-blog/template-file.php in the child theme's dir and then in parent's.
+	$located = locate_template( array( $template_dir . '/' . $template ), false );
+
+	if ( ! $located ) {
+		$located = BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH . 'templates/' . $template;
+	}
+
+	if ( is_readable( $located ) ) {
+		require $located;
+	}
+}

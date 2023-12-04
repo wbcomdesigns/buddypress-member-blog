@@ -1,0 +1,1262 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wbcom Designs - BuddyPress Member Blog\n"
+"POT-Creation-Date: 2023-12-04 15:59+0530\n"
+"PO-Revision-Date: 2023-12-04 16:00+0530\n"
+"Last-Translator: Varun Dubey <varun@wbcomdesigns.com>\n"
+"Language-Team: Varun Dubey <varun@wbcomdesigns.com>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: buddypress-member-blog.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: plugin-update-checker/vendor\n"
+"X-Poedit-SearchPathExcluded-3: vendor\n"
+
+#: admin/class-buddypress-member-blog-admin.php:123
+msgid "WB Plugins"
+msgstr "WB Plugins"
+
+#: admin/class-buddypress-member-blog-admin.php:125
+#: admin/class-buddypress-member-blog-admin.php:150
+msgid "General"
+msgstr "Algemeen"
+
+#: admin/class-buddypress-member-blog-admin.php:127
+msgid "BuddyPress Member BlogSettings Page"
+msgstr "BuddyPress Lid BlogSettings Pagina"
+
+#: admin/class-buddypress-member-blog-admin.php:127
+msgid "Member Blog"
+msgstr "Leden Blog"
+
+#: admin/class-buddypress-member-blog-admin.php:149
+msgid "Welcome"
+msgstr "Welkom"
+
+#: admin/class-buddypress-member-blog-admin.php:151
+msgid "Restrictions"
+msgstr "Beperkingen"
+
+#: admin/class-buddypress-member-blog-admin.php:152
+msgid "Groups Integration"
+msgstr "Groepen integratie"
+
+#: admin/class-buddypress-member-blog-admin.php:153
+msgid "Notifications"
+msgstr "Meldingen"
+
+#: admin/class-buddypress-member-blog-admin.php:154
+msgid "Email Notification Settings"
+msgstr "Email meldingen instellingen"
+
+#: admin/class-buddypress-member-blog-admin.php:172
+msgid "BuddyPress Member Blog Pro"
+msgstr "BuddyPress pagina sidebar"
+
+#: admin/class-buddypress-member-blog-admin.php:174
+#: admin/wbcom/templates/wbcom-plugins-page.php:115
+#: admin/wbcom/templates/wbcom-plugins-page.php:430
+msgid "BuddyPress Member Blog"
+msgstr "BuddyPress Leden Blog"
+
+#. translators: %s:
+#: admin/class-buddypress-member-blog-admin.php:181
+#: admin/class-buddypress-member-blog-admin.php:183
+#: admin/wbcom/templates/wbcom-license-page.php:15
+#, php-format
+msgid "Version %s"
+msgstr "Versie %s"
+
+#: admin/class-buddypress-member-blog-admin.php:195
+msgid "Menu"
+msgstr "Menu"
+
+#: admin/inc/bp-member-blog-setting-email-notification-pro-tab.php:19
+#: admin/inc/bp-member-blog-setting-group-integration-tab.php:20
+#: admin/inc/bp-member-blog-setting-notifications-pro-tab.php:19
+#: admin/inc/bp-member-blog-setting-restriction-tab.php:19
+msgid "Get Pro Version"
+msgstr "Koop de Pro-versie"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:39
+msgid "General Settings"
+msgstr "Algemene instellingen"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:40
+#: admin/inc/bp-member-blog-welcome-page.php:31
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:52
+msgid "Create a new blog post"
+msgstr "Een nieuw blogbericht maken"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:53
+msgid ""
+"This page should contain the shortcode [bp-member-blog] for creating a new "
+"post."
+msgstr ""
+"Deze pagina moet de shortcode [bp-lid-blog] bevatten om een nieuw bericht te "
+"maken."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:77
+msgid "View"
+msgstr "Bekijk"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:79
+msgid "(opens in a new tab)"
+msgstr "(opent in een nieuw tabblad)"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:87
+msgid "Restrict the ability by user roles"
+msgstr "Beperk de mogelijkheid per gebruikersrol"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:88
+msgid "Selected user roles will be allowed to create post."
+msgstr "Geselecteerde gebruikersrollen mogen berichten aanmaken."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:121
+msgid "Restrict the ability by member types"
+msgstr "Beperk de mogelijkheid per lidtype"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:122
+msgid "Selected member type will be allowed to create post."
+msgstr "Geselecteerde leden mogen berichten aanmaken."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:125
+msgid "Select member type to create post"
+msgstr "Selecteer het type lid om een bericht te maken"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:137
+msgid "Default status of the blog"
+msgstr "Standaardstatus van het blog"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:139
+msgid ""
+"When a member create a new blog, the status of the blog will be determined."
+msgstr ""
+"Wanneer een lid een nieuw blog aanmaakt, wordt de status van het blog "
+"bepaald."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:152
+msgid "Members can create blog category"
+msgstr "Leden kunnen een blogcategorie aanmaken"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:154
+msgid "Allow members to create new blog categories while submitting new blogs."
+msgstr ""
+"Sta leden toe om nieuwe blogcategorieën te maken tijdens het indienen van "
+"nieuwe blogs."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:167
+msgid "Media management"
+msgstr "Mediabeheer"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:169
+msgid "When blog post removed permanently delete the associated media file."
+msgstr ""
+"Wanneer de blogpost definitief wordt verwijderd, verwijdert u het "
+"bijbehorende mediabestand."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:182
+msgid "Exclude categories"
+msgstr "Categorieën uitsluiten"
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:184
+msgid ""
+"Please select the categories that should be excluded for members to "
+"associate their blogs with."
+msgstr ""
+"Selecteer de categorieën die moeten worden uitgesloten voor leden om hun "
+"blogs aan te koppelen."
+
+#: admin/inc/bp-member-blog-setting-general-tab.php:187
+msgid "Choose the categories"
+msgstr "Kies de categorieën"
+
+#: admin/inc/bp-member-blog-welcome-page.php:20
+msgid ""
+"Enable BuddyPress members to easily create and manage blog posts, either "
+"publishing them directly or sending them for review. It's simple to navigate "
+"to a member's profile to read their posts."
+msgstr ""
+"BuddyPress-leden kunnen gemakkelijk blogberichten maken en beheren, ze "
+"direct publiceren of ter beoordeling versturen. Het is eenvoudig om naar het "
+"profiel van een lid te navigeren om hun berichten te lezen."
+
+#: admin/inc/bp-member-blog-welcome-page.php:25
+msgid "Help &amp; Support Resources"
+msgstr "Help &amp; Ondersteuningsbronnen"
+
+#: admin/inc/bp-member-blog-welcome-page.php:26
+msgid ""
+"Here are all the resources you may need to get help from us. Documentation "
+"is usually the best place to start. If you require help anytime, our "
+"customer care team is available to assist you at the support center."
+msgstr ""
+"Hier vind je alle bronnen die je nodig hebt om hulp van ons te krijgen. "
+"Documentatie is meestal de beste plaats om te beginnen. Mocht je op elk "
+"moment hulp nodig hebben, dan staat ons klantenserviceteam klaar om je te "
+"helpen in het ondersteuningscentrum."
+
+#: admin/inc/bp-member-blog-welcome-page.php:32
+msgid ""
+"We have prepared an extensive guide on BuddyPress Members Blog to learn all "
+"aspects of the plugin. You will find most of your answers here."
+msgstr ""
+"We hebben een uitgebreide gids gemaakt over BuddyPress Members Blog om alle "
+"aspecten van de plugin te leren kennen. Je zult hier de meeste antwoorden "
+"vinden."
+
+#: admin/inc/bp-member-blog-welcome-page.php:33
+msgid "Read Documentation"
+msgstr "Lees de documentatie"
+
+#: admin/inc/bp-member-blog-welcome-page.php:39
+msgid "Support Center"
+msgstr "Ondersteuning"
+
+#: admin/inc/bp-member-blog-welcome-page.php:40
+msgid ""
+"We strive to offer the best customer care via our support center. Once your "
+"theme is activated, you can ask us for help anytime."
+msgstr ""
+"We streven ernaar de beste klantenservice te bieden via ons "
+"ondersteuningscentrum. Zodra je thema geactiveerd is, kun je ons altijd om "
+"hulp vragen."
+
+#: admin/inc/bp-member-blog-welcome-page.php:41
+msgid "Get Support"
+msgstr "Krijg ondersteuning"
+
+#: admin/inc/bp-member-blog-welcome-page.php:46
+msgid "Got Feedback?"
+msgstr "Heb je feedback?"
+
+#: admin/inc/bp-member-blog-welcome-page.php:47
+msgid ""
+"We want to hear about your experience with the plugin. We would also love to "
+"hear any suggestions you may for future updates."
+msgstr ""
+"We horen graag wat je van de plugin vindt. We horen ook graag suggesties "
+"voor toekomstige updates."
+
+#: admin/inc/bp-member-blog-welcome-page.php:48
+msgid "Send Feedback"
+msgstr "Verstuur feedback"
+
+#: admin/wbcom/templates/wbcom-license-page.php:12
+msgid "BuddyPress Members Blog"
+msgstr "BuddyPress Leden Blog"
+
+#: admin/wbcom/templates/wbcom-license-page.php:20
+msgid "Plugin License"
+msgstr "Plugin Licentie"
+
+#: admin/wbcom/templates/wbcom-license-page.php:26
+#: admin/wbcom/templates/wbcom-license-page.php:38
+msgid "Product"
+msgstr "Product"
+
+#: admin/wbcom/templates/wbcom-license-page.php:27
+#: admin/wbcom/templates/wbcom-license-page.php:39
+msgid "Version"
+msgstr "Versie"
+
+#: admin/wbcom/templates/wbcom-license-page.php:28
+#: admin/wbcom/templates/wbcom-license-page.php:40
+msgid "Key"
+msgstr "Sleutel"
+
+#: admin/wbcom/templates/wbcom-license-page.php:29
+#: admin/wbcom/templates/wbcom-license-page.php:41
+msgid "Status"
+msgstr "Status"
+
+#: admin/wbcom/templates/wbcom-license-page.php:30
+#: admin/wbcom/templates/wbcom-license-page.php:42
+msgid "Action"
+msgstr "Actie"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:12
+#: admin/wbcom/wbcom-admin-settings.php:269
+msgid "Themes & Extension"
+msgstr "Thema's & Uitbreidingen"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:20
+#: admin/wbcom/templates/wbcom-plugins-page.php:28
+msgid "Paid Extension"
+msgstr "Betaalde verlenging"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:21
+msgid "Free Extension"
+msgstr "Gratis uitbreiding"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:22
+msgid "LearnDash Extension"
+msgstr "Uitbreiding LearnDash"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:23
+#: admin/wbcom/templates/wbcom-plugins-page.php:362
+#: admin/wbcom/wbcom-admin-settings.php:188
+#: admin/wbcom/wbcom-admin-settings.php:189
+msgid "Our Themes"
+msgstr "Onze thema’s"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:29
+#: admin/wbcom/templates/wbcom-plugins-page.php:300
+#: admin/wbcom/templates/wbcom-plugins-page.php:425
+msgid "View More Extension"
+msgstr "Meer uitbreiding bekijken"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:37
+msgid "BuddyPress Moderation Pro"
+msgstr "BuddyPress Moderatie Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:38
+msgid ""
+"BuddyPress Moderation solution with advanced features to give you complete "
+"control over your community and keep it secure with automatic moderation and "
+"limitations, and more."
+msgstr ""
+"BuddyPress Moderation oplossing met geavanceerde functies om u volledige "
+"controle te geven over uw community en deze veilig te houden met "
+"automatische moderatie en beperkingen, en meer."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:40
+#: admin/wbcom/templates/wbcom-plugins-page.php:53
+#: admin/wbcom/templates/wbcom-plugins-page.php:66
+#: admin/wbcom/templates/wbcom-plugins-page.php:79
+#: admin/wbcom/templates/wbcom-plugins-page.php:92
+#: admin/wbcom/templates/wbcom-plugins-page.php:105
+#: admin/wbcom/templates/wbcom-plugins-page.php:118
+#: admin/wbcom/templates/wbcom-plugins-page.php:131
+#: admin/wbcom/templates/wbcom-plugins-page.php:144
+#: admin/wbcom/templates/wbcom-plugins-page.php:157
+#: admin/wbcom/templates/wbcom-plugins-page.php:170
+#: admin/wbcom/templates/wbcom-plugins-page.php:183
+#: admin/wbcom/templates/wbcom-plugins-page.php:196
+#: admin/wbcom/templates/wbcom-plugins-page.php:209
+#: admin/wbcom/templates/wbcom-plugins-page.php:222
+#: admin/wbcom/templates/wbcom-plugins-page.php:235
+#: admin/wbcom/templates/wbcom-plugins-page.php:248
+#: admin/wbcom/templates/wbcom-plugins-page.php:261
+#: admin/wbcom/templates/wbcom-plugins-page.php:274
+#: admin/wbcom/templates/wbcom-plugins-page.php:287
+#: admin/wbcom/templates/wbcom-plugins-page.php:311
+#: admin/wbcom/templates/wbcom-plugins-page.php:324
+#: admin/wbcom/templates/wbcom-plugins-page.php:337
+#: admin/wbcom/templates/wbcom-plugins-page.php:350
+#: admin/wbcom/templates/wbcom-plugins-page.php:374
+#: admin/wbcom/templates/wbcom-plugins-page.php:387
+#: admin/wbcom/templates/wbcom-plugins-page.php:400
+#: admin/wbcom/templates/wbcom-plugins-page.php:413
+#: admin/wbcom/templates/wbcom-plugins-page.php:433
+#: admin/wbcom/templates/wbcom-plugins-page.php:443
+#: admin/wbcom/templates/wbcom-plugins-page.php:453
+#: admin/wbcom/templates/wbcom-plugins-page.php:463
+#: admin/wbcom/templates/wbcom-plugins-page.php:473
+#: admin/wbcom/templates/wbcom-plugins-page.php:483
+#: admin/wbcom/templates/wbcom-plugins-page.php:493
+#: admin/wbcom/templates/wbcom-plugins-page.php:503
+#: admin/wbcom/templates/wbcom-plugins-page.php:513
+#: admin/wbcom/templates/wbcom-plugins-page.php:523
+#: admin/wbcom/templates/wbcom-plugins-page.php:533
+#: admin/wbcom/templates/wbcom-plugins-page.php:543
+msgid "View Details"
+msgstr "Bekijk details"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:41
+#: admin/wbcom/templates/wbcom-plugins-page.php:54
+#: admin/wbcom/templates/wbcom-plugins-page.php:67
+#: admin/wbcom/templates/wbcom-plugins-page.php:80
+#: admin/wbcom/templates/wbcom-plugins-page.php:93
+#: admin/wbcom/templates/wbcom-plugins-page.php:106
+#: admin/wbcom/templates/wbcom-plugins-page.php:119
+#: admin/wbcom/templates/wbcom-plugins-page.php:132
+#: admin/wbcom/templates/wbcom-plugins-page.php:145
+#: admin/wbcom/templates/wbcom-plugins-page.php:158
+#: admin/wbcom/templates/wbcom-plugins-page.php:171
+#: admin/wbcom/templates/wbcom-plugins-page.php:184
+#: admin/wbcom/templates/wbcom-plugins-page.php:197
+#: admin/wbcom/templates/wbcom-plugins-page.php:210
+#: admin/wbcom/templates/wbcom-plugins-page.php:223
+#: admin/wbcom/templates/wbcom-plugins-page.php:236
+#: admin/wbcom/templates/wbcom-plugins-page.php:249
+#: admin/wbcom/templates/wbcom-plugins-page.php:262
+#: admin/wbcom/templates/wbcom-plugins-page.php:275
+#: admin/wbcom/templates/wbcom-plugins-page.php:288
+#: admin/wbcom/templates/wbcom-plugins-page.php:312
+#: admin/wbcom/templates/wbcom-plugins-page.php:325
+#: admin/wbcom/templates/wbcom-plugins-page.php:338
+#: admin/wbcom/templates/wbcom-plugins-page.php:351
+#: admin/wbcom/templates/wbcom-plugins-page.php:388
+#: admin/wbcom/templates/wbcom-plugins-page.php:444
+#: admin/wbcom/templates/wbcom-plugins-page.php:454
+#: admin/wbcom/templates/wbcom-plugins-page.php:464
+#: admin/wbcom/templates/wbcom-plugins-page.php:474
+#: admin/wbcom/templates/wbcom-plugins-page.php:484
+#: admin/wbcom/templates/wbcom-plugins-page.php:494
+#: admin/wbcom/templates/wbcom-plugins-page.php:504
+#: admin/wbcom/templates/wbcom-plugins-page.php:514
+#: admin/wbcom/templates/wbcom-plugins-page.php:524
+#: admin/wbcom/templates/wbcom-plugins-page.php:534
+#: admin/wbcom/templates/wbcom-plugins-page.php:544
+msgid "Get It Now"
+msgstr "Nu aanschaffen"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:50
+msgid "BuddyPress Resume Manager"
+msgstr "BuddyPress cv-manager"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:51
+msgid ""
+"BuddyPress Resume Manager adds display resume functionality on a user’s "
+"BuddyPress/BuddyBoss Platform Profile."
+msgstr ""
+"BuddyPress Resume Manager voegt cv-functionaliteit toe aan het BuddyPress/"
+"BuddyBoss Platform Profiel van een gebruiker."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:63
+msgid "BuddyPress Polls"
+msgstr "BuddyPress Polls"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:64
+msgid ""
+"BuddyPress Polls allows your community members to create polls as an "
+"activity, letting your members respond."
+msgstr ""
+"Met BuddyPress Polls kunnen leden van uw community polls maken als een "
+"activiteit en uw leden laten reageren."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:76
+msgid "BuddyPress Private Community Pro"
+msgstr "BuddyPress Privé Gemeenschap Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:77
+msgid ""
+"BuddyPress Private Community Pro offers Privacy control for profiles. It "
+"provides a feature to lockdown BuddyPress Component and asks users to log in "
+"to go further to check the profile or any other protected details."
+msgstr ""
+"BuddyPress Private Community Pro biedt privacycontrole voor profielen. Het "
+"biedt een functie om BuddyPress Component te vergrendelen en vraagt "
+"gebruikers om in te loggen om verder te gaan om het profiel of andere "
+"beschermde details te controleren."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:89
+msgid "BuddyPress Profile Pro"
+msgstr "BuddyPress Profiel Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:90
+msgid ""
+"BuddyPress Profile Pro gives you the power to extend BuddyPress Profiles "
+"with repeater fields and groups. You can easily add multiple field groups "
+"and display them at a member’s profile."
+msgstr ""
+"BuddyPress Profile Pro geeft je de mogelijkheid om BuddyPress-profielen uit "
+"te breiden met herhalingsvelden en groepen. Je kunt eenvoudig meerdere "
+"veldgroepen toevoegen en deze weergeven op het profiel van een lid."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:102
+msgid "BuddyPress Check-ins Pro"
+msgstr "BuddyPress Inchecken Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:103
+msgid ""
+"BuddyPress Check-ins Pro Plugin allows your members to post check-ins like "
+"other social media platforms, on your website activity stream. Members have "
+"a mashup of their check-ins on their profile."
+msgstr ""
+"Met de BuddyPress Check-ins Pro Plugin kunnen je leden check-ins posten op "
+"de activiteitenstroom van je website, net als op andere sociale "
+"mediaplatforms. Leden hebben een mashup van hun check-ins op hun profiel."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:116
+msgid ""
+"BuddyPress Member Blog Pro plugin provides each of your site members their "
+"own writing environment with a fantastic user experience."
+msgstr ""
+"BuddyPress Member Blog Pro plugin biedt elk lid van je site zijn eigen "
+"schrijfomgeving met een fantastische gebruikerservaring."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:128
+msgid "BuddyPress BuddyVendor"
+msgstr "BuddyPress BuddyVendor"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:129
+msgid ""
+"BuddyVendor or BuddyPress Multivendor Marketplace Quickly turn your "
+"BuddyPress community into a social marketplace."
+msgstr ""
+"BuddyVendor of BuddyPress Multivendor Marktplaats Verander uw BuddyPress-"
+"gemeenschap snel in een sociale marktplaats."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:141
+msgid "BuddyPress Statistics"
+msgstr "BuddyPress Statistieken"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:142
+msgid ""
+"BuddyPress Stats plugin creates an activity log of everything that happens "
+"on your BuddyPress powered community site and keeps all counts on the user "
+"profile that displays a range of statistics of your community members."
+msgstr ""
+"BuddyPress Stats plugin maakt een activiteitenlogboek van alles wat er "
+"gebeurt op uw BuddyPress-gemeenschapssite en houdt alle tellingen bij op het "
+"gebruikersprofiel dat een reeks statistieken van uw gemeenschapsleden "
+"weergeeft."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:154
+msgid "Who viewed my profile"
+msgstr "Wie heeft mijn profiel bekeken"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:155
+msgid ""
+"The Who Viewed My Profile Plugin helps you to know about your profile "
+"visitors. It displays the count of the profile views on the member profile "
+"header."
+msgstr ""
+"De Wie heeft mijn profiel bekeken-plugin helpt je om meer te weten te komen "
+"over de bezoekers van je profiel. Het toont het aantal bekeken profielen in "
+"de kop van het profiel van het lid."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:167
+msgid "BuddyPress Friend & Follow Suggestion"
+msgstr "BuddyPress vriend & volg suggestie"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:168
+msgid ""
+"BuddyPress Friends and Follow suggestions plugin assists you with improving "
+"your BuddyPress or BuddyBoss Platform-based community."
+msgstr ""
+"BuddyPress Vrienden en Volg suggesties plugin helpt je bij het verbeteren "
+"van je BuddyPress of BuddyBoss Platform gebaseerde community."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:180
+msgid "BuddyPress Giphy"
+msgstr "BuddyPress Giphy"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:181
+msgid ""
+"Make your activity stream even more tempting and interesting to attract "
+"members by adding GIFs."
+msgstr ""
+"Maak je activiteitenstroom nog verleidelijker en interessanter om leden aan "
+"te trekken door GIF's toe te voegen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:193
+msgid "Shortcodes for BuddyPress Pro"
+msgstr "Shortcodes voor BuddyPress Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:194
+msgid ""
+"Add and Customize the BuddyPress components on any of the WordPress pages/"
+"posts using elementor widgets"
+msgstr ""
+"BuddyPress-componenten toevoegen en aanpassen op WordPress pagina's/posts "
+"met behulp van elementor widgets"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:206
+msgid "BuddyPress Sticky Post"
+msgstr "BuddyPress Sticky Post"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:207
+msgid ""
+"Make your posts sticky on BuddyPress by pinning site-wide and group "
+"activities on the top of the community wall."
+msgstr ""
+"Maak uw berichten sticky op BuddyPress door sitebrede en groepsactiviteiten "
+"bovenaan de communitymuur te prikken."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:219
+msgid "BuddyPress Quotes"
+msgstr "BuddyPress Citaten"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:220
+msgid ""
+"Allow BuddyPress users to post content with attractive background colors and "
+"beautiful images."
+msgstr ""
+"Laat BuddyPress-gebruikers inhoud posten met aantrekkelijke "
+"achtergrondkleuren en mooie afbeeldingen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:232
+msgid "BuddyPress Auto Friends"
+msgstr "BuddyPress Auto Vrienden"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:233
+msgid ""
+"The new BuddyPress Automatic Friends plugins makes your new users feel a "
+"little more at home upon signing up to your community."
+msgstr ""
+"De nieuwe plugins BuddyPress Automatic Friends zorgt ervoor dat je nieuwe "
+"gebruikers zich een beetje meer thuis voelen wanneer ze zich aanmelden bij "
+"je community."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:245
+msgid "BuddyPress Newsfeed"
+msgstr "BuddyPress Nieuwsfeed"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:246
+msgid ""
+"Create A Customized Newsfeed Experience Just Like Facebook. By default, "
+"BuddyPress offers separate type of activities for your BuddyPress Activity "
+"Stream."
+msgstr ""
+"Creëer een aangepaste nieuwsfeed-ervaring net als Facebook. Standaard biedt "
+"BuddyPress aparte soorten activiteiten voor uw BuddyPress Activity Stream."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:258
+msgid "BuddyPress Status"
+msgstr "BuddyPress-status"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:259
+msgid ""
+"Allow members to add status on their profile and give their reactions to all "
+"the activity updates."
+msgstr ""
+"Laat leden een status toevoegen aan hun profiel en hun reacties geven op "
+"alle activiteitenupdates."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:271
+msgid "BuddyPress Hashtags"
+msgstr "BuddyPress Hashtags"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:272
+msgid ""
+"BuddyPress Hashtags for BuddyPress and bbPress. It allows adding hashtag "
+"links to BuddyPress activity and bbPress topics. "
+msgstr ""
+"BuddyPress Hashtags voor BuddyPress en bbPress. Hiermee kun je hashtag-links "
+"toevoegen aan BuddyPress-activiteiten en bbPress-onderwerpen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:284
+msgid "BuddyPress Profanity"
+msgstr "BuddyPress Scheldwoorden"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:285
+msgid ""
+"Specify a list of bad words to control the content in your BuddyPress "
+"community."
+msgstr ""
+"Specificeer een lijst met slechte woorden om de inhoud in je BuddyPress-"
+"community te controleren."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:299
+msgid "Extension for LearnDash"
+msgstr "Uitbreiding voor LearnDash"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:308
+msgid "LMS Notes"
+msgstr "LMS opmerkingen"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:309
+msgid ""
+"Learndash Notes will extend the LearnDash functionality to create Notes for "
+"courses, lessons and topics."
+msgstr ""
+"Learndash Notes breidt de LearnDash-functionaliteit uit om notities te maken "
+"voor cursussen, lessen en onderwerpen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:321
+msgid "Learndash wpForo"
+msgstr "Leren wpForo"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:322
+msgid ""
+"Learndash wpForo integration allows you to add a discussion channel for your "
+"learners. Allow you to link your course with multiple forums."
+msgstr ""
+"Met Learndash wpForo-integratie kun je een discussiekanaal toevoegen voor je "
+"studenten. Hiermee kunt je je cursus koppelen aan meerdere forums."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:334
+msgid "LearnDash Dashboard"
+msgstr "Dashboard voor LearnDash"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:335
+msgid ""
+"LearnDash Dashboard gives the admin, instructors, and students a dashboard "
+"of their own, where they can easily manage anything related to their "
+"courses, lessons, and contact others."
+msgstr ""
+"LearnDash Dashboard geeft de beheerder, docenten en studenten een eigen "
+"dashboard, waar ze gemakkelijk alles kunnen beheren met betrekking tot hun "
+"cursussen, lessen en contact met anderen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:347
+msgid "PeepSo LearnDash Integration"
+msgstr "PeepSo LearnDash-integratie"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:348
+msgid ""
+"Integrate LearnDash with PeepSo to display options for courses inside a "
+"member profile."
+msgstr ""
+"Integreer LearnDash met PeepSo om opties voor cursussen weer te geven in een "
+"profiel van een lid."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:363
+msgid "View More Themes"
+msgstr "Bekijk meer thema’s"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:371
+msgid "Reign BuddyPress Theme"
+msgstr "Reign BuddyPress Thema"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:372
+msgid ""
+"Create your social network website for the company, school, sports team, or "
+"any niche community using a highly customizable WordPress BuddyPress theme."
+msgstr ""
+"Maak je sociale netwerkwebsite voor je bedrijf, school, sportteam of een "
+"andere nichegemeenschap met behulp van een zeer aanpasbaar WordPress "
+"BuddyPress-thema."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:375
+msgid "Get Sandbox"
+msgstr "Haal Sandbox"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:384
+msgid "BuddyX Pro Theme"
+msgstr "BuddyX Pro Thema"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:385
+msgid ""
+"To build an online community website for all niches with full flexibility, "
+"control, and freedom. No coding is required! Offers unique layouts with "
+"clean code and easy-to-customize options giving you a whole new way to "
+"visualize BuddyPress."
+msgstr ""
+"Een online communitywebsite bouwen voor alle niches met volledige "
+"flexibiliteit, controle en vrijheid. Geen codering vereist! Biedt unieke lay-"
+"outs met schone code en eenvoudig aan te passen opties die u een geheel "
+"nieuwe manier geven om BuddyPress te visualiseren."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:397
+msgid "BuddyX Free Theme"
+msgstr "BuddyX Gratis Thema"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:398
+#: admin/wbcom/templates/wbcom-plugins-page.php:451
+msgid ""
+"Allow users to create and manage their to-dos with the relevant category "
+"right from their profile."
+msgstr ""
+"Laat gebruikers hun to-dos maken en beheren met de relevante categorie "
+"direct vanuit hun profiel."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:401
+#: admin/wbcom/templates/wbcom-plugins-page.php:434
+msgid "Get Pro"
+msgstr "Krijg Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:410
+msgid "KnowX Theme"
+msgstr "Thema KnowX"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:411
+msgid ""
+"A Free WordPress Knowledge base Theme. KnowX helps you set up a Knowledge "
+"Base in WordPress in less time than it takes to brew a coffee."
+msgstr ""
+"Een gratis WordPress Kennisdatabank Thema. KnowX helpt je bij het opzetten "
+"van een kennisbank in WordPress in minder tijd dan het kost om koffie te "
+"zetten."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:414
+msgid "Get Demo"
+msgstr "Demo aanvragen"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:424
+msgid "Our Free Extension"
+msgstr "Onze gratis uitbreiding"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:431
+msgid ""
+"BuddyPress Member Blog is a free plugin that allows users to create/manage "
+"their blog/posts from the profile."
+msgstr ""
+"BuddyPress Member Blog is een gratis plugin waarmee gebruikers hun blog/"
+"posts kunnen maken/beheren vanuit hun profiel."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:440
+msgid "BuddyPress Ads"
+msgstr "BuddyPress-advertenties"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:441
+msgid ""
+"Integrate your BuddyPress community to provide a smooth customer experience "
+"and increase site engagement."
+msgstr ""
+"Integreer uw BuddyPress-gemeenschap om een soepele klantervaring te bieden "
+"en de betrokkenheid bij de site te verhogen."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:450
+msgid "BuddyPress User Todo List"
+msgstr "BuddyPress gebruiker todo lijst"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:460
+msgid "BuddyPress Job Manager"
+msgstr "BuddyPress Taakmanager"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:461
+msgid ""
+"Create specific tabs in employer’s and candidate’s profiles on BuddyPress."
+msgstr ""
+"Maak specifieke tabbladen in de profielen van werkgevers en kandidaten op "
+"BuddyPress."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:470
+msgid "BuddyPress Member Reviews"
+msgstr "BuddyPress-ledenbeoordelingen"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:471
+msgid ""
+"Allow members to provide their ratings and reviews to other members’ "
+"profiles based on multiple criteria."
+msgstr ""
+"Laat leden hun beoordelingen en recensies geven aan de profielen van andere "
+"leden op basis van meerdere criteria."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:480
+msgid "BuddyPress Birthday Widget"
+msgstr "BuddyPress Verjaardag Widget"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:481
+msgid "Display the upcoming birthdays of your BuddyPress community members."
+msgstr "Geef de aankomende verjaardagen van uw BuddyPress-leden weer."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:490
+msgid "reCaptcha for BuddyPress"
+msgstr "reCaptcha voor BuddyPress"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:491
+msgid ""
+"Buddypress reCaptcha is the best solution that provides an all-in-one "
+"captcha for  Buddypress, WordPress, and woo-commerce."
+msgstr ""
+"Buddypress reCaptcha is de beste oplossing die een alles-in-één captcha "
+"biedt voor Buddypress, WordPress en woo-commerce."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:500
+msgid "BuddyPress WooCommerce Integration"
+msgstr "BuddyPress WooCommerce integratie"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:501
+msgid ""
+"BuddyWoo Integration Plugin will help to integrate WooCommerce with "
+"Buddypress."
+msgstr ""
+"BuddyWoo Integratie Plugin zal helpen om WooCommerce te integreren met "
+"Buddypress."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:510
+msgid "BuddyPress Member Export Import"
+msgstr "BuddyPress lid exporteren importeren"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:511
+msgid ""
+"Easily import/export your BuddyPress members. Small but an important "
+"features."
+msgstr ""
+"Gemakkelijk importeren/exporteren van uw BuddyPress-leden. Kleine maar "
+"belangrijke functies."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:520
+msgid "BuddyPress Activity Bump"
+msgstr "BuddyPress Activiteit Bump"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:521
+msgid ""
+"ump the most recent activity on the top of newsfeed in your BuddyPress "
+"website."
+msgstr ""
+"plaats de meest recente activiteit bovenaan de nieuwsfeed op je BuddyPress-"
+"website."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:530
+msgid "Shortcodes for BuddyPress"
+msgstr "Shortcodes voor BuddyPress Pro"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:531
+msgid ""
+"Use shortcodes to display activity streams, members, group listings, and "
+"user notifications on any post."
+msgstr ""
+"Gebruik shortcodes om activiteitenstreams, leden, groepsoverzichten en "
+"gebruikersmeldingen weer te geven op elk bericht."
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:540
+msgid "BuddyPress Create Group Type"
+msgstr "BuddyPress Groep Type aanmaken"
+
+#: admin/wbcom/templates/wbcom-plugins-page.php:541
+msgid ""
+"Create group types on BuddyPress based on the interest areas of your "
+"community members."
+msgstr ""
+"Maak groepstypes op BuddyPress gebaseerd op de interessegebieden van uw "
+"communityleden."
+
+#: admin/wbcom/templates/wbcom-support-page.php:12
+msgid "Help & Support"
+msgstr "Help & Support"
+
+#: admin/wbcom/templates/wbcom-support-page.php:17
+msgid "How can we help you?"
+msgstr "Hoe kunnen wij u helpen?"
+
+#: admin/wbcom/templates/wbcom-support-page.php:18
+msgid ""
+"Our team is here to help you out at anytime. If you have any idea about how "
+"we could improve. You can share access to your site on our helpdesk if it "
+"can help getting faster."
+msgstr ""
+"Ons team staat altijd klaar om je te helpen. Als je een idee hebt over hoe "
+"we kunnen verbeteren. Je kunt de toegang tot je site delen op onze helpdesk "
+"als dat kan helpen om sneller te gaan."
+
+#: admin/wbcom/templates/wbcom-support-page.php:27
+msgid "Tickets Support"
+msgstr "Tickets Ondersteuning"
+
+#: admin/wbcom/templates/wbcom-support-page.php:28
+msgid ""
+"Open a ticket on our helpdesk, we don't guarantee a fast response but within "
+"a week. Except if you've purchased one of our product we'll reply within 24 "
+"hours."
+msgstr ""
+"Open een ticket op onze helpdesk, we garanderen geen snelle reactie maar "
+"binnen een week. Behalve als je een van onze producten hebt gekocht, dan "
+"antwoorden we binnen 24 uur."
+
+#: admin/wbcom/templates/wbcom-support-page.php:31
+msgid "Open a ticket"
+msgstr "Open een ticket"
+
+#: admin/wbcom/templates/wbcom-support-page.php:44
+#: admin/wbcom/templates/wbcom-support-page.php:48
+msgid "Contact Us"
+msgstr "Neem contact met ons op"
+
+#: admin/wbcom/templates/wbcom-support-page.php:45
+msgid ""
+"Create a new thread on our plugin page, participation is open to anyone from "
+"all around the world. We'll be there to help as well but can't guarantee any "
+"delay."
+msgstr ""
+"Maak een nieuwe thread aan op onze pluginpagina, deelname staat open voor "
+"iedereen van over de hele wereld. We zullen er zijn om te helpen, maar "
+"kunnen geen vertraging garanderen."
+
+#: admin/wbcom/wbcom-admin-settings.php:156
+msgid "Activate"
+msgstr "Activeren"
+
+#: admin/wbcom/wbcom-admin-settings.php:157
+msgid "Deactivate"
+msgstr "Deactiveren"
+
+#: admin/wbcom/wbcom-admin-settings.php:180
+#: admin/wbcom/wbcom-admin-settings.php:181
+msgid "Our Plugins"
+msgstr "Onze plugins"
+
+#: admin/wbcom/wbcom-admin-settings.php:196
+#: admin/wbcom/wbcom-admin-settings.php:197
+#: admin/wbcom/wbcom-admin-settings.php:275
+msgid "Support"
+msgstr "Ondersteuning"
+
+#: admin/wbcom/wbcom-admin-settings.php:263
+msgid "Settings"
+msgstr "Instellingen"
+
+#: admin/wbcom/wbcom-paid-plugin-settings.php:31
+#: admin/wbcom/wbcom-paid-plugin-settings.php:32
+#: admin/wbcom/wbcom-paid-plugin-settings.php:49
+msgid "License"
+msgstr "Licentie"
+
+#: buddypress-member-blog.php:134
+msgid " BuddyPress Member Blog"
+msgstr " BuddyPress Leden Blog"
+
+#: buddypress-member-blog.php:135
+msgid "BuddyPress"
+msgstr "Buddypress"
+
+#: buddypress-member-blog.php:137
+#, php-format
+msgid "%1$s is ineffective now as it requires %2$s to be installed and active."
+msgstr ""
+"%1$s is nu niet effectief omdat het vereist dat %2$s is geïnstalleerd en "
+"actief is."
+
+#: includes/buddypress-member-blog-functions.php:78
+msgid "Publish"
+msgstr "Publiceren"
+
+#: includes/buddypress-member-blog-functions.php:82
+msgid "Unpublish"
+msgstr "De-publiceer"
+
+#: includes/buddypress-member-blog-functions.php:146
+msgid "Edit"
+msgstr "Bewerken"
+
+#: includes/buddypress-member-blog-functions.php:213
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: includes/buddypress-member-blog-functions.php:302
+msgid "Auto Draft"
+msgstr "Automatisch concept"
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
+msgid "View details"
+msgstr "Bekijk details"
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "Meer informatie over %s"
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "Controleer op updates"
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "De %s plugin is bijgewerkt."
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:215
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "Er is een nieuwe versie van de %s plugin beschikbaar."
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Kon niet bepalen of updates beschikbaar zijn voor %s."
+
+#: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:223
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Onbekende update checker status \"%s\""
+
+#: plugin-update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Er is geen changelog beschikbaar."
+
+#: public/class-buddypress-member-blog-public.php:135
+msgid "Category name is required."
+msgstr "Categorienaam is vereist."
+
+#: public/class-buddypress-member-blog-public.php:163
+msgid "Add new post"
+msgstr "Nieuw artikel toevoegen"
+
+#: public/class-buddypress-member-blog-public.php:184
+#: public/class-buddypress-member-blog-public.php:219
+#, php-format
+msgid "Blog %s"
+msgstr "Blog %s"
+
+#. translators: %s:
+#: public/class-buddypress-member-blog-public.php:247
+#, php-format
+msgid " %s"
+msgstr " %s"
+
+#: public/class-buddypress-member-blog-public.php:257
+msgid "Published"
+msgstr "Gepubliceerd"
+
+#: public/class-buddypress-member-blog-public.php:268
+msgid "Pending"
+msgstr "In afwachting"
+
+#: public/class-buddypress-member-blog-public.php:279
+msgid "Draft Posts"
+msgstr "Conceptberichten"
+
+#: public/class-buddypress-member-blog-public.php:295
+#: public/class-buddypress-member-blog-public.php:380
+msgid "New Post"
+msgstr "Nieuw Bericht"
+
+#: public/class-buddypress-member-blog-public.php:370
+msgid "Posts"
+msgstr "Berichten"
+
+#: public/class-buddypress-member-blog-public.php:379
+msgid "add-new"
+msgstr "toevoegen"
+
+#: public/class-buddypress-member-blog-public.php:495
+msgid "Post Published"
+msgstr "Bericht gepubliceerd"
+
+#: public/class-buddypress-member-blog-public.php:522
+msgid "Post unpublished"
+msgstr "Blog offline gehaald"
+
+#: public/class-buddypress-member-blog-public.php:552
+msgid "Post deleted successfully"
+msgstr "Blog met succes verwijderd"
+
+#: public/class-buddypress-member-blog-public.php:601
+#: public/class-buddypress-member-blog-public.php:699
+msgid "Post updated successfully."
+msgstr "Bericht succesvol bijgewerkt."
+
+#: public/class-buddypress-member-blog-public.php:601
+#: public/class-buddypress-member-blog-public.php:619
+msgid "View Post"
+msgstr "Bekijk bericht"
+
+#: public/class-buddypress-member-blog-public.php:603
+#: public/class-buddypress-member-blog-public.php:621
+msgid "Your post is under review, It will appear after the approval."
+msgstr "Je bericht wordt beoordeeld. Het zal verschijnen na goedkeuring."
+
+#: public/class-buddypress-member-blog-public.php:619
+#: public/class-buddypress-member-blog-public.php:703
+msgid "Post created successfully."
+msgstr "Bericht succesvol aangemaakt."
+
+#: public/class-buddypress-member-blog-public.php:665
+msgid "Post saved successfully."
+msgstr "Bericht succesvol opgeslagen."
+
+#: public/class-buddypress-member-blog-public.php:757
+msgid "You are not allowed to access this page."
+msgstr "Je hebt onvoldoende toegangsrechten tot deze pagina."
+
+#: templates/draft-posts.php:82 templates/pending-posts.php:84
+#: templates/posts.php:81
+msgid "Permanent Link to"
+msgstr "Permanente link naar"
+
+#. translators: %s:
+#: templates/draft-posts.php:89 templates/pending-posts.php:91
+#: templates/posts.php:88
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: templates/draft-posts.php:110 templates/pending-posts.php:112
+#: templates/posts.php:109
+msgid "Read the rest of this entry &rarr;"
+msgstr "Lees verder &rarr;"
+
+#: templates/draft-posts.php:114 templates/pending-posts.php:116
+#: templates/posts.php:113
+msgid "Pages: "
+msgstr "Pagina's: "
+
+#: templates/draft-posts.php:153 templates/pending-posts.php:155
+#: templates/posts.php:150
+msgid "You have not posted anything yet."
+msgstr "Je hebt nog niets gepost."
+
+#: templates/edit.php:50
+msgid "Update post"
+msgstr "Bijgewerkt artikel"
+
+#: templates/edit.php:50
+msgid "Create a new post"
+msgstr "Maak een nieuw bericht"
+
+#: templates/edit.php:53
+msgid "Submit for Review"
+msgstr "Indienen voor review"
+
+#: templates/edit.php:65
+msgid "Title:"
+msgstr "Titel:"
+
+#: templates/edit.php:75
+msgid "Content:"
+msgstr "Inhoud:"
+
+#: templates/edit.php:95
+msgid "Category:"
+msgstr "Categorie:"
+
+#: templates/edit.php:97
+msgid "Select post category"
+msgstr "Selecteer artikelcategorie:"
+
+#. translators: Display plural label name
+#: templates/edit.php:113
+msgid "Add Category"
+msgstr "Categorie toevoegen"
+
+#: templates/edit.php:116
+msgid "Add"
+msgstr "Toevoegen"
+
+#: templates/edit.php:124
+msgid "Tag:"
+msgstr "Tag:"
+
+#: templates/edit.php:126
+msgid "Please add post tags with comma separator."
+msgstr "Voeg posttags toe met komma scheidingsteken."
+
+#: templates/edit.php:148
+msgid "Featured Image:"
+msgstr "Uitgelichte afbeelding"
+
+#: templates/edit.php:152
+msgid "Add Image"
+msgstr "Afbeelding toevoegen"
+
+#: templates/edit.php:178
+msgid "Save"
+msgstr "Opslaan"
+
+#. Plugin Name of the plugin/theme
+msgid "Wbcom Designs - BuddyPress Member Blog"
+msgstr "Wbcom Ontwerpen - BuddyPress Blog voor leden"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wbcomdesigns.com/downloads/buddypress-member-blog"
+msgstr "https://wbcomdesigns.com/downloads/buddypress-member-blog"
+
+#. Description of the plugin/theme
+msgid ""
+"Allow your BuddyPress members to create and manage their blog posts from "
+"there profile.  Allow them to publish their posts directly or send them for "
+"review. you can easily navigate to any member's profile to read  their posts."
+msgstr ""
+"Laat uw BuddyPress-leden hun blogberichten maken en beheren vanuit hun "
+"profiel.  Je kunt eenvoudig naar het profiel van een lid navigeren om hun "
+"berichten te lezen."
+
+#. Author of the plugin/theme
+msgid "Wbcom Designs"
+msgstr "Wbcom Ontwerpen"
+
+#. Author URI of the plugin/theme
+msgid "https://wbcomdesigns.com/"
+msgstr "https://wbcomdesigns.com/"

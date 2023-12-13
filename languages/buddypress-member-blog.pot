@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 11:39:54+00:00\n"
+"POT-Creation-Date: 2023-12-13 12:07:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -956,43 +956,43 @@ msgstr ""
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:494
+#: public/class-buddypress-member-blog-public.php:495
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:521
+#: public/class-buddypress-member-blog-public.php:522
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:551
+#: public/class-buddypress-member-blog-public.php:552
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:600
-#: public/class-buddypress-member-blog-public.php:698
+#: public/class-buddypress-member-blog-public.php:601
+#: public/class-buddypress-member-blog-public.php:699
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:600
-#: public/class-buddypress-member-blog-public.php:618
+#: public/class-buddypress-member-blog-public.php:601
+#: public/class-buddypress-member-blog-public.php:619
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:602
-#: public/class-buddypress-member-blog-public.php:620
+#: public/class-buddypress-member-blog-public.php:603
+#: public/class-buddypress-member-blog-public.php:621
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:618
-#: public/class-buddypress-member-blog-public.php:702
+#: public/class-buddypress-member-blog-public.php:619
+#: public/class-buddypress-member-blog-public.php:703
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:664
+#: public/class-buddypress-member-blog-public.php:665
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:756
+#: public/class-buddypress-member-blog-public.php:757
 msgid "You are not allowed to access this page."
 msgstr ""
 
@@ -1022,60 +1022,60 @@ msgstr ""
 msgid "You have not posted anything yet."
 msgstr ""
 
-#: templates/edit.php:49
+#: templates/edit.php:50
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:49
+#: templates/edit.php:50
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:52
+#: templates/edit.php:53
 msgid "Submit for Review"
 msgstr ""
 
-#: templates/edit.php:64
+#: templates/edit.php:65
 msgid "Title:"
 msgstr ""
 
-#: templates/edit.php:74
+#: templates/edit.php:75
 msgid "Content:"
 msgstr ""
 
-#: templates/edit.php:94
+#: templates/edit.php:95
 msgid "Category:"
 msgstr ""
 
-#: templates/edit.php:96
+#: templates/edit.php:97
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:112
+#: templates/edit.php:113
 #. translators: Display plural label name
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:115
+#: templates/edit.php:116
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:123
+#: templates/edit.php:124
 msgid "Tag:"
 msgstr ""
 
-#: templates/edit.php:125
+#: templates/edit.php:126
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:147
+#: templates/edit.php:148
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:151
+#: templates/edit.php:152
 msgid "Add Image"
 msgstr ""
 
-#: templates/edit.php:177
+#: templates/edit.php:178
 msgid "Save"
 msgstr ""
 

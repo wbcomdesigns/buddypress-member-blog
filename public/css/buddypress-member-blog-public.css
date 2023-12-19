@@ -619,7 +619,36 @@ buddyboss-theme
 /*--------------------------------------------------------------
  Dark Mode
 --------------------------------------------------------------*/
-.dark-mode .bp-member-blog-container>div.bp_members,
+.dark-scheme .post-actions span.delete-post a:before,
+.dark-mode .post-actions span.delete-post a:before {
+    background: url(../images/trash-white.svg) no-repeat center center;
+    background-size: cover;
+}
+
+.dark-scheme .post-actions span.publish-post a:before,
+.dark-mode .post-actions span.publish-post a:before {
+    background: url(../images/document-white.svg) no-repeat center center;
+    background-size: cover;
+}
+
+.dark-scheme .bp-member-blog-container .post-date:before,
+.dark-mode .bp-member-blog-container .post-date:before {
+    background: url(../images/calendar-alt-white.svg) no-repeat center center;
+    background-size: cover;
+}
+
+.dark-scheme .bp-member-blog-container .post-content span.bp-edit-post:before,
+.dark-mode .bp-member-blog-container .post-content span.bp-edit-post:before {
+    background: url(../images/edit_square-white.svg) no-repeat center center;
+    background-size: cover;
+}
+
+.dark-mode .bp-member-blog-container.bpmb-blog-posts img.loader-image {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+/* .dark-mode .bp-member-blog-container>div.bp_members,
 .dark-mode .bp-member-blog-container form#bp-member-post {
     border: 1px solid #3e3e3e;
     background: #242526;
@@ -633,11 +662,6 @@ buddyboss-theme
 
 .dark-mode .bp-member-blog-container .post-categories a {
     background: #69696a;
-}
-
-.dark-mode .bp-member-blog-container.bpmb-blog-posts img.loader-image {
-    -webkit-filter: brightness(0) invert(1);
-            filter: brightness(0) invert(1);
 }
 
 .dark-mode #bp-member-post input#bp_member_blog_post_tag,
@@ -689,8 +713,7 @@ buddyboss-theme
     cursor: pointer;
     color: #fff;
     overflow: hidden;
-}
-
+} */
 
 /*--------------------------------------------------------------
 Youzify Support

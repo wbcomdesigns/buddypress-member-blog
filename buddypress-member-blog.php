@@ -167,11 +167,12 @@ function bp_member_blog_user_upload_file_permission() {
 					$role->add_cap( 'upload_files' );
 				}
 				if ( ! defined( 'DOING_AJAX' ) ) {
-					$role->remove_cap( 'edit_posts' );
-					$role->remove_cap( 'delete_posts' );
-					$role->remove_cap( 'delete_published_posts' );
 					$role->remove_cap( 'edit_published_posts' );
+					$role->remove_cap( 'edit_others_pages' );
+					$role->remove_cap( 'edit_others_posts' );
+					$role->remove_cap( 'edit_published_pages' );
 					$role->remove_cap( 'unfiltered_html' );
+					$role->remove_cap( 'edit_posts' );
 				}
 			}
 		}
@@ -196,11 +197,13 @@ function bp_member_blog_wp_head() {
 			foreach ( $user_roles as $user_role ) {
 				$role = get_role( $user_role );
 
-				$role->add_cap( 'edit_posts' );
-				$role->add_cap( 'delete_posts' );
 				$role->add_cap( 'edit_published_posts' );
-				$role->add_cap( 'delete_published_posts' );
+				$role->add_cap( 'edit_others_pages' );
+				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'edit_posts' );
 				$role->add_cap( 'unfiltered_html' );
+				$role->add_cap( 'edit_published_pages' );
+				$role->add_cap( 'upload_files' );
 
 			}
 		}
@@ -222,11 +225,13 @@ function bp_member_blog_check_ajax_referer( $action, $result ) {
 		if ( ! empty( $user_roles ) && ! user_can( $current_user, 'edit_posts' ) ) {
 			foreach ( $user_roles as $user_role ) {
 				$role = get_role( $user_role );
-				$role->add_cap( 'edit_posts' );
-				$role->add_cap( 'delete_posts' );
 				$role->add_cap( 'edit_published_posts' );
-				$role->add_cap( 'delete_published_posts' );
+				$role->add_cap( 'edit_others_pages' );
+				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'edit_posts' );
 				$role->add_cap( 'unfiltered_html' );
+				$role->add_cap( 'edit_published_pages' );
+				$role->add_cap( 'upload_files' );
 			}
 		}
 	}

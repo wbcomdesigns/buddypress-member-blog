@@ -84,8 +84,11 @@ query_posts( $query_args );
 
 					<div class="post-date">
 						<?php
-						/* translators: %s: */
-						printf( esc_html__( '%1$s', 'buddypress-member-blog' ), get_the_date(), wp_kses_post( get_the_category_list( ', ' ) ) );
+							/* translators: %s: Date of the post */
+							printf(
+								esc_html__('Posted on %s', 'buddypress-member-blog'),
+								get_the_date()
+							);
 						?>
 					</div>
 					<div class="post-categories">

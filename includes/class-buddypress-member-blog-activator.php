@@ -31,7 +31,27 @@ class Buddypress_Member_Blog_Activator {
 	public static function activate() {
 		global $wpdb;
 
-		$add_new_post = get_page_by_title( 'Add new post' );
+		$args = array(
+			'post_type'      => 'page',
+			'post_status'    => 'publish',
+			'title'          => 'Add new post',
+			'posts_per_page' => 1
+		);
+
+		$query = new WP_Query($args);
+
+		$add_new_post = null;
+
+		if ($query->have_posts()) {
+			while ($query->have_posts()) {
+				$query->the_post();
+				$add_new_post = get_post();
+				break; // Get only the first post
+			}
+		}
+
+		// Reset post data to avoid conflicts with global post variables
+		wp_reset_postdata();
 		if ( empty( $add_new_post ) ) {
 			$new_post_page = wp_insert_post(
 				array(

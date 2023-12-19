@@ -181,6 +181,7 @@ class Buddypress_Member_Blog_Public {
 			} else {
 				$total_posts = bp_member_blog_get_total_published_posts( $user_id );
 			}
+			// translators: %s is replaced with a count of total posts
 			$blog_label = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
 			$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 			if ( is_user_logged_in() ) {
@@ -216,6 +217,7 @@ class Buddypress_Member_Blog_Public {
 				$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
 				$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
 				$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
+				// translators: %s is replaced with a count of total posts
 				$blog_label                                 = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
 				$blog_slug                                  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 				if ( empty( $user_roles ) && empty( $user_types ) ) {
@@ -244,7 +246,7 @@ class Buddypress_Member_Blog_Public {
 			bp_core_new_nav_item(
 				array(
 					/* translators: %s: */
-					'name'                => sprintf( esc_html__( $blog_label . ' %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ),
+					'name' => sprintf(esc_html__('%1$s %2$s', 'buddypress-member-blog'), $blog_label, '<span class="count">' . $total_posts . '</span>'),
 					'slug'                => $blog_slug,
 					'screen_function'     => array( $this, 'bp_member_posts' ),
 					'default_subnav_slug' => $blog_slug,

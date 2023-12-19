@@ -178,8 +178,10 @@ class Buddypress_Member_Blog_Admin {
 							<?php
 							/* translators: %s: */
 							if ( class_exists( 'BuddyPress_Member_Blog_Pro' ) ) {
+								// translators: %s is replaced with the plugin version
 								printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BuddyPress_Member_Blog_Pro_PLUGIN_VERSION ) );
 							} else {
+								// translators: %s is replaced with the plugin version
 								printf( esc_html__( 'Version %s', 'buddypress-member-blog' ), esc_html( BUDDYPRESS_MEMBER_BLOG_VERSION ) );
 							}
 							?>

@@ -131,9 +131,10 @@ add_action( 'admin_init', 'buddypress_member_blog_requires_buddypress' );
  */
 function buddypress_member_blog_required_plugin_admin_notice() {
 
-	$bpmb_plugin = esc_html__( ' BuddyPress Member Blog', 'buddypress-member-blog' );
+	$bpmb_plugin = esc_html__( 'BuddyPress Member Blog', 'buddypress-member-blog' );
 	$bp_plugin   = esc_html__( 'BuddyPress', 'buddypress-member-blog' );
 	echo '<div class="error"><p>';
+	// translators: %1$s is replaced with the BuddyPress Member Blog and %2$s is replaced with the BuddyPress.
 	echo sprintf( esc_html__( '%1$s is ineffective now as it requires %2$s to be installed and active.', 'buddypress-member-blog' ), '<strong>' . esc_html( $bpmb_plugin ) . '</strong>', '<strong>' . esc_html( $bp_plugin ) . '</strong>' );
 	echo '</p></div>';
 }

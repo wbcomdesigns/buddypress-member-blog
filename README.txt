@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.4.1
-Stable tag: 2.0.2
+Tested up to: 6.4.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ e.g.
 
 
 == Changelog ==
+= 2.0.3 =
+* Fix: (#227) Managed dark mode with reign theme
+* Fix: Fixed can not upload media on edit post
+
 = 2.0.2 =
 * Updated: Added option for template override 
 

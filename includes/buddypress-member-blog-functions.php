@@ -193,9 +193,16 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 
 	$action_name = 'bp-new-post';
+	$active_plugins = get_option( 'active_plugins' );
+	if ( in_array( 'buddypress-member-blog-pro/class-buddypress-member-blog-pro.php', $active_plugins ) ) {
+		$bp_blog_pro_option = get_option( 'bp_member_blog_gen_stngs' );
+		$blog_slug = isset( $bp_blog_pro_option['blog_slug'] ) && ( '' !== $bp_blog_pro_option['blog_slug'] ) ? $bp_blog_pro_option['blog_slug'] : 'blog';
+	} else {
+		$blog_slug = 'blog';
+	}
 
 	// if we are here, we can allow user to edit the post.
-	return bp_members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	return bp_members_get_user_url( $post->post_author ) . $blog_slug . '/bp-new-post/?post_id=' . $post->ID . '&action=edit';
 }
 
 

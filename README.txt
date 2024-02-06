@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.4.2
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ e.g.
 
 
 == Changelog ==
+= 2.0.4 =
+* Fix: (#219) Fixed edit blog URL on member profile 
+* Fix: Fixed translate issue
+
 = 2.0.3 =
 * Fix: (#227) Managed dark mode with reign theme
 * Fix: Fixed can not upload media on edit post

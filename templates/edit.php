@@ -75,13 +75,15 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 				<span><?php esc_html_e( 'Content:', 'buddypress-member-blog' ); ?></span>
 
 				<?php
-				wp_editor(
-					apply_filters( 'bp_member_blog_post_content', $blog_post->post_content ),
-					'bp_member_blog_post_content',
-					array(
-						'media_buttons' => true,
-					)
-				);
+				if ( ! is_admin() ) {
+					wp_editor(
+						apply_filters( 'bp_member_blog_post_content', $blog_post->post_content ),
+						'bp_member_blog_post_content',
+						array(
+							'media_buttons' => true,
+						)
+					);
+				}
 				?>
 			</label>
 

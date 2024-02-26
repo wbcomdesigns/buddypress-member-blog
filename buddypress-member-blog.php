@@ -150,36 +150,45 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 /*
  *  Remove edit post cap for subscriber user on admin and fronted
  */
-add_action( 'init', 'bp_member_blog_user_upload_file_permission' );
-function bp_member_blog_user_upload_file_permission() {
-	if ( is_user_logged_in() ) {
-		global $post, $current_user;
+function bp_member_blog_update_capabilities() {
+	$current_version = get_option( 'bp_member_blog_version' );
+	$plugin_version = BUDDYPRESS_MEMBER_BLOG_VERSION; // Define your current plugin version here
 
-		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+	if ( version_compare( $current_version, $plugin_version, '<' ) ) {
+		$default_capabilities = array(
+			'subscriber' => array(
+				'read' => true,
+				'upload_files' => false,
+				'edit_posts' => false,
+				'unfiltered_html' => false,
+			),
+			'contributor' => array(
+				'read' => true,
+				'edit_posts' => true,
+				'upload_files' => false,
+				'unfiltered_html' => false,
+			),
+			// Add other roles and their expected capabilities as necessary
+		);
 
-		$user_roles = array_intersect( $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
-
-		if ( ! empty( $user_roles ) && ! user_can( $current_user, 'edit_posts' ) ) {
-			foreach ( $user_roles as $user_role ) {
-				$role = get_role( $user_role );
-				if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-					$role->remove_cap( 'upload_files' );
-				} else {
-					$role->add_cap( 'upload_files' );
-				}
-				if ( ! defined( 'DOING_AJAX' ) ) {
-					$role->remove_cap( 'edit_published_posts' );
-					$role->remove_cap( 'edit_others_pages' );
-					$role->remove_cap( 'edit_others_posts' );
-					$role->remove_cap( 'edit_published_pages' );
-					$role->remove_cap( 'unfiltered_html' );
-					$role->remove_cap( 'edit_posts' );
+		foreach ( $default_capabilities as $role => $caps ) {
+			$role_object = get_role( $role );
+			if ( $role_object ) {
+				foreach ( $caps as $cap => $enabled ) {
+					if ( $enabled && ! $role_object->has_cap( $cap ) ) {
+						$role_object->add_cap( $cap );
+					} elseif ( ! $enabled && $role_object->has_cap( $cap ) ) {
+						$role_object->remove_cap( $cap );
+					}
 				}
 			}
 		}
-	}
 
+		update_option( 'bp_member_blog_version', $plugin_version );
+	}
 }
+
+add_action( 'plugins_loaded', 'bp_member_blog_update_capabilities' );
 
 
 /*
@@ -225,14 +234,9 @@ function bp_member_blog_check_ajax_referer( $action, $result ) {
 
 		if ( ! empty( $user_roles ) && ! user_can( $current_user, 'edit_posts' ) ) {
 			foreach ( $user_roles as $user_role ) {
-				$role = get_role( $user_role );
-				$role->add_cap( 'edit_published_posts' );
-				$role->add_cap( 'edit_others_pages' );
-				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'upload_files' );
 				$role->add_cap( 'edit_posts' );
 				$role->add_cap( 'unfiltered_html' );
-				$role->add_cap( 'edit_published_pages' );
-				$role->add_cap( 'upload_files' );
 			}
 		}
 	}

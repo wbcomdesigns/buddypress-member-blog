@@ -8,11 +8,11 @@ Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-BuddyPress Member Blog is a free plugin that allows users to create/manage their blog/posts from the profile. The plugin also allows you to moderate user-submitted posts. Allow members to display their submitted blogs at their BuddyPress Profile
+BuddyPress Member Blog is a free plugin that allows users to create/manage their blog/posts from their profile. The plugin also permits you to moderate user-submitted posts. Allow members to display their submitted blogs on their BuddyPress Profile.
 
 == Description ==
 
-BuddyPress Member Blog is a free plugin that allows users to create/manage their blog/posts from the profile. The plugin also allows you to moderate user-submitted posts. Allow members to display their submitted blogs at their BuddyPress Profile
+BuddyPress Member Blog is a free plugin that allows users to create/manage their blog/posts from their profile. The plugin also permits you to moderate user-submitted posts. Allow members to display their submitted blogs on their BuddyPress Profile.
 
 == Installation ==
 

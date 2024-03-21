@@ -170,15 +170,16 @@ function bp_member_blog_update_capabilities() {
 			),
 			// Add other roles and their expected capabilities as necessary
 		);
-
-		foreach ( $default_capabilities as $role => $caps ) {
-			$role_object = get_role( $role );
-			if ( $role_object ) {
-				foreach ( $caps as $cap => $enabled ) {
-					if ( $enabled && ! $role_object->has_cap( $cap ) ) {
-						$role_object->add_cap( $cap );
-					} elseif ( ! $enabled && $role_object->has_cap( $cap ) ) {
-						$role_object->remove_cap( $cap );
+		if( ! empty( $default_capabilities ) ){
+			foreach ( $default_capabilities as $role => $caps ) {
+				$role_object = get_role( $role );
+				if ( $role_object ) {
+					foreach ( $caps as $cap => $enabled ) {
+						if ( $enabled && ! $role_object->has_cap( $cap ) ) {
+							$role_object->add_cap( $cap );
+						} elseif ( ! $enabled && $role_object->has_cap( $cap ) ) {
+							$role_object->remove_cap( $cap );
+						}
 					}
 				}
 			}

@@ -161,7 +161,7 @@ query_posts( $query_args );
 				} else {
 					echo '<div id="message" class="info">';
 				}
-				echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) );
+				echo sprintf( __( "%s hasn't posted anything yet.", "buddypress-member-blog" ) , esc_html( bp_get_displayed_user_fullname() ) );
 				echo '</div>';
 			}
 		} else {
@@ -172,7 +172,7 @@ query_posts( $query_args );
 			} else {
 				echo '<div id="message" class="info">';
 			}
-			echo sprintf( "<p>%s hasn't posted anything yet.</p>", esc_html( bp_get_displayed_user_fullname() ) );
+			echo sprintf( __( "%s hasn't posted anything yet.", "buddypress-member-blog" ) , esc_html( bp_get_displayed_user_fullname() ) );
 			echo '</div>';
 		}
 	endif;

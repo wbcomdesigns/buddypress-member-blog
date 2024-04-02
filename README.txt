@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 2.1.1 =
+* Fix: (#242)Fixed issue on tab Translation
+* Fix: (#238)Fixed fatal error on the client site
 
 = 2.1.0 =
 * Fix: (#236) Fixed client site conflict issue

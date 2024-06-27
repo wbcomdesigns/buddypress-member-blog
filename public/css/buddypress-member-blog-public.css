@@ -220,8 +220,8 @@ select#bp-blog-category-select {
 .bp-member-blog-post-category-wrapper select,
 .bp-member-blog-post-category-wrapper .selectize-control {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .bp-member-blog-post-category-wrapper a.add-bpmb-category {
@@ -232,11 +232,11 @@ select#bp-blog-category-select {
     display: flex;
     background: rgba(0, 0, 0, 0.05);
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     border-radius: 4px;
 }
 
@@ -296,8 +296,8 @@ nav.bp-navs li#draft-personal-li a {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 nav.bp-navs li#blog-personal-li a span,
@@ -318,8 +318,8 @@ nav.bp-navs li#draft-personal-li a span {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     width: 100%;
     border-radius: 5px !important;
     margin-top: 20px;
@@ -368,6 +368,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entr
     font-size: 22px;
     line-height: 24px;
 }
+
 body.buddypress .buddypress-wrap .bp-member-blog-container .post-content h3.entry-title span.bp-edit-post {
     margin-left: 10px;
 }
@@ -499,8 +500,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     display: flex;
     gap: 7px;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .bp-member-blog-container.bpmb-blog-posts .page-numbers {
@@ -514,11 +515,11 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .bp-member-blog-container.bpmb-blog-posts a.prev.page-numbers,
@@ -551,8 +552,8 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     .bp-member-blog-container .post-content {
         width: 100%;
         -webkit-box-pack: left;
-            -ms-flex-pack: left;
-                justify-content: left;
+        -ms-flex-pack: left;
+        justify-content: left;
     }
 
     .bp-member-blog-container .post-featured-image {
@@ -746,4 +747,9 @@ Youzify Support
 .youzify-main-column #wp-bp_member_blog_post_content-media-buttons {
     float: left;
     margin-bottom: -3px;
+}
+
+.bpmb-blog-posts .bp_members.type-bp_members.bb-grid-cell {
+    width: 100%;
+    max-width: 100%;
 }

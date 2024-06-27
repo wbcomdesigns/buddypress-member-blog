@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict";
 
     /**
@@ -29,7 +29,7 @@
      * practising this, we should strive to set a better example in our own work.
      */
 
-    $(document).ready(function($) {
+    $(document).ready(function ($) {
         $("#bp-blog-category-select").selectize({
             placeholder: $("#bp-blog-category-select").data("placeholder"),
             plugins: ["remove_button"],
@@ -43,7 +43,7 @@
         $(document).on(
             "click",
             ".bp-member-blog-container .post-actions a.confirm",
-            function() {
+            function () {
                 if (confirm("This post will be permanently deleted.")) {
                     return true;
                 }
@@ -54,12 +54,12 @@
         $(document).on(
             "change",
             "#bp_member_blog_post_featured_image",
-            function() {
+            function () {
                 console.log(this.files);
                 const file = this.files[0];
                 if (file) {
                     let reader = new FileReader();
-                    reader.onload = function(event) {
+                    reader.onload = function (event) {
                         $("#bp_member_post_img_preview").attr("src", event.target.result);
                         $(".bp_member_blog_post_img_preview").show();
                     };
@@ -69,7 +69,7 @@
         );
 
         /* Member Report Subject */
-        $("#bp_member_blog_post_tag").keypress(function(e) {
+        $("#bp_member_blog_post_tag").keypress(function (e) {
             var keycode = e.keyCode ? e.keyCode : e.which;
 
             // If user Clicks Enter
@@ -101,7 +101,7 @@
                 } else {
                     // Add Flash Element In Case is Already Exist.
                     current_elts.addClass("flash");
-                    setTimeout(function() {
+                    setTimeout(function () {
                         current_elts.removeClass("flash");
                     }, 1000);
                     $(this).val("");
@@ -110,11 +110,11 @@
             }
         });
 
-        $.bpmb_check_post_tags_existence = function(elt, keyword) {
+        $.bpmb_check_post_tags_existence = function (elt, keyword) {
             // Setup Variables.
             var tag_obj = $();
             // Check Old Tags.
-            elt.find(".added-post-tag").each(function() {
+            elt.find(".added-post-tag").each(function () {
                 var str = $.trim($.trim($(this).text()).slice(0, -1));
                 if (str.toLowerCase() === $.trim(keyword).toLowerCase()) {
                     tag_obj = $(this);
@@ -126,13 +126,13 @@
             return tag_obj;
         };
 
-        $(document).on("click", ".bpmb-tag-remove", function(e) {
+        $(document).on("click", ".bpmb-tag-remove", function (e) {
             e.preventDefault();
             $(this).parent().remove();
         });
 
         //Add BP bpmb Category Show Row
-        jQuery(document).on("click", ".add-bpmb-category", function() {
+        jQuery(document).on("click", ".add-bpmb-category", function () {
             jQuery(".add-bpmb-cat-row").slideToggle("slow");
             var element_height = jQuery(".add-bpmb-cat-row")
                 .css("height")
@@ -145,7 +145,7 @@
         });
 
         //Add BP bpmb Category
-        jQuery(document).on("click", "#add-bpmb-cat", function() {
+        jQuery(document).on("click", "#add-bpmb-cat", function () {
             var name = jQuery("#bpmb-category-name").val();
             var btn_text = jQuery(this).html();
             if (name == "") {
@@ -156,11 +156,11 @@
                 jQuery(this).html(btn_text + ' <i class="fa fa-refresh fa-spin"></i>');
                 jQuery.post(
                     ajaxurl, {
-                        action: "bpmb_add_category_front_end",
-                        name: name,
-                        security_nonce: bpmb_ajax_object.ajax_nonce,
-                    },
-                    function(response) {
+                    action: "bpmb_add_category_front_end",
+                    name: name,
+                    security_nonce: bpmb_ajax_object.ajax_nonce,
+                },
+                    function (response) {
                         if (response) {
                             jQuery(".add-bpmb-cat-row").hide();
                             jQuery("#bp-blog-category-select").append(
@@ -205,13 +205,13 @@
             }
         });
         // add count
-        jQuery('#blog').each(function() {
+        jQuery('#blog').each(function () {
             jQuery(this).append('<span class="publish_post_count">(' + bpmb_ajax_object.publish_post_count + ')</span>');
         });
-        jQuery('#pending').each(function() {
+        jQuery('#pending').each(function () {
             jQuery(this).append('<span class="pending_post_count">(' + bpmb_ajax_object.pending_post_count + ')</span>');
         });
-        jQuery('#draft').each(function() {
+        jQuery('#draft').each(function () {
             jQuery(this).append('<span class="draft_post_count">(' + bpmb_ajax_object.draft_post_count + ')</span>');
         });
 

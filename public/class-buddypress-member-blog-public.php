@@ -111,6 +111,7 @@ class Buddypress_Member_Blog_Public {
 			'author'      => $user_id,
 			'post_type'   => 'post',
 			'post_status' => 'publish',
+			'posts_per_page' => -1,
 		);
 		$current_user_publish_posts = count( get_posts( $bp_publish_blogs ) );
 		$bp_draft_blogs             = array(

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-08 06:26:19+00:00\n"
+"POT-Creation-Date: 2024-07-08 07:33:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -917,87 +917,87 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:135
+#: public/class-buddypress-member-blog-public.php:136
 msgid "Category name is required."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:163
+#: public/class-buddypress-member-blog-public.php:164
 msgid "Add new post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:185
-#: public/class-buddypress-member-blog-public.php:221
+#: public/class-buddypress-member-blog-public.php:186
+#: public/class-buddypress-member-blog-public.php:222
 #. translators: %s is replaced with a count of total posts
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:249
+#: public/class-buddypress-member-blog-public.php:250
 #. translators: %s:
 msgid "%1$s %2$s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:259
+#: public/class-buddypress-member-blog-public.php:260
 msgid "Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:270
+#: public/class-buddypress-member-blog-public.php:271
 msgid "Pending"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:281
+#: public/class-buddypress-member-blog-public.php:282
 msgid "Draft Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:297
-#: public/class-buddypress-member-blog-public.php:382
+#: public/class-buddypress-member-blog-public.php:298
+#: public/class-buddypress-member-blog-public.php:383
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:372
+#: public/class-buddypress-member-blog-public.php:373
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:381
+#: public/class-buddypress-member-blog-public.php:382
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:497
+#: public/class-buddypress-member-blog-public.php:498
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:524
+#: public/class-buddypress-member-blog-public.php:525
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:554
+#: public/class-buddypress-member-blog-public.php:555
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:603
-#: public/class-buddypress-member-blog-public.php:701
+#: public/class-buddypress-member-blog-public.php:604
+#: public/class-buddypress-member-blog-public.php:702
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:603
-#: public/class-buddypress-member-blog-public.php:621
+#: public/class-buddypress-member-blog-public.php:604
+#: public/class-buddypress-member-blog-public.php:622
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:605
-#: public/class-buddypress-member-blog-public.php:623
+#: public/class-buddypress-member-blog-public.php:606
+#: public/class-buddypress-member-blog-public.php:624
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:621
-#: public/class-buddypress-member-blog-public.php:705
+#: public/class-buddypress-member-blog-public.php:622
+#: public/class-buddypress-member-blog-public.php:706
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:667
+#: public/class-buddypress-member-blog-public.php:668
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:759
+#: public/class-buddypress-member-blog-public.php:760
 msgid "You are not allowed to access this page."
 msgstr ""
 

@@ -587,6 +587,8 @@ class Buddypress_Member_Blog_Public {
 			}
 
 			if ( isset( $_POST['post_id'] ) && $_POST['post_id'] != 0 && $_POST['post_id'] != '' ) {
+				$user_id = get_current_user_id();
+				$user = get_userdata($user_id);
 
 				/* Update Post */
 				$post_id   = wp_update_post(
@@ -595,12 +597,12 @@ class Buddypress_Member_Blog_Public {
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
-						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' : ( ( isset( $_POST['bp_member_blog_form_save'] ) ) ? 'draft' : 'pending' ),
+						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) || in_array('administrator', $user->roles )  ) ? 'publish' : ( ( isset( $_POST['bp_member_blog_form_save'] ) ) ? 'draft' : 'pending' ),
 						'post_author'  => get_current_user_id(),
 					)
 				);
 				$post_link = get_permalink( $post_id );
-				if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {
+				if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) || in_array('administrator', $user->roles ) ) {
 					bp_core_add_message( __( 'Post updated successfully.', 'buddypress-member-blog' ) . '<span class="bp-blog-view-link"><a href="' . $post_link . '">' . __( 'View Post', 'buddypress-member-blog' ) . '</a></span>' );
 				} else {
 					bp_core_add_message( __( 'Your post is under review, It will appear after the approval.', 'buddypress-member-blog' ) );

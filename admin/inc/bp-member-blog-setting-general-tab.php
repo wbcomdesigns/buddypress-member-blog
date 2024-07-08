@@ -166,7 +166,7 @@ if ( ! empty( $member_types ) ) {
 				<label for="bp_member_blog_image_delete">
 					<?php esc_html_e( 'Media management', 'buddypress-member-blog' ); ?>
 				</label>
-				<p class="description"><?php esc_html_e( 'When blog post removed permanently delete the associated media file.', 'buddypress-member-blog' ); ?></p>
+				<p class="description"><?php esc_html_e( 'On blog post deletion, permanently remove the associated featured image.', 'buddypress-member-blog' ); ?></p>
 			</div>
 			<div class="wbcom-settings-section-options">
 				<label class="wb-switch">

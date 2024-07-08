@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-01 09:29:20+00:00\n"
+"POT-Creation-Date: 2024-07-08 06:26:19+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -931,11 +931,6 @@ msgstr ""
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:243
-#. translators: %s:
-msgid "Blog"
-msgstr ""
-
 #: public/class-buddypress-member-blog-public.php:249
 #. translators: %s:
 msgid "%1$s %2$s"
@@ -1006,34 +1001,34 @@ msgstr ""
 msgid "You are not allowed to access this page."
 msgstr ""
 
-#: templates/draft-posts.php:82 templates/pending-posts.php:84
+#: templates/draft-posts.php:82 templates/pending-posts.php:82
 #: templates/posts.php:81
 msgid "Permanent Link to"
 msgstr ""
 
-#: templates/draft-posts.php:90 templates/pending-posts.php:92
+#: templates/draft-posts.php:90 templates/pending-posts.php:90
 #: templates/posts.php:89
 #. translators: %s: Date of the post
 msgid "Posted on %s"
 msgstr ""
 
-#: templates/draft-posts.php:115 templates/pending-posts.php:116
+#: templates/draft-posts.php:115 templates/pending-posts.php:114
 #: templates/posts.php:112
 msgid "Read the rest of this entry &rarr;"
 msgstr ""
 
-#: templates/draft-posts.php:119 templates/pending-posts.php:120
+#: templates/draft-posts.php:119 templates/pending-posts.php:118
 #: templates/posts.php:116
 msgid "Pages: "
 msgstr ""
 
-#: templates/draft-posts.php:158 templates/pending-posts.php:159
+#: templates/draft-posts.php:158 templates/pending-posts.php:157
 #: templates/posts.php:153
 msgid "You have not posted anything yet."
 msgstr ""
 
 #: templates/draft-posts.php:169 templates/draft-posts.php:180
-#: templates/pending-posts.php:170 templates/pending-posts.php:181
+#: templates/pending-posts.php:168 templates/pending-posts.php:179
 #: templates/posts.php:164 templates/posts.php:175
 msgid "%s hasn't posted anything yet."
 msgstr ""

@@ -66,7 +66,7 @@ query_posts( $query_args );
 			global $post;
 			?>
 
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div id="post-<?php the_ID(); ?>" class="<?php echo esc_attr( 'bpmb-blog-post' ); ?>">
 
 				<div class="post-featured-image">
 					<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) : ?>
@@ -75,8 +75,6 @@ query_posts( $query_args );
 						<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'public/images/no-post-image.jpg'; ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="<?php the_title(); ?>" width="150" height="150">
 					<?php endif; ?>
 				</div>
-
-
 
 				<div class="post-content">
 

@@ -253,12 +253,12 @@ function bp_member_blog_paginate() {
 		// structure of “format” depends on whether we’re using pretty permalinks.
 			$format = '?paged=%#%';
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-		if ( $blog_slug == bp_current_action() ) {
+		if ( $blog_slug == bp_current_action() && bp_is_current_component( 'xprofile' ) ) {
 			$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );
-		} else {
-			$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug . '/' . bp_current_action() );
+		} else if(  bp_is_current_component( 'groups' ) ) {
+			$group_id = bp_get_current_group_id();
+			$base = trailingslashit( bp_get_group_url( $group_id ) . $blog_slug );
 		}
-
 		echo wp_kses_post(
 			paginate_links(
 				array(

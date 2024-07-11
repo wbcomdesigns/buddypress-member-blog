@@ -45,7 +45,7 @@ if ( isset( $bp_member_blog_gen_stngs['create_category'] ) && ! empty( $bp_membe
 	$create_cat = $bp_member_blog_gen_stngs['create_category'];
 }
 
-$category = get_terms( $args );
+$category = get_terms( apply_filters( 'bp_member_blog_terms_args', $args ) );
 
 $submit_btn_value = ( isset( $_GET ) && isset( $_GET['action'] ) && 'edit' === $_GET['action'] ) ? __( 'Update post', 'buddypress-member-blog' ) : __( 'Create a new post', 'buddypress-member-blog' ); //phpcs:ignore
 

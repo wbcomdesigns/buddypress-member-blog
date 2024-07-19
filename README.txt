@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.5.0
-Stable tag: 2.1.1
+Tested up to: 6.6.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,16 @@ e.g.
 
 
 == Changelog ==
+= 2.2.0 =
+* Enhancement: Added filter for category management.
+* Fix: Resolved group pagination issue with BB platform.
+* Fix: Fixed pagination redirecting to 404 on the group page.
+* Update: Changed descriptions for clarity.
+* Fix: Ensured admins do not need approval to publish posts.
+* Update: Improved pagination spacing for better UI.
+* Fix: Corrected published blog count issue.
+* Enhancement: Managed UI within the blog tab for a smoother experience.
+
 = 2.1.1 =
 * Fix: (#242)Fixed issue on tab Translation
 * Fix: (#238)Fixed fatal error on the client site

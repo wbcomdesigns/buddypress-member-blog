@@ -71,7 +71,7 @@ query_posts( $query_args );
 				<div class="post-featured-image">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php esc_html_e( 'Permanent Link to', 'buddypress-member-blog' ); ?> <?php the_title_attribute(); ?>">
 						<?php if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) : ?>
-							<?php the_post_thumbnail( 'thumbnail' ); ?>
+							<?php the_post_thumbnail(); ?>
 						<?php else : ?>
 							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'public/images/no-post-image.jpg'; ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="<?php the_title(); ?>" width="150" height="150">
 						<?php endif; ?>

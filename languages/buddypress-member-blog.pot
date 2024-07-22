@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-08 07:33:47+00:00\n"
+"POT-Creation-Date: 2024-07-22 13:50:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -159,7 +159,7 @@ msgid "Media management"
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:169
-msgid "When blog post removed permanently delete the associated media file."
+msgid "On blog post deletion, permanently remove the associated featured image."
 msgstr ""
 
 #: admin/inc/bp-member-blog-setting-general-tab.php:182
@@ -893,7 +893,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: includes/buddypress-member-blog-functions.php:309
+#: includes/buddypress-member-blog-functions.php:307
 msgid "Auto Draft"
 msgstr ""
 
@@ -973,63 +973,63 @@ msgstr ""
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:604
-#: public/class-buddypress-member-blog-public.php:702
+#: public/class-buddypress-member-blog-public.php:606
+#: public/class-buddypress-member-blog-public.php:704
 msgid "Post updated successfully."
-msgstr ""
-
-#: public/class-buddypress-member-blog-public.php:604
-#: public/class-buddypress-member-blog-public.php:622
-msgid "View Post"
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:606
 #: public/class-buddypress-member-blog-public.php:624
+msgid "View Post"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:608
+#: public/class-buddypress-member-blog-public.php:626
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:622
-#: public/class-buddypress-member-blog-public.php:706
+#: public/class-buddypress-member-blog-public.php:624
+#: public/class-buddypress-member-blog-public.php:708
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:668
+#: public/class-buddypress-member-blog-public.php:670
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:760
+#: public/class-buddypress-member-blog-public.php:763
 msgid "You are not allowed to access this page."
 msgstr ""
 
-#: templates/draft-posts.php:82 templates/pending-posts.php:82
-#: templates/posts.php:81
+#: templates/draft-posts.php:82 templates/pending-posts.php:72
+#: templates/pending-posts.php:84 templates/posts.php:69 templates/posts.php:83
 msgid "Permanent Link to"
 msgstr ""
 
-#: templates/draft-posts.php:90 templates/pending-posts.php:90
-#: templates/posts.php:89
+#: templates/draft-posts.php:90 templates/pending-posts.php:92
+#: templates/posts.php:91
 #. translators: %s: Date of the post
 msgid "Posted on %s"
 msgstr ""
 
-#: templates/draft-posts.php:115 templates/pending-posts.php:114
-#: templates/posts.php:112
+#: templates/draft-posts.php:115 templates/pending-posts.php:116
+#: templates/posts.php:114
 msgid "Read the rest of this entry &rarr;"
 msgstr ""
 
-#: templates/draft-posts.php:119 templates/pending-posts.php:118
-#: templates/posts.php:116
+#: templates/draft-posts.php:119 templates/pending-posts.php:120
+#: templates/posts.php:118
 msgid "Pages: "
 msgstr ""
 
-#: templates/draft-posts.php:158 templates/pending-posts.php:157
-#: templates/posts.php:153
+#: templates/draft-posts.php:158 templates/pending-posts.php:159
+#: templates/posts.php:155
 msgid "You have not posted anything yet."
 msgstr ""
 
-#: templates/draft-posts.php:169 templates/draft-posts.php:180
-#: templates/pending-posts.php:168 templates/pending-posts.php:179
-#: templates/posts.php:164 templates/posts.php:175
+#: templates/draft-posts.php:170 templates/draft-posts.php:183
+#: templates/pending-posts.php:171 templates/pending-posts.php:184
+#: templates/posts.php:167 templates/posts.php:180
 msgid "%s hasn't posted anything yet."
 msgstr ""
 

@@ -759,7 +759,9 @@ class Buddypress_Member_Blog_Public {
 			if ( empty( $user_roles ) && empty( $user_types ) ) {
 				ob_start();
 				echo '<div class="bp-feedback bp-messages bp-template-notice error"><span class="bp-icon" aria-hidden="true"></span>';
+				echo '<p>';
 				esc_html_e( 'You are not allowed to access this page.', 'buddypress-member-blog' );
+				echo '</p>';
 				echo '</div>';
 				return ob_get_clean();
 			}

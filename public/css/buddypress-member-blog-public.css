@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Global
 # Add New Post / Update Post
 # Single Profile Page
 # RTL Support
@@ -10,12 +11,56 @@
 }
 
 /*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+.buddypress-wrap .standard-form.bp-member-blog-post-form textarea,
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="text"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="color"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="date"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="datetime"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="datetime-local"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="email"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="month"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="number"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="range"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="search"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="tel"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="time"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="url"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="week"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form select,
+.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="password"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form [data-bp-search] input[type="search"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form [data-bp-search] input[type="text"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form .groups-members-search input[type="search"],
+.buddypress-wrap .standard-form.bp-member-blog-post-form .groups-members-search input[type="text"] {
+    background-color: #fff;
+}
+
+/*--------------------------------------------------------------
 # Add New Post / Update Post
 --------------------------------------------------------------*/
 .bp-member-blog-container form#bp-member-post {
     padding: 20px;
     border: 1px solid #eee;
     background: #fff;
+    border-radius: 10px;
+}
+
+.bp-member-blog-field-container {
+    margin: 1.5em 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+}
+
+.bp-member-blog-field-container:first-child {
+    margin-top: 0;
+}
+
+.bp-member-blog-field-container .selectize-input {
+    box-shadow: none;
 }
 
 button#insert-media-button {
@@ -63,7 +108,7 @@ button#insert-media-button:hover {
 }
 
 .buddypress-wrap .standard-form.bp-member-blog-post-form label {
-    margin: 15px 0;
+    margin: 0;
     font-weight: 400;
     border: none !important;
 }
@@ -91,10 +136,16 @@ button#insert-media-button:hover {
     font-size: 15px;
 }
 
-.bp-member-blog-container .standard-form>label>span,
-.bp-member-blog-container .standard-form>.label>span {
-    display: block;
-    margin: 0 0 5px;
+.bp-member-blog-container .standard-form .bp-member-blog-field-container label>span,
+.bp-member-blog-container .standard-form .bp-member-blog-field-container .label>span {
+    display: inline-block;
+    font-weight: 500;
+    margin: 0 0 3px;
+    padding: 0;
+}
+
+.bp-member-blog-required {
+    color: #ff0000;
 }
 
 ul.bpmb-post-tag-lists {
@@ -133,6 +184,10 @@ ul.bpmb-post-tag-lists span.bpmb-tag-remove {
 
 ul.bpmb-post-tag-lists span.bpmb-tag-remove:hover {
     background: rgba(0, 0, 0, 0.05);
+}
+
+input#blog-submit {
+    font-size: 18px;
 }
 
 .bp-member-blog-post-form .bp-member-blog-btn {
@@ -577,7 +632,7 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
 }
 
 /*--------------------------------------------------------------
-buddyboss-theme
+#  buddyboss-theme
 --------------------------------------------------------------*/
 .buddyboss-theme #wp-bp_member_blog_post_content-wrap input {
     height: auto;
@@ -610,7 +665,7 @@ buddyboss-theme
 }
 
 /*--------------------------------------------------------------
- Dark Mode
+# Dark Mode
 --------------------------------------------------------------*/
 .dark-scheme .post-actions span.delete-post a:before,
 .dark-mode .post-actions span.delete-post a:before {
@@ -642,7 +697,7 @@ buddyboss-theme
 }
 
 /*--------------------------------------------------------------
-Youzify Support
+#  Youzify Support
 --------------------------------------------------------------*/
 #youzify .bp-member-blog-container.bpmb-blog-posts .bpmb-blog-post {
     background: #fff;

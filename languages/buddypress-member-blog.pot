@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 13:50:10+00:00\n"
+"POT-Creation-Date: 2024-07-25 13:30:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -974,7 +974,7 @@ msgid "Post deleted successfully"
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:606
-#: public/class-buddypress-member-blog-public.php:704
+#: public/class-buddypress-member-blog-public.php:708
 msgid "Post updated successfully."
 msgstr ""
 
@@ -989,15 +989,15 @@ msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
 #: public/class-buddypress-member-blog-public.php:624
-#: public/class-buddypress-member-blog-public.php:708
+#: public/class-buddypress-member-blog-public.php:712
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:670
+#: public/class-buddypress-member-blog-public.php:673
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:763
+#: public/class-buddypress-member-blog-public.php:767
 msgid "You are not allowed to access this page."
 msgstr ""
 
@@ -1033,19 +1033,19 @@ msgstr ""
 msgid "%s hasn't posted anything yet."
 msgstr ""
 
-#: templates/edit.php:50
+#: templates/edit.php:49
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:50
+#: templates/edit.php:49
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:53
+#: templates/edit.php:52
 msgid "Submit for Review"
 msgstr ""
 
-#: templates/edit.php:65
+#: templates/edit.php:64
 msgid "Title:"
 msgstr ""
 
@@ -1061,32 +1061,32 @@ msgstr ""
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:115
+#: templates/edit.php:153
 #. translators: Display plural label name
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:118
+#: templates/edit.php:156
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:126
+#: templates/edit.php:167
 msgid "Tag:"
 msgstr ""
 
-#: templates/edit.php:128
+#: templates/edit.php:169
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:150
+#: templates/edit.php:192
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:154
+#: templates/edit.php:196
 msgid "Add Image"
 msgstr ""
 
-#: templates/edit.php:180
+#: templates/edit.php:222
 msgid "Save"
 msgstr ""
 

@@ -656,7 +656,10 @@ class Buddypress_Member_Blog_Public {
 					update_post_meta( $post_id, '_thumbnail_id', $attachment_id );
 				}
 			}
-
+			
+			
+			do_action( 'buddypress_member_blog_post_submit', $post_id );
+			
 			if ( isset( $_POST['bp_member_blog_form_save'] ) ) {
 
 				if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
@@ -671,7 +674,8 @@ class Buddypress_Member_Blog_Public {
 				wp_redirect( $url );
 				exit;
 			}
-			do_action( 'buddypress_member_blog_post_submit', $post_id );
+			
+			
 			/* Redirect to single post page when user publish post */
 			if ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) {
 				$post_link = get_permalink( $post_id );

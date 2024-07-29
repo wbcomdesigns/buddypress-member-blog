@@ -13,29 +13,6 @@
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
-.buddypress-wrap .standard-form.bp-member-blog-post-form textarea,
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="text"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="color"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="date"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="datetime"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="datetime-local"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="email"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="month"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="number"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="range"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="search"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="tel"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="time"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="url"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="week"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form select,
-.buddypress-wrap .standard-form.bp-member-blog-post-form input[type="password"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form [data-bp-search] input[type="search"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form [data-bp-search] input[type="text"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form .groups-members-search input[type="search"],
-.buddypress-wrap .standard-form.bp-member-blog-post-form .groups-members-search input[type="text"] {
-    background-color: #fff;
-}
 
 /*--------------------------------------------------------------
 # Add New Post / Update Post
@@ -53,6 +30,10 @@
     background: rgba(0, 0, 0, 0.01);
     border: 1px solid rgba(0, 0, 0, 0.02);
     border-radius: 10px;
+}
+
+.bp-member-blog-field-container:hover {
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .bp-member-blog-field-container:first-child {
@@ -656,12 +637,6 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     margin-bottom: 0;
     min-height: 28px;
     line-height: 28px;
-}
-
-#wp-bp_member_blog_post_content-wrap button.wp-switch-editor {
-    line-height: 28px;
-    min-height: 28px;
-    border: none !important
 }
 
 /*--------------------------------------------------------------

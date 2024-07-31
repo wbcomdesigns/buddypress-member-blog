@@ -222,6 +222,7 @@ aside.bp-feedback.saved-successfully.bp-messages.bp-template-notice.success {
     border-left: 4px solid green;
     border-radius: 0;
     margin-bottom: 20px;
+    padding: 0;
 }
 
 aside.bp-feedback.saved-successfully span.bp-icon {
@@ -233,6 +234,7 @@ aside.bp-feedback.saved-successfully span.bp-icon {
     color: green;
     font-weight: 500;
     margin: 0;
+    padding: 10px 15px;
 }
 
 select#bp-blog-category-select {
@@ -295,7 +297,7 @@ select#bp-blog-category-select {
     -ms-flex-pack: center;
     justify-content: center;
     font-size: 16px;
-    margin: 10px 0;
+    margin: 0;
     padding: 40px 0;
 }
 

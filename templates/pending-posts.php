@@ -56,7 +56,7 @@ $query_args = array(
 query_posts( $query_args );
 
 ?>
-<?php do_action( 'bp_member_blog_before_posts' ); ?>
+<?php do_action( 'bp_member_blog_before_posts', 'pending' ); ?>
 <div  class="bp-member-blog-container bpmb-blog-posts">
 	<?php if ( have_posts() ) : ?>
 

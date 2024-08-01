@@ -204,7 +204,7 @@ class Buddypress_Member_Blog_Public {
 			*
 			*/
 			$member_types = bp_get_member_type( bp_displayed_user_id(), false );
-			$display_user = get_userdata( bp_displayed_user_id() );
+			$display_user = get_userdata( bp_displayed_user_id() );			
 			if ( empty( $display_user ) && ! is_admin() ) {
 				return;
 			}
@@ -212,8 +212,8 @@ class Buddypress_Member_Blog_Public {
 				$bp_member_blog_gen_stngs['bp_create_post'] = array( 'administrator' );
 			}
 
-			if ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
-			|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
+			if ( !empty( $display_user ) && ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
+			|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) ) {
 				$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
 				$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
 				$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );

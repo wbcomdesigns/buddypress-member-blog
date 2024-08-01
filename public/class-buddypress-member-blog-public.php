@@ -149,7 +149,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function buddypress_member_blog_setup_nav() {
-		if ( bp_is_user() && bp_is_active( 'members' ) ) {
+		if ( ( bp_is_user() && bp_is_active( 'members' ) ) || is_admin() ) {
 			if ( class_exists( 'Youzify' ) ) {
 				$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
 				$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
@@ -205,7 +205,7 @@ class Buddypress_Member_Blog_Public {
 			*/
 			$member_types = bp_get_member_type( bp_displayed_user_id(), false );
 			$display_user = get_userdata( bp_displayed_user_id() );
-			if ( empty( $display_user ) ) {
+			if ( empty( $display_user ) && ! is_admin() ) {
 				return;
 			}
 			if ( ! isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
@@ -221,7 +221,7 @@ class Buddypress_Member_Blog_Public {
 				// translators: %s is replaced with a count of total posts
 				$blog_label                                 = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
 				$blog_slug                                  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-				if ( empty( $user_roles ) && empty( $user_types ) ) {
+				if ( empty( $user_roles ) && empty( $user_types ) && !is_admin() ) {
 					return;
 				} else {
 					bp_core_new_nav_item(
@@ -238,7 +238,7 @@ class Buddypress_Member_Blog_Public {
 				}
 			}
 
-			if ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) {
+			if (  ! is_admin() && ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) ) {
 				return;
 			}
 			// $blog_label = apply_filters( 'bp_member_change_blog_label', __( 'Blog', 'buddypress-member-blog' ) );

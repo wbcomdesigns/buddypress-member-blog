@@ -149,43 +149,81 @@ class Buddypress_Member_Blog_Public {
 	 * @since 1.0.0
 	 */
 	public function buddypress_member_blog_setup_nav() {
-		if ( ( bp_is_user() && bp_is_active( 'members' ) ) || is_admin() ) {
-			if ( class_exists( 'Youzify' ) ) {
-				$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
-				$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-				if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
-					$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
-				}
-				// Add Sub Tab.
-				bp_core_new_subnav_item(
-					array(
-						'slug'            => 'bp-new-post',
-						'parent_slug'     => 'posts',
-						'name'            => __( 'Add new post', 'buddypress-member-blog' ),
-						'parent_url'      => bp_displayed_user_domain() . 'posts/',
-						'screen_function' => array( $this, 'bp_member_new_post' ),
-						'link'            => $link,
-						'position'        => 100,
-					)
-				);
-				return false;
-			}
-			global  $bp,$current_user;
-			$user_id = bp_displayed_user_id();
-
+		
+		if ( class_exists( 'Youzify' ) ) {
+			$link                     = bp_displayed_user_domain() . 'posts/bp-new-post';
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-
-			$is_my_profile = bp_is_my_profile();
-
-			if ( $is_my_profile ) {
-				$total_posts = bp_member_blog_get_total_posted( $user_id, $is_my_profile );
-			} else {
-				$total_posts = bp_member_blog_get_total_published_posts( $user_id );
+			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+				$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
 			}
+			// Add Sub Tab.
+			bp_core_new_subnav_item(
+				array(
+					'slug'            => 'bp-new-post',
+					'parent_slug'     => 'posts',
+					'name'            => __( 'Add new post', 'buddypress-member-blog' ),
+					'parent_url'      => bp_displayed_user_domain() . 'posts/',
+					'screen_function' => array( $this, 'bp_member_new_post' ),
+					'link'            => $link,
+					'position'        => 100,
+				)
+			);
+			return false;
+		}
+		global  $bp,$current_user;
+		$user_id = bp_displayed_user_id();
+
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+
+		$is_my_profile = bp_is_my_profile();
+
+		if ( $is_my_profile ) {
+			$total_posts = bp_member_blog_get_total_posted( $user_id, $is_my_profile );
+		} else {
+			$total_posts = bp_member_blog_get_total_published_posts( $user_id );
+		}
+		// translators: %s is replaced with a count of total posts
+		$blog_label = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		if ( is_user_logged_in() ) {
+			bp_core_new_nav_item(
+				array(
+					/* translators: %s: */
+					'name'                => $blog_label,
+					'slug'                => $blog_slug,
+					'screen_function'     => array( $this, 'bp_member_posts' ),
+					'default_subnav_slug' => $blog_slug,
+					'position'            => 80,
+					'item_css_id'         => 'bp-member-blog',
+				)
+			);
+		}
+
+		/*
+		* Check current user role to allowed create post or not
+		*
+		*/
+		$member_types = bp_get_member_type( bp_displayed_user_id(), false );
+		$display_user = get_userdata( bp_displayed_user_id() );			
+		if ( empty( $display_user ) && ! is_admin() ) {
+			return;
+		}
+		if ( ! isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
+			$bp_member_blog_gen_stngs['bp_create_post'] = array( 'administrator' );
+		}
+
+		if ( !empty( $display_user ) && ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
+		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) ) {
+			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
+			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
+			$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
 			// translators: %s is replaced with a count of total posts
-			$blog_label = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
-			$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-			if ( is_user_logged_in() ) {
+			$blog_label                                 = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
+			$blog_slug                                  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+			if ( empty( $user_roles ) && empty( $user_types ) && !is_admin() ) {
+				return;
+			} else {
 				bp_core_new_nav_item(
 					array(
 						/* translators: %s: */
@@ -198,113 +236,75 @@ class Buddypress_Member_Blog_Public {
 					)
 				);
 			}
-
-			/*
-			* Check current user role to allowed create post or not
-			*
-			*/
-			$member_types = bp_get_member_type( bp_displayed_user_id(), false );
-			$display_user = get_userdata( bp_displayed_user_id() );			
-			if ( empty( $display_user ) && ! is_admin() ) {
-				return;
-			}
-			if ( ! isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) {
-				$bp_member_blog_gen_stngs['bp_create_post'] = array( 'administrator' );
-			}
-
-			if ( !empty( $display_user ) && ( ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) && ! empty( $bp_member_blog_gen_stngs['bp_create_post'] ) )
-			|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) ) {
-				$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
-				$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
-				$user_roles                                 = array_intersect( (array) $display_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
-				$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
-				// translators: %s is replaced with a count of total posts
-				$blog_label                                 = apply_filters( 'bp_member_change_blog_label', sprintf( esc_html__( 'Blog %s', 'buddypress-member-blog' ), '<span class="count">' . $total_posts . '</span>' ) );
-				$blog_slug                                  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-				if ( empty( $user_roles ) && empty( $user_types ) && !is_admin() ) {
-					return;
-				} else {
-					bp_core_new_nav_item(
-						array(
-							/* translators: %s: */
-							'name'                => $blog_label,
-							'slug'                => $blog_slug,
-							'screen_function'     => array( $this, 'bp_member_posts' ),
-							'default_subnav_slug' => $blog_slug,
-							'position'            => 80,
-							'item_css_id'         => 'bp-member-blog',
-						)
-					);
-				}
-			}
-
-			if (  ! is_admin() && ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) ) {
-				return;
-			}
-			// $blog_label = apply_filters( 'bp_member_change_blog_label', __( 'Blog', 'buddypress-member-blog' ) );
-			// $blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-			// Add 'Blog' to the main navigation.
-			bp_core_new_nav_item(
-				array(
-					/* translators: %s: */
-					'name' => sprintf(esc_html__('%1$s %2$s', 'buddypress-member-blog'), $blog_label, '<span class="count">' . $total_posts . '</span>'),
-					'slug'                => $blog_slug,
-					'screen_function'     => array( $this, 'bp_member_posts' ),
-					'default_subnav_slug' => $blog_slug,
-					'position'            => 80,
-					'item_css_id'         => 'bp-member-blog',
-				)
-			);
-			bp_core_new_subnav_item(
-				array(
-					'name'            => __( 'Published', 'buddypress-member-blog' ),
-					'slug'            => 'blog',
-					'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
-					'parent_slug'     => $blog_slug,
-					'screen_function' => array( $this, 'bp_member_posts' ),
-					'position'        => 30,
-				)
-			);
-
-			bp_core_new_subnav_item(
-				array(
-					'name'            => __( 'Pending', 'buddypress-member-blog' ),
-					'slug'            => 'pending',
-					'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
-					'parent_slug'     => $blog_slug,
-					'screen_function' => array( $this, 'bp_member_pending_posts' ),
-					'position'        => 30,
-				)
-			);
-
-			bp_core_new_subnav_item(
-				array(
-					'name'            => __( 'Draft Posts', 'buddypress-member-blog' ),
-					'slug'            => 'draft',
-					'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
-					'parent_slug'     => $blog_slug,
-					'screen_function' => array( $this, 'bp_member_draft_posts' ),
-					'position'        => 30,
-				)
-			);
-
-			$link                     = '';
-			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-			if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
-				$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
-			}
-			bp_core_new_subnav_item(
-				array(
-					'name'            => __( 'New Post', 'buddypress-member-blog' ),
-					'slug'            => 'bp-new-post',
-					'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
-					'parent_slug'     => $blog_slug,
-					'screen_function' => array( $this, 'bp_member_new_post' ),
-					'link'            => $link,
-					'position'        => 30,
-				)
-			);
 		}
+
+		if (  ! is_admin() && ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) ) {
+			return;
+		}
+		// $blog_label = apply_filters( 'bp_member_change_blog_label', __( 'Blog', 'buddypress-member-blog' ) );
+		// $blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		// Add 'Blog' to the main navigation.
+		bp_core_new_nav_item(
+			array(
+				/* translators: %s: */
+				'name' => sprintf(esc_html__('%1$s %2$s', 'buddypress-member-blog'), $blog_label, '<span class="count">' . $total_posts . '</span>'),
+				'slug'                => $blog_slug,
+				'screen_function'     => array( $this, 'bp_member_posts' ),
+				'default_subnav_slug' => $blog_slug,
+				'position'            => 80,
+				'item_css_id'         => 'bp-member-blog',
+			)
+		);
+		bp_core_new_subnav_item(
+			array(
+				'name'            => __( 'Published', 'buddypress-member-blog' ),
+				'slug'            => 'blog',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
+				'screen_function' => array( $this, 'bp_member_posts' ),
+				'position'        => 30,
+			)
+		);
+
+		bp_core_new_subnav_item(
+			array(
+				'name'            => __( 'Pending', 'buddypress-member-blog' ),
+				'slug'            => 'pending',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
+				'screen_function' => array( $this, 'bp_member_pending_posts' ),
+				'position'        => 30,
+			)
+		);
+
+		bp_core_new_subnav_item(
+			array(
+				'name'            => __( 'Draft Posts', 'buddypress-member-blog' ),
+				'slug'            => 'draft',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
+				'screen_function' => array( $this, 'bp_member_draft_posts' ),
+				'position'        => 30,
+			)
+		);
+
+		$link                     = '';
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
+			$link = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] );
+		}
+		bp_core_new_subnav_item(
+			array(
+				'name'            => __( 'New Post', 'buddypress-member-blog' ),
+				'slug'            => 'bp-new-post',
+				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
+				'parent_slug'     => $blog_slug,
+				'screen_function' => array( $this, 'bp_member_new_post' ),
+				'link'            => $link,
+				'position'        => 30,
+			)
+		);
+		
 	}
 
 

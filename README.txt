@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.6.0
-Stable tag: 2.2.1
+Tested up to: 6.6.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,18 @@ e.g.
 
 
 == Changelog ==
+= 2.2.2 =
+* Managed: Backend options responsive fixes
+* Managed: Only Show the Blog Parent Menu
+* Fixed: Removed Condition to show the menu on all pages
+* Fixed: Warning in the admin side
+* Fixed: Blog menu with BB Platform
+* Fixed: Post updated notice UI
+* Fixed: Update and manage form fields UI in frontend
+* Fixed: Remove unwanted css
+* Fixed: Update and manage form fields UI in frontend 
+* Fixed: Move the Hook after updating the custom fields
+
 = 2.2.1 =
 * Enhancement: Added nested view for category management.
 * Update: Merged branch '2.2.1' from GitHub repository for synchronization.

@@ -99,8 +99,16 @@ h4.wbcom-support-section {
 }
 
 .wbcom-settings-section-options-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+}
+
+.wbcom-settings-section-options-flex select#my_dashboard_page {
+    margin-right: 15px;
 }
 
 .wbcom-settings-section-options select,
@@ -138,11 +146,16 @@ h4.wbcom-support-section {
     text-align: center;
     border-color: #2a32ef;
     font-size: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #2a32ef;
     color: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    margin-left: 8px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     border-radius: 8px;
 }
@@ -169,8 +182,12 @@ ul.wbcom-settings-member-retraction.wbcom-settings-section-options-flex {
 div#wb_admin_plugin_name {
     font-size: 20px;
     font-weight: 600;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: #000;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -189,9 +206,15 @@ div#wb_admin_plugin_name span {
     background: #E1E6F4;
     position: relative;
     border-radius: 12px 12px 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 25px 30px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -239,12 +262,15 @@ div#wb_admin_plugin_name span {
 
 #wb_admin_header #wb_admin_nav ul li.wb_admin_nav_item a {
     font-size: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding-left: 30px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #222222;
     -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
     transition: all .2s ease-out;
     text-decoration: none;
 }
@@ -300,6 +326,8 @@ div#wb_admin_plugin_name span {
 .wbcom-admin-settings-page {
     background: #fff;
     padding: 30px 30px 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
 }
@@ -354,7 +382,6 @@ div#wb_admin_plugin_name span {
     text-decoration: none;
     border-radius: 10px;
     -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
     transition: all .2s ease-out;
     box-shadow: none;
     outline: none;
@@ -368,10 +395,8 @@ div#wb_admin_plugin_name span {
 .wbcom-admin-settings-page .nav-tab-active:hover {
     color: #2a32ef;
     background: #ffffff;
-    -webkit-box-shadow: 0px 12px 30px rgba(53, 66, 134, 0.12);
     box-shadow: 0px 12px 30px rgba(53, 66, 134, 0.12);
     -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
     transition: all .3s ease-in;
     border-radius: 10px;
     outline: none;
@@ -410,6 +435,7 @@ div#wb_admin_plugin_name span {
     text-shadow: none;
     font-weight: 600;
     border: 0;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
     box-shadow: 0px 10px 25px rgba(32, 53, 85, 0.35);
     border-radius: 12px;
@@ -454,8 +480,14 @@ Themes and Extension
 }
 
 .wbcom-bp-addons-plugins-title-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin-bottom: 25px;
 }
@@ -471,7 +503,11 @@ Themes and Extension
 }
 
 ul.wbcom-addons-plugins-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -503,6 +539,7 @@ ul.wbcom-addons-plugins-links li {
     background: #2a32ef;
     border-radius: 10px;
     font-size: 15px;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
     box-shadow: 0px 8px 20px rgba(32, 53, 85, 0.25);
 }
@@ -517,26 +554,27 @@ ul.wbcom-addons-plugins-links li {
 }
 
 .wbcom-addon-plugins-inner-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .wbcom-addons-plugins-card {
     background: #FBFBFB;
     border-radius: 10px;
-    -webkit-box-shadow: 0 10px 25px rgba(173, 180, 210, 0.20);
     box-shadow: 0 10px 25px rgba(173, 180, 210, 0.20);
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     padding: 1.2%;
@@ -582,7 +620,10 @@ ul.wbcom-addons-plugins-links li {
 }
 
 .wbcom-addons-card-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -599,6 +640,7 @@ ul.wbcom-addons-plugins-links li {
     text-align: center;
     margin-right: 10px;
     margin-top: 10px;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -651,11 +693,16 @@ ul#wbcom_support_list {
     line-height: 2.1em;
     overflow: hidden;
     border-radius: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .wbcom_help_support_box {
+    -ms-flex-item-align: start;
     align-self: flex-start;
     width: 100%;
     max-width: 48%;
@@ -697,6 +744,7 @@ ul#wbcom_support_list {
     display: inline-block;
     text-decoration: none;
     text-shadow: none;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
     margin-top: 15px;
 }
@@ -851,9 +899,11 @@ License style
     border-radius: 12px;
     padding: 8px 15px;
     text-align: center;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
     color: #fff;
     width: 100%;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -952,12 +1002,17 @@ License style
 }
 
 .wbcom-support-info-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 40px -15px 10px;
 }
 
 .wbcom-support-info-wrap .wbcom-support-info-widgets {
+    -ms-flex-item-align: start;
     align-self: flex-start;
     width: 100%;
     max-width: 325px;
@@ -979,6 +1034,7 @@ License style
     max-width: 190px;
     text-align: center;
     width: 100%;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -1000,6 +1056,7 @@ License style
     font-size: 20px;
     vertical-align: top;
     text-align: center;
+    -webkit-transition: color 0.1s ease-in;
     transition: color 0.1s ease-in;
     margin-right: 8px;
 }
@@ -1030,6 +1087,7 @@ License style
     display: none;
     position: relative;
     background: #1d2327;
+    -webkit-transition: background .2s ease-out;
     transition: background .2s ease-out;
 }
 
@@ -1041,17 +1099,21 @@ License style
     height: 100%;
     position: absolute;
     width: 100%;
+    -webkit-transition-duration: 0.3s, 0.3s;
     transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0s;
     transition-delay: 0.3s, 0s;
 }
 
 .wb-toggle-icon .wb-icon-bars:before {
     top: -8px;
+    -webkit-transition-property: top, -webkit-transform;
     transition-property: top, transform;
 }
 
 .wb-toggle-icon .wb-icon-bars:after {
     bottom: -8px;
+    -webkit-transition-property: bottom, -webkit-transform;
     transition-property: bottom, transform;
 }
 
@@ -1080,6 +1142,7 @@ License style
 
 .wb-toggle-btn:checked~.wb-toggle-icon .wb-icon-bars:before,
 .wb-toggle-btn:checked~.wb-toggle-icon .wb-icon-bars:after {
+    -webkit-transition-delay: 0s, 0.3s;
     transition-delay: 0s, 0.3s;
 }
 
@@ -1093,7 +1156,6 @@ License style
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
-    -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
@@ -1104,6 +1166,7 @@ License style
     display: none;
     position: relative;
     background: #1d2327;
+    -webkit-transition: background .2s ease-out;
     transition: background .2s ease-out;
 }
 
@@ -1164,6 +1227,7 @@ License style
     height: 20px;
     background-color: #fff;
     border-radius: 6px;
+    -webkit-transition: all .3s;
     transition: all .3s;
     box-shadow: 0px 0px 8px rgb(0 0 0 / 35%);
 }
@@ -1203,6 +1267,7 @@ License style
     height: 20px;
     background-color: #fff;
     border-radius: 6px;
+    -webkit-transition: all .3s;
     transition: all .3s;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.35);
 }
@@ -1256,6 +1321,7 @@ License style
 }
 
 .wbcom-faq-section-row {
+    -ms-flex-item-align: start;
     align-self: flex-start;
     width: auto;
     background: #fff;
@@ -1265,6 +1331,7 @@ License style
     margin: 12px 0;
     border: 1px solid rgba(200, 197, 218, 0.50);
     box-shadow: 0 15px 36px rgba(32, 53, 85, 0.15);
+    -webkit-transition: all 0.6s ease 0s;
     transition: all 0.6s ease 0s;
     position: relative;
 }
@@ -1291,6 +1358,7 @@ button.wbcom-faq-accordion {
     text-align: left;
     padding: 0;
     background-color: transparent;
+    -webkit-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
     width: 100%;
 }
@@ -1304,6 +1372,7 @@ div.wbcom-faq-panel {
     padding: 0;
     max-height: 0;
     overflow: hidden;
+    -webkit-transition: max-height 0.2s ease-out;
     transition: max-height 0.2s ease-out;
     margin: 0px;
 }
@@ -1479,10 +1548,6 @@ Media Queries
         width: 100%;
     }
 
-    .wbcom-settings-section-options-flex {
-        display: block;
-    }
-
     .wbcom-settings-section-options ul.wbcom-settings-member-retraction.wbcom-settings-section-options-flex li {
         width: 100%;
     }
@@ -1491,9 +1556,16 @@ Media Queries
 @media screen and (max-width: 1189px) {
 
     #wb_admin_header #wb_admin_nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
@@ -1567,10 +1639,6 @@ Media Queries
         height: auto;
     }
 
-    .wbcom-settings-section-options.wbcom-settings-section-options-flex a.button-secondary {
-        margin: 10px 0 0 0;
-    }
-
     /*Theme Page*/
     .wbcom-bp-addons-plugins-title-section {
         display: block;
@@ -1578,6 +1646,8 @@ Media Queries
 
     ul.wbcom-addons-plugins-links {
         margin: 0;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
@@ -1619,6 +1689,8 @@ Media Queries
     }
 
     .wbcom-bp-addons-plugins-list.wbcom-bp-free-addon-plugins .wbcom-bp-addons-plugins-title-section {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -1706,7 +1778,10 @@ Media Queries
 
     div#wb_admin_plugin_name {
         font-size: 18px;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
@@ -1746,8 +1821,6 @@ Media Queries
     .wbcom-welcome-support-info .wbcom-support-inner p {
         height: auto;
     }
-
-
 }
 
 @media screen and (min-width: 591px) and (max-width: 1189px) {
@@ -1755,6 +1828,8 @@ Media Queries
     .wbcom-addon-plugins-inner-wrapper,
     ul#wbcom_support_list,
     .wbcom-bp-addons-plugins-title-section {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -1764,17 +1839,13 @@ Media Queries
         max-width: 44%;
         padding: 15px;
     }
-
-
 }
 
-
-@media only screen and (max-width: 926px) {
-
-    .wbcom-settings-section-options.wbcom-settings-section-options-flex a.button-secondary {
-        margin: 0 15px 0px;
+@media screen and (max-width: 767px) {
+    .wbcom-settings-section-options-flex select#my_dashboard_page {
+        max-width: 100%;
+        margin: 0 0 15px;
     }
-
 }
 
 /* Media Queries */

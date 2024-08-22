@@ -250,11 +250,11 @@ function bp_member_blog_paginate() {
 		$base = " ";
 		// get the current page.
 		$current_page = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-			$user_id  = bp_displayed_user_id();
+		$user_id  = bp_displayed_user_id();
 		// structure of “format” depends on whether we’re using pretty permalinks.
-			$format = '?paged=%#%';
-		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-		if ( $blog_slug == bp_current_action() && bp_is_current_component() ) {
+		$format = '?paged=%#%';
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );		
+		if ( $blog_slug == bp_current_action() ) {
 			$base = trailingslashit( bp_members_get_user_url( $user_id ) . $blog_slug );
 		}
 		echo wp_kses_post(
@@ -263,11 +263,7 @@ function bp_member_blog_paginate() {
 					'base'      => $base . '%_%',
 					'format'    => $format,
 					'current'   => $current_page,
-					'total'     => $total,
-					'end_size'  => 1,
-					'mid_size'  => 2,
-					'prev_next' => true,
-					'type'      => 'plain',
+					'total'     => $total,					
 				)
 			)
 		);

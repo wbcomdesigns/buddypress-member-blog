@@ -15,7 +15,7 @@
  * Plugin Name:       Wbcom Designs - BuddyPress Member Blog
  * Plugin URI:        https://wbcomdesigns.com/downloads/buddypress-member-blog
  * Description:       Allow your BuddyPress members to create and manage their blog posts from their profile.  Allow them to publish their posts directly or send them for review. You can easily navigate to any member's profile to read  their posts.
- * Version:           2.2.2
+ * Version:           2.2.2.1
  * Author:            Wbcom Designs
  * Author URI:        https://wbcomdesigns.com/
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BUDDYPRESS_MEMBER_BLOG_VERSION', '2.2.2' );
+define( 'BUDDYPRESS_MEMBER_BLOG_VERSION', '2.2.2.1' );
 
 
 define( 'BUDDYPRESS_MEMBER_BLOG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );

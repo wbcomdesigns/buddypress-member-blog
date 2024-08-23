@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.6.1
-Stable tag: 2.2.2
+Stable tag: 2.2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 2.2.2.1 =
+* Fix: Pagination issue
+
 = 2.2.2 =
 * Managed: Backend options responsive fixes
 * Managed: Only Show the Blog Parent Menu

@@ -51,6 +51,11 @@
             }
         );
 
+         // Trigger file input click when button is clicked
+         $("#custom-file-upload-button").on("click", function () {
+            $("#bp_member_blog_post_featured_image").click();
+        });
+
         $(document).on(
             "change",
             "#bp_member_blog_post_featured_image",

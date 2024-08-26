@@ -307,16 +307,7 @@ select#bp-blog-category-select {
 
 .bp-member-blog-featured-image-wrapper .custom-file-upload {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-.bp-member-blog-featured-image-wrapper .custom-file-upload:hover {
-    background-color: #45a049;
 }
 
 .bp_member_blog_post_img_preview {

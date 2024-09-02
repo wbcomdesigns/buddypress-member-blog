@@ -436,3 +436,17 @@ function bp_member_blog_load_template( $template ) {
 		require $located;
 	}
 }
+
+// Function to display categories as nested options.
+	function bp_member_blog_display_category_options( $categories, $post_selected_category = array(), $depth = 0 ) {
+		foreach ( $categories as $cat ) {
+			$selected = ( ! empty( $post_selected_category ) && in_array( $cat->term_id, $post_selected_category ) ) ? 'selected' : '';
+			echo '<option value="' . esc_attr( $cat->term_id ) . '" ' . esc_attr( $selected ) . '>';
+			echo str_repeat( '&nbsp;', $depth * 4 ) . esc_html( $cat->name );
+			echo '</option>';
+
+			if ( ! empty( $cat->children ) ) {
+				display_category_options( $cat->children, $post_selected_category, $depth + 1 );
+			}
+		}
+	}

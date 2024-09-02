@@ -13,7 +13,8 @@ $blog_post                = (object) array(
 );
 $post_selected_category   = $post_selected_tag = array();
 $post_thumbnail           = '';
-$args                     = array();
+$exclude                  = array();
+
 if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$post_id   = sanitize_text_field( wp_unslash( $_GET['post_id'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$blog_post = get_post( $post_id );
@@ -31,12 +32,8 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 	$post_thumbnail         = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 }
 
-$args = array(
-	'taxonomy'   => 'category',
-	'hide_empty' => false,
-);
 if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) ) {
-	$args['exclude'] = $bp_member_blog_gen_stngs['exclude_category'];
+	$exclude[] = $bp_member_blog_gen_stngs['exclude_category'];
 }
 
 $create_cat = '';
@@ -44,7 +41,6 @@ if ( isset( $bp_member_blog_gen_stngs['create_category'] ) && ! empty( $bp_membe
 	$create_cat = $bp_member_blog_gen_stngs['create_category'];
 }
 
-$category = get_terms( apply_filters( 'bp_member_blog_terms_args', $args ) );
 
 $submit_btn_value = (isset($_GET) && isset($_GET['action']) && 'edit' === $_GET['action']) ? __('Update post', 'buddypress-member-blog') : __('Create a new post', 'buddypress-member-blog'); //phpcs:ignore
 
@@ -100,27 +96,17 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 							<?php
 							// Fetch categories hierarchically.
 							$categories = get_categories(
-								array(
-									'hide_empty'   => false,
-									'hierarchical' => true,
-									'orderby'      => 'name',
-									'order'        => 'ASC',
+								apply_filters( 'bp_member_blog_terms_args', 
+									array(
+
+										'hide_empty'   => false,
+										'hierarchical' => true,
+										'orderby'      => 'name',
+										'order'        => 'ASC',
+										'exclude'      => $exclude
+									)
 								)
 							);
-
-							// Function to display categories as nested options.
-							function display_category_options( $categories, $post_selected_category = array(), $depth = 0 ) {
-								foreach ( $categories as $cat ) {
-									$selected = ( ! empty( $post_selected_category ) && in_array( $cat->term_id, $post_selected_category ) ) ? 'selected' : '';
-									echo '<option value="' . esc_attr( $cat->term_id ) . '" ' . esc_attr( $selected ) . '>';
-									echo str_repeat( '&nbsp;', $depth * 4 ) . esc_html( $cat->name );
-									echo '</option>';
-
-									if ( ! empty( $cat->children ) ) {
-										display_category_options( $cat->children, $post_selected_category, $depth + 1 );
-									}
-								}
-							}
 
 							// Fetch top level categories and their children.
 							$category_tree = array();
@@ -138,7 +124,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 							}
 
 							// Display the category options.
-							display_category_options( $category_tree, $post_selected_category );
+							bp_member_blog_display_category_options( $category_tree, $post_selected_category );
 							?>
 						</select>
 						<?php if ( 'yes' === $create_cat ) { ?>
@@ -192,8 +178,8 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 					<span><?php esc_html_e( 'Featured Image:', 'buddypress-member-blog' ); ?></span>
 
 					<div class="bp-member-blog-featured-image-wrapper">
-						<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" style="display: none;" />
-						<button type="button" id="custom-file-upload-button" class="custom-file-upload button btn"><?php esc_html_e( 'Add Image', 'buddypress-member-blog' ); ?></button>
+						<input type="file" id="bp_member_blog_post_featured_image" name="bp_member_blog_post_featured_image" />
+						<label for="bp_member_blog_post_featured_image" class="custom-file-upload"><?php esc_html_e( 'Add Image', 'buddypress-member-blog' ); ?></label>
 					</div>
 
 					<div class="bp_member_blog_post_img_preview" 

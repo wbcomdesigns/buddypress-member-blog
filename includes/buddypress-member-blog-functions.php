@@ -446,7 +446,7 @@ function bp_member_blog_load_template( $template ) {
 			echo '</option>';
 
 			if ( ! empty( $cat->children ) ) {
-				display_category_options( $cat->children, $post_selected_category, $depth + 1 );
+				bp_member_blog_display_category_options( $cat->children, $post_selected_category, $depth + 1 );
 			}
 		}
 	}

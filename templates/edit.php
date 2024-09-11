@@ -27,8 +27,8 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 		<?php
 	}
 
-	$post_selected_category = wp_get_object_terms( $post_id, 'category', array_merge( $args, array( 'fields' => 'ids' ) ) );
-	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array_merge( $args, array( 'fields' => 'names' ) ) );
+	$post_selected_category = wp_get_object_terms( $post_id, 'category', array( 'fields' => 'ids' ) );	
+	$post_selected_tag      = wp_get_object_terms( $post_id, 'post_tag', array( 'fields' => 'names' ) );	
 	$post_thumbnail         = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 }
 
@@ -124,7 +124,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 							}
 
 							// Display the category options.
-							bp_member_blog_display_category_options( $category_tree, $post_selected_category );
+							bp_member_blog_display_category_options( $category_tree, $post_selected_category );							
 							?>
 						</select>
 						<?php if ( 'yes' === $create_cat ) { ?>

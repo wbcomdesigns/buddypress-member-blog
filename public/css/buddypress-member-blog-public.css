@@ -514,14 +514,14 @@ body.buddypress .buddypress-wrap .bp-member-blog-container .post-content .bp-edi
     clear: both;
 }
 
-<<<<<<< Updated upstream
+
 .bp_member_blog_pro_group_posts_activity_action span.reign-post-title {
-=======
-.bp_member_blog_pro_group_posts_activity_action .activity-inner span {
-    margin: 15px 15px 5px;
->>>>>>> Stashed changes
     font-size: 20px;
     display: block;
+}
+
+.bp_member_blog_pro_group_posts_activity_action .activity-inner span {
+    margin: 15px 15px 5px;
 }
 
 .bp-member-blog-container.bpmb-blog-posts .navigation.pagination {

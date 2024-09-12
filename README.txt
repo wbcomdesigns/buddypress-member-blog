@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.6.1
-Stable tag: 2.2.2.1
+Tested up to: 6.6.2
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,13 @@ e.g.
 
 
 == Changelog ==
+= 2.3.0 =
+* Enhancement: Managed button color to align with the theme's color scheme.
+* Fix: Resolved fatal error on editing posts.
+* Fix: Corrected the function call for bp_member_blog_display_category_options().
+* Fix: Hookable position for category now works as expected.
+* Update: Adjusted image size settings and alignment for better visuals.
+
 = 2.2.2.1 =
 * Fix: Pagination issue
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 08:36:10+00:00\n"
+"POT-Creation-Date: 2024-09-12 05:27:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1033,60 +1033,60 @@ msgstr ""
 msgid "%s hasn't posted anything yet."
 msgstr ""
 
-#: templates/edit.php:49
+#: templates/edit.php:45
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:49
+#: templates/edit.php:45
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:52
+#: templates/edit.php:48
 msgid "Submit for Review"
 msgstr ""
 
-#: templates/edit.php:64
+#: templates/edit.php:60
 msgid "Title:"
 msgstr ""
 
-#: templates/edit.php:75
+#: templates/edit.php:71
 msgid "Content:"
 msgstr ""
 
-#: templates/edit.php:97
+#: templates/edit.php:93
 msgid "Category:"
 msgstr ""
 
-#: templates/edit.php:99
+#: templates/edit.php:95
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:153
+#: templates/edit.php:139
 #. translators: Display plural label name
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:156
+#: templates/edit.php:142
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:167
+#: templates/edit.php:153
 msgid "Tag:"
 msgstr ""
 
-#: templates/edit.php:169
+#: templates/edit.php:155
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:192
+#: templates/edit.php:178
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:196
+#: templates/edit.php:182
 msgid "Add Image"
 msgstr ""
 
-#: templates/edit.php:222
+#: templates/edit.php:208
 msgid "Save"
 msgstr ""
 

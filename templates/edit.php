@@ -32,8 +32,12 @@ if ( isset( $_GET['post_id'] ) && $_GET['post_id'] != 0 && isset( $_GET['action'
 	$post_thumbnail         = get_the_post_thumbnail_url( $post_id, 'post-thumbnail' );
 }
 
+$exclude = array(); // Initialize as an empty array.
+
 if ( isset( $bp_member_blog_gen_stngs['exclude_category'] ) && ! empty( $bp_member_blog_gen_stngs['exclude_category'] ) ) {
-	$exclude[] = $bp_member_blog_gen_stngs['exclude_category'];
+    $exclude = array_map( 'absint', (array) $bp_member_blog_gen_stngs['exclude_category'] );
+} else {
+    error_log('No categories set for exclusion.'); // Optional: Debugging log for when it's empty.
 }
 
 $create_cat = '';
@@ -98,12 +102,11 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 							$categories = get_categories(
 								apply_filters( 'bp_member_blog_terms_args', 
 									array(
-
 										'hide_empty'   => false,
 										'hierarchical' => true,
 										'orderby'      => 'name',
 										'order'        => 'ASC',
-										'exclude'      => $exclude
+										'exclude'      => $exclude, // Always pass the array, whether empty or filled.
 									)
 								)
 							);

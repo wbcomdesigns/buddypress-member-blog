@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.6.2
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+= 2.3.1 =
+* Fix category exclusion logic and improve category selection
+
 = 2.3.0 =
 * Enhancement: Managed button color to align with the theme's color scheme.
 * Fix: Resolved fatal error on editing posts.

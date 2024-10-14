@@ -76,6 +76,7 @@ query_posts( $query_args );
 				</div>
 
 
+
 				<div class="post-content">
 
 					<h3 class="entry-title">
@@ -85,9 +86,11 @@ query_posts( $query_args );
 
 					<div class="post-date">
 						<?php
-							/* translators: %s: published date of the post.*/
-							printf( (esc_html__('Posted on %s', 'buddypress-member-blog') ), esc_html(get_the_date()));
-							
+							/* translators: %s: Date of the post */
+							printf(
+								esc_html__('Posted on %s', 'buddypress-member-blog'),
+								get_the_date()
+							);
 						?>
 					</div>
 					<div class="post-categories">
@@ -139,31 +142,42 @@ query_posts( $query_args );
 			</div>
 		<?php
 	else :
-		$bp_template_option = bp_get_option( '_bp_theme_package_id' );
-		if ( 'nouveau' === $bp_template_option ) {
-			echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
-			echo '<span class="bp-icon" aria-hidden="true"></span>';
-		} else {
-			echo '<div id="message" class="info">';
-		}
-		echo '<p>';
 		if ( is_user_logged_in() ) {
-			
 			if ( bp_is_my_profile() ) {
-				
+				$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+				if ( 'nouveau' === $bp_template_option ) {
+					echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+					echo '<span class="bp-icon" aria-hidden="true"></span>';
+				} else {
+					echo '<div id="message" class="info">';
+				}
+				echo '<p>';
 				esc_html_e( 'You have not posted anything yet.', 'buddypress-member-blog' );
 				echo '</p>';
 				echo '</div>';
 			} else {
-				/* translators: %s: full name of the current user.*/
-				printf( (esc_html__("%s hasn't posted anything yet.", 'buddypress-member-blog') ), esc_html(bp_get_displayed_user_fullname()));
+				$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+				if ( 'nouveau' === $bp_template_option ) {
+					echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+					echo '<span class="bp-icon" aria-hidden="true"></span>';
+				} else {
+					echo '<div id="message" class="info">';
+				}
+				echo '<p>';
+				echo sprintf( __( "%s hasn't posted anything yet.", "buddypress-member-blog" ) , esc_html( bp_get_displayed_user_fullname() ) );
 				echo '</p>';
 				echo '</div>';
 			}
 		} else {
-			
-			/* translators: %s: full name of the current user.*/
-			printf( (esc_html__("%s hasn't posted anything yet.", 'buddypress-member-blog') ), esc_html(bp_get_displayed_user_fullname()));
+			$bp_template_option = bp_get_option( '_bp_theme_package_id' );
+			if ( 'nouveau' === $bp_template_option ) {
+				echo '<div id="message" class="info bp-feedback bp-messages bp-template-notice">';
+				echo '<span class="bp-icon" aria-hidden="true"></span>';
+			} else {
+				echo '<div id="message" class="info">';
+			}
+			echo '<p>';
+			echo sprintf( __( "%s hasn't posted anything yet.", "buddypress-member-blog" ) , esc_html( bp_get_displayed_user_fullname() ) );
 			echo '</p>';
 			echo '</div>';
 		}

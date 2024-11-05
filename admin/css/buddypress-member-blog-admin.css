@@ -54,6 +54,10 @@
   margin-bottom: 15px;
 }
 
+select#my_dashboard_page option:first-child {
+  display: none !important;
+}
+
 .wbcom-settings-section-options .selectize-input input[type="text"] {
   height: auto;
 }
@@ -87,7 +91,6 @@ a#bp-member-blog-pro-delete-table span {
   text-decoration: none !important;
   margin-bottom: 10px;
   border-radius: 5px;
-}
 }
 
 .wbcom-admin-settings-page .wbcom-tab-content {

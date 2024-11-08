@@ -181,8 +181,12 @@ class Buddypress_Member_Blog {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
-		$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_setup_nav', 100 );
+		if( class_exists( 'Youzify' ) ){
+			$this->loader->add_action( 'youzify_add_new_profile_tabs', $plugin_public, 'buddypress_member_blog_setup_nav', 100 );
+		} else {
+			$this->loader->add_action( 'bp_setup_nav', $plugin_public, 'buddypress_member_blog_setup_nav', 100 );
+		}	
+		
 		$this->loader->add_action( 'bp_setup_admin_bar', $plugin_public, 'buddypress_member_blog_setup_admin_bar', 100 );
 
 		$this->loader->add_action( 'bp_actions', $plugin_public, 'buddypress_member_blog_publish' );

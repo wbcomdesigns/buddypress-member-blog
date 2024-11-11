@@ -226,7 +226,7 @@ class Buddypress_Member_Blog_Public {
 		bp_core_new_nav_item(
 			array(
 				/* translators: %s: */
-				'name' => sprintf(esc_html__('%1$s %2$s', 'buddypress-member-blog'), $blog_label, '<span class="count">' . $total_posts . '</span>'),
+				'name'                => class_exists( 'Youzify' ) ? sprintf( esc_html__('%1$s', 'buddypress-member-blog'), $blog_label ) :  sprintf( esc_html__('%1$s %2$s', 'buddypress-member-blog'), $blog_label, '<span class="count">' . $total_posts . '</span>' ),
 				'slug'                => $blog_slug,
 				'screen_function'     => array( $this, 'bp_member_posts' ),
 				'default_subnav_slug' => $blog_slug,

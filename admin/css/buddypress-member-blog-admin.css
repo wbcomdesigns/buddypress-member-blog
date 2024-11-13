@@ -198,3 +198,16 @@ a#bp-member-blog-pro-delete-table span {
   line-height: 1;
   border-radius: 12px;
 }
+
+
+@media screen and (max-width: 1189px) {
+  
+    .wbcom-admin-settings-page .wbcom-tab-content {
+      width: auto;
+      padding: 10px;
+    }
+    .wbcom-admin-option-wrap {
+      padding: 10px;
+    }
+
+}

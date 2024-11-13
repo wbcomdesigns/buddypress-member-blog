@@ -209,8 +209,7 @@ function bp_member_blog_wp_head() {
 				$role = get_role( $user_role );
 
 				$role->add_cap( 'edit_published_posts' );
-				$role->add_cap( 'edit_others_pages' );
-				$role->add_cap( 'edit_others_posts' );
+				$role->add_cap( 'edit_others_pages' );				
 				$role->add_cap( 'edit_posts' );
 				$role->add_cap( 'unfiltered_html' );
 				$role->add_cap( 'edit_published_pages' );

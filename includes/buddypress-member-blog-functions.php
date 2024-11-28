@@ -450,3 +450,53 @@ function bp_member_blog_display_category_options( $categories, $post_selected_ca
 		}
 	}
 }
+
+
+
+function bp_member_get_user_roles(){
+	$user_id = get_current_user_id();
+
+	if ($user_id) {
+		$sites = get_sites(['fields' => 'ids']); // Get all site IDs
+		$roles_across_sites = [];
+
+		foreach ($sites as $site_id) {
+			switch_to_blog($site_id);
+			if (function_exists('buddypress')) {
+				$user = get_userdata($user_id);
+				if ($user && !empty($user->roles)) {
+					$roles_across_sites = array_merge($user->roles,$roles_across_sites);
+				}
+			}
+			restore_current_blog(); // Restore to the original site
+		}
+
+		return $roles_across_sites;
+	} else {
+		return [];
+	}
+}
+
+function bp_member_get_member_type(){
+	$user_id = get_current_user_id();
+	
+	if ($user_id) {
+		$sites = get_sites(['fields' => 'ids']); // Get all site IDs
+		$member_type_across_sites = [];
+
+		foreach ($sites as $site_id) {
+			switch_to_blog($site_id);
+			if (function_exists('buddypress')) {
+				$member_types = bp_get_member_type( get_current_user_id(), false );
+				if ( !empty($member_types) ) {
+					$member_type_across_sites = array_merge($member_types,$member_type_across_sites);
+				}
+			}
+			restore_current_blog(); // Restore to the original site
+		}
+
+		return $member_type_across_sites;
+	} else {
+		return [];
+	}
+}

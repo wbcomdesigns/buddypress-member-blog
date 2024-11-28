@@ -737,7 +737,18 @@ class Buddypress_Member_Blog_Public {
 		|| ( isset( $bp_member_blog_gen_stngs['member_types'] ) && ! empty( $bp_member_blog_gen_stngs['member_types'] ) ) ) {
 			$bp_member_blog_gen_stngs['bp_create_post'] = ( isset( $bp_member_blog_gen_stngs['bp_create_post'] ) ) ? $bp_member_blog_gen_stngs['bp_create_post'] : array();
 			$bp_member_blog_gen_stngs['member_types']   = ( isset( $bp_member_blog_gen_stngs['member_types'] ) ) ? $bp_member_blog_gen_stngs['member_types'] : array();
-			$user_roles                                 = array_intersect( (array) $current_user->roles, $bp_member_blog_gen_stngs['bp_create_post'] );
+			if( is_multisite() ){
+				$current_roles = bp_member_get_user_roles();
+			}else{
+				$current_roles = $current_user->roles;
+			}
+			if( is_multisite() ){
+				$member_types = bp_member_get_member_type();
+			}else{
+				$member_types = $member_types;
+			}
+			
+			$user_roles                                 = array_intersect( (array) $current_roles, $bp_member_blog_gen_stngs['bp_create_post'] );
 			$user_types                                 = array_intersect( (array) $member_types, $bp_member_blog_gen_stngs['member_types'] );
 			if ( empty( $user_roles ) && empty( $user_types ) ) {
 				ob_start();
@@ -770,7 +781,6 @@ class Buddypress_Member_Blog_Public {
 			?>
 		</div>
 		<?php
-
 		return ob_get_clean();
 	}
 

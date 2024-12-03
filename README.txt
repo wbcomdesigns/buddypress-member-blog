@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.6.2
-Stable tag: 2.3.1
+Tested up to: 6.7.1
+Stable tag: 2.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,17 @@ e.g.
 
 
 == Changelog ==
+
+= 2.4.0 =
+* Fixed issue preventing admin from adding blogs from the front-end in multisite.
+* Managed mobile and tablet UI responsiveness issues.
+* Resolved UI issue on the "Create a Member Blog" dropdown.
+* Fixed blog category dropdown display issue on the edit blog screen.
+* Fixed notices displayed when no blog posts exist
+* Fixed issue where pending subscriber blogs could be edited by other subscribers.
+* Resolved blog count duplication issue with Youzify.
+* Fixed blog tab display issue with Youzify.
+
 = 2.3.1 =
 * Fix category exclusion logic and improve category selection
 

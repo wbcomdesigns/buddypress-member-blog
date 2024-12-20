@@ -206,10 +206,8 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<input type="hidden" value="<?php echo ( isset( $_SERVER['REQUEST_URI'] ) ) ? esc_attr( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : ''; ?>" name="post_form_url" />
 			<?php do_action( 'bp_post_before_submit_button', $post_id ); ?>
 			<input id="blog-submit" name="bp_member_blog_form_subimitted" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr( $submit_btn_value ); ?>" />
+			<input id="blog-submit" name="bp_member_blog_form_save" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr__( 'Save', 'buddypress-member-blog' ); ?>" />
 
-			<?php if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) ) : ?>
-				<input id="blog-submit" name="bp_member_blog_form_save" class="bp-member-blog-btn btn button button-primary button-large" type="submit" value="<?php echo esc_attr__( 'Save', 'buddypress-member-blog' ); ?>" />
-			<?php endif; ?>
 
 			<?php wp_nonce_field( 'bp_member_blog_post' ); ?>
 		</form>

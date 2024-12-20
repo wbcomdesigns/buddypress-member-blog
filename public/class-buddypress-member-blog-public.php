@@ -552,6 +552,8 @@ class Buddypress_Member_Blog_Public {
 					return;
 				}
 			}
+			$user_id = get_current_user_id();
+			$user = get_userdata($user_id);
 			// for recaptcha
 			$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 
@@ -564,7 +566,19 @@ class Buddypress_Member_Blog_Public {
 			if ( isset( $_REQUEST['bp_member_blog_post_content'] ) && ! empty( $_POST['bp_member_blog_post_content'] ) ) {
 				$post_content = wp_kses_post( wp_unslash( $_REQUEST['bp_member_blog_post_content'] ) );
 			}
-
+			if( isset( $bp_member_blog_gen_stngs['publish_post'] ) || in_array('administrator', $user->roles ) ){
+                if( isset( $_POST['bp_member_blog_form_save'] ) ){
+                    $post_status = 'draft';
+                }else{
+                    $post_status = 'publish';
+                }
+            }else{
+                if( isset( $_POST['bp_member_blog_form_save'] ) ){
+                    $post_status = 'draft';
+                }else{
+                    $post_status = 'pending';
+                }
+            }
 			if ( isset( $_POST['post_id'] ) && $_POST['post_id'] != 0 && $_POST['post_id'] != '' ) {
 				$user_id = get_current_user_id();
 				$user = get_userdata($user_id);
@@ -576,7 +590,7 @@ class Buddypress_Member_Blog_Public {
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
-						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) || in_array('administrator', $user->roles )  ) ? 'publish' : ( ( isset( $_POST['bp_member_blog_form_save'] ) ) ? 'draft' : 'pending' ),
+						'post_status'  => $post_status,
 						'post_author'  => get_current_user_id(),
 					)
 				);
@@ -593,7 +607,7 @@ class Buddypress_Member_Blog_Public {
 						'post_title'   => $post_title,
 						'post_type'    => 'post',
 						'post_content' => $post_content,
-						'post_status'  => ( isset( $bp_member_blog_gen_stngs['publish_post'] ) ) ? 'publish' : ( ( isset( $_POST['bp_member_blog_form_save'] ) ) ? 'draft' : 'pending' ),
+						'post_status'  => $post_status,
 						'post_author'  => get_current_user_id(),
 					)
 				);
@@ -643,7 +657,7 @@ class Buddypress_Member_Blog_Public {
 
 				if ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) && $bp_member_blog_gen_stngs['bp_post_page'] != 0 ) {
 
-					$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) . '?post_id=' . $post_id . '&action=edit&is_draft=1';
+					$url = get_permalink( $bp_member_blog_gen_stngs['bp_post_page'] ) ;
 
 				} else {
 

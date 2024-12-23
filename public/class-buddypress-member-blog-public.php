@@ -75,8 +75,6 @@ class Buddypress_Member_Blog_Public {
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 		$bp_add_new_page_id = ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) ) ? (int) $bp_member_blog_gen_stngs['bp_post_page'] : 0;
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
-		
-		// var_dump(bp_is_activity_directory());
 		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_add_new_page_id ){
 
 			wp_enqueue_style( 'dashicons' );
@@ -114,7 +112,8 @@ class Buddypress_Member_Blog_Public {
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 		$post_id = $wp_query->get_queried_object_id();
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
-		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_member_blog_gen_stngs ){
+		$bp_add_new_page_id = ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) ) ? (int) $bp_member_blog_gen_stngs['bp_post_page'] : 0;
+		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_add_new_page_id ){
 			wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
 	

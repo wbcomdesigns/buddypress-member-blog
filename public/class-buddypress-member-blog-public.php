@@ -59,7 +59,7 @@ class Buddypress_Member_Blog_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
+		global $post,$wp_query;
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
@@ -71,11 +71,19 @@ class Buddypress_Member_Blog_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		$post_id = $wp_query->get_queried_object_id();
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		$bp_add_new_page_id = ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) ) ? (int) $bp_member_blog_gen_stngs['bp_post_page'] : 0;
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		
+		// var_dump(bp_is_activity_directory());
+		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_add_new_page_id ){
 
-		wp_enqueue_style( 'dashicons' );
+			wp_enqueue_style( 'dashicons' );
 
-		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-public.css', array(), $this->version, 'all' );
+		}
 
 	}
 
@@ -86,7 +94,7 @@ class Buddypress_Member_Blog_Public {
 	 */
 	public function enqueue_scripts() {
 
-		global $post;
+		global $post,$wp_query;
 		if ( ! is_user_logged_in() && is_a( $post, 'WP_Post' ) && isset( $post->post_content ) && has_shortcode( $post->post_content, 'bp-member-blog' ) ) {
 			wp_redirect( site_url() );
 			exit;
@@ -103,42 +111,47 @@ class Buddypress_Member_Blog_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
-
-		$user_id                    = bp_displayed_user_id();
-		$bp_publish_blogs           = array(
-			'author'      => $user_id,
-			'post_type'   => 'post',
-			'post_status' => 'publish',
-			'posts_per_page' => -1,
-		);
-		$current_user_publish_posts = count( get_posts( $bp_publish_blogs ) );
-		$bp_draft_blogs             = array(
-			'author'      => $user_id,
-			'post_type'   => 'post',
-			'post_status' => 'draft',
-		);
-		$current_user_draft_posts   = count( get_posts( $bp_draft_blogs ) );
-		$bp_pending_blogs           = array(
-			'author'      => $user_id,
-			'post_type'   => 'post',
-			'post_status' => 'pending',
-		);
-		$current_user_pending_posts = count( get_posts( $bp_pending_blogs ) );
-
-		wp_localize_script(
-			$this->plugin_name,
-			'bpmb_ajax_object',
-			array(
-				'ajax_url'           => admin_url( 'admin-ajax.php' ),
-				'ajax_nonce'         => wp_create_nonce( 'bpmb-blog-nonce' ),
-				'required_cat_text'  => esc_html__( 'Category name is required.', 'buddypress-member-blog' ),
-				'publish_post_count' => $current_user_publish_posts,
-				'pending_post_count' => $current_user_pending_posts,
-				'draft_post_count'   => $current_user_draft_posts,
-			)
-		);
+		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		$post_id = $wp_query->get_queried_object_id();
+		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_member_blog_gen_stngs ){
+			wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
+	
+			$user_id                    = bp_displayed_user_id();
+			$bp_publish_blogs           = array(
+				'author'      => $user_id,
+				'post_type'   => 'post',
+				'post_status' => 'publish',
+				'posts_per_page' => -1,
+			);
+			$current_user_publish_posts = count( get_posts( $bp_publish_blogs ) );
+			$bp_draft_blogs             = array(
+				'author'      => $user_id,
+				'post_type'   => 'post',
+				'post_status' => 'draft',
+			);
+			$current_user_draft_posts   = count( get_posts( $bp_draft_blogs ) );
+			$bp_pending_blogs           = array(
+				'author'      => $user_id,
+				'post_type'   => 'post',
+				'post_status' => 'pending',
+			);
+			$current_user_pending_posts = count( get_posts( $bp_pending_blogs ) );
+	
+			wp_localize_script(
+				$this->plugin_name,
+				'bpmb_ajax_object',
+				array(
+					'ajax_url'           => admin_url( 'admin-ajax.php' ),
+					'ajax_nonce'         => wp_create_nonce( 'bpmb-blog-nonce' ),
+					'required_cat_text'  => esc_html__( 'Category name is required.', 'buddypress-member-blog' ),
+					'publish_post_count' => $current_user_publish_posts,
+					'pending_post_count' => $current_user_pending_posts,
+					'draft_post_count'   => $current_user_draft_posts,
+				)
+			);
+		}
 	}
 
 

@@ -165,6 +165,7 @@ class Buddypress_Member_Blog {
 		/* Plugin register settings */
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'bp_member_blog_add_plugin_settings' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'wbcom_hide_all_admin_notices_from_setting_page' );
+		
 
 	}
 

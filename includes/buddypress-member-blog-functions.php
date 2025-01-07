@@ -386,7 +386,7 @@ function bp_member_blog_get_total_posted( $user_id = 0, $is_my_profile = false )
 
 	$where_status_query = join( ' || ', $status );
 
-	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE post_author=%d AND post_type=%s AND ({$where_status_query})", $user_id, 'post' ) );
+	$count = $wpdb->get_var( $wpdb->prepare( "SELECT count('*') FROM {$wpdb->posts} WHERE post_author=%d AND post_type=%s AND ({$where_status_query})", $user_id, 'post' ) );		// phpcs:ignore.
 
 	return intval( $count );
 

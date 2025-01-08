@@ -616,8 +616,7 @@ class Buddypress_Member_Blog_Public {
 				}elseif( function_exists('buddypress') && buddypress()->buddyboss ){
 					if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( ! isset( $user->roles ) || ! in_array( 'administrator', $user->roles, true ) ) ) {
 						bp_core_add_message(
-							__( 'Your post is under review. It will appear after approval.', 'buddypress-member-blog' ),
-							'info'
+							__( 'Your post is under review. It will appear after approval.', 'buddypress-member-blog' )
 						);
 					}
 				}

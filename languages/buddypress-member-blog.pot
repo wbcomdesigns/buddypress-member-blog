@@ -1,14 +1,14 @@
-# Copyright (C) 2024 
+# Copyright (C) 2025 
 # This file is distributed under the same license as the  package.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 09:11:31+00:00\n"
+"POT-Creation-Date: 2025-01-09 06:21:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Varun Dubey\n"
 "Language-Team: Wbcom Designs\n"
 "Language: en\n"
@@ -68,7 +68,7 @@ msgstr ""
 #: admin/class-buddypress-member-blog-admin.php:174
 #: admin/wbcom/templates/wbcom-plugins-page.php:115
 #: admin/wbcom/templates/wbcom-plugins-page.php:430
-#: buddypress-member-blog.php:134
+#: buddypress-member-blog.php:131
 msgid "BuddyPress Member Blog"
 msgstr ""
 
@@ -867,11 +867,11 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: buddypress-member-blog.php:135
+#: buddypress-member-blog.php:132
 msgid "BuddyPress"
 msgstr ""
 
-#: buddypress-member-blog.php:138
+#: buddypress-member-blog.php:135
 #. translators: %1$s is replaced with the BuddyPress Member Blog and %2$s is
 #. replaced with the BuddyPress.
 msgid "%1$s is ineffective now as it requires %2$s to be installed and active."
@@ -917,87 +917,91 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:136
+#: public/class-buddypress-member-blog-public.php:147
 msgid "Category name is required."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:164
-msgid "Add new post"
-msgstr ""
-
-#: public/class-buddypress-member-blog-public.php:186
-#: public/class-buddypress-member-blog-public.php:222
+#: public/class-buddypress-member-blog-public.php:177
+#: public/class-buddypress-member-blog-public.php:213
 #. translators: %s is replaced with a count of total posts
 msgid "Blog %s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:250
+#: public/class-buddypress-member-blog-public.php:241
 #. translators: %s:
+msgid "%1$s"
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:241
 msgid "%1$s %2$s"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:260
+#: public/class-buddypress-member-blog-public.php:251
 msgid "Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:271
+#: public/class-buddypress-member-blog-public.php:262
 msgid "Pending"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:282
+#: public/class-buddypress-member-blog-public.php:273
 msgid "Draft Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:298
-#: public/class-buddypress-member-blog-public.php:383
+#: public/class-buddypress-member-blog-public.php:289
+#: public/class-buddypress-member-blog-public.php:374
 msgid "New Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:373
+#: public/class-buddypress-member-blog-public.php:364
 msgid "Posts"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:382
+#: public/class-buddypress-member-blog-public.php:373
 msgid "add-new"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:498
+#: public/class-buddypress-member-blog-public.php:489
 msgid "Post Published"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:525
+#: public/class-buddypress-member-blog-public.php:516
 msgid "Post unpublished"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:555
+#: public/class-buddypress-member-blog-public.php:546
 msgid "Post deleted successfully"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:606
-#: public/class-buddypress-member-blog-public.php:708
+#: public/class-buddypress-member-blog-public.php:612
+#: public/class-buddypress-member-blog-public.php:721
 msgid "Post updated successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:606
-#: public/class-buddypress-member-blog-public.php:624
+#: public/class-buddypress-member-blog-public.php:612
+#: public/class-buddypress-member-blog-public.php:637
 msgid "View Post"
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:608
-#: public/class-buddypress-member-blog-public.php:626
+#: public/class-buddypress-member-blog-public.php:614
+#: public/class-buddypress-member-blog-public.php:639
 msgid "Your post is under review, It will appear after the approval."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:624
-#: public/class-buddypress-member-blog-public.php:712
+#: public/class-buddypress-member-blog-public.php:619
+msgid "Your post is under review. It will appear after approval."
+msgstr ""
+
+#: public/class-buddypress-member-blog-public.php:637
+#: public/class-buddypress-member-blog-public.php:725
 msgid "Post created successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:673
+#: public/class-buddypress-member-blog-public.php:686
 msgid "Post saved successfully."
 msgstr ""
 
-#: public/class-buddypress-member-blog-public.php:767
+#: public/class-buddypress-member-blog-public.php:791
 msgid "You are not allowed to access this page."
 msgstr ""
 
@@ -1022,72 +1026,70 @@ msgstr ""
 msgid "Pages: "
 msgstr ""
 
-#: templates/draft-posts.php:158 templates/pending-posts.php:159
+#: templates/draft-posts.php:159 templates/pending-posts.php:160
 #: templates/posts.php:155
 msgid "You have not posted anything yet."
 msgstr ""
 
-#: templates/draft-posts.php:170 templates/draft-posts.php:183
-#: templates/pending-posts.php:171 templates/pending-posts.php:184
-#: templates/posts.php:167 templates/posts.php:180
-msgid "%s hasn't posted anything yet."
-msgstr ""
-
-#: templates/edit.php:45
+#: templates/edit.php:49
 msgid "Update post"
 msgstr ""
 
-#: templates/edit.php:45
+#: templates/edit.php:49
 msgid "Create a new post"
 msgstr ""
 
-#: templates/edit.php:48
+#: templates/edit.php:52
 msgid "Submit for Review"
 msgstr ""
 
-#: templates/edit.php:60
+#: templates/edit.php:64
 msgid "Title:"
 msgstr ""
 
-#: templates/edit.php:71
+#: templates/edit.php:75
 msgid "Content:"
 msgstr ""
 
-#: templates/edit.php:93
+#: templates/edit.php:97
 msgid "Category:"
 msgstr ""
 
-#: templates/edit.php:95
+#: templates/edit.php:99
 msgid "Select post category"
 msgstr ""
 
-#: templates/edit.php:139
+#: templates/edit.php:142
 #. translators: Display plural label name
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:142
+#: templates/edit.php:145
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:153
+#: templates/edit.php:156
 msgid "Tag:"
 msgstr ""
 
-#: templates/edit.php:155
+#: templates/edit.php:158
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:178
+#: templates/edit.php:181
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:182
+#: templates/edit.php:185
 msgid "Add Image"
 msgstr ""
 
-#: templates/edit.php:208
+#: templates/edit.php:209
 msgid "Save"
+msgstr ""
+
+#: templates/posts.php:167 templates/posts.php:180
+msgid "%s hasn't posted anything yet."
 msgstr ""
 
 #: plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213

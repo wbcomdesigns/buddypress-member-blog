@@ -3,8 +3,8 @@ Contributors: Wbcom Designs
 Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
-Tested up to: 6.7.1
-Stable tag: 2.4.0
+Tested up to: 6.7.2
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,28 @@ e.g.
 
 
 == Changelog ==
+
+= 2.5.0 =
+* Enhancement: Improved UI for BuddyBoss group activity generation.  
+* Update: Adjusted notice colors for better visual appeal.  
+* Fix: Notice is now hidden for pending review status when using BuddyBoss.  
+* Fix: Resolved fatal error when visiting the blog tab in BuddyBoss.  
+* Fix: Addressed PHPCS issues in `buddypress-member-blog-functions.php`.  
+* Update: Removed Hard-G dependencies from the plugin for better compatibility.  
+* Fix: Removed notices from the page if BuddyBoss is detected.  
+* Fix: Resolved JavaScript issues causing improper functionality.  
+* Enhancement: Updated and implemented CSS and JS improvements.  
+* Fix: Ensured "Add to Draft" option appears when pending review is disabled.  
+* Fix: Resolved post draft and save issues for better content management.  
+* Enhancement: Updated `buddypress-member-blog.php` for improved performance.  
+* Fix: Allowed admin users to add blogs from the front end in multisite environments.  
+* Fix: Managed mobile and tablet UI issues for a smoother experience.  
+* Fix: Resolved UI issues in the "Create Member Blog" dropdown.  
+* Fix: PHPCS adjustments for category dropdown on blog edit pages.  
+* Fix: Notices are now properly displayed when no blogs exist on user profiles.
+* Fix: Addressed capability issue where a subscriber's pending blog could be edited by another subscriber.  
+* Fix: Resolved blog count duplication issue when using Youzify.  
+* Fix: Fixed blog tab functionality with Youzify integration.  
 
 = 2.4.0 =
 * Fixed issue preventing admin from adding blogs from the front-end in multisite.

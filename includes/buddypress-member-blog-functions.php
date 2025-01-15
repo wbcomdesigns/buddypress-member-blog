@@ -503,10 +503,9 @@ function bp_member_get_member_type(){
 
 function members_get_user_url( $author_id ){
 	if( function_exists('buddypress') && buddypress()->buddyboss ){
-        $url = bbp_get_user_profile_url( $author_id );
-        
+        $url = ( function_exists('bbp_get_user_profile_url') ) ? bbp_get_user_profile_url( $author_id ) : '';
     }else{
-        $url = bp_members_get_user_url( $author_id );
+        $url = ( function_exists('bp_members_get_user_url') ) ? bp_members_get_user_url( $author_id ) : '';
     }
 	return $url;
 }

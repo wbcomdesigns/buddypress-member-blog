@@ -22,7 +22,7 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 		$user_id = bp_displayed_user_id();
 	}
 
-	$url = members_get_user_url( $user_id ) . 'blog' . '/';
+	$url = bp_member_blog_get_user_url( $user_id ) . 'blog' . '/';
 
 	return $url;
 }
@@ -44,7 +44,7 @@ function bp_member_blog_get_new_url() {
 	}
 
 	// if we are here, we can allow user to edit the post.
-	return members_get_user_url( $user_id ) . 'blog' . '/edit/';
+	return bp_member_blog_get_user_url( $user_id ) . 'blog' . '/edit/';
 }
 
 
@@ -109,7 +109,7 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 	$url  = '';
 
 	// check if post is published.
-	$url = members_get_user_url( $post->post_author ) . 'blog' . '/';
+	$url = bp_member_blog_get_user_url( $post->post_author ) . 'blog' . '/';
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
@@ -202,7 +202,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 	}
 
 	// if we are here, we can allow user to edit the post.
-	return members_get_user_url( $post->post_author ) . $blog_slug . '/bp-new-post/?post_id=' . $post->ID . '&action=edit';
+	return bp_member_blog_get_user_url( $post->post_author ) . $blog_slug . '/bp-new-post/?post_id=' . $post->ID . '&action=edit';
 }
 
 
@@ -226,7 +226,7 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 
 	$action_name = 'delete';
 
-	$url = members_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	$url = bp_member_blog_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 
@@ -255,7 +255,7 @@ function bp_member_blog_paginate() {
 		$format = '?paged=%#%';
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );		
 		if ( $blog_slug == bp_current_action() ) {
-			$base = trailingslashit( members_get_user_url( $user_id ) . $blog_slug );
+			$base = trailingslashit( bp_member_blog_get_user_url( $user_id ) . $blog_slug );
 		}
 		echo wp_kses_post(
 			paginate_links(
@@ -501,13 +501,11 @@ function bp_member_get_member_type(){
 	}
 }
 
-function members_get_user_url( $author_id ){
+function bp_member_blog_get_user_url( $author_id ){
 	if( function_exists('buddypress') && buddypress()->buddyboss ){
-        $url = bbp_get_user_profile_url( $author_id );
-        
+        $url = function_exists( 'bp_core_get_user_domain' ) ? bp_core_get_user_domain( $author_id ): '';
     }else{
-        $url = bp_members_get_user_url( $author_id );
+        $url = function_exists( 'bp_members_get_user_url' ) ? bp_members_get_user_url( $author_id ): '';
     }
-	return $url;
+	return apply_filters( 'bp_member_blog_get_user_url' , $url, $author_id);
 }
-

@@ -452,7 +452,9 @@ function bp_member_blog_display_category_options( $categories, $post_selected_ca
 }
 
 
-
+/**
+ * function for fetching the user role on multisite 
+ */
 function bp_member_get_user_roles(){
 	$user_id = get_current_user_id();
 
@@ -477,6 +479,9 @@ function bp_member_get_user_roles(){
 	}
 }
 
+/**
+ * function for fetching the member type of user on multisite 
+ */
 function bp_member_get_member_type(){
 	$user_id = get_current_user_id();
 	
@@ -501,6 +506,11 @@ function bp_member_get_member_type(){
 	}
 }
 
+/**
+ * function for fetching the user profile url
+ *
+ * @param int $author_id user id.
+ */
 function bp_member_blog_get_user_url( $author_id ){
 	if( function_exists('buddypress') && buddypress()->buddyboss ){
         $url = function_exists( 'bp_core_get_user_domain' ) ? bp_core_get_user_domain( $author_id ): '';

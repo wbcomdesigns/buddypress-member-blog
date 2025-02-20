@@ -21,8 +21,8 @@ function bp_member_blog_get_home_url( $user_id = false ) {
 	if ( ! $user_id ) {
 		$user_id = bp_displayed_user_id();
 	}
-
-	$url = bp_member_blog_get_user_url( $user_id ) . 'blog' . '/';
+	$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+	$url = bp_member_blog_get_user_url( $user_id ) . $blog_slug . '/';
 
 	return $url;
 }
@@ -42,9 +42,10 @@ function bp_member_blog_get_new_url() {
 	if ( ! $user_id ) {
 		return '';
 	}
+	$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 
 	// if we are here, we can allow user to edit the post.
-	return bp_member_blog_get_user_url( $user_id ) . 'blog' . '/edit/';
+	return bp_member_blog_get_user_url( $user_id ) . $blog_slug . '/edit/';
 }
 
 
@@ -107,9 +108,9 @@ function bp_member_blog_get_post_publish_unpublish_url( $post_id = 0 ) {
 
 	$post = get_post( $post_id );
 	$url  = '';
-
+	$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 	// check if post is published.
-	$url = bp_member_blog_get_user_url( $post->post_author ) . 'blog' . '/';
+	$url = bp_member_blog_get_user_url( $post->post_author ) . $blog_slug . '/';
 
 	if ( bp_member_blog_is_post_published( $post_id ) ) {
 		$url = $url . 'unpublish/' . $post_id . '/';
@@ -194,13 +195,7 @@ function bp_member_blog_get_edit_url( $post_id = 0 ) {
 
 	$action_name = 'bp-new-post';
 	$active_plugins = get_option( 'active_plugins' );
-	if ( in_array( 'buddypress-member-blog-pro/class-buddypress-member-blog-pro.php', $active_plugins ) ) {
-		$bp_blog_pro_option = get_option( 'bp_member_blog_gen_stngs' );
-		$blog_slug = isset( $bp_blog_pro_option['blog_slug'] ) && ( '' !== $bp_blog_pro_option['blog_slug'] ) ? $bp_blog_pro_option['blog_slug'] : 'blog';
-	} else {
-		$blog_slug = 'blog';
-	}
-
+	$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 	// if we are here, we can allow user to edit the post.
 	return bp_member_blog_get_user_url( $post->post_author ) . $blog_slug . '/bp-new-post/?post_id=' . $post->ID . '&action=edit';
 }
@@ -225,8 +220,9 @@ function bp_member_blog_get_delete_link( $id = 0, $label = '' ) {
 	$post = get_post( $id );
 
 	$action_name = 'delete';
+	$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 
-	$url = bp_member_blog_get_user_url( $post->post_author ) . 'blog' . "/{$action_name}/" . $post->ID . '/';
+	$url = bp_member_blog_get_user_url( $post->post_author ) . $blog_slug . "/{$action_name}/" . $post->ID . '/';
 
 	return "<a href='{$url}' class='confirm' >{$label}</a>";
 

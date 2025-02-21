@@ -249,7 +249,7 @@ class Buddypress_Member_Blog_Public {
 		bp_core_new_subnav_item(
 			array(
 				'name'            => __( 'Published', 'buddypress-member-blog' ),
-				'slug'            => 'blog',
+				'slug'            => $blog_slug,
 				'parent_url'      => trailingslashit( bp_loggedin_user_domain() . $blog_slug ),
 				'parent_slug'     => $blog_slug,
 				'screen_function' => array( $this, 'bp_member_posts' ),

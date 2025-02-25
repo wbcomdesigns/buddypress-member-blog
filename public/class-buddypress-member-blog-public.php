@@ -232,8 +232,7 @@ class Buddypress_Member_Blog_Public {
 		if (  ( ! is_user_logged_in() || get_current_user_id() != bp_displayed_user_id() ) ) {
 			return;
 		}
-		// $blog_label = apply_filters( 'bp_member_change_blog_label', __( 'Blog', 'buddypress-member-blog' ) );
-		// $blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
+		
 		// Add 'Blog' to the main navigation.
 		bp_core_new_nav_item(
 			array(

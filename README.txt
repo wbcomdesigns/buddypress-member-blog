@@ -4,7 +4,7 @@ Donate link: https://wbcomdesigns.com/
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 6.7.2
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,11 @@ e.g.
 
 
 == Changelog ==
+= 2.5.2 =
+* Fixed: Blog deletion causing a 404 error.  
+* Fixed: Slug issue while using blogs.  
+* Removed: Unused commented code for cleaner and optimized codebase.  
+
 = 2.5.1 =
 * Fix: Fatal error when activating member blog with wp stories
 

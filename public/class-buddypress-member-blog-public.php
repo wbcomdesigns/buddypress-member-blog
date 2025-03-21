@@ -77,10 +77,18 @@ class Buddypress_Member_Blog_Public {
 		$blog_slug  = apply_filters( 'bp_member_change_blog_slug', 'blog' );
 		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_add_new_page_id ){
 
+			$rtl_css = is_rtl() ? '-rtl' : '';
+
+			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+				$css_extension = '.css';
+			} else {
+				$css_extension = '.min.css';
+			}
+
 			wp_enqueue_style( 'dashicons' );
 
-			wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/vendor/selectize.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css' . $rtl_css . '/buddypress-member-blog-public' . $css_extension, array(), $this->version, 'all' );
 		}
 
 	}
@@ -114,8 +122,15 @@ class Buddypress_Member_Blog_Public {
 		$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
 		$bp_add_new_page_id = ( isset( $bp_member_blog_gen_stngs['bp_post_page'] ) ) ? (int) $bp_member_blog_gen_stngs['bp_post_page'] : 0;
 		if( bp_is_activity_directory() || bp_is_group() || bp_is_user_activity() || bp_is_current_component( $blog_slug ) || $post_id === $bp_add_new_page_id ){
-			wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public.js', array( 'jquery' ), $this->version, false );
+
+			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+				$js_extension = '.js';
+			} else {
+				$js_extension = '.min.js';
+			}
+
+			wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/vendor/selectize.min.js', array( 'jquery' ), $this->version, false );
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-public' . $js_extension, array( 'jquery' ), $this->version, false );
 	
 			$user_id                    = bp_displayed_user_id();
 			$bp_publish_blogs           = array(

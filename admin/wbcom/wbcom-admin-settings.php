@@ -141,9 +141,15 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 			}
 			if ( ! wp_script_is( 'wbcom_admin_setting_js', 'enqueued' ) ) {
 
+				if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+					$js_extension = '.js';
+				} else {
+					$js_extension = '.min.js';
+				}
+
 				wp_register_script(
 					$handle    = 'wbcom_admin_setting_js',
-					$src       = BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/js/wbcom-admin-setting.js',
+					$src       = BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/js/wbcom-admin-setting' . $js_extension,
 					$deps      = array( 'jquery' ),
 					$ver       = time(),
 					$in_footer = true
@@ -163,9 +169,16 @@ if ( ! class_exists( 'Wbcom_Admin_Settings' ) ) {
 			}
 
 			if ( ! wp_style_is( 'wbcom-admin-setting-css', 'enqueued' ) ) {
-				wp_enqueue_style('wbcom-admin-setting-css', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/css/wbcom-admin-setting.css', array(), BUDDYPRESS_MEMBER_BLOG_VERSION);
-			}
+				$rtl_css = is_rtl() ? '-rtl' : '';
 
+				if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+					$css_extension = '.css';
+				} else {
+					$css_extension = '.min.css';
+				}
+
+				wp_enqueue_style('wbcom-admin-setting-css', BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/css' . $rtl_css . '/wbcom-admin-setting' . $css_extension, array(), BUDDYPRESS_MEMBER_BLOG_VERSION);
+			}
 		}
 
 		/**

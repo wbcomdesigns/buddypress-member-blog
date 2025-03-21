@@ -70,8 +70,16 @@ class Buddypress_Member_Blog_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/selectize.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/buddypress-member-blog-admin.css', array(), $this->version, 'all' );
+		$rtl_css = is_rtl() ? '-rtl' : '';
+
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			$css_extension = '.css';
+		} else {
+			$css_extension = '.min.css';
+		}
+
+		wp_enqueue_style( 'selectize', plugin_dir_url( __FILE__ ) . 'css/vendor/selectize.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css' . $rtl_css . '/buddypress-member-blog-admin' . $css_extension, array(), $this->version, 'all' );
 	}
 
 	/**
@@ -92,8 +100,15 @@ class Buddypress_Member_Blog_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/selectize.min.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-admin.js', array( 'jquery' ), $this->version, false );
+
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			$js_extension = '.js';
+		} else {
+			$js_extension = '.min.js';
+		}
+
+		wp_enqueue_script( 'selectize', plugin_dir_url( __FILE__ ) . 'js/vendor/selectize.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/buddypress-member-blog-admin' . $js_extension, array( 'jquery' ), $this->version, false );
 	}
 
 		/**

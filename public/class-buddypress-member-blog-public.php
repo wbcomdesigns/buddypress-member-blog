@@ -163,6 +163,7 @@ class Buddypress_Member_Blog_Public {
 					'publish_post_count' => $current_user_publish_posts,
 					'pending_post_count' => $current_user_pending_posts,
 					'draft_post_count'   => $current_user_draft_posts,
+					'post_deleted_msg'   => esc_html__( 'This post will be permanently deleted.', 'buddypress-member-blog' ),
 				)
 			);
 		}

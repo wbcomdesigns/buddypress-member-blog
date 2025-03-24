@@ -44,7 +44,9 @@
             "click",
             ".bp-member-blog-container .post-actions a.confirm",
             function () {
-                if (confirm("This post will be permanently deleted.")) {
+                const message = bpmb_ajax_object.post_deleted_msg;
+
+                if (confirm(message)) {
                     return true;
                 }
                 return false;

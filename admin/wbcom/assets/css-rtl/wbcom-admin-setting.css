@@ -34,21 +34,6 @@ h4.wbcom-support-section {
     width: auto;
 }
 
-.wbcom-bp-row-2settings {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    border: 1px solid rgba(200, 197, 218, 0);
-    box-shadow: -5px 5px 20px rgba(32, 53, 85, 0.10);
-    margin-top: 20px;
-    overflow: hidden;
-    width: 100%;
-}
-
-.wbcom-bp-row-2settings {
-    width: auto;
-}
-
 .wbcom-admin-option-wrap th {
     width: 250px;
     padding: 20px;
@@ -1451,8 +1436,6 @@ Media Queries
     /* Hide table headers (but not display: none;, for accessibility) */
     .wb-license-form-table thead tr {
         position: absolute;
-        /*        top: -9999px;
-                left: -9999px;*/
     }
 
     .wb-license-form-table td {
@@ -1847,6 +1830,5 @@ Media Queries
         margin: 0 0 15px;
     }
 }
-
 /* Media Queries */
 /*# sourceMappingURL=wbcom-admin-setting.css.map */

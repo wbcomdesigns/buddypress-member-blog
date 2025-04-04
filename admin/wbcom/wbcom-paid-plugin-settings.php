@@ -51,7 +51,6 @@ if ( ! class_exists( 'Wbcom_Paid_Plugin_Settings' ) ) {
 			</li>
 			<?php
 		}
-
 	}
 
 	function instantiate_wbcom_manager() {

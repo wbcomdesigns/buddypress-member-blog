@@ -1,9 +1,7 @@
 <div class="wrap">
 	<div class="wbcom-bb-plugins-offer-wrapper">
 		<div id="wb_admin_logo">
-			<a href="https://wbcomdesigns.com/downloads/buddypress-community-bundle/" target="_blank">
-				<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL ) . 'admin/wbcom/assets/imgs/wbcom-offer-notice.png'; ?>">
-			</a>
+
 		</div>
 	</div>
 	<div class="wbcom-wrap wbcom-plugin-wrapper">    	
@@ -30,9 +28,6 @@
 					</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-moderation.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Moderation Pro', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Moderation solution with advanced features to give you complete control over your community and keep it secure with automatic moderation and limitations, and more.', 'buddypress-member-blog' ); ?></p>
@@ -43,9 +38,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-resume-manager.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Resume Manager', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Resume Manager adds display resume functionality on a user’s BuddyPress/BuddyBoss Platform Profile.', 'buddypress-member-blog' ); ?></p>
@@ -56,9 +48,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-poll.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Polls', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Polls allows your community members to create polls as an activity, letting your members respond.', 'buddypress-member-blog' ); ?></p>
@@ -69,9 +58,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-community-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Private Community Pro', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Private Community Pro offers Privacy control for profiles. It provides a feature to lockdown BuddyPress Component and asks users to log in to go further to check the profile or any other protected details.', 'buddypress-member-blog' ); ?></p>
@@ -82,9 +68,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-profile-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Profile Pro', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Profile Pro gives you the power to extend BuddyPress Profiles with repeater fields and groups. You can easily add multiple field groups and display them at a member’s profile.', 'buddypress-member-blog' ); ?></p>
@@ -95,9 +78,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-check-ins-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Check-ins Pro', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Check-ins Pro Plugin allows your members to post check-ins like other social media platforms, on your website activity stream. Members have a mashup of their check-ins on their profile.', 'buddypress-member-blog' ); ?></p>
@@ -108,9 +88,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-member-blog.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Member Blog', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Member Blog Pro plugin provides each of your site members their own writing environment with a fantastic user experience.', 'buddypress-member-blog' ); ?></p>
@@ -121,9 +98,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-buddybendor.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress BuddyVendor', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyVendor or BuddyPress Multivendor Marketplace Quickly turn your BuddyPress community into a social marketplace.', 'buddypress-member-blog' ); ?></p>
@@ -134,9 +108,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-statistics.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Statistics', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Stats plugin creates an activity log of everything that happens on your BuddyPress powered community site and keeps all counts on the user profile that displays a range of statistics of your community members.', 'buddypress-member-blog' ); ?></p>
@@ -147,9 +118,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-profile-viewed.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'Who viewed my profile', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'The Who Viewed My Profile Plugin helps you to know about your profile visitors. It displays the count of the profile views on the member profile header.', 'buddypress-member-blog' ); ?></p>
@@ -160,9 +128,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-friend-follow.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Friend & Follow Suggestion', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Friends and Follow suggestions plugin assists you with improving your BuddyPress or BuddyBoss Platform-based community.', 'buddypress-member-blog' ); ?></p>
@@ -173,9 +138,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-giphy.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Giphy', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Make your activity stream even more tempting and interesting to attract members by adding GIFs.', 'buddypress-member-blog' ); ?></p>
@@ -186,9 +148,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-shortcodes-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'Shortcodes for BuddyPress Pro', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Add and Customize the BuddyPress components on any of the WordPress pages/posts using elementor widgets', 'buddypress-member-blog' ); ?></p>
@@ -199,9 +158,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-sticky-post.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Sticky Post', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Make your posts sticky on BuddyPress by pinning site-wide and group activities on the top of the community wall.', 'buddypress-member-blog' ); ?></p>
@@ -212,9 +168,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-quotes.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Quotes', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Allow BuddyPress users to post content with attractive background colors and beautiful images.', 'buddypress-member-blog' ); ?></p>
@@ -225,9 +178,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-auto-friends.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Auto Friends', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'The new BuddyPress Automatic Friends plugins makes your new users feel a little more at home upon signing up to your community.', 'buddypress-member-blog' ); ?></p>
@@ -238,9 +188,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-check-ins-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Newsfeed', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Create A Customized Newsfeed Experience Just Like Facebook. By default, BuddyPress offers separate type of activities for your BuddyPress Activity Stream.', 'buddypress-member-blog' ); ?></p>
@@ -251,9 +198,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-status.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Status', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Allow members to add status on their profile and give their reactions to all the activity updates.', 'buddypress-member-blog' ); ?></p>
@@ -264,9 +208,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-hashtags.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Hashtags', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'BuddyPress Hashtags for BuddyPress and bbPress. It allows adding hashtag links to BuddyPress activity and bbPress topics. ', 'buddypress-member-blog' ); ?></p>
@@ -277,9 +218,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-profanity.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyPress Profanity', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Specify a list of bad words to control the content in your BuddyPress community.', 'buddypress-member-blog' ); ?></p>
@@ -301,9 +239,6 @@
 				</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/ld-notes.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'LMS Notes', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Learndash Notes will extend the LearnDash functionality to create Notes for courses, lessons and topics.', 'buddypress-member-blog' ); ?></p>
@@ -314,9 +249,6 @@
 						</div>		
 					</div>					
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/ld-wpforo.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'Learndash wpForo', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Learndash wpForo integration allows you to add a discussion channel for your learners. Allow you to link your course with multiple forums.', 'buddypress-member-blog' ); ?></p>
@@ -327,9 +259,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/ld-dashboard.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'LearnDash Dashboard', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'LearnDash Dashboard gives the admin, instructors, and students a dashboard of their own, where they can easily manage anything related to their courses, lessons, and contact others.', 'buddypress-member-blog' ); ?></p>
@@ -340,9 +269,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/bp-peepso-learnDash.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'PeepSo LearnDash Integration', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Integrate LearnDash with PeepSo to display options for courses inside a member profile.', 'buddypress-member-blog' ); ?></p>
@@ -364,9 +290,6 @@
 				</div>
 				<div class="wbcom-addon-plugins-inner-wrapper">
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/reign-theme.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'Reign BuddyPress Theme', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Create your social network website for the company, school, sports team, or any niche community using a highly customizable WordPress BuddyPress theme.', 'buddypress-member-blog' ); ?></p>
@@ -377,9 +300,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/buddyx-pro.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyX Pro Theme', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'To build an online community website for all niches with full flexibility, control, and freedom. No coding is required! Offers unique layouts with clean code and easy-to-customize options giving you a whole new way to visualize BuddyPress.', 'buddypress-member-blog' ); ?></p>
@@ -390,9 +310,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/buddyx-free.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'BuddyX Free Theme', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'Allow users to create and manage their to-dos with the relevant category right from their profile.', 'buddypress-member-blog' ); ?></p>
@@ -403,9 +320,6 @@
 						</div>		
 					</div>
 					<div class="wbcom-addons-plugins-card">
-						<div class="wbcom-addons-image-card">
-							<img src="<?php echo esc_url( BUDDYPRESS_MEMBER_BLOG_PLUGIN_URL . 'admin/wbcom/assets/imgs/knowxtheme.jpg' ); ?>" alt="BuddyPress-addons-img">
-						</div>
 						<div class="wbcom-addons-card-details">
 							<h2><?php esc_html_e( 'KnowX Theme', 'buddypress-member-blog' ); ?></h2>
 							<p><?php esc_html_e( 'A Free WordPress Knowledge base Theme. KnowX helps you set up a Knowledge Base in WordPress in less time than it takes to brew a coffee.', 'buddypress-member-blog' ); ?></p>

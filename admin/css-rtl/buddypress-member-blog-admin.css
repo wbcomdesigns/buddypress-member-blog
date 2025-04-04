@@ -26,6 +26,11 @@
   content: "\f111";
 }
 
+.nav-tab-wrapper ul li#custom-fields a.nav-tab:before {
+  content: "\f151";
+  margin-top: 2px;
+}
+
 .nav-tab-wrapper ul li#restriction a.nav-tab:before,
 .nav-tab-wrapper ul li#restriction-pro a.nav-tab:before {
   content: "\f528";

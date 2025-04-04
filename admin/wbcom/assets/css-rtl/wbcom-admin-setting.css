@@ -73,6 +73,10 @@ h4.wbcom-support-section {
     margin: 12px 0;
 }
 
+.wbcom-addons-card-details h2 {
+    margin: 0;
+}
+
 .wbcom-addons-card-details p,
 .wbcom_help_support_details .wbcom_help_support_inner_details p,
 #wbcom_admin_content_support p,
@@ -86,6 +90,12 @@ h4.wbcom-support-section {
 .wbcom-tab-content p.description {
     font-size: var(--font-size-medium);
     color: var(--text-light);
+}
+
+#wbcom-learndash-extension,
+#wbcom-themes-list,
+#wbcom-free-extension {
+    display: none;
 }
 
 /* ========== Common Containers ========== */
@@ -158,7 +168,7 @@ ul#wbcom_support_list {
 }
 
 .wbcom-all-addons-plugins-wrap {
-    padding: 30px;
+    padding: var(--spacing-large);
     background: #fff;
 }
 
@@ -673,10 +683,6 @@ div#wb_admin_plugin_name span {
     padding: 1.2%;
     border: 1px solid rgba(200, 197, 218, 0.35);
     margin-bottom: 25px;
-    width: 46.7%;
-}
-
-#wbcom-free-extension .wbcom-addons-plugins-card {
     width: 29.7%;
 }
 
@@ -1350,36 +1356,12 @@ div.wbcom-faq-panel p {
     }
 
     .wbcom-bp-addons-plugins-title-section .wbcom-addons-plugins-links li a {
-        font-size: 14px;
+        font-size: var(--font-size-normal);
     }
 
     .wbcom-bp-addons-plugins-title-section a.wbcom-addons-button {
         display: inline-block;
         margin-top: 15px;
-    }
-
-    .wbcom-addon-plugins-inner-wrapper,
-    ul#wbcom_support_list {
-        display: block;
-    }
-
-    .wbcom-addons-plugins-card,
-    .wbcom_help_support_box,
-    #wbcom-free-extension .wbcom-addons-plugins-card {
-        width: auto;
-        display: block;
-        max-width: 100%;
-        padding: 4%;
-    }
-
-    ul.wbcom-addons-plugins-links li {
-        margin: 0 0 0 10px;
-    }
-
-    .wbcom-addons-image-card img {
-        margin: 0 0 20px;
-        max-width: 100%;
-        width: 100%;
     }
 
     .wbcom-addons-card-button a.wbcom-addons-button {
@@ -1397,15 +1379,15 @@ div.wbcom-faq-panel p {
     }
 
     .wbcom_help_support_box {
-        margin: 20px 0;
+        margin: var(--spacing-medium) 0;
     }
 
     ul#wbcom_support_list {
-        padding: 0px 15px;
+        padding: 0px var(--spacing-normal);
     }
 
     .wb-plugins-license-tables-wrap {
-        padding: 15px;
+        padding: var(--spacing-normal);
     }
 
     .wbcom-admin-settings-page {
@@ -1415,7 +1397,7 @@ div.wbcom-faq-panel p {
     }
 
     .wbcom-all-addons-plugins-wrap {
-        padding: 20px;
+        padding: var(--spacing-medium);
     }
 
     #wb_admin_header #wb_admin_logo .wb_admin_right,
@@ -1439,7 +1421,7 @@ div.wbcom-faq-panel p {
     }
 
     .wbcom_admin_tab_content {
-        padding: 16px 15px;
+        padding: 16px var(--spacing-normal);
     }
 
     .wbcom-demo-content-wrap .wbcom-demo-importer .container {
@@ -1448,16 +1430,16 @@ div.wbcom-faq-panel p {
 
     .wbcom-demo-title {
         width: auto;
-        padding: 15px;
+        padding: var(--spacing-normal);
         display: block;
     }
 
     .wbcom-demo-content-wrap {
-        padding: 16px 15px;
+        padding: 16px var(--spacing-normal);
     }
 
     .wbcom_single_box {
-        margin: 15px 0;
+        margin: var(--spacing-normal) 0;
     }
 
     /* Layout Adjustments */
@@ -1524,15 +1506,15 @@ div.wbcom-faq-panel p {
 
     #wb_admin_header #wb_admin_nav ul li.wb_admin_nav_item a {
         font-size: var(--font-size-normal);
-        padding-right: 15px;
+        padding-right: var(--spacing-normal);
     }
 
     .wbcom-bb-plugins-offer-wrapper {
-        margin: 20px 5px -10px;
+        margin: var(--spacing-medium) 5px -10px;
     }
 
     .wbcom-wrap {
-        margin: 20px 5px;
+        margin: var(--spacing-medium) 5px;
     }
 
     .wbcom-welcome-description,

@@ -2,7 +2,7 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
- .wb-info {
+.wb-info {
   color: #1c86f2;
 }
 
@@ -24,6 +24,11 @@
 
 .nav-tab-wrapper ul li#general a.nav-tab:before {
   content: "\f111";
+}
+
+.nav-tab-wrapper ul li#custom-fields a.nav-tab:before {
+  content: "\f151";
+  margin-top: 2px;
 }
 
 .nav-tab-wrapper ul li#restriction a.nav-tab:before,
@@ -156,7 +161,7 @@ a#bp-member-blog-pro-delete-table span {
   display: none !important;
 }
 
-.wbcom-settings-section-options-flex select#my_dashboard_page option:first-child{
+.wbcom-settings-section-options-flex select#my_dashboard_page option:first-child {
   display: none !important;
 }
 
@@ -175,14 +180,13 @@ a#bp-member-blog-pro-delete-table span {
 .wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:after,
 .wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:checked::after,
 .wbcom-settings-section-wrap.members-blog-publish-wrap .wb-slider.wb-round::after {
-    content: "Pending Review";
+  content: "Pending Review";
 }
 
 .wbcom-admin-option-wrap .form-table .wbcom-settings-section-wrap.members-blog-publish-wrap input[type=checkbox]:checked::after,
 .wbcom-settings-section-wrap.members-blog-publish-wrap .wb-switch input:checked+.wb-slider::after {
-    content: "Published";
+  content: "Published";
 }
-
 
 .wbcom-flex {
   display: flex;
@@ -199,15 +203,13 @@ a#bp-member-blog-pro-delete-table span {
   border-radius: 12px;
 }
 
-
 @media screen and (max-width: 1189px) {
-  
-    .wbcom-admin-settings-page .wbcom-tab-content {
-      width: auto;
-      padding: 10px;
-    }
-    .wbcom-admin-option-wrap {
-      padding: 10px;
-    }
+  .wbcom-admin-settings-page .wbcom-tab-content {
+    width: auto;
+    padding: 10px;
+  }
 
+  .wbcom-admin-option-wrap {
+    padding: 10px;
+  }
 }

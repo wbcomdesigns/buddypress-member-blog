@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-04T11:20:26+00:00\n"
+"POT-Creation-Date: 2025-04-04T11:28:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: buddypress-member-blog\n"
@@ -951,36 +951,40 @@ msgstr ""
 msgid "Category:"
 msgstr ""
 
-#: templates/edit.php:99
+#: templates/edit.php:98
+msgid "The entered category name is restricted ! Please try another one or select from the dropdown."
+msgstr ""
+
+#: templates/edit.php:100
 msgid "Select post category"
 msgstr ""
 
 #. translators: Display plural label name
-#: templates/edit.php:142
+#: templates/edit.php:143
 msgid "Add Category"
 msgstr ""
 
-#: templates/edit.php:145
+#: templates/edit.php:146
 msgid "Add"
 msgstr ""
 
-#: templates/edit.php:156
+#: templates/edit.php:157
 msgid "Tag:"
 msgstr ""
 
-#: templates/edit.php:158
+#: templates/edit.php:159
 msgid "Please add post tags with comma separator."
 msgstr ""
 
-#: templates/edit.php:181
+#: templates/edit.php:182
 msgid "Featured Image:"
 msgstr ""
 
-#: templates/edit.php:185
+#: templates/edit.php:186
 msgid "Add Image"
 msgstr ""
 
-#: templates/edit.php:209
+#: templates/edit.php:210
 msgid "Save"
 msgstr ""
 

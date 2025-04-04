@@ -95,7 +95,7 @@ if ( ! isset( $bp_member_blog_gen_stngs['publish_post'] ) && ( $post_id == 0 || 
 			<div class="bp-member-blog-field-container">
 				<label class="bpmb_category" for="bp_member_blog_post_category">
 					<span><?php esc_html_e( 'Category:', 'buddypress-member-blog' ); ?></span>
-					<div><span class='bp_member_blog_category_add_error_field' hidden><?php echo esc_html__( 'The entered category name is restricted ! Please try another one or select from the dropdown.', 'buddypress-member-blog' ); ?></span></div>
+					<div><span class='bp_member_blog_category_add_error_field' hidden><?php echo esc_html__( 'The category name you entered is not allowed. Please choose a different name or select one from the dropdown.', 'buddypress-member-blog' ); ?></span></div>
 					<div class="bp-member-blog-post-category-wrapper">
 						<select id="bp-blog-category-select" name="bp_member_blog_post_category[]" multiple data-placeholder="<?php esc_html_e( 'Select post category', 'buddypress-member-blog' ); ?>">
 							<?php

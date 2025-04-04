@@ -43,6 +43,13 @@
     box-shadow: none;
 }
 
+span.bp_member_blog_category_add_error_field {
+    color: #ff0000;
+    font-size: 13px;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
 button#insert-media-button {
     background: #fff;
     border-color: #ccc;

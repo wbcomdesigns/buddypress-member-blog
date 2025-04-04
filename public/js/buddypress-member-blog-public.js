@@ -169,40 +169,48 @@
                 },
                     function (response) {
                         if (response) {
-                            jQuery(".add-bpmb-cat-row").hide();
-                            jQuery("#bp-blog-category-select").append(
-                                '<option value="' + response + '">' + name + "</option>"
-                            );
-                            let presetvalue = jQuery("#bp-blog-category-select").val();
-                            if ("" != presetvalue) {
-                                let selectedOptions = [];
-                                if (presetvalue.includes(",")) {
-                                    selectedOptions = presetvalue.split(",");
-                                    selectedOptions.push(response);
-                                } else if (Array.isArray(presetvalue)) {
-                                    selectedOptions = presetvalue;
-                                    selectedOptions.push(response);
-                                } else {
-                                    selectedOptions = [presetvalue];
-                                    selectedOptions.push(response);
-                                }
-                                jQuery("#bp-blog-category-select")[0].selectize.addOption({
-                                    text: name,
-                                    value: response,
-                                });
+                            if( false === response.success ) {
+                                jQuery( '.bp_member_blog_category_add_error_field' ).show();
+                                jQuery(".add-bpmb-cat-row").hide();
+                            }else if( true === response.success ) {
+                               response = response.data.cat_id
+                                jQuery(".add-bpmb-cat-row").hide();
+                                jQuery('.bp_member_blog_category_add_error_field').hide();
+                                jQuery("#bp-blog-category-select").append(
+                                    '<option value="' + response + '">' + name + "</option>"
+                                );
+                                let presetvalue = jQuery("#bp-blog-category-select").val();
+                                if ("" != presetvalue) {
+                                    let selectedOptions = [];
+                                    if (presetvalue.includes(",")) {
+                                        selectedOptions = presetvalue.split(",");
+                                        selectedOptions.push(response);
+                                    } else if (Array.isArray(presetvalue)) {
+                                        selectedOptions = presetvalue;
+                                        selectedOptions.push(response);
+                                    } else {
+                                        selectedOptions = [presetvalue];
+                                        selectedOptions.push(response);
+                                    }
+                                    jQuery("#bp-blog-category-select")[0].selectize.addOption({
+                                        text: name,
+                                        value: response,
+                                    });
 
-                                jQuery("#bp-blog-category-select")[0].selectize.setValue(
-                                    selectedOptions
-                                );
-                            } else {
-                                jQuery("#bp-blog-category-select")[0].selectize.addOption({
-                                    text: name,
-                                    value: response,
-                                });
-                                jQuery("#bp-blog-category-select")[0].selectize.setValue(
-                                    response
-                                );
+                                    jQuery("#bp-blog-category-select")[0].selectize.setValue(
+                                        selectedOptions
+                                    );
+                                } else {
+                                    jQuery("#bp-blog-category-select")[0].selectize.addOption({
+                                        text: name,
+                                        value: response,
+                                    });
+                                    jQuery("#bp-blog-category-select")[0].selectize.setValue(
+                                        response
+                                    );
+                                }
                             }
+                            
                             jQuery("#add-bpmb-cat").html(btn_text);
                             jQuery("#bpmb-category-name").val("");
                             jQuery(".add-bpmb-category span").attr("class", "dashicons dashicons-plus");

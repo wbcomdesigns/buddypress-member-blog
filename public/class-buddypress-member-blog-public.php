@@ -898,6 +898,21 @@ class Buddypress_Member_Blog_Public {
 			if ( isset( $_POST['name'] ) ) {
 				$term       = sanitize_text_field( wp_unslash( $_POST['name'] ) );
 				$term_label = sanitize_text_field( wp_unslash( $_POST['name'] ) );
+
+				$exclude = array();
+				$bp_member_blog_gen_stngs = get_option( 'bp_member_blog_gen_stngs' );
+				$exclude_categories       = $bp_member_blog_gen_stngs['exclude_category'];
+				$exclude_categories       = array_map( 'absint', (array) $exclude_categories );
+				$exclude                  = array_map( array( $this, 'bp_member_blog_fetch_term_name' ), $exclude_categories );
+				
+				if( !empty( $exclude ) && is_array( $exclude ) ) {
+					if( in_array( strtolower($term), array_map('strtolower', $exclude) ) ) {
+						wp_send_json_error();
+						wp_die();
+					}
+				}
+
+
 				if ( str_contains( $term, ' ' ) ) {
 					$term_arr   = explode( ' ', $term );
 					$output_arr = array_map(
@@ -923,9 +938,23 @@ class Buddypress_Member_Blog_Public {
 					);
 				}
 				$cat_id = isset( $demo['term_id'] ) ? $demo['term_id'] : '';
+				wp_send_json_success(
+					array(
+						'cat_id' => $cat_id
+					)
+					
+
+				);
+				
 				echo esc_html( $cat_id );
 			}
 			die;
 		}
+	}
+
+	function bp_member_blog_fetch_term_name( $term_id ) {
+		$term_name = get_term( $term_id );
+		$term_name = !empty( $term_name ) && is_object( $term_name ) ? $term_name->name : '';
+		return $term_name;
 	}
 }
